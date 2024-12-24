@@ -1,27 +1,38 @@
-KLEE Symbolic Virtual Machine
-=============================
+# KOM Experiments
 
-[![Build Status](https://github.com/klee/klee/workflows/CI/badge.svg)](https://github.com/klee/klee/actions?query=workflow%3ACI)
-[![Build Status](https://api.cirrus-ci.com/github/klee/klee.svg)](https://cirrus-ci.com/github/klee/klee)
-[![Coverage](https://codecov.io/gh/klee/klee/branch/master/graph/badge.svg)](https://codecov.io/gh/klee/klee)
+This directory contains the data required to reproduce the experiments described in our USENIX 2025 paper: The Cost of Performance: Breaking ThreadX with Kernel Object Masquerading Attacks.
 
-`KLEE` is a symbolic virtual machine built on top of the LLVM compiler
-infrastructure. Currently, there are two primary components:
+For driver source code we used in our experiments, please refer to [this repo](https://github.com/VoodooChild99/perry-drivers).
 
-  1. The core symbolic virtual machine engine; this is responsible for
-     executing LLVM bitcode modules with support for symbolic
-     values. This is comprised of the code in lib/.
+## Requirements
+### Hardware Dependencies
+* **Processor**: We recommend using a machine with two Intel Xeon E5-2620 v2 CPUs (12 cores, 24 threads) to reproduce the experiment. However, comparable hardware may also suffice.
+* **Memory**: At least 64GB of RAM
+* **Storage**: At least 256GB.
+* **Board**: NUCLEO-U575ZI-Q is used as one of the platform in the PoC experiment.
+### Software Dependencies
+* **OS**: We used Ubuntu 24.04. Other systems are not tested.
+* **Misc**: git, qemu and Docker
 
-  2. A POSIX/Linux emulation layer oriented towards supporting uClibc,
-     with additional support for making parts of the operating system
-     environment symbolic.
+## Preparations
+It is assumed that you have built the experiment platform with Docker as described [here](https://github.com/VoodooChild99/perry?tab=readme-ov-file#build-with-docker).
+All experiments should be conducted within the built container (execute `run_docker.sh` to launch a shell). 
 
-Additionally, there is a simple library for replaying computed inputs
-on native code (for closed programs). There is also a more complicated
-infrastructure for replaying the inputs generated for the POSIX/Linux
-emulation layer, which handles running native programs in an
-environment that matches a computed test input, including setting up
-files, pipes, environment variables, and passing command line
-arguments.
+## Directory Layout
+| Directories/Files                                        | Experiment                                                   |
+| :------------------------------------------------------- | :----------------------------------------------------------- |
+| [symbolic-execution-engine](./symbolic-execution-engine) | Symbolic execution for ThreadX system calls as described in Section 6.2 (Vulnerable System Call" and "Performance of Symbolic Execution Engine"). |
+| [Proof-of-Concept](./Proof-of-Concept)                   | Proof of Concept for KOM attacks as described in Section 6.2 ("Implications of Attacks") and A.2 (Proof of Concept). |
+| [modification-ThreadX.md](./modification-ThreadX.md)     | The modifications we made to the ThreadX source code.        |
 
-For further information, see the [webpage](http://klee.github.io/).
+## Running the Experiments
+Please refer to the `README` files in [symbolic-execution-engine](./symbolic-execution-engine), [Proof-of-Concept](./Proof-of-Concept) for detailed instructions.
+
+Note that the symbolic execution takes ~10 hours. 
+
+## (TODO)Badges
+<p float="left">
+<img src="./assets/usenixbadges-available.svg" width="15%">
+<img src="./assets/usenixbadges-functional.svg" width="15%">
+<img src="./assets/usenixbadges-reproduced.svg" width="15%">
+</p>
