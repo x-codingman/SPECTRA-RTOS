@@ -1,0 +1,8 @@
+Error: failed external call: vAssertCalled
+File: tasks.c
+Line: 1224
+assembly.ll line: 8436
+State: 1
+Stack: 
+	#000008436 in xTaskDelayUntil(pxPreviousWakeTime=symbolic, xTimeIncrement=symbolic) at tasks.c:1224
+	#100000146 in main() at xTaskDelayUntil.c:28

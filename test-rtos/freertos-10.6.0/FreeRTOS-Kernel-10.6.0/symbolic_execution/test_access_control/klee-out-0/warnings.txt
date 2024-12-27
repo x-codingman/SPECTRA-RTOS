@@ -1,0 +1,5 @@
+KLEE: WARNING: undefined reference to function: MPU_vTaskSuspendImpl
+KLEE: WARNING: undefined reference to function: assert
+KLEE: WARNING: undefined reference to function: klee_make_symbolic_controllable
+KLEE: WARNING: undefined reference to function: xTaskCreate
+KLEE: WARNING ONCE: calling external: xTaskCreate(94505331376384, 94505331376592, 200, 0, 1, 0) at test.c:16 14

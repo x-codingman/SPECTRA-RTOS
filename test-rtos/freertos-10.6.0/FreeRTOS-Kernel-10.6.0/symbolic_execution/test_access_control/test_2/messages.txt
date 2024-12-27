@@ -1,0 +1,263 @@
+KLEE: Execute: test_2.c:17
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_2.c:17
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 94428926585400
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_2.c:17
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_2.c:19
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_2.c:20
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_2.c:21
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_2.c:22
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_2.c:22
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_2.c:23
+KLEE: DEBUG: dump the result of address
+KLEE: DEBUG: dump address and result
+KLEE: DEBUG: alloc TCB in executeMemoryOperation!!
+KLEE: DEBUG: Allocate global memory for TCB!!!states size: 1
+KLEE: DEBUG: Alloc stack, top address: 94428919527424
+KLEE: mo address: 94428926585400
+KLEE: newMo address: 94428914224960
+KLEE: alloc uncontrollable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 280,            alloc address: 94428914224960
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_2.c:23
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_2.c:23
+KLEE: DEBUG: forking state!!!
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_2.c:24
+KLEE: DEBUG: dump the result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_2.c:24
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:604
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 94428926585368
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:604
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:604
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 94428926585568
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:604
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:604
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:606
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:607
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:607
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:609
+KLEE: DEBUG: dump the result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:609
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:609
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:611
+KLEE: DEBUG: dump the result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:611
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:611
+KLEE: DEBUG: forking state!!!
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:611
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:611
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:611
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:611
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:611
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:620
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_2.c:25
+KLEE: DEBUG: dump the result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_2.c:25
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_2.c:25
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_2.c:0
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_2.c:25
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_2.c:25
+KLEE: ERROR: this function has no access control mechnism here 
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:611
+KLEE: DEBUG: dump the result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:611
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:604
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:611
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:611
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:611
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:611
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:611
+KLEE: DEBUG: forking state!!!
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:620
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_2.c:25
+KLEE: DEBUG: dump the result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_2.c:25
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_2.c:25
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_2.c:0
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_2.c:25
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_2.c:25
+KLEE: ERROR: this function has no access control mechnism here 
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:615
+KLEE: DEBUG: dump the result of address
+KLEE: DEBUG: Lazy alloc name: lazy_alloc1
+KLEE: DEBUG: Detect a unintialzied constant pointer.
+KLEE: DEBUG: Alloc a new memory object for it. Alloc size:280 and address:94428914225536
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:615
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:615
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:617
+KLEE: DEBUG: dump the result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:617
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_2.c:33
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 94428926585512
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_2.c:33
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_2.c:33
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_2.c:34
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_2.c:35
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:618
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:619
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:620
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_2.c:25
+KLEE: DEBUG: dump the result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_2.c:25
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_2.c:25
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_2.c:0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_2.c:25
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_2.c:25
+KLEE: ERROR: this function has no access control mechnism here 
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_2.c:23
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_2.c:23
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_2.c:27
+KLEE: DEBUG: dump the result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_2.c:27
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 0

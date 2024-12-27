@@ -1,0 +1,4 @@
+../../../klee_test/build/bin/klee --search=dfs -debug-print-instructions=all:stderr test.test.bc
+PID: 1756163
+Using monotonic steady clock with 1/1000000000s resolution
+Started: 2023-08-30 07:10:47

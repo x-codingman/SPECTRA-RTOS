@@ -1,0 +1,7 @@
+Error: this API function has no access control mechnism
+File: test_2.c
+Line: 25
+assembly.ll line: 24800
+State: 3
+Stack: 
+	#000024800 in main() at test_2.c:25

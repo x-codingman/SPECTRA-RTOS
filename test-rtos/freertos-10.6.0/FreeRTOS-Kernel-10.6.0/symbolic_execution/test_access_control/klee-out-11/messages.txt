@@ -1,0 +1,332 @@
+KLEE: Execute: test.c:16
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test.c:16
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 94294779661448
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test.c:16
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test.c:18
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test.c:19
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test.c:20
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test.c:20
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test.c:21
+KLEE: DEBUG: dump the result of address
+KLEE: DEBUG: dump address and result
+KLEE: DEBUG: alloc TCB in executeMemoryOperation!!
+KLEE: DEBUG: Allocate global memory for TCB!!!states size: 1
+KLEE: DEBUG: Alloc stack, top address: 94294772643840
+KLEE: mo address: 94294779661448
+KLEE: newMo address: 94294767259744
+KLEE: alloc uncontrollable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 280,            alloc address: 94294767259744
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test.c:21
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test.c:21
+KLEE: DEBUG: forking state!!!
+KLEE: DEBUG: add constraints in addressConstraintsForTargetApp
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 2
+KLEE: Execute: test.c:22
+KLEE: DEBUG: dump the result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test.c:22
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:567
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 94294779661416
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:567
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:567
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 94294779661592
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:567
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:567
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:569
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:570
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:570
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:572
+KLEE: DEBUG: dump the result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:572
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:572
+KLEE: DEBUG: forking state!!!
+KLEE: DEBUG: add constraints in addressConstraintsForTargetApp
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:580
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: tasks.c:4107
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 94294779661632
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: tasks.c:4109
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: tasks.c:4111
+KLEE: DEBUG: dump the result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: tasks.c:4111
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: tasks.c:4111
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: tasks.c:4113
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: tasks.c:4114
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: tasks.c:4127
+KLEE: DEBUG: dump the result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: tasks.c:4127
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:580
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:580
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:582
+KLEE: DEBUG: dump the result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:582
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:582
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:584
+KLEE: DEBUG: dump the result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:584
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:584
+KLEE: DEBUG: forking state!!!
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 4
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:584
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:584
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:584
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:584
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:584
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:593
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:567
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:595
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test.c:23
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test.c:23
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test.c:24
+KLEE: DEBUG: dump the result of address
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test.c:24
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:584
+KLEE: DEBUG: dump the result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:584
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:567
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:584
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:584
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:584
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:584
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:584
+KLEE: DEBUG: forking state!!!
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 4
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:593
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:567
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:595
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test.c:23
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test.c:23
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test.c:24
+KLEE: DEBUG: dump the result of address
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test.c:24
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:586
+KLEE: DEBUG: dump the result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:586
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:586
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:314
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:314
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:314
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:314
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:314
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:315
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:317
+KLEE: DEBUG: dump the result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:317
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:317
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:317
+KLEE: DEBUG: dump the result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:317
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:314
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:317
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:317
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:317
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:317
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:317
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:317
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:317
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:318
+KLEE: DEBUG: dump the result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:318
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:318
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:318
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:318
+KLEE: DEBUG: dump the result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:318
+KLEE: DEBUG: dump the result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:318
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:318
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:318
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: portable/Common/mpu_wrappers_v2.c:318

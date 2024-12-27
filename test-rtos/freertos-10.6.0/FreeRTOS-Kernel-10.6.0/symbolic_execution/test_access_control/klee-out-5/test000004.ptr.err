@@ -1,0 +1,10 @@
+Error: resolve failed
+File: list.c
+Line: 113
+assembly.ll line: 6480
+State: 8
+Stack: 
+	#000006480 in vListInsertEnd(pxList=94859487145248, pxNewListItem=symbolic) at list.c:113
+	#100010502 in vTaskSuspend(xTaskToSuspend=symbolic) at tasks.c:1720
+	#200017692 in MPU_vTaskSuspendImpl(pxTaskToSuspend=symbolic) at portable/Common/mpu_wrappers_v2.c:574
+	#300026026 in main() at test.c:18

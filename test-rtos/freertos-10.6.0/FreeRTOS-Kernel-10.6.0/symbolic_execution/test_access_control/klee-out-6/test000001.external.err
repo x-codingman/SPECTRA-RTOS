@@ -1,0 +1,9 @@
+Error: failed external call: assert
+File: test.c
+Line: 27
+assembly.ll line: 26038
+State: 2
+Stack: 
+	#000026038 in portIS_TASK_PRIVILEGED() at test.c:27
+	#100017694 in MPU_vTaskSuspendImpl(pxTaskToSuspend=symbolic) at portable/Common/mpu_wrappers_v2.c:580
+	#200026017 in main() at test.c:18

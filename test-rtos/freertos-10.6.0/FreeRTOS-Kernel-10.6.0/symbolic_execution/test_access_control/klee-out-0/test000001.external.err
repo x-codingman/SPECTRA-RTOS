@@ -1,0 +1,7 @@
+Error: failed external call: xTaskCreate
+File: test.c
+Line: 15
+assembly.ll line: 17
+State: 1
+Stack: 
+	#000000017 in main() at test.c:15

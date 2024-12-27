@@ -1,0 +1,14 @@
+/home/sxh/threadx/threadx/build/CMakeFiles/threadx.dir
+/home/sxh/threadx/threadx/build/CMakeFiles/freertos-threadx.dir
+/home/sxh/threadx/threadx/build/CMakeFiles/package.dir
+/home/sxh/threadx/threadx/build/CMakeFiles/package_source.dir
+/home/sxh/threadx/threadx/build/CMakeFiles/edit_cache.dir
+/home/sxh/threadx/threadx/build/CMakeFiles/rebuild_cache.dir
+/home/sxh/threadx/threadx/build/ports/cortex_m33/gnu/CMakeFiles/package.dir
+/home/sxh/threadx/threadx/build/ports/cortex_m33/gnu/CMakeFiles/package_source.dir
+/home/sxh/threadx/threadx/build/ports/cortex_m33/gnu/CMakeFiles/edit_cache.dir
+/home/sxh/threadx/threadx/build/ports/cortex_m33/gnu/CMakeFiles/rebuild_cache.dir
+/home/sxh/threadx/threadx/build/common/CMakeFiles/package.dir
+/home/sxh/threadx/threadx/build/common/CMakeFiles/package_source.dir
+/home/sxh/threadx/threadx/build/common/CMakeFiles/edit_cache.dir
+/home/sxh/threadx/threadx/build/common/CMakeFiles/rebuild_cache.dir

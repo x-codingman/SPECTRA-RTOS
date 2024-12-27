@@ -1,0 +1,17 @@
+array alloc2[40] : w32 -> w8 = symbolic
+array symbolic_TCB[280] : w32 -> w8 = symbolic
+array xTaskToResume[8] : w32 -> w8 = symbolic
+(query [(Eq 94859473867424
+             (ReadLSB w64 0 xTaskToResume))
+         (Eq 94859487182720
+             (ReadLSB w64 88 symbolic_TCB))
+         (Eq 94859487552352
+             (ReadLSB w64 96 symbolic_TCB))
+         (Eq 94859487558784
+             (ReadLSB w64 112 symbolic_TCB))
+         (Eq false
+             (Eq 1
+                 (ReadLSB w64 0 alloc2)))
+         (Eq 0
+             (ReadLSB w64 152 symbolic_TCB))]
+        false)
