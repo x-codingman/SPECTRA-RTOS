@@ -25,6 +25,12 @@ All experiments should be conducted within the built container (execute `run_doc
 | [Proof-of-Concept](./Proof-of-Concept)                   | Proof of Concept for KOM attacks as described in Section 6.2 ("Implications of Attacks") and A.2 (Proof of Concept). |
 | [modification-ThreadX.md](./modification-ThreadX.md)     | The modifications we made to the ThreadX source code.        |
 
+#### Building With Docker
+```
+docker build -t klee/klee .
+```
+
+
 ## Running the Experiments
 Please refer to the `README` files in [symbolic-execution-engine](./symbolic-execution-engine), [Proof-of-Concept](./Proof-of-Concept) for detailed instructions.
 

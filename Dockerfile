@@ -16,9 +16,9 @@ ENV COVERAGE=0
 ENV USE_TCMALLOC=1
 ENV BASE=/tmp
 ENV LLVM_VERSION=11.0
-ENV ENABLE_DOXYGEN=1
+ENV ENABLE_DOXYGEN=0
 ENV ENABLE_OPTIMIZED=1
-ENV ENABLE_DEBUG=1
+ENV ENABLE_DEBUG=0
 ENV DISABLE_ASSERTIONS=1
 ENV REQUIRES_RTTI=0
 ENV SOLVERS=STP:Z3
@@ -30,16 +30,17 @@ ENV STP_VERSION=2.3.3
 ENV MINISAT_VERSION=master
 ENV Z3_VERSION=4.8.15
 ENV USE_LIBCXX=1
-ENV KLEE_RUNTIME_BUILD="Debug"
+ENV KLEE_RUNTIME_BUILD="Release"
 LABEL maintainer="Xinhui Shao (xinhuishao@seu.edu.cn)"
 
 
 # TODO remove adding sudo package
 # Create ``klee`` user for container with password ``klee``.
 # and give it password-less sudo access (temporarily so we can use the CI scripts)
-RUN apt update && DEBIAN_FRONTEND=noninteractive apt -y --no-install-recommends install sudo emacs-nox vim-nox file python3-dateutil && \
+RUN apt update && DEBIAN_FRONTEND=noninteractive apt -y --no-install-recommends install libgoogle-perftools-dev python3-pip zlib1g-dev sqlite3 libsqlite3-dev sudo build-essential emacs-nox vim-nox file cmake python3-dateutil && \
     rm -rf /var/lib/apt/lists/* && \
     useradd -m klee && \
+    pip3 install lit && \
     echo klee:klee | chpasswd && \
     cp /etc/sudoers /etc/sudoers.bak && \
     echo 'klee  ALL=(root) NOPASSWD: ALL' >> /etc/sudoers
@@ -50,20 +51,40 @@ COPY --chown=klee:klee . /tmp/klee_src/
 USER klee
 WORKDIR /home/klee
 # Build and set klee user to be owner
-RUN /tmp/klee_src/scripts/build/build.sh --debug --install-system-deps klee && pip3 install flask wllvm && \
-    sudo rm -rf /var/lib/apt/lists/*
+
+# RUN /tmp/klee_src/scripts/build/build.sh --debug --install-system-deps klee && pip3 install flask wllvm && \
+#     sudo rm -rf /var/lib/apt/lists/*
 
 
-ENV PATH="$PATH:/tmp/llvm-110-install_O_D_A/bin:/home/klee/klee_build/bin:/home/klee/.local/bin"
+ENV PATH="$PATH:/tmp/llvm-110-install_O_D_A/bin:/home/klee/.local/bin"
 ENV BASE=/tmp
+
+
 
 # Add KLEE header files to system standard include folder
 RUN sudo /bin/bash -c 'ln -s /tmp/klee_src/include/klee /usr/include/'
 
-ENV LD_LIBRARY_PATH /home/klee/klee_build/lib/
+# ENV LD_LIBRARY_PATH /home/klee/klee_build/lib/
 
-# Add KLEE binary directory to PATH
-RUN /bin/bash -c 'ln -s ${BASE}/klee_src /home/klee/ && ln -s ${BASE}/klee_build* /home/klee/klee_build'
+# # Add KLEE binary directory to PATH
+# RUN /bin/bash -c 'ln -s ${BASE}/klee_src /home/klee/ && ln -s ${BASE}/klee_build* /home/klee/klee_build'
+
+RUN /bin/bash -c 'ln -s ${BASE}/klee_src /home/klee/'
 
 # TODO Remove when STP is fixed
 RUN /bin/bash -c 'echo "export LD_LIBRARY_PATH=$(cd ${BASE}/metaSMT-*-deps/stp-git-basic/lib/ && pwd):$LD_LIBRARY_PATH" >> /home/klee/.bashrc'
+
+RUN mkdir /home/klee/klee_src/build
+WORKDIR /home/klee/klee_src/build
+RUN cmake \
+-DCMAKE_CXX_FLAGS_DEBUG="-g" \
+-DCMAKE_C_FLAGS_DEBUG="-g" \
+-DCMAKE_CXX_FLAGS_RELEASE="-O3 -DNDEBUG" \
+-DCMAKE_C_FLAGS_RELEASE="-O3 -DNDEBUG" \
+-DCMAKE_CXX_FLAGS_RELWITHDEBINFO="-O2 -g -DNDEBUG" \
+-DCMAKE_C_FLAGS_RELWITHDEBINFO="-O2 -g -DNDEBUG" \
+-DENABLE_SOLVER_STP=ON \
+-DENABLE_POSIX_RUNTIME=ON \
+-DSTP_DIR=/tmp/stp-2.3.3-install/lib/cmake/STP/ \
+.. && \
+make -j$(nproc)
