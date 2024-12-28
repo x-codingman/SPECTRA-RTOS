@@ -37,7 +37,7 @@ LABEL maintainer="Xinhui Shao (xinhuishao@seu.edu.cn)"
 # TODO remove adding sudo package
 # Create ``klee`` user for container with password ``klee``.
 # and give it password-less sudo access (temporarily so we can use the CI scripts)
-RUN apt update && DEBIAN_FRONTEND=noninteractive apt -y --no-install-recommends install libgoogle-perftools-dev python3-pip zlib1g-dev sqlite3 libsqlite3-dev sudo build-essential emacs-nox vim-nox file cmake python3-dateutil && \
+RUN apt update && DEBIAN_FRONTEND=noninteractive apt -y --no-install-recommends install git libgoogle-perftools-dev python3-pip zlib1g-dev sqlite3 libsqlite3-dev sudo build-essential emacs-nox vim-nox file cmake python3-dateutil && \
     rm -rf /var/lib/apt/lists/* && \
     useradd -m klee && \
     pip3 install lit && \
