@@ -1,14 +1,16 @@
 
-include /home/klee/TizenRT/build/configs/stm32h745zi-nucleo/hello/defconfig
+include /home/xinhuishao/tizenrt/build/configs/stm32h745zi-nucleo/hello/defconfig
 
 
 CC                    := clang
+RTOS_BASE             := /home/xinhuishao/tizenrt/
+KLEE_BASE             := /home/xinhuishao/my-works/UCSE-RTOS/
 
-BUILD_DIR             := ./build
-BUILD_EXTRA_DIR       := ./build_extra
+BUILD_DIR             := ${RTOS_BASE}/symbolic_execution/build
+
 BUILD_DIR_ABS         := $(abspath $(BUILD_DIR))
 
-RTOS_REL      := ../../tizenrt
+RTOS_REL      := ${RTOS_BASE}
 RTOS_DIR          := $(abspath $(RTOS_REL))
 
 KERNEL_DIR            := ${RTOS_DIR}/os/kernel
@@ -16,7 +18,7 @@ OS_DIR            := ${RTOS_DIR}/os
 #TARGET_DIR            := /home/klee/FreeRTOS-kernel-revision/portable/GCC/ARM_CM33_NTZ/non_secure
 
 
-KLEE_INCLUDE_DIR      := /home/klee/klee_test/include/
+KLEE_INCLUDE_DIR      := ${KLEE_BASE}/include/
 
 
 INCLUDE_DIRS          := -I.
@@ -34,7 +36,7 @@ INCLUDE_DIRS          += -I${RTOS_DIR}/os/fs/tmpfs
 INCLUDE_DIRS          += -I${RTOS_DIR}/os/arch/arm/src/common
 INCLUDE_DIRS          += -I${RTOS_DIR}/os/include/arch/chip
 INCLUDE_DIRS          += -I${RTOS_DIR}/os/arch/arm/src/armv7-m
-INCLUDE_DIRS          += -I/home/klee/tizenrt/os/board/rtl8730e/src/component/file_system/fatfs/r0.14b/include/ff.h
+INCLUDE_DIRS          += -I${RTOS_DIR}/os/board/rtl8730e/src/component/file_system/fatfs/r0.14b/include/ff.h
 
 SOURCE_FILES          := $(shell find ${OS_DIR} -type f -name '*.c')
 # SOURCE_FILES          += $(wildcard ${KERNEL_DIR}/../arch/arm/src/armv7-m/*.c)
@@ -97,7 +99,7 @@ TEST_FINAL_BC_FILES         := $(TEST_SOURCE_FILES:%.c= $(BUILD_DIR)/test_files/
 
 
 
-CFLAGS                :=  -emit-llvm -c -w -g  -Wundef
+CFLAGS                :=  -H  -emit-llvm -c -w -g  -Wundef
 # CFLAGS                += --sysroot=/usr/lib/gcc/arm-none-eabi/6.3.1
 
 
