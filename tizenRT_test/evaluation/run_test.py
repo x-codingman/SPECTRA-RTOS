@@ -6,7 +6,7 @@ import json
 
 
 output_dir = "/home/klee/tizenrt/symbolic_execution/output/"
-test_files_dir = "/home/klee/tizenrt/symbolic_execution/build/test_files/test_files/"
+test_files_dir = "/home/klee/klee_src/test-rtos/tizenrt/symbolic_execution/build/test_files/test_files/"
 test_info_dir = "/home/klee/tizenrt/symbolic_execution/test-info-output/"
 
 

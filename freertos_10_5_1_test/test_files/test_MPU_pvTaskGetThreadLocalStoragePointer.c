@@ -1,0 +1,28 @@
+#include "klee_help.h"
+#include <FreeRTOS.h>
+#include <task.h>
+#include <queue.h>
+#include <semphr.h>
+#include <timers.h>
+#include <event_groups.h>
+#include <stream_buffer.h>
+
+#include <klee/klee.h>
+#include "wrappers.h"
+void vTaskFunction1( void *pvParameters )
+{
+    TaskHandle_t KLEE_xTaskToQuery;
+    klee_make_symbolic_controllable(&KLEE_xTaskToQuery, sizeof(KLEE_xTaskToQuery), "KLEE_xTaskToQuery", true);
+    BaseType_t KLEE_xIndex;
+    klee_make_symbolic_controllable(&KLEE_xIndex, sizeof(KLEE_xIndex), "KLEE_xIndex", true);
+    MPU_pvTaskGetThreadLocalStoragePointer(KLEE_xTaskToQuery, KLEE_xIndex);
+    assert(0);
+}
+
+#define STACK_SIZE 1000
+
+int main()
+{
+    xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, NULL);
+    return 0;
+}

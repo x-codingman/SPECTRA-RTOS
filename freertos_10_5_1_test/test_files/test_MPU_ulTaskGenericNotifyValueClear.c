@@ -1,0 +1,30 @@
+#include "klee_help.h"
+#include <FreeRTOS.h>
+#include <task.h>
+#include <queue.h>
+#include <semphr.h>
+#include <timers.h>
+#include <event_groups.h>
+#include <stream_buffer.h>
+
+#include <klee/klee.h>
+#include "wrappers.h"
+void vTaskFunction1( void *pvParameters )
+{
+    TaskHandle_t KLEE_xTask;
+    klee_make_symbolic_controllable(&KLEE_xTask, sizeof(KLEE_xTask), "KLEE_xTask", true);
+    UBaseType_t KLEE_uxIndexToClear;
+    klee_make_symbolic_controllable(&KLEE_uxIndexToClear, sizeof(KLEE_uxIndexToClear), "KLEE_uxIndexToClear", true);
+    uint32_t KLEE_ulBitsToClear;
+    klee_make_symbolic_controllable(&KLEE_ulBitsToClear, sizeof(KLEE_ulBitsToClear), "KLEE_ulBitsToClear", true);
+    MPU_ulTaskGenericNotifyValueClear(KLEE_xTask, KLEE_uxIndexToClear, KLEE_ulBitsToClear);
+    assert(0);
+}
+
+#define STACK_SIZE 1000
+
+int main()
+{
+    xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, NULL);
+    return 0;
+}

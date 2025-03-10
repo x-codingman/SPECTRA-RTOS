@@ -3,9 +3,11 @@ include /home/klee/klee_src/test-rtos/tizenrt/build/configs/stm32h745zi-nucleo/h
 
 
 CC                    := clang
+RTOS_BASE             := /home/xinhuishao/tizenrt/
+KLEE_BASE             := /home/xinhuishao/my-works/UCSE-RTOS/
 
-BUILD_DIR             := ./build
-BUILD_EXTRA_DIR       := ./build_extra
+BUILD_DIR             := ${RTOS_BASE}/symbolic_execution/build
+
 BUILD_DIR_ABS         := $(abspath $(BUILD_DIR))
 
 RTOS_REL      := /home/klee/klee_src/test-rtos/tizenrt
@@ -97,7 +99,7 @@ TEST_FINAL_BC_FILES         := $(TEST_SOURCE_FILES:%.c= $(BUILD_DIR)/test_files/
 
 
 
-CFLAGS                :=  -emit-llvm -c -w -g  -Wundef
+CFLAGS                :=  -H  -emit-llvm -c -w -g  -Wundef
 # CFLAGS                += --sysroot=/usr/lib/gcc/arm-none-eabi/6.3.1
 
 
