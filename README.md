@@ -1,8 +1,7 @@
-# KOM Experiments
+# UCSE-RTOS Experiments
 
 This directory contains the data required to reproduce the experiments described in our USENIX 2025 paper: The Cost of Performance: Breaking ThreadX with Kernel Object Masquerading Attacks.
 
-For driver source code we used in our experiments, please refer to [this repo](https://github.com/VoodooChild99/perry-drivers).
 
 ## Requirements
 ### Hardware Dependencies
@@ -35,10 +34,3 @@ docker build -t klee/klee .
 Please refer to the `README` files in [symbolic-execution-engine](./symbolic-execution-engine), [Proof-of-Concept](./Proof-of-Concept) for detailed instructions.
 
 Note that the symbolic execution takes ~10 hours. 
-
-## (TODO)Badges
-<p float="left">
-<img src="./assets/usenixbadges-available.svg" width="15%">
-<img src="./assets/usenixbadges-functional.svg" width="15%">
-<img src="./assets/usenixbadges-reproduced.svg" width="15%">
-</p>
