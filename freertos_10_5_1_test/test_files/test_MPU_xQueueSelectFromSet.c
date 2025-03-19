@@ -9,13 +9,9 @@
 
 #include <klee/klee.h>
 #include "wrappers.h"
-void vTaskFunction1( void *pvParameters )
-{
-    QueueSetHandle_t KLEE_xQueueSet;
-    klee_make_symbolic_controllable(&KLEE_xQueueSet, sizeof(KLEE_xQueueSet), "KLEE_xQueueSet", true);
-    const TickType_t KLEE_xTicksToWait;
-    klee_make_symbolic_controllable(&KLEE_xTicksToWait, sizeof(KLEE_xTicksToWait), "KLEE_xTicksToWait", true);
-    MPU_xQueueSelectFromSet(KLEE_xQueueSet, KLEE_xTicksToWait);
+extern TaskHandle_t pxCurrentTCB;
+void vTaskFunction1();
+void vTaskFunction1(){
     assert(0);
 }
 
@@ -23,6 +19,14 @@ void vTaskFunction1( void *pvParameters )
 
 int main()
 {
-    xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, NULL);
+    TaskHandle_t initial_xTask;
+    xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, &initial_xTask);
+    QueueSetHandle_t KLEE_xQueueSet;
+    klee_make_symbolic_controllable(&KLEE_xQueueSet, sizeof(KLEE_xQueueSet), "KLEE_kernel_xQueueSet", true);
+    const TickType_t KLEE_xTicksToWait;
+    klee_make_symbolic_controllable(&KLEE_xTicksToWait, sizeof(KLEE_xTicksToWait), "KLEE_xTicksToWait", true);
+    QueueSetMemberHandle_t KLEE_return_val;
+    klee_make_symbolic_controllable(&KLEE_return_val, sizeof(KLEE_return_val), "KLEE_kernel_return_val", true);
+    KLEE_return_val = MPU_xQueueSelectFromSet(KLEE_xQueueSet, KLEE_xTicksToWait);
     return 0;
 }

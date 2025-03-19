@@ -9,15 +9,9 @@
 
 #include <klee/klee.h>
 #include "wrappers.h"
-void vTaskFunction1( void *pvParameters )
-{
-    TaskHandle_t KLEE_xTask;
-    klee_make_symbolic_controllable(&KLEE_xTask, sizeof(KLEE_xTask), "KLEE_xTask", true);
-    UBaseType_t KLEE_uxIndexToClear;
-    klee_make_symbolic_controllable(&KLEE_uxIndexToClear, sizeof(KLEE_uxIndexToClear), "KLEE_uxIndexToClear", true);
-    uint32_t KLEE_ulBitsToClear;
-    klee_make_symbolic_controllable(&KLEE_ulBitsToClear, sizeof(KLEE_ulBitsToClear), "KLEE_ulBitsToClear", true);
-    MPU_ulTaskGenericNotifyValueClear(KLEE_xTask, KLEE_uxIndexToClear, KLEE_ulBitsToClear);
+extern TaskHandle_t pxCurrentTCB;
+void vTaskFunction1();
+void vTaskFunction1(){
     assert(0);
 }
 
@@ -25,6 +19,16 @@ void vTaskFunction1( void *pvParameters )
 
 int main()
 {
-    xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, NULL);
+    TaskHandle_t initial_xTask;
+    xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, &initial_xTask);
+    TaskHandle_t KLEE_xTask;
+    klee_make_symbolic_controllable(&KLEE_xTask, sizeof(KLEE_xTask), "KLEE_kernel_xTask", true);
+    UBaseType_t KLEE_uxIndexToClear;
+    klee_make_symbolic_controllable(&KLEE_uxIndexToClear, sizeof(KLEE_uxIndexToClear), "KLEE_uxIndexToClear", true);
+    uint32_t KLEE_ulBitsToClear;
+    klee_make_symbolic_controllable(&KLEE_ulBitsToClear, sizeof(KLEE_ulBitsToClear), "KLEE_ulBitsToClear", true);
+    uint32_t KLEE_return_val;
+    klee_make_symbolic_controllable(&KLEE_return_val, sizeof(KLEE_return_val), "KLEE_return_val", true);
+    KLEE_return_val = MPU_ulTaskGenericNotifyValueClear(KLEE_xTask, KLEE_uxIndexToClear, KLEE_ulBitsToClear);
     return 0;
 }

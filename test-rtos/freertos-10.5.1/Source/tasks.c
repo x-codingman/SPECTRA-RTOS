@@ -219,10 +219,10 @@
  * the task.  It is inserted at the end of the list.
  */
 #define prvAddTaskToReadyList( pxTCB )                                                                 \
-    traceMOVED_TASK_TO_READY_STATE( pxTCB );                                                           \
-    taskRECORD_READY_PRIORITY( ( pxTCB )->uxPriority );                                                \
-    listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
-    tracePOST_MOVED_TASK_TO_READY_STATE( pxTCB )
+    // traceMOVED_TASK_TO_READY_STATE( pxTCB );                                                           \
+    // taskRECORD_READY_PRIORITY( ( pxTCB )->uxPriority );                                                \
+    // listINSERT_END( &( pxReadyTasksLists[ ( pxTCB )->uxPriority ] ), &( ( pxTCB )->xStateListItem ) ); \
+    // tracePOST_MOVED_TASK_TO_READY_STATE( pxTCB )
 /*-----------------------------------------------------------*/
 
 /*

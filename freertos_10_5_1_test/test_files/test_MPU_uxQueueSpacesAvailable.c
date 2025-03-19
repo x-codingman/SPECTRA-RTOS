@@ -9,11 +9,9 @@
 
 #include <klee/klee.h>
 #include "wrappers.h"
-void vTaskFunction1( void *pvParameters )
-{
-    const QueueHandle_t KLEE_xQueue;
-    klee_make_symbolic_controllable(&KLEE_xQueue, sizeof(KLEE_xQueue), "KLEE_xQueue", true);
-    MPU_uxQueueSpacesAvailable(KLEE_xQueue);
+extern TaskHandle_t pxCurrentTCB;
+void vTaskFunction1();
+void vTaskFunction1(){
     assert(0);
 }
 
@@ -21,6 +19,12 @@ void vTaskFunction1( void *pvParameters )
 
 int main()
 {
-    xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, NULL);
+    TaskHandle_t initial_xTask;
+    xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, &initial_xTask);
+    const QueueHandle_t KLEE_xQueue;
+    klee_make_symbolic_controllable(&KLEE_xQueue, sizeof(KLEE_xQueue), "KLEE_kernel_xQueue", true);
+    UBaseType_t KLEE_return_val;
+    klee_make_symbolic_controllable(&KLEE_return_val, sizeof(KLEE_return_val), "KLEE_return_val", true);
+    KLEE_return_val = MPU_uxQueueSpacesAvailable(KLEE_xQueue);
     return 0;
 }

@@ -9,11 +9,9 @@
 
 #include <klee/klee.h>
 #include "wrappers.h"
-void vTaskFunction1( void *pvParameters )
-{
-    QueueHandle_t KLEE_pxMutex;
-    klee_make_symbolic_controllable(&KLEE_pxMutex, sizeof(KLEE_pxMutex), "KLEE_pxMutex", true);
-    MPU_xQueueGiveMutexRecursive(KLEE_pxMutex);
+extern TaskHandle_t pxCurrentTCB;
+void vTaskFunction1();
+void vTaskFunction1(){
     assert(0);
 }
 
@@ -21,6 +19,12 @@ void vTaskFunction1( void *pvParameters )
 
 int main()
 {
-    xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, NULL);
+    TaskHandle_t initial_xTask;
+    xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, &initial_xTask);
+    QueueHandle_t KLEE_pxMutex;
+    klee_make_symbolic_controllable(&KLEE_pxMutex, sizeof(KLEE_pxMutex), "KLEE_kernel_pxMutex", true);
+    BaseType_t KLEE_return_val;
+    klee_make_symbolic_controllable(&KLEE_return_val, sizeof(KLEE_return_val), "KLEE_return_val", true);
+    KLEE_return_val = MPU_xQueueGiveMutexRecursive(KLEE_pxMutex);
     return 0;
 }

@@ -83,24 +83,21 @@ typedef unsigned TypeSize;
 #include <cerrno>
 #include <cstring>
 #include <cxxabi.h>
+#include <dirent.h>
 #include <fstream>
 #include <iomanip>
 #include <iosfwd>
+#include <iostream>
 #include <limits>
+#include <set>
 #include <sstream>
 #include <string>
 #include <sys/mman.h>
 #include <vector>
-#include <set>
-#include <iostream>
-#include <dirent.h>
-
-
 
 // add sxh
-#include "TestInfoRecord.h"
 #include "ArchAddressSpaceInfo.h"
-
+#include "TestInfoRecord.h"
 
 using namespace llvm;
 using namespace klee;
@@ -438,19 +435,19 @@ unsigned allocname = 1;
 std::string test_target_name;
 std::string dereference_location_file;
 std::string writable_location_file;
-std::string  description_file; 
+std::string description_file;
 unsigned writable_location_id = 0;
 unsigned readable_location_id = 0;
 bool isFirstAPI = true;
 uint64_t V2allocNameCount = 0;
 uint64_t allocLocationCount = 0;
 uint64_t asmResultCount = 0;
-std::map<Instruction*, uint64_t > biMap;
+std::map<Instruction *, uint64_t> biMap;
 std::vector<std::string> dereference_locations_files;
 std::vector<json> dereference_locations_jsons;
 std::map<std::string, uint64_t> writable_record;
-std::set< std::pair<std::string,uint64_t> > readableLocationRecord;
-std::set< std::pair<std::string,uint64_t> > writableLocationRecord;
+std::set<std::pair<std::string, uint64_t>> readableLocationRecord;
+std::set<std::pair<std::string, uint64_t>> writableLocationRecord;
 // XXX hack
 extern "C" unsigned dumpStates, dumpPTree;
 unsigned dumpStates = 0, dumpPTree = 0;
@@ -885,12 +882,13 @@ void Executor::initializeGlobalObjects(ExecutionState &state) {
     //   }else{
     //       elementSize = kmodule->targetData->getTypeStoreSize(elementType);
     //   }
-      
+
     //   size_t alignment = 8;
     //   MemoryObject *newMo = NULL;
     //   if (isDesiredType(elementType)) {
 
-    //     klee_debug_message("Debug: find struct.tskTaskControlBlock in global "
+    //     klee_debug_message("Debug: find struct.tskTaskControlBlock in global
+    //     "
     //                        "initilization, its name is: %s",
     //                        v.getName().str().c_str());
     //     size_t stackSize = 0x200;
@@ -1092,7 +1090,6 @@ Executor::StatePair Executor::fork(ExecutionState &current, ref<Expr> condition,
                                    bool isInternal, BranchType reason) {
   Solver::Validity res;
 
-  
   std::map<ExecutionState *, std::vector<SeedInfo>>::iterator it =
       seedMap.find(&current);
   bool isSeeding = it != seedMap.end();
@@ -1104,6 +1101,13 @@ Executor::StatePair Executor::fork(ExecutionState &current, ref<Expr> condition,
   if (isSeeding)
     timeout *= static_cast<unsigned>(it->second.size());
   solver->setTimeout(timeout);
+
+  // for(auto constraint : current.constraints){
+  //   klee_message("constraint:");
+  //   constraint->dump();
+  //   klee_message("condition:"); 
+  //   condition->dump();
+  // }
   bool success = solver->evaluate(current.constraints, condition, res,
                                   current.queryMetaData);
   solver->setTimeout(time::Span());
@@ -1270,27 +1274,30 @@ Executor::StatePair Executor::fork(ExecutionState &current, ref<Expr> condition,
       }
     }
 
-    //TODO check if the condition contains the symbolic pointer
+    // TODO check if the condition contains the symbolic pointer
     ref<Expr> left_value, right_value;
-    left_value=condition->getKid(0);
-    right_value=condition->getKid(1);
-    
+    left_value = condition->getKid(0);
+    right_value = condition->getKid(1);
+
     condition->dump();
     left_value->dump();
     right_value->dump();
     // If the condition contains symbolic pointer ,we just ingore it.
     std::string condition_expression = condition->dump1();
-    if(condition_expression.find("ptr")==std::string::npos &&
-    current.addressSpace.address_mo_info.count(left_value)==0 && 
-    current.addressSpace.address_mo_info.count(right_value)==0){
+    if (condition_expression.find("ptr") == std::string::npos &&
+        current.addressSpace.address_mo_info.count(left_value) == 0 &&
+        current.addressSpace.address_mo_info.count(right_value) == 0) {
       addConstraint(*trueState, condition);
       addConstraint(*falseState, Expr::createIsZero(condition));
       trueState->addAddressConstraintsForTargetApp(condition);
-      falseState->addAddressConstraintsForTargetApp(Expr::createIsZero(condition));
-    }else{
-      klee_debug_message("DEBUG: add constraints in addressConstraintsForTargetApp");
+      falseState->addAddressConstraintsForTargetApp(
+          Expr::createIsZero(condition));
+    } else {
+      klee_debug_message(
+          "DEBUG: add constraints in addressConstraintsForTargetApp");
       trueState->addAddressConstraintsForTargetApp(condition);
-      falseState->addAddressConstraintsForTargetApp(Expr::createIsZero(condition));
+      falseState->addAddressConstraintsForTargetApp(
+          Expr::createIsZero(condition));
     }
     // addConstraint(*trueState, condition);
     // addConstraint(*falseState, Expr::createIsZero(condition));
@@ -2285,12 +2292,11 @@ void Executor::executeInstruction(ExecutionState &state, KInstruction *ki) {
   case Instruction::Br: {
     BranchInst *bi = cast<BranchInst>(i);
 
-    if(biMap[i]==1){
-       klee_debug_message("DEBUG: terminate the State, try to break the loop");
+    if (biMap[i] == 1) {
+      klee_debug_message("DEBUG: terminate the State, try to break the loop");
       terminateState(state);
       break;
     }
-
 
     if (bi->isUnconditional()) {
       transferToBasicBlock(bi->getSuccessor(0), bi->getParent(), state);
@@ -2302,13 +2308,13 @@ void Executor::executeInstruction(ExecutionState &state, KInstruction *ki) {
 
       cond = optimizer.optimizeExpr(cond, false);
 
-      if(state.biCount.count(i)==0){
-        state.biCount[i]=0;
-      }else if(state.biCount[i]>10){
+      if (state.biCount.count(i) == 0) {
+        state.biCount[i] = 0;
+      } else if (state.biCount[i] > 10) {
         Solver::Validity res;
-        
-        bool success = solver->evaluate(state.constraints, cond, res,
-                                  state.queryMetaData);
+
+        bool success =
+            solver->evaluate(state.constraints, cond, res, state.queryMetaData);
         solver->setTimeout(time::Span());
         if (!success) {
           state.pc = state.prevPC;
@@ -2316,26 +2322,26 @@ void Executor::executeInstruction(ExecutionState &state, KInstruction *ki) {
           break;
         }
         klee_debug_message("DEBUG: Try to break the loop");
-        state.biCount[i]=0;
-        biMap[i]=1;
-        if(res == Solver::Unknown){
+        state.biCount[i] = 0;
+        biMap[i] = 1;
+        if (res == Solver::Unknown) {
           addConstraint(state, Expr::createIsZero(cond));
           transferToBasicBlock(bi->getSuccessor(1), bi->getParent(), state);
           break;
         }
-          
-        if(res == Solver::True){
+
+        if (res == Solver::True) {
           transferToBasicBlock(bi->getSuccessor(0), bi->getParent(), state);
           break;
         }
-        if(res == Solver::False)
+        if (res == Solver::False)
           transferToBasicBlock(bi->getSuccessor(1), bi->getParent(), state);
-        // If we want to break the loop, we first need to check if we need to add the constraint
+        // If we want to break the loop, we first need to check if we need to
+        // add the constraint
         break;
-      }else{
+      } else {
         state.biCount[i]++;
       }
-
 
       Executor::StatePair branches =
           fork(state, cond, false, BranchType::ConditionalBranch);
@@ -2346,7 +2352,7 @@ void Executor::executeInstruction(ExecutionState &state, KInstruction *ki) {
       // up with convenient instruction specific data.
       if (statsTracker && state.stack.back().kf->trackCoverage)
         statsTracker->markBranchVisited(branches.first, branches.second);
-      
+
       if (branches.first)
         transferToBasicBlock(bi->getSuccessor(0), bi->getParent(),
                              *branches.first);
@@ -2666,11 +2672,12 @@ void Executor::executeInstruction(ExecutionState &state, KInstruction *ki) {
             if (!hasInvalid) {
               terminateStateOnExecError(state, "invalid function pointer");
               hasInvalid = true;
-              // add 
-              // It is unsure why the loop is determined by free and fork() to handle the symbolic pointer
-              // Now we just report the symbolic pointer, and continue the execution without further resolution
+              // add
+              // It is unsure why the loop is determined by free and fork() to
+              // handle the symbolic pointer Now we just report the symbolic
+              // pointer, and continue the execution without further resolution
               klee_debug_message("Execute: Find symbolic pointer");
-              break; 
+              break;
             }
           }
         }
@@ -2997,47 +3004,47 @@ void Executor::executeInstruction(ExecutionState &state, KInstruction *ki) {
   case Instruction::BitCast: {
     ref<Expr> result = eval(ki, 0, state).value;
 
-    
     // add to reallocate memory for symbolic pointer to conversion type
     // version 3
-    Type * fromType =
-    ki->inst->getOperand(0)->getType()->getPointerElementType(); unsigned
-    fromSize = kmodule->targetData->getTypeStoreSize(fromType); Type *
-    elementType = ki->inst->getType()->getPointerElementType(); unsigned
-    elementSize = kmodule->targetData->getTypeStoreSize(elementType);
+    Type *fromType =
+        ki->inst->getOperand(0)->getType()->getPointerElementType();
+    unsigned fromSize = kmodule->targetData->getTypeStoreSize(fromType);
+    Type *elementType = ki->inst->getType()->getPointerElementType();
+    unsigned elementSize = kmodule->targetData->getTypeStoreSize(elementType);
 
-     if(
-    ki->inst->getOperand(0)->getType()->isPointerTy() &&
-    ki->inst->getType()->isPointerTy() && elementSize > fromSize){
+    if (ki->inst->getOperand(0)->getType()->isPointerTy() &&
+        ki->inst->getType()->isPointerTy() && elementSize > fromSize) {
       ObjectPair op;
       bool needBound = false;
-      if (state.addressSpace.address_mo_info.count(result)!=0)
-      {
-         klee_debug_message("DEBUG: BITCASTING CHANGE MO!!!"); 
+      if (state.addressSpace.address_mo_info.count(result) != 0) {
+        klee_debug_message("DEBUG: BITCASTING CHANGE MO!!!");
         const MemoryObject *oldMo = state.addressSpace.address_mo_info[result];
-        
+
         // Fix here, the old memory is not really deleted
         // remove the memory object from the record
-        bool controllable = state.addressSpace.mo_controllable_info[oldMo].first;
+        bool controllable =
+            state.addressSpace.mo_controllable_info[oldMo].first;
         state.addressSpace.record.remove(oldMo);
         size_t alignment = 8;
         ref<Expr> size = Expr::createPointer(elementSize);
-        MemoryObject* newMo = NULL;
+        MemoryObject *newMo = NULL;
         if (isDesiredType(elementType)) {
-            klee_debug_message("DEBUG: alloc TCB in executeMemoryOperation!!"); 
-            size_t stackSize=0x1000;
-            newMo=lazyAllocTCBSymbolic(state,(size_t)elementSize,stackSize,false,alignment, controllable);
+          klee_debug_message("DEBUG: alloc TCB in executeMemoryOperation!!");
+          size_t stackSize = 0x1000;
+          newMo = lazyAllocTCBSymbolic(state, (size_t)elementSize, stackSize,
+                                       false, alignment, controllable);
         }
 
-        if(newMo==NULL)
+        if (newMo == NULL)
           newMo = lazyAlloc(state, size, false, ki, alignment, controllable);
         // std::string name = "";
         // executeMakeSymbolic(state, newMo, name);
         state.addressSpace.address_mo_info[result] = newMo;
-        state.addressSpace.mo_controllable_info[newMo] = state.addressSpace.mo_controllable_info[oldMo];
+        state.addressSpace.mo_controllable_info[newMo] =
+            state.addressSpace.mo_controllable_info[oldMo];
 
         // If result is a constant expr, we should update the result.
-        if(isa<ConstantExpr>(result)){
+        if (isa<ConstantExpr>(result)) {
           result = newMo->getBaseExpr();
         }
       }
@@ -3046,11 +3053,13 @@ void Executor::executeInstruction(ExecutionState &state, KInstruction *ki) {
     // //       // second to reallocate new memory
     // //       ref<Expr> size = Expr::createPointer(elementSize);
     // //       size_t alignment = 8;
-    // //       MemoryObject *newMo = lazyAlloc(state, size, true, ki, alignment);
+    // //       MemoryObject *newMo = lazyAlloc(state, size, true, ki,
+    // alignment);
     // //       std::string name = "";//address->toString();
     // //       executeMakeSymbolic(state, newMo, name);
 
-    // //       // ref<Expr> Bound = EqExpr::create(newMo->getBaseExpr(), result);
+    // //       // ref<Expr> Bound = EqExpr::create(newMo->getBaseExpr(),
+    // result);
     // //       // state.replaceEqConstraint(Bound);
 
     // //       // record the new relation
@@ -3073,10 +3082,13 @@ void Executor::executeInstruction(ExecutionState &state, KInstruction *ki) {
     //     ki->inst->getOperand(0)->getType()->getPointerElementType();
     // unsigned fromSize = kmodule->targetData->getTypeStoreSize(fromType);
     // Type *elementType = ki->inst->getType()->getPointerElementType();
-    // unsigned elementSize = kmodule->targetData->getTypeStoreSize(elementType);
+    // unsigned elementSize =
+    // kmodule->targetData->getTypeStoreSize(elementType);
 
-    // // We only convert the void pointer to other type pointers because LLVM can
-    // // not identify void pointer at this version. LLVM will treat void pointer
+    // // We only convert the void pointer to other type pointers because LLVM
+    // can
+    // // not identify void pointer at this version. LLVM will treat void
+    // pointer
     // // as i8 pointer
     // llvm::LLVMContext context;
     // Type *i8Type = llvm::Type::getInt8Ty(context);
@@ -3118,14 +3130,17 @@ void Executor::executeInstruction(ExecutionState &state, KInstruction *ki) {
     //           size_t alignment = 8;
     //           MemoryObject *newMo = NULL;
     //           if (isDesiredType(elementType)) {
-    //             newMo = lazyAllocTCBSymbolic(state, elementSize, 0x1000, false,
+    //             newMo = lazyAllocTCBSymbolic(state, elementSize, 0x1000,
+    //             false,
     //                                          alignment);
     //           } else {
     //             newMo =
-    //                 lazyAlloc(state, size, !oldMo->isAGlobal(), ki, alignment);
+    //                 lazyAlloc(state, size, !oldMo->isAGlobal(), ki,
+    //                 alignment);
     //           }
 
-    //           // third to backtrack the IR to modify the value of the symbolic
+    //           // third to backtrack the IR to modify the value of the
+    //           symbolic
     //           // pointer It is supposed that a corresponding load instruciton
     //           // before it
     //           ref<Expr> base = eval(prevIR, 0, state).value;
@@ -3155,8 +3170,8 @@ void Executor::executeInstruction(ExecutionState &state, KInstruction *ki) {
     //         }
     //       } else {
     //         klee_debug_message(
-    //             "DEBUG: Bitcast: Not a load instruction before symbol pointer "
-    //             "type conversion");
+    //             "DEBUG: Bitcast: Not a load instruction before symbol pointer
+    //             " "type conversion");
     //       }
     //     } else {
     //       klee_debug_message("DEBUG: Bitcas: Not a symbolic base address ");
@@ -3853,15 +3868,15 @@ void Executor::run(ExecutionState &initialState) {
   states.insert(&initialState);
 
   // add
-  if(!isFirstAPI){
-    for (auto &filename: dereference_locations_files){
+  if (!isFirstAPI) {
+    for (auto &filename : dereference_locations_files) {
       json j;
       std::ifstream file(filename);
       klee_debug_message(filename.c_str());
-      if (file.is_open()){
+      if (file.is_open()) {
         file >> j;
         dereference_locations_jsons.push_back(j);
-      }else{
+      } else {
         klee_error("Cannot open the file: %s", filename.c_str());
       }
       file.close();
@@ -4224,31 +4239,32 @@ void Executor::callExternalFunction(ExecutionState &state, KInstruction *target,
     return;
   }
 
-
-  // If we meet __asm__ function, we will step the function procedure and return a symbol as the function result. 
-    {
+  // If we meet __asm__ function, we will step the function procedure and return
+  // a symbol as the function result.
+  {
     klee_debug_message("DEBUG: Detect __asm__ external function!");
-  // We check if it need a return value
-    
+    // We check if it need a return value
+
     Type *resultType = target->inst->getType();
-    if (resultType != Type::getVoidTy(kmodule->module->getContext())){
+    if (resultType != Type::getVoidTy(kmodule->module->getContext())) {
       uint64_t size = kmodule->targetData->getTypeStoreSize(resultType);
       Expr::Width width = getWidthForLLVMType(resultType);
       unsigned bytes = Expr::getMinBytesForWidth(width);
       size_t alignment = bytes;
       const llvm::Value *allocSite = state.prevPC->inst;
       MemoryObject *newMo = memory->allocate(size, 0, 1, allocSite, alignment);
-      std::string moName = "lazy_alloc_external_return" + llvm::utostr(++asmResultCount);
+      std::string moName =
+          "lazy_alloc_external_return" + llvm::utostr(++asmResultCount);
       executeMakeSymbolic(state, newMo, moName);
       // After executeMakeSymbolic(), get the new objecstate
       const ObjectState *nos = state.addressSpace.findObject(newMo);
       ref<Expr> e = nos->read(0, width);
-      
+
       e.get()->dump();
       bindLocal(target, state, e);
     }
     return;
-    }
+  }
 
   // normal external function handling path
   // allocate 512 bits for each argument (+return value) to support
@@ -4325,7 +4341,7 @@ void Executor::callExternalFunction(ExecutionState &state, KInstruction *target,
     std::string TmpStr;
     llvm::raw_string_ostream os(TmpStr);
     os << "calling external: " << callable->getName().str() << "(";
-    
+
     for (unsigned i = 0; i < arguments.size(); i++) {
       os << arguments[i];
       if (i != arguments.size() - 1)
@@ -4416,7 +4432,8 @@ ObjectState *Executor::bindObjectInState(ExecutionState &state,
 // If there is symbolic size, fix the code.
 MemoryObject *Executor::lazyAlloc(ExecutionState &state, ref<Expr> size,
                                   bool isLocal, KInstruction *target,
-                                  size_t allocationAlignment, bool controllable) {
+                                  size_t allocationAlignment,
+                                  bool controllable) {
   size = toUnique(state, size);
   MemoryObject *mo = NULL;
   if (ConstantExpr *CE = dyn_cast<ConstantExpr>(size)) {
@@ -4424,14 +4441,14 @@ MemoryObject *Executor::lazyAlloc(ExecutionState &state, ref<Expr> size,
     // mo = memory->allocate(CE->getZExtValue(), isLocal, /*isGlobal=*/false,
     // allocSite, allocationAlignment);
 
-    uint32_t uintSize=CE->getZExtValue();
+    uint32_t uintSize = CE->getZExtValue();
     if (!isLocal) {
-      klee_debug_message("DEBUG: Allocate global memory!!!alloc size: %lu, states size: %d",
-                         uintSize,(int)states.size());
+      klee_debug_message(
+          "DEBUG: Allocate global memory!!!alloc size: %lu, states size: %d",
+          uintSize, (int)states.size());
     }
 
-    mo = memory->allocate(uintSize, isLocal, 1, allocSite,
-                          allocationAlignment);
+    mo = memory->allocate(uintSize, isLocal, 1, allocSite, allocationAlignment);
     if (!mo) {
       bindLocal(target, state,
                 ConstantExpr::alloc(0, Context::get().getPointerWidth()));
@@ -4445,10 +4462,12 @@ MemoryObject *Executor::lazyAlloc(ExecutionState &state, ref<Expr> size,
         state, "Pointing object of the symbolic pointer has symbolic size",
         StateTerminationType::Ptr);
   }
-  std::string name = controllable ? "lazy_alloc_controllable" + llvm::utostr(allocname++):
-      "lazy_alloc_uncontrollable" + llvm::utostr(allocname++); // address->toString();
-  
-  klee_debug_message("DEBUG: Lazy alloc name: %s",name.c_str());
+  std::string name =
+      controllable ? "lazy_alloc_controllable" + llvm::utostr(allocname++)
+                   : "lazy_alloc_uncontrollable" +
+                         llvm::utostr(allocname++); // address->toString();
+
+  klee_debug_message("DEBUG: Lazy alloc name: %s", name.c_str());
   executeMakeSymbolic(state, mo, name);
   state.addressSpace.record.push_back(mo);
 
@@ -4458,7 +4477,8 @@ MemoryObject *Executor::lazyAlloc(ExecutionState &state, ref<Expr> size,
 // add alloc task TCB structures
 MemoryObject *Executor::lazyAllocTCBSymbolic(ExecutionState &state, size_t size,
                                              size_t stackSize, bool isLocal,
-                                             size_t allocationAlignment, bool controllable) {
+                                             size_t allocationAlignment,
+                                             bool controllable) {
 
   MemoryObject *mo = NULL;
 
@@ -4493,8 +4513,10 @@ MemoryObject *Executor::lazyAllocTCBSymbolic(ExecutionState &state, size_t size,
                        "lazyAllocTCBSymbolic!!! states size: %d",
                        (int)states.size());
   } else {
-    std::string name = controllable ? "lazy_alloc_controllable" + llvm::utostr(allocname++):
-      "lazy_alloc_uncontrollable" + llvm::utostr(allocname++); // address->toString();
+    std::string name =
+        controllable ? "lazy_alloc_controllable" + llvm::utostr(allocname++)
+                     : "lazy_alloc_uncontrollable" +
+                           llvm::utostr(allocname++); // address->toString();
     executeMakeSymbolic(state, mo, name);
     state.addressSpace.record.push_back(mo);
     bool needBound = false;
@@ -4518,8 +4540,6 @@ MemoryObject *Executor::lazyAllocTCBSymbolic(ExecutionState &state, size_t size,
 
   return mo;
 }
-
-
 
 void Executor::executeAlloc(ExecutionState &state, ref<Expr> size, bool isLocal,
                             KInstruction *target, bool zeroMemory,
@@ -4719,12 +4739,11 @@ void Executor::executeMemoryOperation(
   klee_debug_message("DEBUG: dump the address expression before symplifying");
   address.get()->dump();
   if (!isa<ConstantExpr>(address))
-    
+
     address = ConstraintManager::simplifyExpr(state.constraints, address);
-  if (isWrite && !isa<ConstantExpr>(value)){
+  if (isWrite && !isa<ConstantExpr>(value)) {
     value = ConstraintManager::simplifyExpr(state.constraints, value);
   }
-    
 
   address = optimizer.optimizeExpr(address, true);
 
@@ -4744,41 +4763,45 @@ void Executor::executeMemoryOperation(
       klee_debug_message("DEBUG: lazyResolve failed, found a symbolic pointer");
     }
     // if(state.addressSpace.address_mo_info.count(address)>0){
-    //       const MemoryObject *newMo = state.addressSpace.address_mo_info[address];
-    //       addConstraint(state, EqExpr::create(address,newMo->getBaseExpr()));
-    //       if (!isa<ConstantExpr>(address))
-    //         address = ConstraintManager::simplifyExpr(state.constraints, address);
-    //       klee_debug_message("DEBUG: Binding a symbolic pointer with address expression:");
-    //       address.get()->dump();
+    //       const MemoryObject *newMo =
+    //       state.addressSpace.address_mo_info[address]; addConstraint(state,
+    //       EqExpr::create(address,newMo->getBaseExpr())); if
+    //       (!isa<ConstantExpr>(address))
+    //         address = ConstraintManager::simplifyExpr(state.constraints,
+    //         address);
+    //       klee_debug_message("DEBUG: Binding a symbolic pointer with address
+    //       expression:"); address.get()->dump();
     // }else{
-        std::vector<ref<Expr>> kids = getAddKids(address);
-        klee_debug_message("DEBUG: dump the address expression");
-        address.get()->dump();
-        for(int i=0; i<kids.size();i++){
+    std::vector<ref<Expr>> kids = getAddKids(address);
+    klee_debug_message("DEBUG: dump the address expression");
+    address.get()->dump();
+    for (int i = 0; i < kids.size(); i++) {
 
-          if(state.addressSpace.address_mo_info.count(kids[i])>0){
-          const MemoryObject *newMo = state.addressSpace.address_mo_info[kids[i]];
-          addConstraint(state, EqExpr::create(kids[i],newMo->getBaseExpr()));
-          if (!isa<ConstantExpr>(address))
-            address = ConstraintManager::simplifyExpr(state.constraints, address);
-          klee_debug_message("DEBUG: Binding a symbolic pointer with address expression:");
-          kids[i].get()->dump();
-          }
-
-        }
+      if (state.addressSpace.address_mo_info.count(kids[i]) > 0) {
+        const MemoryObject *newMo = state.addressSpace.address_mo_info[kids[i]];
+        addConstraint(state, EqExpr::create(kids[i], newMo->getBaseExpr()));
+        if (!isa<ConstantExpr>(address))
+          address = ConstraintManager::simplifyExpr(state.constraints, address);
+        klee_debug_message(
+            "DEBUG: Binding a symbolic pointer with address expression:");
+        kids[i].get()->dump();
+      }
+    }
     //}
 
     // if(state.addressSpace.address_mo_info.count(kid)>0){
     //   const MemoryObject *newMo = state.addressSpace.address_mo_info[kid];
     //   addConstraint(state, EqExpr::create(kid,newMo->getBaseExpr()));
     //   if (!isa<ConstantExpr>(address))
-    //     address = ConstraintManager::simplifyExpr(state.constraints, address);
-    //   klee_debug_message("DEBUG: Binding a symbolic pointer with address expression:");
-    //   kid.get()->dump();
+    //     address = ConstraintManager::simplifyExpr(state.constraints,
+    //     address);
+    //   klee_debug_message("DEBUG: Binding a symbolic pointer with address
+    //   expression:"); kid.get()->dump();
 
     // }else{
-    //   klee_debug_message("DEBUG: FIX ME resolve failed, cannot find the recorded symbolic pointer");
-    //   terminateStateOnError(state, "resolve failed", StateTerminationType::Ptr);
+    //   klee_debug_message("DEBUG: FIX ME resolve failed, cannot find the
+    //   recorded symbolic pointer"); terminateStateOnError(state, "resolve
+    //   failed", StateTerminationType::Ptr);
     // }
   }
   // Check if the address can be resolved after allocation
@@ -4789,7 +4812,6 @@ void Executor::executeMemoryOperation(
       terminateStateOnError(state, "resolve failed", StateTerminationType::Ptr);
     }
   }
-
 
   const MemoryObject *mo = op.first;
   const ObjectState *os = op.second;
@@ -4804,192 +4826,234 @@ void Executor::executeMemoryOperation(
     vulnerabilityReport(report_str, target);
   }
 
-
-
-  
   if (state.addressSpace.isSymbolicBaseAddress(mo->getBaseExpr())) {
     if (isWrite) {
-        // Detect the information leak vulnerability.
+      // Detect the information leak vulnerability.
       std::string address_expr = address.get()->dump1();
-      bool address_controllable = getMoControllableInfo(state, mo) || address_expr.find("KLEE")!=std::string::npos;
-      if (address_controllable){
-         detectInformationLeak(state, address, value, target);
+      bool address_controllable =
+          getMoControllableInfo(state, mo) ||
+          address_expr.find("KLEE") != std::string::npos;
+      if (address_controllable) {
+        detectInformationLeak(state, address, value, target);
       }
-      klee_debug_message("DEBUG: address controllable flag: %d",address_controllable);
+
+      // Detect the arbitrary memory write vulnerability.
+      klee_debug_message("DEBUG: address controllable flag: %d",
+                         address_controllable);
 
       // add memory address constraint
       // Test if the attacker can write a desired value on the memory.
       uint64_t desired_value = 0;
-      uint64_t desired_address_start=MPU_ENABLE_ADDRESS;
-      uint64_t desired_address_end=MPU_ENABLE_ADDRESS;
+      uint64_t desired_address_start = MPU_ENABLE_ADDRESS;
+      uint64_t desired_address_end = MPU_ENABLE_ADDRESS;
       solver->setTimeout(coreSolverTimeout);
-      bool value_test_result = false;
-      bool address_test_result = false;
+      bool canBeDesiredValue = false;
+      bool canBeDesiredAddress = false;
       bool success;
-      
-      //Check if the MO of the address is controllable
-      
-      
-      ref<Expr> address_test = address;
+
+      // Check if the MO of the address is controllable
+
+      ref<Expr> address_test = originalAddress;
       uint64_t address_offset = 0;
+      klee_debug_message("DEBUG: TEST here, address is:");
+      address_test->dump();
       // Extract the original expression
-      if(ConstantExpr *CE = dyn_cast<ConstantExpr>(address)){
-          std::pair<MemoryObject*, uint64_t> mo_pair = state.addressSpace.findMemoryObject(CE);
-          address_test = state.addressSpace.getOriginalExprFromMo(mo_pair.first);
-          address_offset = mo_pair.second;
-          if(CE -> getZExtValue() ==0 ){
-            klee_test_info("Error: find a constant variable dereferencing."
-                          "on file %s: line %d.",
-                            target->info->file.c_str());
-          }
-          
-          assert(address_test && "FIX ME: find mo with no existing record");
-      }
-        
-      // The following code aims to detect if the address can out of the bound of the mo.
-
-        if (!solver->mustBeTrue(state.constraints,
-                               mo->getBoundsCheckPointer(address), address_test_result,
-                               state.queryMetaData)){
-           klee_message("Error: solver timed out");
+      if (ConstantExpr *CE = dyn_cast<ConstantExpr>(address)) {
+        std::pair<MemoryObject *, uint64_t> mo_pair =
+            state.addressSpace.findMemoryObject(CE);
+        address_test = state.addressSpace.getOriginalExprFromMo(mo_pair.first);
+        address_offset = mo_pair.second;
+        address_test->dump();
+        if (CE->getZExtValue() == 0) {
+          klee_test_info("Error: find a constant variable dereferencing."
+                         "on file %s: line %d.",
+                         target->info->file.c_str());
         }
-       
-        // The following code aims to detect the arbitrary writing operation
-        // Check the address to see whether it can reach dangrous region.
-        // First we check if address > desired_address_start has a solution
-        // success = solver->mayBeTrue(
-        // state.addressConstraintsForTargetApp,
-        // UgeExpr::create(address_test, ConstantExpr::create(desired_address_start, address_test->getWidth())),
-        // address_test_result, state.queryMetaData);
-        // assert(success && "FIXME: Unhandled solver failure");
 
-        // //If so, then we check if address < desired_address_end has a solution
-        // if(address_test_result){
-        //   success = solver->mayBeTrue(
-        //   state.addressConstraintsForTargetApp,
-        //   UleExpr::create(address_test,ConstantExpr::create(desired_address_end, address_test->getWidth())),
-        //   address_test_result, state.queryMetaData);
-        // }
-        // assert(success && "FIXME: Unhandled solver failure");
+        assert(address_test && "FIX ME: find mo with no existing record");
+      }
 
-        //After that, we check if the value can be written with desired value. 
+      // The following code aims to detect if the address can out of the bound
+      // of the mo.
+
+      // if (!solver->mustBeTrue(state.constraints,
+      //                         mo->getBoundsCheckPointer(address),
+      //                         address_test_result, state.queryMetaData)) {
+      //   klee_message("Error: solver timed out");
+      // }
+
+      // The following code aims to detect the arbitrary writing operation
+      // Check the address to see whether it can reach dangrous region.
+      // First we check if address > desired_address_start has a solution
+      success = solver->mayBeTrue(
+      state.addressConstraintsForTargetApp,
+      UgeExpr::create(address_test,
+      ConstantExpr::create(desired_address_start, address_test->getWidth())),
+      canBeDesiredAddress, state.queryMetaData);
+      assert(success && "FIXME: Unhandled solver failure");
+
+      
+      // //If so, then we check if address < desired_address_end has a solution
+      if(canBeDesiredAddress){
         success = solver->mayBeTrue(
-            state.constraints,
-            EqExpr::create(ConstantExpr::create(desired_value, Expr::Bool), ZExtExpr::create(value,Expr::Bool)),
-            value_test_result, state.queryMetaData);
-        assert(success && "FIXME: Unhandled solver failure");
-        // In this case, the attacker can achieve arbitrary memory write.
-        bool isConstrained = checkConstraints(state);
-        if (address_controllable && address_test_result ) {
+        state.addressConstraintsForTargetApp,
+        UleExpr::create(address_test,ConstantExpr::create(desired_address_end,
+        address_test->getWidth())), canBeDesiredAddress,
+        state.queryMetaData);
+      }
+      assert(success && "FIXME: Unhandled solver failure");
+
+      // After that, we check if the value can be written with any desired value.
+      if( !dyn_cast<ConstantExpr>(value) && testSymbolEqualValue(state, value, ConstantExpr::create(0, type)) 
+      && testSymbolEqualValue(state, value, ConstantExpr::create(-1, type))){
+        canBeDesiredValue = true;
+      }else{
+        canBeDesiredValue = false;
+        klee_debug_message("DEBUG: Value is constrained");
+      }
+      
+      // In this case, we check if the attacker can achieve arbitrary memory write.
+      bool isConstrained = checkConstraints(state);
+      klee_debug_message("DEBUG: address_controllable:%d\n canBeDesiredAddress: %d\n canBeDesiredValue: %d", address_controllable, canBeDesiredAddress, canBeDesiredValue);
+      if (address_controllable && canBeDesiredAddress) {
         // TODO
         // We need to check if the pointed memory object is constrained?
         // If yes, it is a limited memory write vulnerability.
         // If no, it is a arbitrary memory write vulnerability.
-          
-          std::string currentVulnerabilityInfo =
-              target->info->file + ":" + std::to_string(target->info->line);
-          auto it = testInfoRecordSet.find(currentVulnerabilityInfo);
-          if (it == testInfoRecordSet.end()) {
-            testInfoRecordSet.insert(currentVulnerabilityInfo);
-            klee_test_info("Error: arbitrary memory write vulnerability (V1)"
-                          "on file %s: line %d. desired value: %lu, desired address %lu-%lu",
-                            target->info->file.c_str(),
-                          target->info->line, desired_value,
-                          desired_address_start,desired_address_end);
-          }
-        }
-        // else if (address_controllable && address_test_result) {
-        //   // In this case, the attacker can write arbitrary memory with fixed value.
-        //   std::string currentVulnerabilityInfo =
-        //       target->info->file + ":" + std::to_string(target->info->line);
-        //   auto it = testInfoRecordSet.find(currentVulnerabilityInfo);
-        //   if (it == testInfoRecordSet.end()) {
-        //     testInfoRecordSet.insert(currentVulnerabilityInfo);
-        //     klee_test_info("Error: Limited memory write vulnerability (V2)"
-        //                   "on file %s: line %d. desired value: %lu, desired address %lu-%lu",
-        //                     target->info->file.c_str(),
-        //                   target->info->line, desired_value,
-        //                   desired_address_start,desired_address_end);
-        //   }
-        // }
-        // to record any pointer which can point to MPU region
-        // if (!address_controllable && value_test_result && address_test_result) 
-        // if (value_test_result && address_test_result){
-        //   std::string  value_name;
-        //   uint64_t value_offset;
-        //   bool value_controllable=false;
-        //   unsigned width;
-        //   Expr::Kind valueType = getExprInfo(value, value_name, value_offset, width);
-        //   if(value_name.find("KLEE_TX_")!=std::string::npos){
-        //     value_controllable=true;
-        //   }
-        //   recordDereferenceLocationsToJson(state, address_test, mo,target, value_controllable);
-        // }
-      //}else{
-        // Check the value to see whether it can reach the range of dangrous region.
-        // First we check if value > desired_address_start has a solution
 
-        success = solver->mayBeTrue(
-        state.addressConstraintsForTargetApp,
-        UgeExpr::create(value, ConstantExpr::create(desired_address_start, type)),
-        value_test_result, state.queryMetaData);
-        assert(success && "FIXME: Unhandled solver failure");
+        // check if the kernel object has semantic check
+        bool has_semantic_check = hasSemanticCheck(state);
 
-        // If so, then we check if value < desired_address_end has a solution
-        if(value_test_result){
-          success = solver->mayBeTrue(
-          state.addressConstraintsForTargetApp,
-          UleExpr::create(value,ConstantExpr::create(desired_address_end, type)),
-          value_test_result, state.queryMetaData);
-        }
-        assert(success && "FIXME: Unhandled solver failure");
-
-        // FIX ME HERE. We need to to consider whether the controllable flag needs to be added for value_test_result. 
-        //if(value_test_result){
-        bool controllable = state.addressSpace.mo_controllable_info[mo].first;
-        if(address_controllable  && !dyn_cast<ConstantExpr>(value)){
-        std::string address_test_name, value_name;
-        uint64_t offset,value_offset;
-        bool value_controllable=false;
-        unsigned width;
-        Expr::Kind valueType = getExprInfo(value, value_name, value_offset, width);
-        if(value_name.find("KLEE_TX_")!=std::string::npos){
-          value_controllable=true;
-        }
-        Expr::Kind exprType = getExprInfo(address_test, address_test_name, offset, width); 
-        if (exprType == Expr::Read || exprType == Expr::Concat){
-          // only record the mo directly pointed by pointer parameter
-          // Only record the parameters
-          int index1 = address_test_name.find("lazy_alloc");
-          int index2 = address_test_name.find("const");
-          if(index1==std::string::npos && index2==std::string::npos){
-            // ref<Expr> offset = mo->getOffsetExpr(address);
-            // if(ConstantExpr* ce = dyn_cast<ConstantExpr>(offset)){
-            //   bool overlap;
-            //   for (auto &j: dereference_locations_jsons){
-            //     overlap = determineMoOverlap(state, mo, ce->getZExtValue(), j);
-            //     if (!overlap)
-            //       break;
-            //   }
-            //   if (overlap)
-            //     klee_second_test_info("The mo can be overlapped with desired value in range of MPU region at file %s: line %d.",
-            //                 target->info->file.c_str(),
-            //                 target->info->line);
-            // }else{
-            //   assert("FIXME in executeMemoryOperation(): symbolic index is not considered");
-            // }
-            klee_debug_message("DEBUG: record writable location");
-            address_test.get()->dump();
-            
-            #ifdef INTER_ANALYSIS_ENABLE
-            recordWritableLocationsToJson(state, mo, address_offset, type,value_controllable);
-            #endif
-          }
+        bool is_controlled_value = false;  
+        std::string value_str = value->dump1();
+        if(value_str.find("KLEE")!=std::string::npos){
+          is_controlled_value = true;
         }else{
-          klee_test_info("Error: unresolved address test on file %s: line %d.", 
-                          target->info->file.c_str(), target->info->line);
-        }  
-        }  
+          is_controlled_value = false;
+        }
+        klee_debug_message("DEBUG: has_semantic_check:%d\n canBeDesiredValue: %d\n is_controlled_value: %d", has_semantic_check, canBeDesiredValue, is_controlled_value);
+        if(has_semantic_check || !canBeDesiredValue || !is_controlled_value){
+
+          std::string report_str = "Limited memory write vulnerability (V2)";
+          vulnerabilityReport(report_str, target);  
+        }else{
+          std::string report_str = "arbitrary memory write vulnerability (V1)";
+          vulnerabilityReport(report_str, target);
+        }
+      }
+      // else if (address_controllable && address_test_result) {
+      //   // In this case, the attacker can write arbitrary memory with fixed
+      //   value. std::string currentVulnerabilityInfo =
+      //       target->info->file + ":" + std::to_string(target->info->line);
+      //   auto it = testInfoRecordSet.find(currentVulnerabilityInfo);
+      //   if (it == testInfoRecordSet.end()) {
+      //     testInfoRecordSet.insert(currentVulnerabilityInfo);
+      //     klee_test_info("Error: Limited memory write vulnerability (V2)"
+      //                   "on file %s: line %d. desired value: %lu, desired
+      //                   address %lu-%lu",
+      //                     target->info->file.c_str(),
+      //                   target->info->line, desired_value,
+      //                   desired_address_start,desired_address_end);
+      //   }
+      // }
+      // to record any pointer which can point to MPU region
+      // if (!address_controllable && canBeDesiredValue && address_test_result)
+      // if (canBeDesiredValue && address_test_result){
+      //   std::string  value_name;
+      //   uint64_t value_offset;
+      //   bool value_controllable=false;
+      //   unsigned width;
+      //   Expr::Kind valueType = getExprInfo(value, value_name, value_offset,
+      //   width); if(value_name.find("KLEE_TX_")!=std::string::npos){
+      //     value_controllable=true;
+      //   }
+      //   recordDereferenceLocationsToJson(state, address_test, mo,target,
+      //   value_controllable);
+      // }
+      //}else{
+      // Check the value to see whether it can reach the range of dangrous
+      // region. First we check if value > desired_address_start has a solution
+
+      success = solver->mayBeTrue(
+          state.addressConstraintsForTargetApp,
+          UgeExpr::create(value,
+                          ConstantExpr::create(desired_address_start, type)),
+          canBeDesiredValue, state.queryMetaData);
+      assert(success && "FIXME: Unhandled solver failure");
+
+      // If so, then we check if value < desired_address_end has a solution
+      if (canBeDesiredValue) {
+        success = solver->mayBeTrue(
+            state.addressConstraintsForTargetApp,
+            UleExpr::create(value,
+                            ConstantExpr::create(desired_address_end, type)),
+            canBeDesiredValue, state.queryMetaData);
+      }
+      assert(success && "FIXME: Unhandled solver failure");
+
+      // FIX ME HERE. We need to to consider whether the controllable flag needs
+      // to be added for canBeDesiredValue.
+      // if(canBeDesiredValue){
+
+      /*** The following code seems for the case of inter-analysis ***/
+      //       bool controllable =
+      //       state.addressSpace.mo_controllable_info[mo].first; if
+      //       (address_controllable && !dyn_cast<ConstantExpr>(value)) {
+      //         std::string address_test_name, value_name;
+      //         uint64_t offset, value_offset;
+      //         bool value_controllable = false;
+      //         unsigned width;
+      //         Expr::Kind valueType =
+      //             getExprInfo(value, value_name, value_offset, width);
+      //         if (value_name.find("KLEE_TX_") != std::string::npos) {
+      //           value_controllable = true;
+      //         }
+      //         Expr::Kind exprType =
+      //             getExprInfo(address_test, address_test_name, offset,
+      //             width);
+      //         if (exprType == Expr::Read || exprType == Expr::Concat) {
+      //           // only record the mo directly pointed by pointer parameter
+      //           // Only record the parameters
+      //           int index1 = address_test_name.find("lazy_alloc");
+      //           int index2 = address_test_name.find("const");
+      //           if (index1 == std::string::npos && index2 ==
+      //           std::string::npos) {
+      //             // ref<Expr> offset = mo->getOffsetExpr(address);
+      //             // if(ConstantExpr* ce = dyn_cast<ConstantExpr>(offset)){
+      //             //   bool overlap;
+      //             //   for (auto &j: dereference_locations_jsons){
+      //             //     overlap = determineMoOverlap(state, mo,
+      //             ce->getZExtValue(),
+      //             //     j); if (!overlap)
+      //             //       break;
+      //             //   }
+      //             //   if (overlap)
+      //             //     klee_second_test_info("The mo can be overlapped with
+      //             desired
+      //             //     value in range of MPU region at file %s: line %d.",
+      //             //                 target->info->file.c_str(),
+      //             //                 target->info->line);
+      //             // }else{
+      //             //   assert("FIXME in executeMemoryOperation(): symbolic
+      //             index is
+      //             //   not considered");
+      //             // }
+      //             klee_debug_message("DEBUG: record writable location");
+      //             address_test.get()->dump();
+
+      // #ifdef INTER_ANALYSIS_ENABLE
+      //             recordWritableLocationsToJson(state, mo, address_offset,
+      //             type,
+      //                                           value_controllable);
+      // #endif
+      //           }
+      //         } else {
+      //           klee_test_info("Error: unresolved address test on file %s:
+      //           line %d.",
+      //                          target->info->file.c_str(),
+      //                          target->info->line);
+      //         }
+      //       }
     }
   }
 
@@ -4998,7 +5062,7 @@ void Executor::executeMemoryOperation(
       terminateStateOnError(state, "memory error: object read only",
                             StateTerminationType::ReadOnly);
     } else {
-       klee_debug_message("DEBUG: dump the address and value");
+      klee_debug_message("DEBUG: dump the address and value");
       address.get()->dump();
       value.get()->dump();
       ObjectState *wos = state.addressSpace.getWriteable(mo, os);
@@ -5009,136 +5073,144 @@ void Executor::executeMemoryOperation(
     klee_debug_message("DEBUG: dump the resolve result of address");
     result.get()->dump();
 
+    if (target->inst->getType()->isPointerTy() &&
+        state.addressSpace.address_mo_info.count(result) == 0) {
 
-    
-    
-    if (target->inst->getType()->isPointerTy()
-        && state.addressSpace.address_mo_info.count(result)==0) {
+      // It needs resolve here to determine whether the pointer represented
 
-      
-        // It needs resolve here to determine whether the pointer represented
-        
-        // the result has been allocated the pointer cannot be resolved, so
-        // allocate memory
-        ObjectPair resultOp;
-        bool resultNeedBound = false;
-        if (!state.addressSpace.lazyResolve(state, solver, result, resultOp,
-                                            resultNeedBound)) {
+      // the result has been allocated the pointer cannot be resolved, so
+      // allocate memory
+      ObjectPair resultOp;
+      bool resultNeedBound = false;
+      if (!state.addressSpace.lazyResolve(state, solver, result, resultOp,
+                                          resultNeedBound)) {
 
-          llvm::Type *elementType =
-                target->inst->getType()->getPointerElementType();
+        llvm::Type *elementType =
+            target->inst->getType()->getPointerElementType();
 
-            // Pay attention here, the type may be an array
-            // However, we don't consider dealing with it
-            // It is supposed that the pointer points to either a function or avariable 
-            unsigned elementSize; 
-            if (elementType->isFunctionTy()){
-              // just allocate 8 bytes for a virtual function
-            klee_debug_message("ERROR: found a function pointer here!!");
-            elementSize = 8;
-            }
-            else{
-              elementSize = kmodule->targetData->getTypeStoreSize(elementType);
-            }
-
-            ref<Expr> size = Expr::createPointer(elementSize);
-            size_t alignment = bytes;
-          
-          // We need to handle that the result is a constant value.
-          // Such as unintialized global values.
-          // TODO: the non concat expr may including other situations
-          if(dyn_cast<ConstantExpr>(result) && !dyn_cast<ConcatExpr>(result) && !elementType->isFunctionTy()){
-            //klee_debug_message("DEBUG: Detect a unintialzied constant pointer.");
-            //unitializedPointerDereferenceReport(target);
-            // MemoryObject *newMo = lazyAlloc(state, size, !mo->isAGlobal(), target,
-            //   alignment);
-            // ObjectState *wos = state.addressSpace.getWriteable(mo, os);
-            // wos->write(mo->getOffsetExpr(address), newMo->getBaseExpr());
-            // klee_debug_message("DEBUG: Alloc a new memory object for it. Alloc size:%lu and address:%lu",elementSize,newMo->address);
-            // result = newMo->getBaseExpr();
-            // state.addressSpace.address_mo_info[result]=newMo;
-            // //Initialize the mo if there is no record for whether it is controllable.
-            // if(state.addressSpace.mo_controllable_info.count(mo)==0){
-            //   state.addressSpace.mo_controllable_info[mo].first=false;
-            //   state.addressSpace.mo_controllable_info[mo].second=NULL;
-            // }
-            // state.addressSpace.mo_controllable_info[newMo].first=false;
-            // // We need to check if it is right!
-            // state.addressSpace.mo_controllable_info[newMo].second=result;
-            // // Record the controllable info of the pointer.
-            // state.addressSpace.pointer_of_mo_controllable_info[newMo] = false;
-
-          }else{
-            klee_debug_message("DEBUG: dump address and result in execution memory operation");
-            address.get()->dump();
-            result.get()->dump();
-
-            //Initialize the mo if there is no record for whether it is controllable.
-            if(state.addressSpace.mo_controllable_info.count(mo)==0){
-              state.addressSpace.mo_controllable_info[mo].first=false;
-              state.addressSpace.mo_controllable_info[mo].second=NULL;
-            }
-            // Assign the controllable flag as same as its pointer.
-            bool controllable = state.addressSpace.mo_controllable_info[mo].first;
-
-            
-            MemoryObject *newMo=NULL;
-            if (isDesiredType(elementType)) {
-                klee_debug_message("DEBUG: alloc TCB in executeMemoryOperation!!"); 
-                size_t stackSize=0x1000;
-                newMo=lazyAllocTCBSymbolic(state,(size_t)elementSize,stackSize,false,alignment, controllable);
-            }
-
-            if(newMo==NULL)
-              newMo = lazyAlloc(state, size, !mo->isAGlobal(), target,
-              alignment, controllable);
-
-            // if (os->readOnly) {
-            //   terminateStateOnError(state, "memory error: object read only",
-            //                         StateTerminationType::ReadOnly);
-            // } else {
-            //   ObjectState *wos = state.addressSpace.getWriteable(mo, os);
-            //   wos->write(mo->getOffsetExpr(address), newMo->getBaseExpr());
-            //   // result = newMo->getBaseExpr();
-            //   result = wos->read(mo->getOffsetExpr(address), type);
-            // }
-            //addConstraint(state, EqExpr::create(result, newMo->getBaseExpr()));
-            state.addressSpace.address_mo_info[result]=newMo;
-
-            state.addressSpace.mo_controllable_info[newMo].first=controllable;
-            state.addressSpace.mo_controllable_info[newMo].second=state.addressSpace.getOriginalExprFromMo(const_cast<MemoryObject*>(mo));
-            // Record the controllable info of the pointer.
-            state.addressSpace.pointer_of_mo_controllable_info[newMo] = controllable;
-            if(state.addressSpace.mo_controllable_info[newMo].first==true)
-              state.addressSpace.mo_controllable_info[newMo].first = isControllableAddress(state,result);
-
-            klee_debug_message("mo address: %lu",mo->address);
-            klee_debug_message("newMo address: %lu",newMo->address);
-            if(state.addressSpace.mo_controllable_info[newMo].first){
-              klee_debug_message("alloc controllable mo!!!");
-            }else{
-              klee_debug_message("alloc uncontrollable mo!!!");
-            }
-            klee_debug_message("DEBUG: The symbolic pointer has been allocated, alloc size: %lu,\
-            alloc address: %lu",elementSize,newMo->address);
+        // Pay attention here, the type may be an array
+        // However, we don't consider dealing with it
+        // It is supposed that the pointer points to either a function or
+        // avariable
+        unsigned elementSize;
+        if (elementType->isFunctionTy()) {
+          // just allocate 8 bytes for a virtual function
+          if (!dyn_cast<ConstantExpr>(result)) {
+            klee_debug_message("ERROR: found a symbolic function pointer here!!");
+            std::string report_str = "Potential Function pointer dereference vulnerability";
+            vulnerabilityReport(report_str, target);
           }
-
-          
-        }
-        // the pointer has been allocated
-        // check whether the memoryObject is newly allocated one
-        // It needs to make sure that the lazyResolve() will return the exact
-        // memoryObject if the pointer is allocated
-        else {
-          const MemoryObject *resultMo = resultOp.first;
-          if (!state.addressSpace.isSymbolicBaseAddress(
-                  resultMo->getBaseExpr())) {
-            // terminateStateOnError(
-            //     state, "resolve doesn't return the newly allocated memory",
-            //     StateTerminationType::Ptr);
-          }
+          elementSize = 8;
+        } else {
+          elementSize = kmodule->targetData->getTypeStoreSize(elementType);
         }
 
+        ref<Expr> size = Expr::createPointer(elementSize);
+        size_t alignment = bytes;
+
+        // We need to handle that the result is a constant value.
+        // Such as unintialized global values.
+        // TODO: the non concat expr may including other situations
+        // If not do this, there would be many errors.
+        if (dyn_cast<ConstantExpr>(result) && !dyn_cast<ConcatExpr>(result) &&
+            !elementType->isFunctionTy()) {
+          klee_debug_message("DEBUG: Detect a unintialzied constant pointer.");
+          //unitializedPointerDereferenceReport(target);
+          bool controllable = false;
+          MemoryObject *newMo = lazyAlloc(state, size, true, target, alignment, controllable);
+          ObjectState *wos = state.addressSpace.getWriteable(mo, os);
+          wos->write(mo->getOffsetExpr(address), newMo->getBaseExpr());
+          klee_debug_message("DEBUG: Alloc a new uncontrollable memory object for the constant pointer. Alloc size:%lu and address:%lu",elementSize,newMo->address);
+          result = newMo->getBaseExpr();
+           state.addressSpace.address_mo_info[result]=newMo;
+           //Initialize the mo if there is no record for whether it is controllable.
+           if(state.addressSpace.mo_controllable_info.count(mo)==0){
+            state.addressSpace.mo_controllable_info[mo].first = false;
+            state.addressSpace.mo_controllable_info[mo].second = NULL;
+           }
+           state.addressSpace.mo_controllable_info[newMo].first=false;
+           // We need to check if it is right!
+           state.addressSpace.mo_controllable_info[newMo].second=result;
+           // Record the controllable info of the pointer.
+           state.addressSpace.pointer_of_mo_controllable_info[newMo] = false;
+
+        } else{
+          klee_debug_message(
+              "DEBUG: dump address and result in execution memory operation");
+          address.get()->dump();
+          result.get()->dump();
+
+          // Initialize the mo if there is no record for whether it is
+          // controllable.
+          if (state.addressSpace.mo_controllable_info.count(mo) == 0) {
+            state.addressSpace.mo_controllable_info[mo].first = false;
+            state.addressSpace.mo_controllable_info[mo].second = NULL;
+          }
+          // Assign the controllable flag as same as its pointer.
+          bool controllable = state.addressSpace.mo_controllable_info[mo].first;
+
+          MemoryObject *newMo = NULL;
+          if (isDesiredType(elementType)) {
+            klee_debug_message("DEBUG: alloc TCB in executeMemoryOperation!!");
+            size_t stackSize = 0x1000;
+            newMo = lazyAllocTCBSymbolic(state, (size_t)elementSize, stackSize,
+                                         false, alignment, controllable);
+          }
+
+          if (newMo == NULL)
+            newMo = lazyAlloc(state, size, !mo->isAGlobal(), target, alignment,
+                              controllable);
+
+          // if (os->readOnly) {
+          //   terminateStateOnError(state, "memory error: object read only",
+          //                         StateTerminationType::ReadOnly);
+          // } else {
+          //   ObjectState *wos = state.addressSpace.getWriteable(mo, os);
+          //   wos->write(mo->getOffsetExpr(address), newMo->getBaseExpr());
+          //   // result = newMo->getBaseExpr();
+          //   result = wos->read(mo->getOffsetExpr(address), type);
+          // }
+          // addConstraint(state, EqExpr::create(result, newMo->getBaseExpr()));
+          state.addressSpace.address_mo_info[result] = newMo;
+
+          state.addressSpace.mo_controllable_info[newMo].first = controllable;
+          state.addressSpace.mo_controllable_info[newMo].second =
+              state.addressSpace.getOriginalExprFromMo(
+                  const_cast<MemoryObject *>(mo));
+          // Record the controllable info of the pointer.
+          state.addressSpace.pointer_of_mo_controllable_info[newMo] =
+              controllable;
+          if (state.addressSpace.mo_controllable_info[newMo].first == true)
+            state.addressSpace.mo_controllable_info[newMo].first =
+                isControllableAddress(state, result);
+
+          klee_debug_message("mo address: %lu", mo->address);
+          klee_debug_message("newMo address: %lu", newMo->address);
+          if (state.addressSpace.mo_controllable_info[newMo].first) {
+            klee_debug_message("alloc controllable mo!!!");
+          } else {
+            klee_debug_message("alloc uncontrollable mo!!!");
+          }
+          klee_debug_message(
+              "DEBUG: The symbolic pointer has been allocated, alloc size: %lu,\
+            alloc address: %lu",
+              elementSize, newMo->address);
+        }
+
+      }
+      // the pointer has been allocated
+      // check whether the memoryObject is newly allocated one
+      // It needs to make sure that the lazyResolve() will return the exact
+      // memoryObject if the pointer is allocated
+      else {
+        const MemoryObject *resultMo = resultOp.first;
+        if (!state.addressSpace.isSymbolicBaseAddress(
+                resultMo->getBaseExpr())) {
+          // terminateStateOnError(
+          //     state, "resolve doesn't return the newly allocated memory",
+          //     StateTerminationType::Ptr);
+        }
+      }
     }
     bindLocal(target, state, result);
   }
@@ -5372,7 +5444,6 @@ void Executor::executeMakeSymbolic(ExecutionState &state,
   }
 }
 
-
 // Add overloaded function of executeMakeSymbolic to add controllable info.
 void Executor::executeMakeSymbolic(ExecutionState &state,
                                    const MemoryObject *mo,
@@ -5380,9 +5451,8 @@ void Executor::executeMakeSymbolic(ExecutionState &state,
                                    bool isControllable) {
   state.addressSpace.mo_controllable_info[mo].first = isControllable;
   state.addressSpace.mo_controllable_info[mo].second = NULL;
-  executeMakeSymbolic(state,mo,name);
+  executeMakeSymbolic(state, mo, name);
 }
-
 
 /***/
 
@@ -5790,60 +5860,63 @@ bool Executor::isDesiredType(llvm::Type *ty) {
   return false;
 }
 
-
-
-bool Executor::isControllableAddress(ExecutionState &state, ref<Expr> addr){
+bool Executor::isControllableAddress(ExecutionState &state, ref<Expr> addr) {
   ref<Expr> address = addr;
-  if(ConstantExpr *CE = dyn_cast<ConstantExpr>(addr)){
-    std::pair<MemoryObject*, uint64_t> moPair = state.addressSpace.findMemoryObject(CE);
+  if (ConstantExpr *CE = dyn_cast<ConstantExpr>(addr)) {
+    std::pair<MemoryObject *, uint64_t> moPair =
+        state.addressSpace.findMemoryObject(CE);
     address = state.addressSpace.getOriginalExprFromMo(moPair.first);
     assert(address && "FIX ME: find mo with no existing record");
   }
-  ref<Expr> e1 = UleExpr::create(address,ConstantExpr::alloc(ATTACK_CAPABILITY_REGION_END,address->getWidth()));
-  ref<Expr> e2 = UgeExpr::create(address,ConstantExpr::alloc(ATTACK_CAPABILITY_REGION_START,address->getWidth()));
+  ref<Expr> e1 =
+      UleExpr::create(address, ConstantExpr::alloc(ATTACK_CAPABILITY_REGION_END,
+                                                   address->getWidth()));
+  ref<Expr> e2 = UgeExpr::create(
+      address,
+      ConstantExpr::alloc(ATTACK_CAPABILITY_REGION_START, address->getWidth()));
   address->dump();
-  bool success1,result1,success2, result2;
-  success1 = solver->mayBeTrue(state.addressConstraintsForTargetApp, e1, result1,state.queryMetaData);
+  bool success1, result1, success2, result2;
+  success1 = solver->mayBeTrue(state.addressConstraintsForTargetApp, e1,
+                               result1, state.queryMetaData);
   assert(success1 && "FIXME: Unhandled solver failure");
-  if(result1){
-      success2 = solver->mayBeTrue(state.addressConstraintsForTargetApp, e2, result2,state.queryMetaData);
-      assert(success2 && "FIXME: Unhandled solver failure");
-      if (result2){
-        address->dump();
-        klee_debug_message("DEBUG: detect controllable address");
-        return true;
-      }
-
+  if (result1) {
+    success2 = solver->mayBeTrue(state.addressConstraintsForTargetApp, e2,
+                                 result2, state.queryMetaData);
+    assert(success2 && "FIXME: Unhandled solver failure");
+    if (result2) {
+      address->dump();
+      klee_debug_message("DEBUG: detect controllable address");
+      return true;
+    }
   }
   klee_debug_message("DEBUG: detect uncontrollable address");
   return false;
 }
 
+//  ref<Expr> kid;
+//   switch(address.get()->getKind()) {
+//     case Expr::Add:
+//       kid = address.get()->getKid(1);
+//       break;
+//     default:
+//       kid = address;
+//       break;
+//   }
 
-  //  ref<Expr> kid;
-  //   switch(address.get()->getKind()) {
-  //     case Expr::Add:
-  //       kid = address.get()->getKid(1);
-  //       break;
-  //     default:
-  //       kid = address;
-  //       break;
-  //   }
-
-std::vector<ref<Expr>> Executor::getAddKids(ref<Expr> addExpr){
+std::vector<ref<Expr>> Executor::getAddKids(ref<Expr> addExpr) {
   std::vector<ref<Expr>> result;
-  
+
   std::queue<ref<Expr>> q;
   q.push(addExpr);
-  while(!q.empty()){
+  while (!q.empty()) {
     ref<Expr> e = q.front();
     q.pop();
-    if(e.get()->getKind() == Expr::Add) {
-      ref<Expr> kid0=e.get()->getKid(0);
-      ref<Expr> kid1=e.get()->getKid(1);
+    if (e.get()->getKind() == Expr::Add) {
+      ref<Expr> kid0 = e.get()->getKid(0);
+      ref<Expr> kid1 = e.get()->getKid(1);
       q.push(kid0);
       q.push(kid1);
-    }else{
+    } else {
       result.push_back(e);
       continue;
     }
@@ -5852,50 +5925,53 @@ std::vector<ref<Expr>> Executor::getAddKids(ref<Expr> addExpr){
 }
 
 // add
-bool Executor::determineMoOverlap(ExecutionState &state, const MemoryObject* mo, uint64_t offset, json &j){
+bool Executor::determineMoOverlap(ExecutionState &state, const MemoryObject *mo,
+                                  uint64_t offset, json &j) {
   std::string name = j["dereference location"]["name"];
   uint64_t relativeOffset = j["dereference location"]["offset"];
   relativeOffset = offset - relativeOffset;
-  bool isUnderflow = (relativeOffset > offset)? true : false;
+  bool isUnderflow = (relativeOffset > offset) ? true : false;
 
   std::vector<ref<Expr>> constraints;
-  for (auto &constraintJson: j["constraints"]){
-    ref<Expr> constraint = jsonToExpr(state, mo, name, relativeOffset, constraintJson, isUnderflow);
-    if (!constraint){
-      klee_second_test_info("The constaint exceeds the mo range %s: . The second test teminates",
-                            constraintJson.dump(4).c_str());
+  for (auto &constraintJson : j["constraints"]) {
+    ref<Expr> constraint = jsonToExpr(state, mo, name, relativeOffset,
+                                      constraintJson, isUnderflow);
+    if (!constraint) {
+      klee_second_test_info(
+          "The constaint exceeds the mo range %s: . The second test teminates",
+          constraintJson.dump(4).c_str());
       return false;
     }
     constraints.push_back(constraint);
   }
 
   bool mayBeTrue = false;
-  for (auto &constraint: constraints){
-    bool success =
-        solver->mayBeTrue(state.constraints, constraint,
-                           mayBeTrue, state.queryMetaData);
+  for (auto &constraint : constraints) {
+    bool success = solver->mayBeTrue(state.constraints, constraint, mayBeTrue,
+                                     state.queryMetaData);
     assert(success && "FIXME: Unhandled solver failure");
 
     std::string Str;
     llvm::raw_string_ostream info(Str);
     ExprPPrinter::printSingleExpr(info, constraint);
-    if (mayBeTrue){
+    if (mayBeTrue) {
       klee_second_test_info("The constaint can be satisfied %s: ",
                             info.str().c_str());
-    }else{
-      klee_second_test_info("The constarin cannot be satisfied %s: . The second test terminates.",
-                            info.str().c_str());
+    } else {
+      klee_second_test_info(
+          "The constarin cannot be satisfied %s: . The second test terminates.",
+          info.str().c_str());
       return false;
     }
   }
   return true;
 }
 
-void Executor::exprToJson(const ref<Expr> &expression, json &j){
-  switch (expression->getKind()){
-  case Expr::Constant:{
+void Executor::exprToJson(const ref<Expr> &expression, json &j) {
+  switch (expression->getKind()) {
+  case Expr::Constant: {
     ConstantExpr *ce = dyn_cast<ConstantExpr>(expression);
-    unsigned width = ce->getWidth(); 
+    unsigned width = ce->getWidth();
     uint64_t value = ce->getZExtValue();
     j["type"] = Expr::Constant;
     j["type_name"] = "Constant";
@@ -5903,41 +5979,43 @@ void Executor::exprToJson(const ref<Expr> &expression, json &j){
     j["value"] = value;
     break;
   }
-  case Expr::Read:{
-    ReadExpr* re = dyn_cast<ReadExpr>(expression);
+  case Expr::Read: {
+    ReadExpr *re = dyn_cast<ReadExpr>(expression);
     std::string name = re->updates.root->name;
-    if(ConstantExpr* ce = dyn_cast<ConstantExpr>(re->index)){
+    if (ConstantExpr *ce = dyn_cast<ConstantExpr>(re->index)) {
       j["type"] = Expr::Read;
       j["type_name"] = "Read";
       j["name"] = name;
       j["index"] = ce->getZExtValue();
-    }else{
-      assert("FIXME in exprToJson(): symbolic index in ReadExpr is not considered");
+    } else {
+      assert("FIXME in exprToJson(): symbolic index in ReadExpr is not "
+             "considered");
     }
     break;
   }
-  case Expr::Concat:{
+  case Expr::Concat: {
     // we assume that all Concat expressions concatenate Read expressions,
     // so we don't split deep into them
-    ConcatExpr* ce = dyn_cast<ConcatExpr>(expression);
-    if(ReadExpr* re = dyn_cast<ReadExpr>(ce->getLeft())){
-      if(ConstantExpr* index = dyn_cast<ConstantExpr>(re->index)){
+    ConcatExpr *ce = dyn_cast<ConcatExpr>(expression);
+    if (ReadExpr *re = dyn_cast<ReadExpr>(ce->getLeft())) {
+      if (ConstantExpr *index = dyn_cast<ConstantExpr>(re->index)) {
         unsigned width = ce->getWidth();
         j["type"] = Expr::Concat;
         j["type_name"] = "Concat";
         j["name"] = re->updates.root->name;
-        j["index"] = index->getZExtValue() + 1 - width/8;
+        j["index"] = index->getZExtValue() + 1 - width / 8;
         j["width"] = width;
-      }else{
-        assert("FIXME in exprToJson(): symbolic index in ConcatExpr is not considered");
+      } else {
+        assert("FIXME in exprToJson(): symbolic index in ConcatExpr is not "
+               "considered");
       }
-    }else{
+    } else {
       assert("FIXME in exprToJson(): non-ReadExpr in ConcatExpr");
     }
     break;
   }
-  case Expr::Eq:{
-    EqExpr* ee = dyn_cast<EqExpr>(expression);
+  case Expr::Eq: {
+    EqExpr *ee = dyn_cast<EqExpr>(expression);
     ref<Expr> left = ee->left;
     json leftJson;
     exprToJson(left, leftJson);
@@ -5950,8 +6028,8 @@ void Executor::exprToJson(const ref<Expr> &expression, json &j){
     j["right"] = rightJson;
     break;
   }
-  case Expr::Ult:{
-    UltExpr* ee = dyn_cast<UltExpr>(expression);
+  case Expr::Ult: {
+    UltExpr *ee = dyn_cast<UltExpr>(expression);
     ref<Expr> left = ee->left;
     json leftJson;
     exprToJson(left, leftJson);
@@ -5964,8 +6042,8 @@ void Executor::exprToJson(const ref<Expr> &expression, json &j){
     j["right"] = rightJson;
     break;
   }
-  case Expr::Ule:{
-    UleExpr* ee = dyn_cast<UleExpr>(expression);
+  case Expr::Ule: {
+    UleExpr *ee = dyn_cast<UleExpr>(expression);
     ref<Expr> left = ee->left;
     json leftJson;
     exprToJson(left, leftJson);
@@ -5978,8 +6056,8 @@ void Executor::exprToJson(const ref<Expr> &expression, json &j){
     j["right"] = rightJson;
     break;
   }
-  case Expr::Ugt:{
-    UgtExpr* ee = dyn_cast<UgtExpr>(expression);
+  case Expr::Ugt: {
+    UgtExpr *ee = dyn_cast<UgtExpr>(expression);
     ref<Expr> left = ee->left;
     json leftJson;
     exprToJson(left, leftJson);
@@ -5992,8 +6070,8 @@ void Executor::exprToJson(const ref<Expr> &expression, json &j){
     j["right"] = rightJson;
     break;
   }
-  case Expr::Uge:{
-    UgeExpr* ee = dyn_cast<UgeExpr>(expression);
+  case Expr::Uge: {
+    UgeExpr *ee = dyn_cast<UgeExpr>(expression);
     ref<Expr> left = ee->left;
     json leftJson;
     exprToJson(left, leftJson);
@@ -6006,8 +6084,8 @@ void Executor::exprToJson(const ref<Expr> &expression, json &j){
     j["right"] = rightJson;
     break;
   }
-  case Expr::Slt:{
-    SltExpr* ee = dyn_cast<SltExpr>(expression);
+  case Expr::Slt: {
+    SltExpr *ee = dyn_cast<SltExpr>(expression);
     ref<Expr> left = ee->left;
     json leftJson;
     exprToJson(left, leftJson);
@@ -6020,8 +6098,8 @@ void Executor::exprToJson(const ref<Expr> &expression, json &j){
     j["right"] = rightJson;
     break;
   }
-  case Expr::Sle:{
-    SleExpr* ee = dyn_cast<SleExpr>(expression);
+  case Expr::Sle: {
+    SleExpr *ee = dyn_cast<SleExpr>(expression);
     ref<Expr> left = ee->left;
     json leftJson;
     exprToJson(left, leftJson);
@@ -6034,8 +6112,8 @@ void Executor::exprToJson(const ref<Expr> &expression, json &j){
     j["right"] = rightJson;
     break;
   }
-  case Expr::Sgt:{
-    SgtExpr* ee = dyn_cast<SgtExpr>(expression);
+  case Expr::Sgt: {
+    SgtExpr *ee = dyn_cast<SgtExpr>(expression);
     ref<Expr> left = ee->left;
     json leftJson;
     exprToJson(left, leftJson);
@@ -6048,8 +6126,8 @@ void Executor::exprToJson(const ref<Expr> &expression, json &j){
     j["right"] = rightJson;
     break;
   }
-  case Expr::Sge:{
-    SgeExpr* ee = dyn_cast<SgeExpr>(expression);
+  case Expr::Sge: {
+    SgeExpr *ee = dyn_cast<SgeExpr>(expression);
     ref<Expr> left = ee->left;
     json leftJson;
     exprToJson(left, leftJson);
@@ -6062,8 +6140,8 @@ void Executor::exprToJson(const ref<Expr> &expression, json &j){
     j["right"] = rightJson;
     break;
   }
-  case Expr::Add:{
-    AddExpr* ee = dyn_cast<AddExpr>(expression);
+  case Expr::Add: {
+    AddExpr *ee = dyn_cast<AddExpr>(expression);
     ref<Expr> left = ee->left;
     json leftJson;
     exprToJson(left, leftJson);
@@ -6076,8 +6154,8 @@ void Executor::exprToJson(const ref<Expr> &expression, json &j){
     j["right"] = rightJson;
     break;
   }
-  case Expr::Sub:{
-    SubExpr* ee = dyn_cast<SubExpr>(expression);
+  case Expr::Sub: {
+    SubExpr *ee = dyn_cast<SubExpr>(expression);
     ref<Expr> left = ee->left;
     json leftJson;
     exprToJson(left, leftJson);
@@ -6090,8 +6168,8 @@ void Executor::exprToJson(const ref<Expr> &expression, json &j){
     j["right"] = rightJson;
     break;
   }
-  case Expr::Mul:{
-    MulExpr* ee = dyn_cast<MulExpr>(expression);
+  case Expr::Mul: {
+    MulExpr *ee = dyn_cast<MulExpr>(expression);
     ref<Expr> left = ee->left;
     json leftJson;
     exprToJson(left, leftJson);
@@ -6104,8 +6182,8 @@ void Executor::exprToJson(const ref<Expr> &expression, json &j){
     j["right"] = rightJson;
     break;
   }
-  case Expr::UDiv:{
-    UDivExpr* ee = dyn_cast<UDivExpr>(expression);
+  case Expr::UDiv: {
+    UDivExpr *ee = dyn_cast<UDivExpr>(expression);
     ref<Expr> left = ee->left;
     json leftJson;
     exprToJson(left, leftJson);
@@ -6118,8 +6196,8 @@ void Executor::exprToJson(const ref<Expr> &expression, json &j){
     j["right"] = rightJson;
     break;
   }
-  case Expr::SDiv:{
-    SDivExpr* ee = dyn_cast<SDivExpr>(expression);
+  case Expr::SDiv: {
+    SDivExpr *ee = dyn_cast<SDivExpr>(expression);
     ref<Expr> left = ee->left;
     json leftJson;
     exprToJson(left, leftJson);
@@ -6132,8 +6210,8 @@ void Executor::exprToJson(const ref<Expr> &expression, json &j){
     j["right"] = rightJson;
     break;
   }
-  case Expr::URem:{
-    URemExpr* ee = dyn_cast<URemExpr>(expression);
+  case Expr::URem: {
+    URemExpr *ee = dyn_cast<URemExpr>(expression);
     ref<Expr> left = ee->left;
     json leftJson;
     exprToJson(left, leftJson);
@@ -6146,8 +6224,8 @@ void Executor::exprToJson(const ref<Expr> &expression, json &j){
     j["right"] = rightJson;
     break;
   }
-  case Expr::SRem:{
-    SRemExpr* ee = dyn_cast<SRemExpr>(expression);
+  case Expr::SRem: {
+    SRemExpr *ee = dyn_cast<SRemExpr>(expression);
     ref<Expr> left = ee->left;
     json leftJson;
     exprToJson(left, leftJson);
@@ -6160,8 +6238,8 @@ void Executor::exprToJson(const ref<Expr> &expression, json &j){
     j["right"] = rightJson;
     break;
   }
-  case Expr::And:{
-    AndExpr* ee = dyn_cast<AndExpr>(expression);
+  case Expr::And: {
+    AndExpr *ee = dyn_cast<AndExpr>(expression);
     ref<Expr> left = ee->left;
     json leftJson;
     exprToJson(left, leftJson);
@@ -6174,8 +6252,8 @@ void Executor::exprToJson(const ref<Expr> &expression, json &j){
     j["right"] = rightJson;
     break;
   }
-  case Expr::Or:{
-    OrExpr* ee = dyn_cast<OrExpr>(expression);
+  case Expr::Or: {
+    OrExpr *ee = dyn_cast<OrExpr>(expression);
     ref<Expr> left = ee->left;
     json leftJson;
     exprToJson(left, leftJson);
@@ -6188,8 +6266,8 @@ void Executor::exprToJson(const ref<Expr> &expression, json &j){
     j["right"] = rightJson;
     break;
   }
-  case Expr::Xor:{
-    XorExpr* ee = dyn_cast<XorExpr>(expression);
+  case Expr::Xor: {
+    XorExpr *ee = dyn_cast<XorExpr>(expression);
     ref<Expr> left = ee->left;
     json leftJson;
     exprToJson(left, leftJson);
@@ -6202,8 +6280,8 @@ void Executor::exprToJson(const ref<Expr> &expression, json &j){
     j["right"] = rightJson;
     break;
   }
-  case Expr::Shl:{
-    ShlExpr* ee = dyn_cast<ShlExpr>(expression);
+  case Expr::Shl: {
+    ShlExpr *ee = dyn_cast<ShlExpr>(expression);
     ref<Expr> left = ee->left;
     json leftJson;
     exprToJson(left, leftJson);
@@ -6216,8 +6294,8 @@ void Executor::exprToJson(const ref<Expr> &expression, json &j){
     j["right"] = rightJson;
     break;
   }
-  case Expr::LShr:{
-    LShrExpr* ee = dyn_cast<LShrExpr>(expression);
+  case Expr::LShr: {
+    LShrExpr *ee = dyn_cast<LShrExpr>(expression);
     ref<Expr> left = ee->left;
     json leftJson;
     exprToJson(left, leftJson);
@@ -6230,8 +6308,8 @@ void Executor::exprToJson(const ref<Expr> &expression, json &j){
     j["right"] = rightJson;
     break;
   }
-  case Expr::AShr:{
-    AShrExpr* ee = dyn_cast<AShrExpr>(expression);
+  case Expr::AShr: {
+    AShrExpr *ee = dyn_cast<AShrExpr>(expression);
     ref<Expr> left = ee->left;
     json leftJson;
     exprToJson(left, leftJson);
@@ -6244,8 +6322,8 @@ void Executor::exprToJson(const ref<Expr> &expression, json &j){
     j["right"] = rightJson;
     break;
   }
-  case Expr::Select:{
-    SelectExpr* se = dyn_cast<SelectExpr>(expression);
+  case Expr::Select: {
+    SelectExpr *se = dyn_cast<SelectExpr>(expression);
     ref<Expr> cond = se->cond;
     json condJson;
     exprToJson(cond, condJson);
@@ -6262,8 +6340,8 @@ void Executor::exprToJson(const ref<Expr> &expression, json &j){
     j["falseExpr"] = falseJson;
     break;
   }
-  case Expr::Extract:{
-    ExtractExpr* ee = dyn_cast<ExtractExpr>(expression);
+  case Expr::Extract: {
+    ExtractExpr *ee = dyn_cast<ExtractExpr>(expression);
     ref<Expr> src = ee->expr;
     json srcJson;
     exprToJson(src, srcJson);
@@ -6274,8 +6352,8 @@ void Executor::exprToJson(const ref<Expr> &expression, json &j){
     j["width"] = ee->getWidth();
     break;
   }
-  case Expr::NotOptimized:{
-    NotOptimizedExpr* ne = dyn_cast<NotOptimizedExpr>(expression);
+  case Expr::NotOptimized: {
+    NotOptimizedExpr *ne = dyn_cast<NotOptimizedExpr>(expression);
     ref<Expr> src = ne->src;
     json srcJson;
     exprToJson(src, srcJson);
@@ -6284,8 +6362,8 @@ void Executor::exprToJson(const ref<Expr> &expression, json &j){
     j["src"] = srcJson;
     break;
   }
-  case Expr::SExt:{
-    SExtExpr* se = dyn_cast<SExtExpr>(expression);
+  case Expr::SExt: {
+    SExtExpr *se = dyn_cast<SExtExpr>(expression);
     ref<Expr> src = se->src;
     json srcJson;
     exprToJson(src, srcJson);
@@ -6295,8 +6373,8 @@ void Executor::exprToJson(const ref<Expr> &expression, json &j){
     j["width"] = se->getWidth();
     break;
   }
-  case Expr::ZExt:{
-    ZExtExpr* ze = dyn_cast<ZExtExpr>(expression);
+  case Expr::ZExt: {
+    ZExtExpr *ze = dyn_cast<ZExtExpr>(expression);
     ref<Expr> src = ze->src;
     json srcJson;
     exprToJson(src, srcJson);
@@ -6309,38 +6387,40 @@ void Executor::exprToJson(const ref<Expr> &expression, json &j){
   default:
     assert("FIXME in exprToJson(): Unprocessed expression types");
     break;
-    // Many expression types have not been processed 
+    // Many expression types have not been processed
   }
 }
 
-ref<Expr> Executor::jsonToExpr(ExecutionState &state, const MemoryObject* mo, std::string name, uint64_t relativeOffset, 
-                               json &j, bool isUnderflow, bool needMarked, bool needMatch, bool *res){
+ref<Expr> Executor::jsonToExpr(ExecutionState &state, const MemoryObject *mo,
+                               std::string name, uint64_t relativeOffset,
+                               json &j, bool isUnderflow, bool needMarked,
+                               bool needMatch, bool *res) {
   Expr::Kind type = j["type"];
-  ref<Expr> expression = NULL; 
-  switch (type){
-  case Expr::Constant:{
+  ref<Expr> expression = NULL;
+  switch (type) {
+  case Expr::Constant: {
     uint64_t value = j["value"];
     unsigned width = j["width"];
     expression = ConstantExpr::create(value, width);
     break;
   }
-  case Expr::Read:{
+  case Expr::Read: {
     if (res)
       *res = false;
     std::string readName = j["name"];
-    if (name != readName){
+    if (name != readName) {
       assert("FIXME in jsonToExpr(): additional mo appears in the constraint");
-    }else{
+    } else {
       uint64_t offset = j["index"];
       offset += relativeOffset;
-      if ((!isUnderflow || (offset < relativeOffset)) && (offset < mo->size)){
+      if ((!isUnderflow || (offset < relativeOffset)) && (offset < mo->size)) {
         const auto op = state.addressSpace.objects.lookup(mo);
         ObjectState *os = op->second.get();
         // now we assume only concrete offset will appear
         expression = os->read(offset, 8);
         if (needMarked)
-          os->setRecordMask(offset,1);
-        if (needMatch && res){
+          os->setRecordMask(offset, 1);
+        if (needMatch && res) {
           if (os->isRecordMaskAllSet(offset, 1))
             *res = true;
           else
@@ -6350,24 +6430,25 @@ ref<Expr> Executor::jsonToExpr(ExecutionState &state, const MemoryObject* mo, st
     }
     break;
   }
-  case Expr::Concat:{
+  case Expr::Concat: {
     if (res)
       *res = false;
     std::string readName = j["name"];
-    if (name != readName){
+    if (name != readName) {
       assert("FIXME in jsonToExpr(): additional mo appears in the constraint");
-    }else{
+    } else {
       uint64_t offset = j["index"];
       offset += relativeOffset;
       unsigned width = j["width"];
-      if ((!isUnderflow || (offset < relativeOffset)) && (offset + width/8 -1 < mo->size)){
+      if ((!isUnderflow || (offset < relativeOffset)) &&
+          (offset + width / 8 - 1 < mo->size)) {
         const auto op = state.addressSpace.objects.lookup(mo);
         ObjectState *os = op->second.get();
         expression = os->read(offset, width);
         if (needMarked)
-          os->setRecordMask(offset, width/8);
-        if (needMatch && res){
-          if (os->isRecordMaskAllSet(offset, width/8))
+          os->setRecordMask(offset, width / 8);
+        if (needMatch && res) {
+          if (os->isRecordMaskAllSet(offset, width / 8))
             *res = true;
           else
             *res = false;
@@ -6376,242 +6457,293 @@ ref<Expr> Executor::jsonToExpr(ExecutionState &state, const MemoryObject* mo, st
     }
     break;
   }
-  case Expr::Eq:{
+  case Expr::Eq: {
     json leftJson = j["left"];
-    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson,
+                                    isUnderflow, needMarked, needMatch, res);
     json rightJson = j["right"];
-    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson,
+                                     isUnderflow, needMarked, needMatch, res);
     if (leftExpr && rightExpr)
       expression = EqExpr::create(leftExpr, rightExpr);
     break;
   }
-  case Expr::Ult:{
+  case Expr::Ult: {
     json leftJson = j["left"];
-    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson,
+                                    isUnderflow, needMarked, needMatch, res);
     json rightJson = j["right"];
-    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson,
+                                     isUnderflow, needMarked, needMatch, res);
     if (leftExpr && rightExpr)
       expression = UltExpr::create(leftExpr, rightExpr);
     break;
   }
-  case Expr::Ule:{
+  case Expr::Ule: {
     json leftJson = j["left"];
-    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson,
+                                    isUnderflow, needMarked, needMatch, res);
     json rightJson = j["right"];
-    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson,
+                                     isUnderflow, needMarked, needMatch, res);
     if (leftExpr && rightExpr)
       expression = UleExpr::create(leftExpr, rightExpr);
     break;
   }
-  case Expr::Ugt:{
+  case Expr::Ugt: {
     json leftJson = j["left"];
-    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson,
+                                    isUnderflow, needMarked, needMatch, res);
     json rightJson = j["right"];
-    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson,
+                                     isUnderflow, needMarked, needMatch, res);
     if (leftExpr && rightExpr)
       expression = UgtExpr::create(leftExpr, rightExpr);
     break;
   }
-  case Expr::Uge:{
+  case Expr::Uge: {
     json leftJson = j["left"];
-    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson,
+                                    isUnderflow, needMarked, needMatch, res);
     json rightJson = j["right"];
-    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson,
+                                     isUnderflow, needMarked, needMatch, res);
     if (leftExpr && rightExpr)
       expression = UgeExpr::create(leftExpr, rightExpr);
     break;
   }
-  case Expr::Slt:{
+  case Expr::Slt: {
     json leftJson = j["left"];
-    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson,
+                                    isUnderflow, needMarked, needMatch, res);
     json rightJson = j["right"];
-    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson,
+                                     isUnderflow, needMarked, needMatch, res);
     if (leftExpr && rightExpr)
       expression = SltExpr::create(leftExpr, rightExpr);
     break;
   }
-  case Expr::Sle:{
+  case Expr::Sle: {
     json leftJson = j["left"];
-    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson,
+                                    isUnderflow, needMarked, needMatch, res);
     json rightJson = j["right"];
-    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson,
+                                     isUnderflow, needMarked, needMatch, res);
     if (leftExpr && rightExpr)
       expression = SleExpr::create(leftExpr, rightExpr);
     break;
   }
-  case Expr::Sgt:{
+  case Expr::Sgt: {
     json leftJson = j["left"];
-    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson,
+                                    isUnderflow, needMarked, needMatch, res);
     json rightJson = j["right"];
-    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson,
+                                     isUnderflow, needMarked, needMatch, res);
     if (leftExpr && rightExpr)
       expression = SgtExpr::create(leftExpr, rightExpr);
     break;
   }
-  case Expr::Sge:{
+  case Expr::Sge: {
     json leftJson = j["left"];
-    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson,
+                                    isUnderflow, needMarked, needMatch, res);
     json rightJson = j["right"];
-    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson,
+                                     isUnderflow, needMarked, needMatch, res);
     if (leftExpr && rightExpr)
       expression = SgeExpr::create(leftExpr, rightExpr);
     break;
   }
-  case Expr::Add:{
+  case Expr::Add: {
     json leftJson = j["left"];
-    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson,
+                                    isUnderflow, needMarked, needMatch, res);
     json rightJson = j["right"];
-    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson,
+                                     isUnderflow, needMarked, needMatch, res);
     if (leftExpr && rightExpr)
       expression = AddExpr::create(leftExpr, rightExpr);
     break;
   }
-  case Expr::Sub:{
+  case Expr::Sub: {
     json leftJson = j["left"];
-    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson,
+                                    isUnderflow, needMarked, needMatch, res);
     json rightJson = j["right"];
-    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson,
+                                     isUnderflow, needMarked, needMatch, res);
     if (leftExpr && rightExpr)
       expression = SubExpr::create(leftExpr, rightExpr);
     break;
   }
-  case Expr::Mul:{
+  case Expr::Mul: {
     json leftJson = j["left"];
-    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson,
+                                    isUnderflow, needMarked, needMatch, res);
     json rightJson = j["right"];
-    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson,
+                                     isUnderflow, needMarked, needMatch, res);
     if (leftExpr && rightExpr)
       expression = MulExpr::create(leftExpr, rightExpr);
     break;
   }
-  case Expr::UDiv:{
+  case Expr::UDiv: {
     json leftJson = j["left"];
-    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson,
+                                    isUnderflow, needMarked, needMatch, res);
     json rightJson = j["right"];
-    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson,
+                                     isUnderflow, needMarked, needMatch, res);
     if (leftExpr && rightExpr)
       expression = UDivExpr::create(leftExpr, rightExpr);
     break;
   }
-  case Expr::SDiv:{
+  case Expr::SDiv: {
     json leftJson = j["left"];
-    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson,
+                                    isUnderflow, needMarked, needMatch, res);
     json rightJson = j["right"];
-    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson,
+                                     isUnderflow, needMarked, needMatch, res);
     if (leftExpr && rightExpr)
       expression = SDivExpr::create(leftExpr, rightExpr);
     break;
   }
-  case Expr::URem:{
+  case Expr::URem: {
     json leftJson = j["left"];
-    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson,
+                                    isUnderflow, needMarked, needMatch, res);
     json rightJson = j["right"];
-    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson,
+                                     isUnderflow, needMarked, needMatch, res);
     if (leftExpr && rightExpr)
       expression = URemExpr::create(leftExpr, rightExpr);
     break;
   }
-  case Expr::SRem:{
+  case Expr::SRem: {
     json leftJson = j["left"];
-    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson,
+                                    isUnderflow, needMarked, needMatch, res);
     json rightJson = j["right"];
-    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson,
+                                     isUnderflow, needMarked, needMatch, res);
     if (leftExpr && rightExpr)
       expression = SRemExpr::create(leftExpr, rightExpr);
     break;
   }
-  case Expr::And:{
+  case Expr::And: {
     json leftJson = j["left"];
-    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson,
+                                    isUnderflow, needMarked, needMatch, res);
     json rightJson = j["right"];
-    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson,
+                                     isUnderflow, needMarked, needMatch, res);
     if (leftExpr && rightExpr)
       expression = AndExpr::create(leftExpr, rightExpr);
     break;
   }
-  case Expr::Or:{
+  case Expr::Or: {
     json leftJson = j["left"];
-    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson,
+                                    isUnderflow, needMarked, needMatch, res);
     json rightJson = j["right"];
-    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson,
+                                     isUnderflow, needMarked, needMatch, res);
     if (leftExpr && rightExpr)
       expression = OrExpr::create(leftExpr, rightExpr);
     break;
   }
-  case Expr::Xor:{
+  case Expr::Xor: {
     json leftJson = j["left"];
-    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson,
+                                    isUnderflow, needMarked, needMatch, res);
     json rightJson = j["right"];
-    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson,
+                                     isUnderflow, needMarked, needMatch, res);
     if (leftExpr && rightExpr)
       expression = XorExpr::create(leftExpr, rightExpr);
     break;
   }
-  case Expr::Shl:{
+  case Expr::Shl: {
     json leftJson = j["left"];
-    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson,
+                                    isUnderflow, needMarked, needMatch, res);
     json rightJson = j["right"];
-    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson,
+                                     isUnderflow, needMarked, needMatch, res);
     if (leftExpr && rightExpr)
       expression = ShlExpr::create(leftExpr, rightExpr);
     break;
   }
-  case Expr::LShr:{
+  case Expr::LShr: {
     json leftJson = j["left"];
-    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson,
+                                    isUnderflow, needMarked, needMatch, res);
     json rightJson = j["right"];
-    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson,
+                                     isUnderflow, needMarked, needMatch, res);
     if (leftExpr && rightExpr)
       expression = LShrExpr::create(leftExpr, rightExpr);
     break;
   }
-  case Expr::AShr:{
+  case Expr::AShr: {
     json leftJson = j["left"];
-    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> leftExpr = jsonToExpr(state, mo, name, relativeOffset, leftJson,
+                                    isUnderflow, needMarked, needMatch, res);
     json rightJson = j["right"];
-    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> rightExpr = jsonToExpr(state, mo, name, relativeOffset, rightJson,
+                                     isUnderflow, needMarked, needMatch, res);
     if (leftExpr && rightExpr)
       expression = AShrExpr::create(leftExpr, rightExpr);
     break;
   }
-  case Expr::Select:{
+  case Expr::Select: {
     json condJson = j["cond"];
-    ref<Expr> condExpr = jsonToExpr(state, mo, name, relativeOffset, condJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> condExpr = jsonToExpr(state, mo, name, relativeOffset, condJson,
+                                    isUnderflow, needMarked, needMatch, res);
     json trueJson = j["trueExpr"];
-    ref<Expr> trueExpr = jsonToExpr(state, mo, name, relativeOffset, trueJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> trueExpr = jsonToExpr(state, mo, name, relativeOffset, trueJson,
+                                    isUnderflow, needMarked, needMatch, res);
     json falseJson = j["falseExpr"];
-    ref<Expr> falseExpr = jsonToExpr(state, mo, name, relativeOffset, falseJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> falseExpr = jsonToExpr(state, mo, name, relativeOffset, falseJson,
+                                     isUnderflow, needMarked, needMatch, res);
     if (condExpr && trueExpr && falseExpr)
       expression = SelectExpr::create(condExpr, trueExpr, falseExpr);
     break;
   }
-  case Expr::Extract:{
+  case Expr::Extract: {
     json srcJson = j["src"];
-    ref<Expr> srcExpr = jsonToExpr(state, mo, name, relativeOffset, srcJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> srcExpr = jsonToExpr(state, mo, name, relativeOffset, srcJson,
+                                   isUnderflow, needMarked, needMatch, res);
     unsigned offset = j["offset"];
     unsigned width = j["width"];
     if (srcExpr)
       expression = ExtractExpr::create(srcExpr, offset, width);
     break;
   }
-  case Expr::NotOptimized:{
+  case Expr::NotOptimized: {
     json srcJson = j["src"];
-    ref<Expr> srcExpr = jsonToExpr(state, mo, name, relativeOffset, srcJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> srcExpr = jsonToExpr(state, mo, name, relativeOffset, srcJson,
+                                   isUnderflow, needMarked, needMatch, res);
     if (srcExpr)
       expression = NotOptimizedExpr::create(srcExpr);
     break;
   }
-  case Expr::SExt:{
+  case Expr::SExt: {
     json srcJson = j["src"];
-    ref<Expr> srcExpr = jsonToExpr(state, mo, name, relativeOffset, srcJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> srcExpr = jsonToExpr(state, mo, name, relativeOffset, srcJson,
+                                   isUnderflow, needMarked, needMatch, res);
     unsigned width = j["width"];
     if (srcExpr)
       expression = SExtExpr::create(srcExpr, width);
     break;
   }
-  case Expr::ZExt:{
+  case Expr::ZExt: {
     json srcJson = j["src"];
-    ref<Expr> srcExpr = jsonToExpr(state, mo, name, relativeOffset, srcJson, isUnderflow, needMarked, needMatch, res);
+    ref<Expr> srcExpr = jsonToExpr(state, mo, name, relativeOffset, srcJson,
+                                   isUnderflow, needMarked, needMatch, res);
     unsigned width = j["width"];
     if (srcExpr)
       expression = ZExtExpr::create(srcExpr, width);
@@ -6621,39 +6753,38 @@ ref<Expr> Executor::jsonToExpr(ExecutionState &state, const MemoryObject* mo, st
     assert("FIXME in exprToJson(): Unprocessed expression types");
     break;
   }
-  if (!expression){
-    if(res) {
-      *res=false;
+  if (!expression) {
+    if (res) {
+      *res = false;
     }
   }
   return expression;
 }
 
-
-
-Expr::Kind Executor::getExprInfo(const ref<Expr>  &e, std::string &moName, uint64_t &offset, unsigned &width ){
+Expr::Kind Executor::getExprInfo(const ref<Expr> &e, std::string &moName,
+                                 uint64_t &offset, unsigned &width) {
   Expr::Kind k = e.get()->getKind();
-  switch(k){
-  case Expr::Concat:{
-    ConcatExpr* e_concat = dyn_cast<ConcatExpr>(e);
-    ReadExpr* left = dyn_cast<ReadExpr>(e_concat->getLeft());
+  switch (k) {
+  case Expr::Concat: {
+    ConcatExpr *e_concat = dyn_cast<ConcatExpr>(e);
+    ReadExpr *left = dyn_cast<ReadExpr>(e_concat->getLeft());
     moName = left->updates.root->name;
     width = e_concat->getWidth();
     if (ConstantExpr *ce = dyn_cast<ConstantExpr>(left->index))
-      offset = ce->getZExtValue() + 1 - width/8;
-    else{
+      offset = ce->getZExtValue() + 1 - width / 8;
+    else {
       // feedback symbolic offset by InvalidKind
       k = Expr::InvalidKind;
     }
     break;
   }
-  case Expr::Read:{
-    ReadExpr* e_read = dyn_cast<ReadExpr>(e);
+  case Expr::Read: {
+    ReadExpr *e_read = dyn_cast<ReadExpr>(e);
     moName = e_read->updates.root->name;
     width = 8;
     if (ConstantExpr *ce = dyn_cast<ConstantExpr>(e_read->index))
       offset = ce->getZExtValue();
-    else{
+    else {
       // feedback symbolic offset by InvalidKind
       k = Expr::InvalidKind;
     }
@@ -6667,78 +6798,89 @@ Expr::Kind Executor::getExprInfo(const ref<Expr>  &e, std::string &moName, uint6
   return k;
 }
 
-void Executor::recordDereferenceLocationsToJson(ExecutionState &state, ref<Expr> address, 
-const MemoryObject *mo, KInstruction *target, bool value_controllabe){
+void Executor::recordDereferenceLocationsToJson(ExecutionState &state,
+                                                ref<Expr> address,
+                                                const MemoryObject *mo,
+                                                KInstruction *target,
+                                                bool value_controllabe) {
   std::string moName;
   uint64_t offset;
-  unsigned width; 
-  switch(address.get()->getKind()){
-    case Expr::Concat:{
-      ConcatExpr* address_concat = dyn_cast<ConcatExpr>(address);
-      ReadExpr* left = dyn_cast<ReadExpr>(address_concat->getLeft());
-      moName = left->updates.root->name;
-      width = address_concat->getWidth();
-      if (ConstantExpr *index = dyn_cast<ConstantExpr>(left->index)){
-        offset = index->getZExtValue() + 1 - width/8;
-        break;
-      }else{
-        return;
-      }
-    }
-    case Expr::Read:{
-      ReadExpr* address_read = dyn_cast<ReadExpr>(address);
-      moName = address_read->updates.root->name;
-      width = 8;
-      if (ConstantExpr *index = dyn_cast<ConstantExpr>(address_read->index)){
-        offset = dyn_cast<ConstantExpr>(address_read->index)->getZExtValue();
-        break;
-      }else{
-        return;
-      }
-    }
-    default:
-      assert("FIXME in executeMemoryOperation(): Unprocessed expression types");
+  unsigned width;
+  switch (address.get()->getKind()) {
+  case Expr::Concat: {
+    ConcatExpr *address_concat = dyn_cast<ConcatExpr>(address);
+    ReadExpr *left = dyn_cast<ReadExpr>(address_concat->getLeft());
+    moName = left->updates.root->name;
+    width = address_concat->getWidth();
+    if (ConstantExpr *index = dyn_cast<ConstantExpr>(left->index)) {
+      offset = index->getZExtValue() + 1 - width / 8;
       break;
+    } else {
+      return;
     }
-
-    json j;
-    // std::vector<json> constraintsJson;
-
-    // ConstraintSet cs;
-    // ConstraintManager cm(cs);
-    // for (auto &constraint:state.addressConstraintsForTargetApp){
-    //   if (cm.containMo(constraint, moName)){
-    //     json constraintJson;
-    //     exprToJson(constraint, constraintJson);
-    //     constraintsJson.push_back(constraintJson);
-    //   }
-    // }
-
-    j["name"] = moName;
-    j["size"] = state.addressSpace.findMemoryObjectFromName(moName)->size;
-    // j["dereference location"] = {{"name", moName}, {"offset", offset}, {"width", width}, {"constraints", constraintsJson}}; 
-    j["dereference location"] = {{"name", moName}, {"offset", offset}, {"value_controllable",value_controllabe},{"width", width}, {"point to", mo->name}};
-    j["line"] = target->info->line;
-    std::string filename = dereference_location_file+"_"+moName+".json";
-    std::ofstream file(filename);
-    klee_debug_message(filename.c_str());
-    if (file.is_open()){
-      file << std::setw(4) << j;
-    }else{
-      assert("Cannot open the file");
+  }
+  case Expr::Read: {
+    ReadExpr *address_read = dyn_cast<ReadExpr>(address);
+    moName = address_read->updates.root->name;
+    width = 8;
+    if (ConstantExpr *index = dyn_cast<ConstantExpr>(address_read->index)) {
+      offset = dyn_cast<ConstantExpr>(address_read->index)->getZExtValue();
+      break;
+    } else {
+      return;
     }
-    file.close();
+  }
+  default:
+    assert("FIXME in executeMemoryOperation(): Unprocessed expression types");
+    break;
+  }
+
+  json j;
+  // std::vector<json> constraintsJson;
+
+  // ConstraintSet cs;
+  // ConstraintManager cm(cs);
+  // for (auto &constraint:state.addressConstraintsForTargetApp){
+  //   if (cm.containMo(constraint, moName)){
+  //     json constraintJson;
+  //     exprToJson(constraint, constraintJson);
+  //     constraintsJson.push_back(constraintJson);
+  //   }
+  // }
+
+  j["name"] = moName;
+  j["size"] = state.addressSpace.findMemoryObjectFromName(moName)->size;
+  // j["dereference location"] = {{"name", moName}, {"offset", offset},
+  // {"width", width}, {"constraints", constraintsJson}};
+  j["dereference location"] = {{"name", moName},
+                               {"offset", offset},
+                               {"value_controllable", value_controllabe},
+                               {"width", width},
+                               {"point to", mo->name}};
+  j["line"] = target->info->line;
+  std::string filename = dereference_location_file + "_" + moName + ".json";
+  std::ofstream file(filename);
+  klee_debug_message(filename.c_str());
+  if (file.is_open()) {
+    file << std::setw(4) << j;
+  } else {
+    assert("Cannot open the file");
+  }
+  file.close();
 }
 
-
-bool Executor::recordWritableLocationsToJson(ExecutionState &state, const MemoryObject *mo, 
-uint64_t address_offset, Expr::Width width, bool value_controllabe){
+bool Executor::recordWritableLocationsToJson(ExecutionState &state,
+                                             const MemoryObject *mo,
+                                             uint64_t address_offset,
+                                             Expr::Width width,
+                                             bool value_controllabe) {
   std::string moName = mo->name;
   // uint64_t offset;
-  // unsigned width; 
+  // unsigned width;
   json j;
   // getExprInfo(address,moName,offset,width);
-  std::string filename = description_file+"_"+test_target_name+"_"+std::to_string(state.id)+"_"+moName+".json";
+  std::string filename = description_file + "_" + test_target_name + "_" +
+                         std::to_string(state.id) + "_" + moName + ".json";
   std::ifstream inFile(filename);
   if (inFile.is_open()) {
     inFile >> j;
@@ -6746,12 +6888,12 @@ uint64_t address_offset, Expr::Width width, bool value_controllabe){
   } else {
     assert("Cannot open the file");
   }
-  std::vector<json> constraintsJson;  
-          
+  std::vector<json> constraintsJson;
+
   ConstraintSet cs;
   ConstraintManager cm(cs);
-  for (auto &constraint:state.addressConstraintsForTargetApp){
-    if (cm.containMo(constraint, moName)){
+  for (auto &constraint : state.addressConstraintsForTargetApp) {
+    if (cm.containMo(constraint, moName)) {
       json constraintJson;
       exprToJson(constraint, constraintJson);
       constraintsJson.push_back(constraintJson);
@@ -6760,33 +6902,40 @@ uint64_t address_offset, Expr::Width width, bool value_controllabe){
 
   uint64_t id = 0;
   // Lookup the last id
-  std::string writableKey = "writable location "+std::to_string(id);
-  while(j.count(writableKey)>0){
+  std::string writableKey = "writable location " + std::to_string(id);
+  while (j.count(writableKey) > 0) {
     id++;
-    writableKey = "writable location "+std::to_string(id);
+    writableKey = "writable location " + std::to_string(id);
   }
   j["name"] = moName;
-  j["size"] = mo->size;                
-  j[writableKey] = {{"offset_in_mo", address_offset}, {"width", width},{"value_controllable", value_controllabe}, {"constraints", constraintsJson} }; 
-          
+  j["size"] = mo->size;
+  j[writableKey] = {{"offset_in_mo", address_offset},
+                    {"width", width},
+                    {"value_controllable", value_controllabe},
+                    {"constraints", constraintsJson}};
+
   std::ofstream file(filename);
   klee_debug_message(filename.c_str());
-  if (file.is_open()){
+  if (file.is_open()) {
     file << std::setw(4) << j;
-  }else{
+  } else {
     assert("Cannot open the file");
   }
   file.close();
 }
 
-void Executor::recordReadableLocationToJson(ExecutionState &state, const MemoryObject *mo, uint64_t offset, Expr::Width width){
+void Executor::recordReadableLocationToJson(ExecutionState &state,
+                                            const MemoryObject *mo,
+                                            uint64_t offset,
+                                            Expr::Width width) {
   std::string moName = mo->name;
   // std::string moName="";
   // uint64_t offset=0;
   // unsigned width=0;
-  std::vector<json> constraintsJson; 
-  // Expr::Kind k = getExprInfo(value, moName, offset, width); 
-  std::string filename = description_file+"_"+std::to_string(state.id)+"_"+moName+".json";
+  std::vector<json> constraintsJson;
+  // Expr::Kind k = getExprInfo(value, moName, offset, width);
+  std::string filename = description_file + "_" + std::to_string(state.id) +
+                         "_" + moName + ".json";
   std::ifstream inFile(filename);
   json j;
   if (inFile.is_open()) {
@@ -6796,68 +6945,78 @@ void Executor::recordReadableLocationToJson(ExecutionState &state, const MemoryO
     assert("Cannot open the file");
   }
   // Check if the location has been record before
-  if(readableLocationRecord.find(make_pair(moName,offset))!=readableLocationRecord.end()){
+  if (readableLocationRecord.find(make_pair(moName, offset)) !=
+      readableLocationRecord.end()) {
     return;
   }
   ConstraintSet cs;
   ConstraintManager cm(cs);
-  for (auto &constraint:state.addressConstraintsForTargetApp){
-    if (cm.containMo(constraint, moName)){
+  for (auto &constraint : state.addressConstraintsForTargetApp) {
+    if (cm.containMo(constraint, moName)) {
       json constraintJson;
       exprToJson(constraint, constraintJson);
       constraintsJson.push_back(constraintJson);
     }
   }
-  j["readable location "+std::to_string(readable_location_id)] = {{"name", moName}, {"offset_in_mo", offset}, {"width", width}, {"constraints", constraintsJson} }; 
+  j["readable location " + std::to_string(readable_location_id)] = {
+      {"name", moName},
+      {"offset_in_mo", offset},
+      {"width", width},
+      {"constraints", constraintsJson}};
   std::ofstream outFile(filename);
   klee_debug_message(filename.c_str());
-  if (outFile.is_open()){
+  if (outFile.is_open()) {
     outFile << std::setw(4) << j;
-  }else{
+  } else {
     assert("Cannot open the file");
   }
   outFile.close();
   readable_location_id++;
 }
 
-
-
-void Executor::detectInformationLeak(ExecutionState &state, ref<Expr> &address, ref<Expr> &value, KInstruction *target){
+void Executor::detectInformationLeak(ExecutionState &state, ref<Expr> &address,
+                                     ref<Expr> &value, KInstruction *target) {
   ref<Expr> address_test = address;
   uint64_t address_offset;
   // Convert the concrete address to it symbolic expression
   // TODO: only symbolic expression for base address now
-  if(ConstantExpr *CE = dyn_cast<ConstantExpr>(address)){
-          std::pair<MemoryObject*, uint64_t> mo_pair = state.addressSpace.findMemoryObject(CE);
-          address_test = state.addressSpace.getOriginalExprFromMo(mo_pair.first);
-          address_offset = mo_pair.second;
-          assert(address_test && "FIX ME: find mo with no existing record");
+  if (ConstantExpr *CE = dyn_cast<ConstantExpr>(address)) {
+    std::pair<MemoryObject *, uint64_t> mo_pair =
+        state.addressSpace.findMemoryObject(CE);
+    address_test = state.addressSpace.getOriginalExprFromMo(mo_pair.first);
+    address_offset = mo_pair.second;
+    assert(address_test && "FIX ME: find mo with no existing record");
   }
-  if(ConstantExpr *CE = dyn_cast<ConstantExpr>(address_test)){
+  if (ConstantExpr *CE = dyn_cast<ConstantExpr>(address_test)) {
     return;
   }
 
   // There is an Information leak vulnerability when it satisfy two conditions.
-  // 1. The value is extracted from a lazy initialized memory object && the address points to the user space
-  // 2. The lazy initialized memory object is controllable (the location is determined by the attacker)
+  // 1. The value is extracted from a lazy initialized memory object && the
+  // address points to the user space
+  // 2. The lazy initialized memory object is controllable (the location is
+  // determined by the attacker)
 
-  // If the value is a concrete value, there could be an information leak vulnerability.
-  // However, we cannot handle this case due to the complicated propogation related to that value.
-  value.get()->dump();
-  if(isa<ConstantExpr>(value)){
-    // If it is a concrete value, then check if it is an pointer of an initialized memory object
+  // If the value is a concrete value, there could be an information leak
+  // vulnerability. However, we cannot handle this case due to the complicated
+  // propogation related to that value.
+  if (isa<ConstantExpr>(value)) {
+    // If it is a concrete value, then check if it is an pointer of an
+    // initialized memory object
     ConstantExpr *CE = dyn_cast<ConstantExpr>(value);
-    std::pair<MemoryObject*, uint64_t> mo_pair = state.addressSpace.findMemoryObject(CE);
-    if(mo_pair.first == NULL){
+    std::pair<MemoryObject *, uint64_t> mo_pair =
+        state.addressSpace.findMemoryObject(CE);
+    if (mo_pair.first == NULL) {
       return;
-    }else{
+    } else {
       // Check if the pointer is belong to an lazy initialized memory object
       // TODO
       return;
     }
   }
 
-  // The value is a symbol, then we check if the symbol is belong to a initialized memory object
+  // The value is a symbol, then we check if the symbol is belong to a
+  // initialized memory object
   // TODO, Is it complete?
   // std::string moName="";
   // uint64_t offset=0;
@@ -6872,203 +7031,241 @@ void Executor::detectInformationLeak(ExecutionState &state, ref<Expr> &address, 
   //   vulnerabilityReport(report_str, target);
   // }
   bool value_controllable = false;
-  bool address_test_result = false;
-  uint64_t desired_address_start=ATTACK_CAPABILITY_REGION_START;
-  uint64_t desired_address_end=ATTACK_CAPABILITY_REGION_END;
-  bool success = false;
 
+
+
+  bool address_test_result = false;
+  uint64_t desired_address_start = ATTACK_CAPABILITY_REGION_START;
+  uint64_t desired_address_end = ATTACK_CAPABILITY_REGION_END;
+  bool success = false;
+  // We identify the READLSB expression by the "isa<ConcatExpr>" 
   std::string value_name = value.get()->dump1();
-  if(value_name.find("lazy_alloc")==std::string::npos){
-      value_controllable=true;
+  if (isa<ConcatExpr>(value) && value_name.find("controllable") != std::string::npos) {
+    value_controllable = true;
   }
-  if(value_controllable == false){
+  if (value_controllable == false) {
     return;
   }
   // Check if the pointing address is inside the user space.
   success = solver->mayBeTrue(
-        state.addressConstraintsForTargetApp,
-        UgeExpr::create(address_test, ConstantExpr::create(desired_address_start, address_test->getWidth())),
-        address_test_result, state.queryMetaData);
-        assert(success && "FIXME: Unhandled solver failure");
+      state.addressConstraintsForTargetApp,
+      UgeExpr::create(address_test,
+                      ConstantExpr::create(desired_address_start,
+                                           address_test->getWidth())),
+      address_test_result, state.queryMetaData);
+  assert(success && "FIXME: Unhandled solver failure");
 
-  //If so, then we check if address < desired_address_end has a solution
-  if(address_test_result){
+  // If so, then we check if address < desired_address_end has a solution
+  if (address_test_result) {
     success = solver->mayBeTrue(
-    state.addressConstraintsForTargetApp,
-    UleExpr::create(address_test,ConstantExpr::create(desired_address_end, address_test->getWidth())),
-    address_test_result, state.queryMetaData);
+        state.addressConstraintsForTargetApp,
+        UleExpr::create(address_test,
+                        ConstantExpr::create(desired_address_end,
+                                             address_test->getWidth())),
+        address_test_result, state.queryMetaData);
   }
   assert(success && "FIXME: Unhandled solver failure");
+  bool has_semantic_check = hasSemanticCheck(state);
   
-  if(address_test_result){
-    std::string report_str = "Information leak vulnerability";
-    //recordReadableLocationToJson(state, mo, offset, width);
-    vulnerabilityReport(report_str, target);
+  if (address_test_result) {
+    if (!has_semantic_check) {
+      std::string report_str = "Information leak vulnerability";
+      // recordReadableLocationToJson(state, mo, offset, width);
+      // dump the address and value
+      vulnerabilityReport(report_str, target);
+      klee_test_info("Information leak vulnerability");
+    } else {
+      std::string report_str = "Limited information leak vulnerability";
+      vulnerabilityReport(report_str, target);
+    }
   }
 }
 
-// Detect pointers that is unintialized before dereferencing, 
+// Detect pointers that is unintialized before dereferencing,
 // e.g., uninitialized gobal pointers, unintialzied pointer parameter
-void Executor::detectUnintializedPointersDereferencing(ExecutionState &state, ref<Expr> &address, KInstruction *target){
+void Executor::detectUnintializedPointersDereferencing(ExecutionState &state,
+                                                       ref<Expr> &address,
+                                                       KInstruction *target) {
   // Note, the address is pointing to lazy intialized memory objects.
   ref<Expr> address_test = address;
   uint64_t address_offset;
   // Convert the concrete address to it symbolic expression
   // TODO: only symbolic expression for base address now
-  if(ConstantExpr *CE = dyn_cast<ConstantExpr>(address)){
-      std::pair<MemoryObject*, uint64_t> mo_pair = state.addressSpace.findMemoryObject(CE);
-      address_test = state.addressSpace.getOriginalExprFromMo(mo_pair.first);
-      address_offset = mo_pair.second;
-      assert(address && "FIX ME: find mo with no existing record");
-
+  if (ConstantExpr *CE = dyn_cast<ConstantExpr>(address)) {
+    std::pair<MemoryObject *, uint64_t> mo_pair =
+        state.addressSpace.findMemoryObject(CE);
+    address_test = state.addressSpace.getOriginalExprFromMo(mo_pair.first);
+    address_offset = mo_pair.second;
+    assert(address && "FIX ME: find mo with no existing record");
   }
 }
-bool Executor::getMoControllableInfo(ExecutionState &state, const MemoryObject* mo){
-      bool address_controllable = state.addressSpace.pointer_of_mo_controllable_info[mo];
-      // Update the controllable info
-      // if (address_controllable && state.addressSpace.mo_controllable_info[mo].second){
-      //   address_controllable = isControllableAddress(state, state.addressSpace.mo_controllable_info[mo].second);
-      //   if (!address_controllable)
-      //     state.addressSpace.pointer_of_mo_controllable_info[mo] = address_controllable;
-      //     state.addressSpace.mo_controllable_info[mo].first = address_controllable;
-      // }
-      //
-      if (address_controllable && state.addressSpace.mo_controllable_info[mo].second){
-        ObjectPair pointerOP;
-        bool needBound;
-        ref<Expr> pointerAddress = state.addressSpace.mo_controllable_info[mo].second;
-        bool success = state.addressSpace.lazyResolve(state, solver, pointerAddress, pointerOP, needBound);
-        if (!success){
-          klee_debug_message("DEBUG: lazyResolve failed to resolve the pointer mo");
-        }
 
-        // check whether pointer MO is still controllable 
-        const MemoryObject *pointerMo = pointerOP.first;
-        getMoControllableInfo(state, pointerMo);
 
-        // After updating the controllable info of pointer Mo, 
-        // check whether MO is still controllable
-        if (state.addressSpace.mo_controllable_info[pointerMo].first){
-          ref<Expr> moExpr = state.addressSpace.getOriginalExprFromMo(const_cast<MemoryObject*>(mo));
-          state.addressSpace.mo_controllable_info[mo].first = isControllableAddress(state, moExpr);
-        }else{
-          state.addressSpace.pointer_of_mo_controllable_info[mo] = false;
-          state.addressSpace.mo_controllable_info[mo].first = false;
-        }
-        address_controllable = state.addressSpace.pointer_of_mo_controllable_info[mo];
-      }
-      if (address_controllable && !state.addressSpace.mo_controllable_info[mo].second){
-        ref<Expr> moExpr = state.addressSpace.getOriginalExprFromMo(const_cast<MemoryObject*>(mo));
-        state.addressSpace.mo_controllable_info[mo].first = isControllableAddress(state, moExpr);
-      }
-      return address_controllable;
+
+bool Executor::getMoControllableInfo(ExecutionState &state,
+                                     const MemoryObject *mo) {
+  bool address_controllable =
+      state.addressSpace.pointer_of_mo_controllable_info[mo];
+  // Update the controllable info
+  // if (address_controllable &&
+  // state.addressSpace.mo_controllable_info[mo].second){
+  //   address_controllable = isControllableAddress(state,
+  //   state.addressSpace.mo_controllable_info[mo].second); if
+  //   (!address_controllable)
+  //     state.addressSpace.pointer_of_mo_controllable_info[mo] =
+  //     address_controllable; state.addressSpace.mo_controllable_info[mo].first
+  //     = address_controllable;
+  // }
+  //
+  if (address_controllable &&
+      state.addressSpace.mo_controllable_info[mo].second) {
+    ObjectPair pointerOP;
+    bool needBound;
+    ref<Expr> pointerAddress =
+        state.addressSpace.mo_controllable_info[mo].second;
+    bool success = state.addressSpace.lazyResolve(state, solver, pointerAddress,
+                                                  pointerOP, needBound);
+    if (!success) {
+      klee_debug_message("DEBUG: lazyResolve failed to resolve the pointer mo");
+    }
+
+    // check whether pointer MO is still controllable
+    const MemoryObject *pointerMo = pointerOP.first;
+    getMoControllableInfo(state, pointerMo);
+
+    // After updating the controllable info of pointer Mo,
+    // check whether MO is still controllable
+    if (state.addressSpace.mo_controllable_info[pointerMo].first) {
+      ref<Expr> moExpr = state.addressSpace.getOriginalExprFromMo(
+          const_cast<MemoryObject *>(mo));
+      state.addressSpace.mo_controllable_info[mo].first =
+          isControllableAddress(state, moExpr);
+    } else {
+      state.addressSpace.pointer_of_mo_controllable_info[mo] = false;
+      state.addressSpace.mo_controllable_info[mo].first = false;
+    }
+    address_controllable =
+        state.addressSpace.pointer_of_mo_controllable_info[mo];
+  }
+  if (address_controllable &&
+      !state.addressSpace.mo_controllable_info[mo].second) {
+    ref<Expr> moExpr = state.addressSpace.getOriginalExprFromMo(
+        const_cast<MemoryObject *>(mo));
+    state.addressSpace.mo_controllable_info[mo].first =
+        isControllableAddress(state, moExpr);
+  }
+  return address_controllable;
 }
-void Executor::vulnerabilityReport(std::string report_str, KInstruction *target){
-  std::string currentVulnerabilityInfo =
-              target->info->file + ":" + std::to_string(target->info->line);
-          auto it = testInfoRecordSet.find(currentVulnerabilityInfo);
-          if (it == testInfoRecordSet.end()) {
-            testInfoRecordSet.insert(currentVulnerabilityInfo);
-            klee_test_info("Error: %s"
-                          "on file %s: line %d. ",report_str.c_str(),
-                            target->info->file.c_str(),
-                          target->info->line);
-          }
-
+void Executor::vulnerabilityReport(std::string report_str,
+                                   KInstruction *target) {
+  std::string currentVulnerabilityInfo = report_str + " " + target->info->file + ":" + std::to_string(target->info->line);
+  auto it = testInfoRecordSet.find(currentVulnerabilityInfo);
+  if (it == testInfoRecordSet.end()) {
+    testInfoRecordSet.insert(currentVulnerabilityInfo);
+    klee_test_info("Error: %s"
+                   "on file %s: line %d. ",
+                   report_str.c_str(), target->info->file.c_str(),
+                   target->info->line);
+  }
 }
 
-void Executor::unitializedPointerDereferenceReport(KInstruction *target){
-  std::string report_str = "Uninitialized pointer dereferencing!! Found a unresolved constant address";
+void Executor::unitializedPointerDereferenceReport(KInstruction *target) {
+  std::string report_str = "Uninitialized pointer dereferencing!!";
   vulnerabilityReport(report_str, target);
 }
 
-
 // We test if the pointer pointing to mo1 can pointing to mo2 or partial of mo2.
 
-bool Executor::canPointToOtherMemoryObject(ExecutionState &state, MemoryObjectV2 &moV2, json &j){
-  const MemoryObject* mo = state.addressSpace.getMoFromName(moV2.name);
+bool Executor::canPointToOtherMemoryObject(ExecutionState &state,
+                                           MemoryObjectV2 &moV2, json &j) {
+  const MemoryObject *mo = state.addressSpace.getMoFromName(moV2.name);
   ConstraintSet moV2Cs;
-  // FIX ME HERE. do we need to distinguish locations and constraints from different paths?
-  // get all constraints of writable locations in moV2
-  for (auto location: moV2.locations){
+  // FIX ME HERE. do we need to distinguish locations and constraints from
+  // different paths? get all constraints of writable locations in moV2
+  for (auto location : moV2.locations) {
     ConstraintSet::const_iterator begin = location.cs.begin();
     ConstraintSet::const_iterator end = location.cs.end();
     ConstraintSet::const_iterator oi = end;
 
-    while(oi != begin){
+    while (oi != begin) {
       oi--;
       moV2Cs.push_back(*oi);
     }
   }
 
   uint64_t mo1Size = j["size"];
-  for(uint64_t ptrOffset=0; ptrOffset<moV2.size+mo1Size; ptrOffset++){
+  for (uint64_t ptrOffset = 0; ptrOffset < moV2.size + mo1Size; ptrOffset++) {
     uint64_t relativeOffset = ptrOffset - mo1Size;
-    bool isUnderflow = (relativeOffset > ptrOffset)? true : false;
+    bool isUnderflow = (relativeOffset > ptrOffset) ? true : false;
 
     int locationCount = 0;
-    std::string locationKey = "writable location " + llvm::utostr(locationCount);
-    while(j.count(locationKey)>0){
+    std::string locationKey =
+        "writable location " + llvm::utostr(locationCount);
+    while (j.count(locationKey) > 0) {
       uint64_t offset = j[locationKey]["offset_in_mo"];
       Expr::Width size = j[locationKey]["width"];
       // const ObjectState *os = state.addressSpace.findObject(mo);
-      // if(!const_cast<ObjectState *>(os)->isRecordMaskAllSet(offset+ptrOffset, size/8))
+      // if(!const_cast<ObjectState *>(os)->isRecordMaskAllSet(offset+ptrOffset,
+      // size/8))
       //   break;
-      
+
       ConstraintSet cs = moV2Cs;
-      // matchRes & conflictRes need to be initialized considering that a writable location has no constraint
+      // matchRes & conflictRes need to be initialized considering that a
+      // writable location has no constraint
       bool matchRes = true;
       bool conflictRes = false;
-      for (auto &constraintJson: j[locationKey]["constraints"]){
-        ref<Expr> constraint = jsonToExpr(state, mo, j["name"], relativeOffset, constraintJson, isUnderflow, false, true, &matchRes);
-        if (!constraint){
+      for (auto &constraintJson : j[locationKey]["constraints"]) {
+        ref<Expr> constraint =
+            jsonToExpr(state, mo, j["name"], relativeOffset, constraintJson,
+                       isUnderflow, false, true, &matchRes);
+        if (!constraint) {
           klee_second_test_info("The constaint exceeds the mo range: %s.",
                                 constraintJson.dump(4).c_str());
-          
         }
         if (matchRes == false)
           break;
-        
+
         // determine that there are no constraint conflicts
-        bool success = solver->mustBeFalse(cs, constraint, conflictRes, state.queryMetaData);
-        if(conflictRes == true)
+        bool success = solver->mustBeFalse(cs, constraint, conflictRes,
+                                           state.queryMetaData);
+        if (conflictRes == true)
           break;
         cs.push_back(constraint);
       }
-      if(matchRes && !conflictRes){
+      if (matchRes && !conflictRes) {
         // FIX ME HERE. is getInitialValues() suitable to detect the overlapping
         std::vector<std::vector<unsigned char>> values;
         std::vector<const Array *> objects;
         for (unsigned i = 0; i != state.symbolics.size(); ++i)
           objects.push_back(state.symbolics[i].second);
-        bool isSatisfied = solver->getInitialValues(cs, objects, values,
-                                                    state.queryMetaData);
-        if(isSatisfied){
-          klee_debug_message("The offset is :%d", ptrOffset-mo1Size);
-          klee_test_info("The offset is :%d", ptrOffset-mo1Size);
+        bool isSatisfied =
+            solver->getInitialValues(cs, objects, values, state.queryMetaData);
+        if (isSatisfied) {
+          klee_debug_message("The offset is :%d", ptrOffset - mo1Size);
+          klee_test_info("The offset is :%d", ptrOffset - mo1Size);
           return true;
-        }else{
+        } else {
           // because locationKey will not be changed after continue statement
           locationKey = "writable location " + llvm::utostr(++locationCount);
           continue;
         }
       }
-    locationKey = "writable location " + llvm::utostr(++locationCount);
+      locationKey = "writable location " + llvm::utostr(++locationCount);
     }
   }
 
   return false;
 }
 
-// Test if the constraint in srcMo can be satified in dstMo in the case they overlap with a certain offset.
-// bool Executor::constraintSolve(ExecutionState &state, KInstruction *target, ConstrainsSet &cs, MemoryObjectV2 &srcMo, MemoryObjectV2 &dstMo, usize_t offset){
-    
+// Test if the constraint in srcMo can be satified in dstMo in the case they
+// overlap with a certain offset. bool Executor::constraintSolve(ExecutionState
+// &state, KInstruction *target, ConstrainsSet &cs, MemoryObjectV2 &srcMo,
+// MemoryObjectV2 &dstMo, usize_t offset){
+
 //     // Convert the constraints
 //     constrainsConvert();
 
 //     //Solve the constraints
-
-
 
 //   std::string name = j["dereference location"]["name"];
 //   uint64_t relativeOffset = j["dereference location"]["offset"];
@@ -7077,9 +7274,10 @@ bool Executor::canPointToOtherMemoryObject(ExecutionState &state, MemoryObjectV2
 
 //   std::vector<ref<Expr>> constraints;
 //   for (auto &constraintJson: j["constraints"]){
-//     ref<Expr> constraint = jsonToExpr(state, mo, name, relativeOffset, constraintJson, isUnderflow);
-//     if (!constraint){
-//       klee_second_test_info("The constaint exceeds the mo range %s: . The second test terminates",
+//     ref<Expr> constraint = jsonToExpr(state, mo, name, relativeOffset,
+//     constraintJson, isUnderflow); if (!constraint){
+//       klee_second_test_info("The constaint exceeds the mo range %s: . The
+//       second test terminates",
 //                             constraintJson.dump(4).c_str());
 //       return false;
 //     }
@@ -7093,19 +7291,18 @@ bool Executor::canPointToOtherMemoryObject(ExecutionState &state, MemoryObjectV2
 //                            mayBeTrue, state.queryMetaData);
 //     assert(success && "FIXME: Unhandled solver failure");
 
-
 //   }
 //   return true;
-    
+
 // }
 
-MemoryObjectV2* Executor::jsonToMoV2(ExecutionState &state, json j){
+MemoryObjectV2 *Executor::jsonToMoV2(ExecutionState &state, json j) {
   MemoryObjectV2 *moV2 = new MemoryObjectV2();
-  //read json
-  
+  // read json
+
   moV2->size = j["size"];
   // Initialize the locations
-  // We assume the location is 
+  // We assume the location is
   // "offset": a,
   // "constraints":[
   //   "constraint1": "Eq (Read alloc2 8 32) 0"
@@ -7116,57 +7313,56 @@ MemoryObjectV2* Executor::jsonToMoV2(ExecutionState &state, json j){
   bool isLocal = false;
   const llvm::Value *allocSite = state.prevPC->inst;
   size_t allocationAlignment = 8;
-  mo = memory->allocate(moV2->size, isLocal, 1, allocSite,
-                        allocationAlignment);
+  mo = memory->allocate(moV2->size, isLocal, 1, allocSite, allocationAlignment);
   // ObjectState *os = NULL;
   if (!mo) {
-    terminateStateOnError(
-        state, "FIX ME: Allocate MO failed",
-        StateTerminationType::Ptr);
+    terminateStateOnError(state, "FIX ME: Allocate MO failed",
+                          StateTerminationType::Ptr);
   } else {
     ObjectState *os = bindObjectInState(state, mo, isLocal);
     os->initializeToZero();
   }
   // FIX ME HERE. naming issues
-  std::string name =
-      "V2MoAlloc" + llvm::utostr(++V2allocNameCount); 
-  //klee_debug_message("DEBUG: Memory object V2 alloc name: %s",name.c_str());
+  std::string name = "V2MoAlloc" + llvm::utostr(++V2allocNameCount);
+  // klee_debug_message("DEBUG: Memory object V2 alloc name: %s",name.c_str());
   executeMakeSymbolic(state, mo, name);
   state.addressSpace.record.push_back(mo);
   // mo->name = name;
   moV2->name = name;
-   
+
   // Traverse the writable locations
   int locationCount = 0;
-  std:: string locationKey = "writable location " + llvm::utostr(locationCount);
-  while(j.count(locationKey)>0){
+  std::string locationKey = "writable location " + llvm::utostr(locationCount);
+  while (j.count(locationKey) > 0) {
     uint64_t offset = j[locationKey]["offset_in_mo"];
     Expr::Width size = j[locationKey]["width"];
 
     // make the writable location in mo symbolic
-    MemoryObject *newMo = memory->allocate(size, isLocal, 1, allocSite, allocationAlignment);
+    MemoryObject *newMo =
+        memory->allocate(size, isLocal, 1, allocSite, allocationAlignment);
     if (!newMo) {
-    terminateStateOnError(
-        state, "FIX ME: Allocate newMO in mo failed",
-        StateTerminationType::Ptr);
+      terminateStateOnError(state, "FIX ME: Allocate newMO in mo failed",
+                            StateTerminationType::Ptr);
     } else {
       ObjectState *nos = bindObjectInState(state, newMo, isLocal);
       nos->initializeToZero();
-    } 
+    }
     // FIX ME HERE. naming issues
-    std::string locationName = "locationAlloc" + llvm::utostr(++allocLocationCount);
+    std::string locationName =
+        "locationAlloc" + llvm::utostr(++allocLocationCount);
     executeMakeSymbolic(state, newMo, locationName);
     state.addressSpace.record.push_back(newMo);
 
     // After executeMakeSymbolic(), get the new objecstate
     const ObjectState *nos = state.addressSpace.findObject(newMo);
-    ref<Expr> value = nos->read(newMo->getOffsetExpr(newMo->getBaseExpr()), size);
+    ref<Expr> value =
+        nos->read(newMo->getOffsetExpr(newMo->getBaseExpr()), size);
     const ObjectState *os = state.addressSpace.findObject(mo);
     ObjectState *wos = state.addressSpace.getWriteable(mo, os);
     wos->write(offset, value);
 
-    // 
-    const_cast<ObjectState *>(os)->setRecordMask(offset, size/8);
+    //
+    const_cast<ObjectState *>(os)->setRecordMask(offset, size / 8);
 
     locationInMemoryObject locationInMo;
     locationInMo.offset = offset;
@@ -7175,33 +7371,34 @@ MemoryObjectV2* Executor::jsonToMoV2(ExecutionState &state, json j){
 
     // Traverse the constraints
     std::vector<ref<Expr>> constraints;
-    for (auto &constraintJson: j[locationKey]["constraints"]){
-      ref<Expr> constraint = jsonToExpr(state, mo, j["name"], 0, constraintJson, false, true);
-      if (!constraint){
-        klee_second_test_info("The constaint exceeds the mo range %s: . The second test teminates",
+    for (auto &constraintJson : j[locationKey]["constraints"]) {
+      ref<Expr> constraint =
+          jsonToExpr(state, mo, j["name"], 0, constraintJson, false, true);
+      if (!constraint) {
+        klee_second_test_info("The constaint exceeds the mo range %s: . The "
+                              "second test teminates",
                               constraintJson.dump(4).c_str());
         return NULL;
-      }  
+      }
       constraints.push_back(constraint);
     }
     locationInMo.cs = ConstraintSet(constraints);
     moV2->locations.push_back(locationInMo);
     locationKey = "writable location " + llvm::utostr(++locationCount);
-   }
-   
+  }
+
   return moV2;
 }
 
-
-
 // One json file corresponds to a MOv2
-// MemoryObjectV2* Executor::jsonToMoV2(ExecutionState &state, KInstruction *target, json j1, json j2){
+// MemoryObjectV2* Executor::jsonToMoV2(ExecutionState &state, KInstruction
+// *target, json j1, json j2){
 //   MemoryObjectV2* moV2 = new MemoryObjectV2();
 //   //read json
 //   moV2->name = j["moName"];
 //   moV2->size = j["size"];
 //   // Initialize the locations
-//   // We assume the location is 
+//   // We assume the location is
 //   // "offset": a,
 //   // "constraints":[
 //   //   "constraint1": "Eq (Read alloc2 8 32) 0"
@@ -7230,18 +7427,19 @@ MemoryObjectV2* Executor::jsonToMoV2(ExecutionState &state, json j){
 //       "V2MoAlloc" + llvm::utostr(++V2allocNameCount); // address->toString();
 //    klee_debug_message("DEBUG: Memory object V2 alloc name: %s",name.c_str());
 //    state.addressSpace.record.push_back(mo);
-   
+
 //    // Traverse the writable locations
 //    int locationCount = 0;
 //    while(json[locationKey].count>0){
 //     uint64_t size = json[locationKey]["size"];
-//     MemoryObject *newMo = memory->allocate(size, isLocal, 1, allocSite, allocationAlignment);
-//     ObjectState *nos = bindObjectInState(state, newMo, isLocal);
-//     nos->initializeToZero();
-//     std::string locationName = "locationAlloc" + llvm::utostr(++allocLocationCount);
+//     MemoryObject *newMo = memory->allocate(size, isLocal, 1, allocSite,
+//     allocationAlignment); ObjectState *nos = bindObjectInState(state, newMo,
+//     isLocal); nos->initializeToZero(); std::string locationName =
+//     "locationAlloc" + llvm::utostr(++allocLocationCount);
 //     executeMakeSymbolic(state, newMo, locationName);
 //     // TODO width
-//     ref<Expr> value = nos->read(newMo->getOffsetExpr(newMo->getBaseExpr()),sizeTODO);
+//     ref<Expr> value =
+//     nos->read(newMo->getOffsetExpr(newMo->getBaseExpr()),sizeTODO);
 //     ObjectState *wos = state.addressSpace.getWriteable(mo, os);
 //     wos->write(location.offset, value);
 //     // Traverse the constraints
@@ -7249,8 +7447,6 @@ MemoryObjectV2* Executor::jsonToMoV2(ExecutionState &state, json j){
 //     constraintKey = "writableLocation" + llvm::utostr(constraintsCount);
 //     while(json[locationKey][constraintKey].count>0){
 //       // Convert the constraints in json to KLEE
-
-
 
 //       constraintKey = "writableLocation" + llvm::utostr(++constraintsCount);
 //     }
@@ -7263,10 +7459,10 @@ MemoryObjectV2* Executor::jsonToMoV2(ExecutionState &state, json j){
 // }
 
 void Executor::runInterAnalysis(llvm::Function *f, int argc, char **argv,
-                         char **envp){
+                                char **envp) {
   klee_debug_message("in Inter analysis");
   std::vector<ref<Expr>> arguments;
-    // force deterministic initialization of memory objects
+  // force deterministic initialization of memory objects
   srand(1);
   srandom(1);
 
@@ -7352,13 +7548,19 @@ void Executor::runInterAnalysis(llvm::Function *f, int argc, char **argv,
 
   processTree = std::make_unique<PTree>(state);
 
-  //run(*state);
-  interAnalysisMain(*state,"/home/klee/klee_test/threadx_test/evaluation/jsonFilesPath.txt");
+  // run(*state);
+  interAnalysisMain(
+      *state, "/home/klee/klee_test/threadx_test/evaluation/jsonFilesPath.txt");
   return;
-  std::string jsonFlieName1 = "/home/klee/klee_test/inter-analysis-result/test-info-output/semaphore_ceiling_put/description_semaphore_ceiling_put_497_lazy_alloc1.json";
-  std::string jsonFlieName2 = "/home/klee/klee_test/inter-analysis-result/test-info-output/queue_create/description_queue_create_19_lazy_alloc1.json";
+  std::string jsonFlieName1 =
+      "/home/klee/klee_test/inter-analysis-result/test-info-output/"
+      "semaphore_ceiling_put/"
+      "description_semaphore_ceiling_put_497_lazy_alloc1.json";
+  std::string jsonFlieName2 =
+      "/home/klee/klee_test/inter-analysis-result/test-info-output/"
+      "queue_create/description_queue_create_19_lazy_alloc1.json";
   bool result = interAnalysis(*state, jsonFlieName1, jsonFlieName2);
-  klee_debug_message("DEBUG: Inter Analysis return %d",result);
+  klee_debug_message("DEBUG: Inter Analysis return %d", result);
   processTree = nullptr;
 
   // hack to clear memory objects
@@ -7372,117 +7574,170 @@ void Executor::runInterAnalysis(llvm::Function *f, int argc, char **argv,
     statsTracker->done();
 }
 
-typedef struct TestItem{
+typedef struct TestItem {
   std::string jsonFile;
   std::string apiName;
   std::string moName;
-}TestItem_t;
+} TestItem_t;
 
-void Executor::interAnalysisMain(ExecutionState &state, std::string filePath){
+void Executor::interAnalysisMain(ExecutionState &state, std::string filePath) {
   std::vector<TestItem_t> jsonFilesInfo;
   std::ifstream file(filePath);
   std::string line;
-      if (!file.is_open()) {
-          std::cerr << "Unable to open file" << filePath.c_str() << std::endl;
-          return;
-      }
-      while (std::getline(file, line)) {
-          klee_debug_message("DEBUG: read line :%s", line.c_str());
-          TestItem_t temp;
-          temp.jsonFile=line;
-          std::getline(file, line);
-          klee_debug_message("DEBUG: read line :%s", line.c_str());
-          temp.apiName=line;
-          std::getline(file, line);
-          klee_debug_message("DEBUG: read line :%s", line.c_str());
-          temp.moName=line;
-          jsonFilesInfo.push_back(temp);
-      }
-    // Second we try to process the inter analysis.
-    klee_debug_message("DEBUG: INTER ANALYSIS PROCESSING");
-    // Record the problemed APIs to filter the matching result.
-    std::set<std::string> isTested;
-    int total = jsonFilesInfo.size()*jsonFilesInfo.size();
-    int count = 0;
-    for(int i=0;i<jsonFilesInfo.size();i++){
-      for(int j=0; j<jsonFilesInfo.size();j++){
-        count++;
-        std::string testTag = jsonFilesInfo[i].apiName+jsonFilesInfo[j].apiName;
-        if(isTested.count(testTag)!=0){
-          continue;
-        }
-        ExecutionState *analysisState = state.branch();
-        addedStates.push_back(analysisState);
-        processTree->attach(state.ptreeNode, analysisState, &state, BranchType::NONE);
-        bool result = interAnalysis(*analysisState, jsonFilesInfo[i].jsonFile, jsonFilesInfo[j].jsonFile);
-        terminateState(*analysisState);
-        //klee_debug_message("DEBUG: Json file 1: %s", jsonFilesInfo[i].jsonFile.c_str());
-        //klee_debug_message("DEBUG: Json file 2: %s", jsonFilesInfo[j].jsonFile.c_str());
-        if(result){
-          //klee_debug_message("DEBUG: DETECT KERNEL MEMORY TAMPERING");
-          
-          klee_test_info(" DETECT KERNEL MEMORY TAMPERING: %s with %s\n \
-                          Json file1 :%s\n Json file2:%s\n",
-                          jsonFilesInfo[i].apiName.c_str(),
-                          jsonFilesInfo[j].apiName.c_str(),
-                          jsonFilesInfo[i].jsonFile.c_str(),
-                          jsonFilesInfo[j].jsonFile.c_str()
-                          );
-          isTested.insert(testTag);
-        }
-        
-        // Print the process
-        
-        double progress = static_cast<double>(count) / total;
-        klee_debug_message("DEBUG: Progress: %d%\r",static_cast<int>(progress * 100));
-      }
-    }
+  if (!file.is_open()) {
+    std::cerr << "Unable to open file" << filePath.c_str() << std::endl;
     return;
+  }
+  while (std::getline(file, line)) {
+    klee_debug_message("DEBUG: read line :%s", line.c_str());
+    TestItem_t temp;
+    temp.jsonFile = line;
+    std::getline(file, line);
+    klee_debug_message("DEBUG: read line :%s", line.c_str());
+    temp.apiName = line;
+    std::getline(file, line);
+    klee_debug_message("DEBUG: read line :%s", line.c_str());
+    temp.moName = line;
+    jsonFilesInfo.push_back(temp);
+  }
+  // Second we try to process the inter analysis.
+  klee_debug_message("DEBUG: INTER ANALYSIS PROCESSING");
+  // Record the problemed APIs to filter the matching result.
+  std::set<std::string> isTested;
+  int total = jsonFilesInfo.size() * jsonFilesInfo.size();
+  int count = 0;
+  for (int i = 0; i < jsonFilesInfo.size(); i++) {
+    for (int j = 0; j < jsonFilesInfo.size(); j++) {
+      count++;
+      std::string testTag = jsonFilesInfo[i].apiName + jsonFilesInfo[j].apiName;
+      if (isTested.count(testTag) != 0) {
+        continue;
+      }
+      ExecutionState *analysisState = state.branch();
+      addedStates.push_back(analysisState);
+      processTree->attach(state.ptreeNode, analysisState, &state,
+                          BranchType::NONE);
+      bool result = interAnalysis(*analysisState, jsonFilesInfo[i].jsonFile,
+                                  jsonFilesInfo[j].jsonFile);
+      terminateState(*analysisState);
+      // klee_debug_message("DEBUG: Json file 1: %s",
+      // jsonFilesInfo[i].jsonFile.c_str()); klee_debug_message("DEBUG: Json
+      // file 2: %s", jsonFilesInfo[j].jsonFile.c_str());
+      if (result) {
+        // klee_debug_message("DEBUG: DETECT KERNEL MEMORY TAMPERING");
+
+        klee_test_info(" DETECT KERNEL MEMORY TAMPERING: %s with %s\n \
+                          Json file1 :%s\n Json file2:%s\n",
+                       jsonFilesInfo[i].apiName.c_str(),
+                       jsonFilesInfo[j].apiName.c_str(),
+                       jsonFilesInfo[i].jsonFile.c_str(),
+                       jsonFilesInfo[j].jsonFile.c_str());
+        isTested.insert(testTag);
+      }
+
+      // Print the process
+
+      double progress = static_cast<double>(count) / total;
+      klee_debug_message("DEBUG: Progress: %d%\r",
+                         static_cast<int>(progress * 100));
+    }
+  }
+  return;
 }
 
-
-
-
-bool Executor::interAnalysis(ExecutionState &state, std::string jsonFlieName1, std::string jsonFlieName2){
-  json j1,j2;
+bool Executor::interAnalysis(ExecutionState &state, std::string jsonFlieName1,
+                             std::string jsonFlieName2) {
+  json j1, j2;
   std::ifstream file1(jsonFlieName1);
-  if (file1.is_open()){
-      file1 >> j1;
-  }else{
-        klee_error("Cannot open the file: %s", jsonFlieName1.c_str());
+  if (file1.is_open()) {
+    file1 >> j1;
+  } else {
+    klee_error("Cannot open the file: %s", jsonFlieName1.c_str());
   }
-      file1.close();
+  file1.close();
   std::ifstream file2(jsonFlieName2);
-  if (file2.is_open()){
-      file2 >> j2;
-  }else{
-        klee_error("Cannot open the file: %s", jsonFlieName2.c_str());
+  if (file2.is_open()) {
+    file2 >> j2;
+  } else {
+    klee_error("Cannot open the file: %s", jsonFlieName2.c_str());
   }
-      file2.close();
+  file2.close();
 
   MemoryObjectV2 *moV2 = jsonToMoV2(state, j2);
-  if(moV2 == NULL){
+  if (moV2 == NULL) {
     klee_debug_message("DEBUG: Can not convert json to MoV2");
     return false;
   }
-  
-  bool result = canPointToOtherMemoryObject(state,*moV2, j1);
-  
+
+  bool result = canPointToOtherMemoryObject(state, *moV2, j1);
+
   return result;
 }
 
-bool Executor::checkConstraints(ExecutionState &state){
+bool Executor::checkConstraints(ExecutionState &state) {
   ConstraintSet cs;
   ConstraintManager cm(cs);
-  for (auto &constraint:state.addressConstraintsForTargetApp){
+  for (auto &constraint : state.addressConstraintsForTargetApp) {
     std::string constraint_string = constraint.get()->dump1();
-    if (constraint_string.find("lazy_alloc")){
+    if (constraint_string.find("lazy_alloc")) {
       return true;
     }
   }
   return false;
 }
 
+bool Executor::testSymbolEqualValue(ExecutionState &state, ref<Expr> symbol, ref<Expr> value){
+  bool success = false;
+  bool result = false;
+  success = solver->mayBeTrue(
+    state.addressConstraintsForTargetApp,
+    EqExpr::create(symbol,
+                    value),
+    result, state.queryMetaData);
+  assert(success && "FIXME: Unhandled solver failure");
+  return result;
+}
+
+const MemoryObject* Executor::findMoWithName (ExecutionState &state, std::string &name){
+  for(auto mo : state.addressSpace.record){
+    if(mo->name == name){
+      return mo;
+    }
+  }
+  return NULL;
+}
 
 
+// TODO, here, we need to distinguish the check for the kenrel objects and the global objects.
+bool Executor::hasSemanticCheck(ExecutionState &state){
+  for(auto constraint : state.addressConstraintsForTargetApp){
+    std::string constraint_string = constraint->dump1();
+    std::vector<std::string> result = findSpecificString(constraint_string, "uncontrollable");
+    if(result.size() > 0){
+      for(auto res : result){
+        const MemoryObject *mo = findMoWithName(state, res);
+        if(mo != NULL){
+          if(mo->isGlobal){
+            klee_debug_message("DEBUG: Kernel Object has semantic check");
+            return true;
+          }
+        }
+      }
+    }
+  }
+  return false;
+}
 
+std::vector<std::string> Executor::findSpecificString(const std::string &input, const std::string &str) {
+    std::vector<std::string> result;
+    std::stringstream ss(input);
+    std::string word;
+
+    while (ss >> word) {
+        if (word.find(str) != std::string::npos) {
+            result.push_back(word);
+        }
+    }
+    
+    return result;
+}

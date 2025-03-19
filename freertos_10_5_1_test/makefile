@@ -1,7 +1,7 @@
 CC                    := clang
 
 BUILD_DIR             := ./build
-BUILD_EXTRA_DIR       := ./build_extra
+
 BUILD_DIR_ABS         := $(abspath $(BUILD_DIR))
 
 FREERTOS_DIR_REL      := ../test-rtos/freertos-10.5.1/Source
@@ -12,7 +12,7 @@ KERNEL_DIR            := ${FREERTOS_DIR}/
 #TARGET_DIR            := /home/klee/FreeRTOS-kernel-revision/portable/GCC/ARM_CM33_NTZ/non_secure
 
 
-KLEE_INCLUDE_DIR      := /home/xinhuishao/my-works/UCSE-RTOS/include/
+KLEE_INCLUDE_DIR      := /home/klee/klee_src/include/
 
 
 INCLUDE_DIRS          := -I.
@@ -41,14 +41,15 @@ SOURCE_FILES          += ${KERNEL_DIR}/portable/ThirdParty/GCC/Posix/utils/wait_
 
 BC_FILES              := $(SOURCE_FILES:%.c=$(BUILD_DIR)/%.bc)
 TEST_SOURCE_FILES     := $(wildcard test_files/*.c)
-TEST_BC_FILES         := $(TEST_SOURCE_FILES:.c=.test.bc)
+TEST_BC_DIR           := ./test_bc_files
+TEST_BC_FILES         := $(TEST_SOURCE_FILES:test_files/%.c=$(TEST_BC_DIR)/%.test.bc)
 # BC_FILES              += $(wildcard /home/klee/klee_build/runtime/POSIX/fd64_Release+Debug+Asserts.bc)
 # BC_FILES              += $(wildcard /home/klee/klee_build/runtime/POSIX/fd_init64_Release+Debug+Asserts.bc)
 # BC_FILES              += $(wildcard /home/klee/klee_build/runtime/POSIX/illegal64_Release+Debug+Asserts.bc)
 # BC_FILES              += $(wildcard /home/klee/klee_build/runtime/POSIX/klee_init_env64_Release+Debug+Asserts.bc)
 # BC_FILES              += $(wildcard /home/klee/klee_build/runtime/POSIX/stubs64_Release+Debug+Asserts.bc)
 
-CFLAGS                :=  -emit-llvm -c -g  
+CFLAGS                :=  -emit-llvm -c -g -O0 
 # CFLAGS                += --sysroot=/usr/lib/gcc/arm-none-eabi/6.3.1
 
 
@@ -87,10 +88,12 @@ $(BUILD_DIR)/%.bc : %.c
 	-mkdir -p $(@D)
 	$(CC) $(INCLUDE_DIRS) $(CFLAGS) $< -o $@
 
-%.test.bc : $(BC_FILES) %.bc
+$(TEST_BC_DIR)/%.test.bc : $(BC_FILES) test_files/%.bc
 	-mkdir -p ${@D}
-	llvm-link-18 $^ -o $@
+	llvm-link $^ -o $@
 
 
 clean:
-	rm -rf $(BUILD_DIR) $(TEST_BC_FILES) %.bc
+	rm -rf $(BUILD_DIR) $(TEST_BC_DIR) %.bc
+
+	

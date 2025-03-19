@@ -9,13 +9,9 @@
 
 #include <klee/klee.h>
 #include "wrappers.h"
-void vTaskFunction1( void *pvParameters )
-{
-    TaskHandle_t KLEE_xTask;
-    klee_make_symbolic_controllable(&KLEE_xTask, sizeof(KLEE_xTask), "KLEE_xTask", true);
-    UBaseType_t KLEE_uxNewPriority;
-    klee_make_symbolic_controllable(&KLEE_uxNewPriority, sizeof(KLEE_uxNewPriority), "KLEE_uxNewPriority", true);
-    MPU_vTaskPrioritySet(KLEE_xTask, KLEE_uxNewPriority);
+extern TaskHandle_t pxCurrentTCB;
+void vTaskFunction1();
+void vTaskFunction1(){
     assert(0);
 }
 
@@ -23,6 +19,12 @@ void vTaskFunction1( void *pvParameters )
 
 int main()
 {
-    xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, NULL);
+    TaskHandle_t initial_xTask;
+    xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, &initial_xTask);
+    TaskHandle_t KLEE_xTask;
+    klee_make_symbolic_controllable(&KLEE_xTask, sizeof(KLEE_xTask), "KLEE_kernel_xTask", true);
+    UBaseType_t KLEE_uxNewPriority;
+    klee_make_symbolic_controllable(&KLEE_uxNewPriority, sizeof(KLEE_uxNewPriority), "KLEE_uxNewPriority", true);
+    MPU_vTaskPrioritySet(KLEE_xTask, KLEE_uxNewPriority);
     return 0;
 }

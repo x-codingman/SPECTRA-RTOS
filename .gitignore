@@ -34,5 +34,12 @@ autoconf/aclocal.m4
 autoconf/autom4te.cache/
 autom4te.cache/
 
+# KLEE output
+test-rtos/freertos-10.5.1/symbolic_execution/
+test-rtos/freertos-10.6.0/symbolic_execution/
+test-rtos/threadx-5.3/symbolic_execution/
+test-rtos/tizenRT/
+test-rtos/tizenrt/
+
 # macOS files
 .DS_Store

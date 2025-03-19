@@ -9,13 +9,9 @@
 
 #include <klee/klee.h>
 #include "wrappers.h"
-void vTaskFunction1( void *pvParameters )
-{
-    TimerHandle_t KLEE_xTimer;
-    klee_make_symbolic_controllable(&KLEE_xTimer, sizeof(KLEE_xTimer), "KLEE_xTimer", true);
-    void * * KLEE_pvNewID;
-    klee_make_symbolic_controllable(&KLEE_pvNewID, sizeof(KLEE_pvNewID), "KLEE_pvNewID", true);
-    MPU_vTimerSetTimerID(KLEE_xTimer, KLEE_pvNewID);
+extern TaskHandle_t pxCurrentTCB;
+void vTaskFunction1();
+void vTaskFunction1(){
     assert(0);
 }
 
@@ -23,6 +19,12 @@ void vTaskFunction1( void *pvParameters )
 
 int main()
 {
-    xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, NULL);
+    TaskHandle_t initial_xTask;
+    xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, &initial_xTask);
+    TimerHandle_t KLEE_xTimer;
+    klee_make_symbolic_controllable(&KLEE_xTimer, sizeof(KLEE_xTimer), "KLEE_kernel_xTimer", true);
+    void * * KLEE_pvNewID;
+    klee_make_symbolic_controllable(&KLEE_pvNewID, sizeof(KLEE_pvNewID), "KLEE_pvNewID", true);
+    MPU_vTimerSetTimerID(KLEE_xTimer, KLEE_pvNewID);
     return 0;
 }

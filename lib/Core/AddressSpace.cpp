@@ -225,6 +225,9 @@ bool AddressSpace::lazyResolve(ExecutionState &state,
     // version 3
     // It is supposed that the solver can help get the memoryObject directly when the address is a difficult expression about array
     ref<ConstantExpr> cex;
+    // for(auto constraint : state.constraints){
+    //   constraint->dump();
+    // }
     if (!solver->getValue(state.constraints, address, cex, state.queryMetaData))
       return false;
     uint64_t example = cex->getZExtValue();
@@ -243,7 +246,7 @@ bool AddressSpace::lazyResolve(ExecutionState &state,
         if (!mustBeTrue){
           needBound = true;
           //printf("Error: out of bound pointer\n");
-          // klee_debug_message("ERROR: out of bound pointer");
+          klee_debug_message("ERROR: out of bound pointer");
         }
         result.first = res->first;
         result.second = res->second.get();

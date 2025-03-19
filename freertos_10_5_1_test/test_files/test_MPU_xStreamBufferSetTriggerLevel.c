@@ -9,13 +9,9 @@
 
 #include <klee/klee.h>
 #include "wrappers.h"
-void vTaskFunction1( void *pvParameters )
-{
-    StreamBufferHandle_t KLEE_xStreamBuffer;
-    klee_make_symbolic_controllable(&KLEE_xStreamBuffer, sizeof(KLEE_xStreamBuffer), "KLEE_xStreamBuffer", true);
-    size_t KLEE_xTriggerLevel;
-    klee_make_symbolic_controllable(&KLEE_xTriggerLevel, sizeof(KLEE_xTriggerLevel), "KLEE_xTriggerLevel", true);
-    MPU_xStreamBufferSetTriggerLevel(KLEE_xStreamBuffer, KLEE_xTriggerLevel);
+extern TaskHandle_t pxCurrentTCB;
+void vTaskFunction1();
+void vTaskFunction1(){
     assert(0);
 }
 
@@ -23,6 +19,14 @@ void vTaskFunction1( void *pvParameters )
 
 int main()
 {
-    xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, NULL);
+    TaskHandle_t initial_xTask;
+    xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, &initial_xTask);
+    StreamBufferHandle_t KLEE_xStreamBuffer;
+    klee_make_symbolic_controllable(&KLEE_xStreamBuffer, sizeof(KLEE_xStreamBuffer), "KLEE_kernel_xStreamBuffer", true);
+    size_t KLEE_xTriggerLevel;
+    klee_make_symbolic_controllable(&KLEE_xTriggerLevel, sizeof(KLEE_xTriggerLevel), "KLEE_xTriggerLevel", true);
+    BaseType_t KLEE_return_val;
+    klee_make_symbolic_controllable(&KLEE_return_val, sizeof(KLEE_return_val), "KLEE_return_val", true);
+    KLEE_return_val = MPU_xStreamBufferSetTriggerLevel(KLEE_xStreamBuffer, KLEE_xTriggerLevel);
     return 0;
 }

@@ -9,8 +9,18 @@
 
 #include <klee/klee.h>
 #include "wrappers.h"
-void vTaskFunction1( void *pvParameters )
+extern TaskHandle_t pxCurrentTCB;
+void vTaskFunction1();
+void vTaskFunction1(){
+    assert(0);
+}
+
+#define STACK_SIZE 1000
+
+int main()
 {
+    TaskHandle_t initial_xTask;
+    xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, &initial_xTask);
     const char * const * KLEE_pcTimerName;
     klee_make_symbolic_controllable(&KLEE_pcTimerName, sizeof(KLEE_pcTimerName), "KLEE_pcTimerName", true);
     const TickType_t KLEE_xTimerPeriodInTicks;
@@ -23,14 +33,8 @@ void vTaskFunction1( void *pvParameters )
     klee_make_symbolic_controllable(&KLEE_pxCallbackFunction, sizeof(KLEE_pxCallbackFunction), "KLEE_pxCallbackFunction", true);
     StaticTimer_t * * KLEE_pxTimerBuffer;
     klee_make_symbolic_controllable(&KLEE_pxTimerBuffer, sizeof(KLEE_pxTimerBuffer), "KLEE_pxTimerBuffer", true);
-    MPU_xTimerCreateStatic(KLEE_pcTimerName, KLEE_xTimerPeriodInTicks, KLEE_uxAutoReload, KLEE_pvTimerID, KLEE_pxCallbackFunction, KLEE_pxTimerBuffer);
-    assert(0);
-}
-
-#define STACK_SIZE 1000
-
-int main()
-{
-    xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, NULL);
+    TimerHandle_t KLEE_return_val;
+    klee_make_symbolic_controllable(&KLEE_return_val, sizeof(KLEE_return_val), "KLEE_kernel_return_val", true);
+    KLEE_return_val = MPU_xTimerCreateStatic(KLEE_pcTimerName, KLEE_xTimerPeriodInTicks, KLEE_uxAutoReload, KLEE_pvTimerID, KLEE_pxCallbackFunction, KLEE_pxTimerBuffer);
     return 0;
 }

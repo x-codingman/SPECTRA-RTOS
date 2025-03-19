@@ -9,15 +9,9 @@
 
 #include <klee/klee.h>
 #include "wrappers.h"
-void vTaskFunction1( void *pvParameters )
-{
-    TaskStatus_t * const * KLEE_pxTaskStatusArray;
-    klee_make_symbolic_controllable(&KLEE_pxTaskStatusArray, sizeof(KLEE_pxTaskStatusArray), "KLEE_pxTaskStatusArray", true);
-    const UBaseType_t KLEE_uxArraySize;
-    klee_make_symbolic_controllable(&KLEE_uxArraySize, sizeof(KLEE_uxArraySize), "KLEE_uxArraySize", true);
-    configRUN_TIME_COUNTER_TYPE * const * KLEE_pulTotalRunTime;
-    klee_make_symbolic_controllable(&KLEE_pulTotalRunTime, sizeof(KLEE_pulTotalRunTime), "KLEE_pulTotalRunTime", true);
-    MPU_uxTaskGetSystemState(KLEE_pxTaskStatusArray, KLEE_uxArraySize, KLEE_pulTotalRunTime);
+extern TaskHandle_t pxCurrentTCB;
+void vTaskFunction1();
+void vTaskFunction1(){
     assert(0);
 }
 
@@ -25,6 +19,16 @@ void vTaskFunction1( void *pvParameters )
 
 int main()
 {
-    xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, NULL);
+    TaskHandle_t initial_xTask;
+    xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, &initial_xTask);
+    TaskStatus_t * const * KLEE_pxTaskStatusArray;
+    klee_make_symbolic_controllable(&KLEE_pxTaskStatusArray, sizeof(KLEE_pxTaskStatusArray), "KLEE_pxTaskStatusArray", true);
+    const UBaseType_t KLEE_uxArraySize;
+    klee_make_symbolic_controllable(&KLEE_uxArraySize, sizeof(KLEE_uxArraySize), "KLEE_uxArraySize", true);
+    configRUN_TIME_COUNTER_TYPE * const * KLEE_pulTotalRunTime;
+    klee_make_symbolic_controllable(&KLEE_pulTotalRunTime, sizeof(KLEE_pulTotalRunTime), "KLEE_pulTotalRunTime", true);
+    UBaseType_t KLEE_return_val;
+    klee_make_symbolic_controllable(&KLEE_return_val, sizeof(KLEE_return_val), "KLEE_return_val", true);
+    KLEE_return_val = MPU_uxTaskGetSystemState(KLEE_pxTaskStatusArray, KLEE_uxArraySize, KLEE_pulTotalRunTime);
     return 0;
 }

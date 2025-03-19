@@ -9,11 +9,9 @@
 
 #include <klee/klee.h>
 #include "wrappers.h"
-void vTaskFunction1( void *pvParameters )
-{
-    TaskHandle_t KLEE_xTaskToSuspend;
-    klee_make_symbolic_controllable(&KLEE_xTaskToSuspend, sizeof(KLEE_xTaskToSuspend), "KLEE_xTaskToSuspend", true);
-    MPU_vTaskSuspend(KLEE_xTaskToSuspend);
+extern TaskHandle_t pxCurrentTCB;
+void vTaskFunction1();
+void vTaskFunction1(){
     assert(0);
 }
 
@@ -21,6 +19,10 @@ void vTaskFunction1( void *pvParameters )
 
 int main()
 {
-    xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, NULL);
+    TaskHandle_t initial_xTask;
+    xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, &initial_xTask);
+    TaskHandle_t KLEE_xTaskToSuspend;
+    klee_make_symbolic_controllable(&KLEE_xTaskToSuspend, sizeof(KLEE_xTaskToSuspend), "KLEE_kernel_xTaskToSuspend", true);
+    MPU_vTaskSuspend(KLEE_xTaskToSuspend);
     return 0;
 }

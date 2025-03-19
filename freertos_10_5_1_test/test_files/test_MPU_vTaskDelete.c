@@ -9,11 +9,9 @@
 
 #include <klee/klee.h>
 #include "wrappers.h"
-void vTaskFunction1( void *pvParameters )
-{
-    TaskHandle_t KLEE_xTaskToDelete;
-    klee_make_symbolic_controllable(&KLEE_xTaskToDelete, sizeof(KLEE_xTaskToDelete), "KLEE_xTaskToDelete", true);
-    MPU_vTaskDelete(KLEE_xTaskToDelete);
+extern TaskHandle_t pxCurrentTCB;
+void vTaskFunction1();
+void vTaskFunction1(){
     assert(0);
 }
 
@@ -21,6 +19,10 @@ void vTaskFunction1( void *pvParameters )
 
 int main()
 {
-    xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, NULL);
+    TaskHandle_t initial_xTask;
+    xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, &initial_xTask);
+    TaskHandle_t KLEE_xTaskToDelete;
+    klee_make_symbolic_controllable(&KLEE_xTaskToDelete, sizeof(KLEE_xTaskToDelete), "KLEE_kernel_xTaskToDelete", true);
+    MPU_vTaskDelete(KLEE_xTaskToDelete);
     return 0;
 }

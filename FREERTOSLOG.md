@@ -1,4 +1,5 @@
 # FreeRTOS中修改的文件
+
 - 注释 wait_for_event.c 63、64、65、66行, 避免调用pthread_cond_wait()使程序陷入等待, 避免loop。
 - 注释 port.c 498行，避免调用pthread_exit( NULL ), 使程序终止。
 - 修改 tasks.c 141行while循环为if, 避免loop。
@@ -13,8 +14,10 @@
 - 修改 queue.c 1757行 for( ; ; )为for( int i=0;i<2 ;i++ ), 避免过多loop。
 - 修改 event_groups.c 561行while循环为if, 避免loop。
 - 修改 queue.c 1549行 for( ; ; )为for( int i=0;i<2 ;i++ ), 避免过多loop。
-
 - 注释 tasks.c 997行, 避免调用external function pthread_once等。6/22
 - 注释 tasks.c 3062行, 避免对pxCurrentTCB重复赋值。6/22
-
 - 注释 tasks.c 2238-2239行, 2250行的循环
+  
+- 20250312
+- 注释task.c 222-225 add task to list
+- 注释函数prvWriteBytesToBuffer

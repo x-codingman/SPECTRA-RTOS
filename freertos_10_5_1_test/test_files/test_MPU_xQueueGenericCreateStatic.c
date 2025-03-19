@@ -9,8 +9,18 @@
 
 #include <klee/klee.h>
 #include "wrappers.h"
-void vTaskFunction1( void *pvParameters )
+extern TaskHandle_t pxCurrentTCB;
+void vTaskFunction1();
+void vTaskFunction1(){
+    assert(0);
+}
+
+#define STACK_SIZE 1000
+
+int main()
 {
+    TaskHandle_t initial_xTask;
+    xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, &initial_xTask);
     const UBaseType_t KLEE_uxQueueLength;
     klee_make_symbolic_controllable(&KLEE_uxQueueLength, sizeof(KLEE_uxQueueLength), "KLEE_uxQueueLength", true);
     const UBaseType_t KLEE_uxItemSize;
@@ -21,14 +31,8 @@ void vTaskFunction1( void *pvParameters )
     klee_make_symbolic_controllable(&KLEE_pxStaticQueue, sizeof(KLEE_pxStaticQueue), "KLEE_pxStaticQueue", true);
     const uint8_t KLEE_ucQueueType;
     klee_make_symbolic_controllable(&KLEE_ucQueueType, sizeof(KLEE_ucQueueType), "KLEE_ucQueueType", true);
-    MPU_xQueueGenericCreateStatic(KLEE_uxQueueLength, KLEE_uxItemSize, KLEE_pucQueueStorage, KLEE_pxStaticQueue, KLEE_ucQueueType);
-    assert(0);
-}
-
-#define STACK_SIZE 1000
-
-int main()
-{
-    xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, NULL);
+    QueueHandle_t KLEE_return_val;
+    klee_make_symbolic_controllable(&KLEE_return_val, sizeof(KLEE_return_val), "KLEE_kernel_return_val", true);
+    KLEE_return_val = MPU_xQueueGenericCreateStatic(KLEE_uxQueueLength, KLEE_uxItemSize, KLEE_pucQueueStorage, KLEE_pxStaticQueue, KLEE_ucQueueType);
     return 0;
 }

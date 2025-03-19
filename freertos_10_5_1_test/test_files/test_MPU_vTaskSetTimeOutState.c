@@ -9,11 +9,9 @@
 
 #include <klee/klee.h>
 #include "wrappers.h"
-void vTaskFunction1( void *pvParameters )
-{
-    TimeOut_t * const * KLEE_pxTimeOut;
-    klee_make_symbolic_controllable(&KLEE_pxTimeOut, sizeof(KLEE_pxTimeOut), "KLEE_pxTimeOut", true);
-    MPU_vTaskSetTimeOutState(KLEE_pxTimeOut);
+extern TaskHandle_t pxCurrentTCB;
+void vTaskFunction1();
+void vTaskFunction1(){
     assert(0);
 }
 
@@ -21,6 +19,10 @@ void vTaskFunction1( void *pvParameters )
 
 int main()
 {
-    xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, NULL);
+    TaskHandle_t initial_xTask;
+    xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, &initial_xTask);
+    TimeOut_t * const * KLEE_pxTimeOut;
+    klee_make_symbolic_controllable(&KLEE_pxTimeOut, sizeof(KLEE_pxTimeOut), "KLEE_pxTimeOut", true);
+    MPU_vTaskSetTimeOutState(KLEE_pxTimeOut);
     return 0;
 }

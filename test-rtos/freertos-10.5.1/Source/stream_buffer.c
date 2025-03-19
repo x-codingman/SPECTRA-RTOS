@@ -1250,44 +1250,44 @@ static size_t prvWriteBytesToBuffer( StreamBuffer_t * const pxStreamBuffer,
                                      size_t xCount,
                                      size_t xHead )
 {
-    size_t xFirstLength;
+    // size_t xFirstLength;
 
-    configASSERT( xCount > ( size_t ) 0 );
+    // configASSERT( xCount > ( size_t ) 0 );
 
-    /* Calculate the number of bytes that can be added in the first write -
-     * which may be less than the total number of bytes that need to be added if
-     * the buffer will wrap back to the beginning. */
-    xFirstLength = configMIN( pxStreamBuffer->xLength - xHead, xCount );
+    // /* Calculate the number of bytes that can be added in the first write -
+    //  * which may be less than the total number of bytes that need to be added if
+    //  * the buffer will wrap back to the beginning. */
+    // xFirstLength = configMIN( pxStreamBuffer->xLength - xHead, xCount );
 
-    /* Write as many bytes as can be written in the first write. */
-    configASSERT( ( xHead + xFirstLength ) <= pxStreamBuffer->xLength );
-    ( void ) memcpy( ( void * ) ( &( pxStreamBuffer->pucBuffer[ xHead ] ) ), ( const void * ) pucData, xFirstLength ); /*lint !e9087 memcpy() requires void *. */
+    // /* Write as many bytes as can be written in the first write. */
+    // configASSERT( ( xHead + xFirstLength ) <= pxStreamBuffer->xLength );
+    // ( void ) memcpy( ( void * ) ( &( pxStreamBuffer->pucBuffer[ xHead ] ) ), ( const void * ) pucData, xFirstLength ); /*lint !e9087 memcpy() requires void *. */
 
-    /* If the number of bytes written was less than the number that could be
-     * written in the first write... */
-    if( xCount > xFirstLength )
-    {
-        /* ...then write the remaining bytes to the start of the buffer. */
-        configASSERT( ( xCount - xFirstLength ) <= pxStreamBuffer->xLength );
-        ( void ) memcpy( ( void * ) pxStreamBuffer->pucBuffer, ( const void * ) &( pucData[ xFirstLength ] ), xCount - xFirstLength ); /*lint !e9087 memcpy() requires void *. */
-    }
-    else
-    {
-        mtCOVERAGE_TEST_MARKER();
-    }
+    // /* If the number of bytes written was less than the number that could be
+    //  * written in the first write... */
+    // if( xCount > xFirstLength )
+    // {
+    //     /* ...then write the remaining bytes to the start of the buffer. */
+    //     configASSERT( ( xCount - xFirstLength ) <= pxStreamBuffer->xLength );
+    //     ( void ) memcpy( ( void * ) pxStreamBuffer->pucBuffer, ( const void * ) &( pucData[ xFirstLength ] ), xCount - xFirstLength ); /*lint !e9087 memcpy() requires void *. */
+    // }
+    // else
+    // {
+    //     mtCOVERAGE_TEST_MARKER();
+    // }
 
-    xHead += xCount;
+    // xHead += xCount;
 
-    if( xHead >= pxStreamBuffer->xLength )
-    {
-        xHead -= pxStreamBuffer->xLength;
-    }
-    else
-    {
-        mtCOVERAGE_TEST_MARKER();
-    }
+    // if( xHead >= pxStreamBuffer->xLength )
+    // {
+    //     xHead -= pxStreamBuffer->xLength;
+    // }
+    // else
+    // {
+    //     mtCOVERAGE_TEST_MARKER();
+    // }
 
-    return xHead;
+    // return xHead;
 }
 /*-----------------------------------------------------------*/
 

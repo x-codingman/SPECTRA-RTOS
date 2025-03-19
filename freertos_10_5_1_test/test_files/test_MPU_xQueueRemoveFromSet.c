@@ -9,13 +9,9 @@
 
 #include <klee/klee.h>
 #include "wrappers.h"
-void vTaskFunction1( void *pvParameters )
-{
-    QueueSetMemberHandle_t KLEE_xQueueOrSemaphore;
-    klee_make_symbolic_controllable(&KLEE_xQueueOrSemaphore, sizeof(KLEE_xQueueOrSemaphore), "KLEE_xQueueOrSemaphore", true);
-    QueueSetHandle_t KLEE_xQueueSet;
-    klee_make_symbolic_controllable(&KLEE_xQueueSet, sizeof(KLEE_xQueueSet), "KLEE_xQueueSet", true);
-    MPU_xQueueRemoveFromSet(KLEE_xQueueOrSemaphore, KLEE_xQueueSet);
+extern TaskHandle_t pxCurrentTCB;
+void vTaskFunction1();
+void vTaskFunction1(){
     assert(0);
 }
 
@@ -23,6 +19,14 @@ void vTaskFunction1( void *pvParameters )
 
 int main()
 {
-    xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, NULL);
+    TaskHandle_t initial_xTask;
+    xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, &initial_xTask);
+    QueueSetMemberHandle_t KLEE_xQueueOrSemaphore;
+    klee_make_symbolic_controllable(&KLEE_xQueueOrSemaphore, sizeof(KLEE_xQueueOrSemaphore), "KLEE_kernel_xQueueOrSemaphore", true);
+    QueueSetHandle_t KLEE_xQueueSet;
+    klee_make_symbolic_controllable(&KLEE_xQueueSet, sizeof(KLEE_xQueueSet), "KLEE_kernel_xQueueSet", true);
+    BaseType_t KLEE_return_val;
+    klee_make_symbolic_controllable(&KLEE_return_val, sizeof(KLEE_return_val), "KLEE_return_val", true);
+    KLEE_return_val = MPU_xQueueRemoveFromSet(KLEE_xQueueOrSemaphore, KLEE_xQueueSet);
     return 0;
 }

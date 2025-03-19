@@ -9,13 +9,9 @@
 
 #include <klee/klee.h>
 #include "wrappers.h"
-void vTaskFunction1( void *pvParameters )
-{
-    TimeOut_t * const * KLEE_pxTimeOut;
-    klee_make_symbolic_controllable(&KLEE_pxTimeOut, sizeof(KLEE_pxTimeOut), "KLEE_pxTimeOut", true);
-    TickType_t * const * KLEE_pxTicksToWait;
-    klee_make_symbolic_controllable(&KLEE_pxTicksToWait, sizeof(KLEE_pxTicksToWait), "KLEE_pxTicksToWait", true);
-    MPU_xTaskCheckForTimeOut(KLEE_pxTimeOut, KLEE_pxTicksToWait);
+extern TaskHandle_t pxCurrentTCB;
+void vTaskFunction1();
+void vTaskFunction1(){
     assert(0);
 }
 
@@ -23,6 +19,14 @@ void vTaskFunction1( void *pvParameters )
 
 int main()
 {
-    xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, NULL);
+    TaskHandle_t initial_xTask;
+    xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, &initial_xTask);
+    TimeOut_t * const * KLEE_pxTimeOut;
+    klee_make_symbolic_controllable(&KLEE_pxTimeOut, sizeof(KLEE_pxTimeOut), "KLEE_pxTimeOut", true);
+    TickType_t * const * KLEE_pxTicksToWait;
+    klee_make_symbolic_controllable(&KLEE_pxTicksToWait, sizeof(KLEE_pxTicksToWait), "KLEE_pxTicksToWait", true);
+    BaseType_t KLEE_return_val;
+    klee_make_symbolic_controllable(&KLEE_return_val, sizeof(KLEE_return_val), "KLEE_return_val", true);
+    KLEE_return_val = MPU_xTaskCheckForTimeOut(KLEE_pxTimeOut, KLEE_pxTicksToWait);
     return 0;
 }

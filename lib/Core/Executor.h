@@ -290,6 +290,7 @@ private:
   // Get all kid expression of the expression.
   // We now only handle ADD expressions.
   std::vector<ref<Expr>> getAddKids(ref<Expr> addExpr);
+  bool testSymbolEqualValue(ExecutionState &state, ref<Expr> symbol, ref<Expr> value);
 
   /// add
   bool determineMoOverlap(ExecutionState &state, const MemoryObject* mo, uint64_t offset, json &j);
@@ -314,6 +315,9 @@ private:
  MemoryObjectV2* jsonToMoV2(ExecutionState &state, json j);
  void interAnalysisMain(ExecutionState &state, std::string directoryPath);
  bool checkConstraints(ExecutionState &state);
+ const MemoryObject* findMoWithName(ExecutionState &state, std::string &name);
+ bool hasSemanticCheck(ExecutionState &state);
+ std::vector<std::string> findSpecificString(const std::string &input, const std::string &str);
   /// Allocate and bind a new object in a particular state. NOTE: This
   /// function may fork.
   ///
