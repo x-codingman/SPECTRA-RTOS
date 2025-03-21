@@ -135,7 +135,7 @@ $(BUILD_DIR)/%.bc : %.c
 
 $(TEST_BC_DIR)/%.test.bc : all.test.bc test_files/%.bc
 	-mkdir -p ${@D}
-	llvm-link-18 $^ -o $@
+	llvm-link $^ -o $@
 
 
 clean:
