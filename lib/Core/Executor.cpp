@@ -829,7 +829,8 @@ void Executor::initializeGlobalObjects(ExecutionState &state) {
         addr = externalDispatcher->resolveSymbol(v.getName().str());
       }
       if (!addr) {
-        klee_error("Unable to load symbol(%.*s) while initializing globals",
+        addr = &__dso_handle;
+        klee_message("Unable to load symbol(%.*s) while initializing globals",
                    static_cast<int>(v.getName().size()), v.getName().data());
       }
       for (unsigned offset = 0; offset < mo->size; offset++) {

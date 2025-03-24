@@ -18,7 +18,13 @@ def vulnerability_analysis(root_folder, output_folder):
                             target_name = os.path.basename(dirpath) 
                             # The target function name may like test_MPU_uxTaskGetStackHighWaterMark
                             # We need to extract the function name from the target name
-                            target_name = target_name.split('_')[2] 
+                            target_name = os.path.basename(dirpath)
+                            parts = target_name.split('_')
+
+                            if len(parts) >= 3 and root_folder == "/home/klee/klee_src/test-rtos/freertos-10.5.1/symbolic_execution/":
+                                target_name = parts[2]
+                            else:
+                                target_name = target_name
                             if match:
                                 vul_type = match.group(1)
                                 file_path = match.group(2)
@@ -93,14 +99,12 @@ def get_rtos_folder():
         return "/home/klee/klee_src/test-rtos/freertos-10.6.0/symbolic_execution/"
     # These two are not ready yet, so print a message
     elif choice == "3": 
-        print("TizenRT is not ready yet")
-        return default_path
+        return "/home/klee/klee_src/test-rtos/tizenrt/symbolic_execution/"
     elif choice == "4":
         print("RT-Thread is not ready yet")
         return default_path 
     elif choice == "5":
-        print("ThreadX is not ready yet")
-        return default_path
+        return "/home/klee/klee_src/test-rtos/threadx-5.3/symbolic_execution/"
     else:
         return default_path
         
