@@ -4761,7 +4761,9 @@ void Executor::executeMemoryOperation(
       klee_debug_message("DEBUG: lazyResolve failed, found a constant address, "
                          "its value is: %lu",
                          CE->getZExtValue());
-      unitializedPointerDereferenceReport(target);
+      if (CE->getZExtValue() == 0){
+        unitializedPointerDereferenceReport(target);
+      }
     } else {
       klee_debug_message("DEBUG: lazyResolve failed, found a symbolic pointer");
     }
@@ -4939,15 +4941,22 @@ void Executor::executeMemoryOperation(
           is_controlled_value = false;
         }
         klee_debug_message("DEBUG: has_semantic_check:%d\n canBeDesiredValue: %d\n is_controlled_value: %d", has_semantic_check, canBeDesiredValue, is_controlled_value);
-        if(has_semantic_check || !canBeDesiredValue || !is_controlled_value){
+        if(has_semantic_check){
 
-          std::string report_str = "Limited memory write vulnerability (V2)";
+          std::string report_str = "Limited memory write vulnerability (V1)";
           vulnerabilityReport(report_str, target);  
+        }else if(!canBeDesiredValue || !is_controlled_value){
+          std::string report_str = "arbitrary memory write vulnerability (V0)";
+          vulnerabilityReport(report_str, target);
         }else{
-          std::string report_str = "arbitrary memory write vulnerability (V1)";
+          std::string report_str = "arbitrary memory write vulnerability (V2)";
           vulnerabilityReport(report_str, target);
         }
+      }else if(address_controllable && !canBeDesiredAddress){
+          std::string report_str = "arbitrary memory write vulnerability (V3)";
+          vulnerabilityReport(report_str, target);
       }
+
       // else if (address_controllable && address_test_result) {
       //   // In this case, the attacker can write arbitrary memory with fixed
       //   value. std::string currentVulnerabilityInfo =
@@ -7177,7 +7186,7 @@ void Executor::vulnerabilityReport(std::string report_str,
 }
 
 void Executor::unitializedPointerDereferenceReport(KInstruction *target) {
-  std::string report_str = "Uninitialized pointer dereferencing!!";
+  std::string report_str = "Null Pointer Dereferencing!!";
   vulnerabilityReport(report_str, target);
 }
 
