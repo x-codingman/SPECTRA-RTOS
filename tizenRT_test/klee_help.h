@@ -13,7 +13,9 @@
 
 #define portRAISE_PRIVILEGE()
 
-
+void up_assert(){
+    klee_terminate_state();
+}
 
 #define portRESET_PRIVILEGE() vResetPrivilege()
     typedef struct MPURegionSettings
