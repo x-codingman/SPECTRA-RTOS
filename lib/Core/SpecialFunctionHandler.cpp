@@ -912,9 +912,11 @@ void SpecialFunctionHandler::handleMakeSymbolicControllable(ExecutionState &stat
   }
 }
 
-void SpecialFunctionHandler::handleTerminateState(ExecutionState &state){
+void SpecialFunctionHandler::handleTerminateState(ExecutionState &state,
+                                              KInstruction *target,
+                                              std::vector<ref<Expr> > &arguments){
   klee_debug_message("DEBUG: terminate state invoked from the tested program");
-  terminateState(state);
+  executor.terminateState(state);
 }
 
 void SpecialFunctionHandler::handleMarkGlobal(ExecutionState &state,
