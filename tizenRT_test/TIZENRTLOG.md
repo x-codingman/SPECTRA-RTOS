@@ -30,3 +30,6 @@
 修改的文件：
 - tizenrt/os/fs/vfs/fs_read.c 注释126行，增加"ret =0;"
 - ../../../tizenrt/os/fs/vfs/fs_truncate.c 注释122行，增加"ret =0;"
+
+## 2025-0325
+file_generate 存在一些问题，比如有些函数的声明无法很好的识别；有些从syscall.csv里面的声明是重复的，对此，目前是手动的修改，大概在10个system call左右的数量需要修改。

@@ -98,9 +98,9 @@ NEW_SOURCE_FILES := $(filter-out $(IGNORE_FILES), $(SOURCE_FILES))
 
 
 BC_FILES              := $(NEW_SOURCE_FILES:%.c=$(BUILD_DIR)/%.bc)
-TEST_SOURCE_FILES     := $(wildcard test_files/*.c)
+TEST_SOURCE_FILES     := $(wildcard test_files_2/*.c)
 TEST_BC_DIR           := ./test_bc_files
-TEST_BC_FILES         := $(TEST_SOURCE_FILES:test_files/%.c=$(TEST_BC_DIR)/%.test.bc)
+TEST_BC_FILES         := $(TEST_SOURCE_FILES:test_files_2/%.c=$(TEST_BC_DIR)/%.test.bc)
 # BC_FILES              += $(wildcard /home/klee/klee_build/runtime/POSIX/fd64_Release+Debug+Asserts.bc)
 # BC_FILES              += $(wildcard /home/klee/klee_build/runtime/POSIX/fd_init64_Release+Debug+Asserts.bc)
 # BC_FILES              += $(wildcard /home/klee/klee_build/runtime/POSIX/illegal64_Release+Debug+Asserts.bc)
@@ -133,7 +133,7 @@ $(BUILD_DIR)/%.bc : %.c
 	-mkdir -p $(@D)
 	$(CC) $(INCLUDE_DIRS) $(CFLAGS) $< -o $@
 
-$(TEST_BC_DIR)/%.test.bc : all.test.bc test_files/%.bc
+$(TEST_BC_DIR)/%.test.bc : all.test.bc test_files_2/%.bc
 	-mkdir -p ${@D}
 	llvm-link $^ -o $@
 

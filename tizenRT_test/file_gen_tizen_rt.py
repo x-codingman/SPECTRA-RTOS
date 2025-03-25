@@ -2,9 +2,9 @@ import csv
 import os
 import re
 
-OUTPUT_DIR = './test_files/'
+OUTPUT_DIR = './test_files_2/'
 CSV_FILE = 'syscall.csv'
-CONFIG_FILE = '/home/klee/TizenRT/os/include/tinyara/config.h'
+CONFIG_FILE = '/home/xinhuishao/tizenrt/os/include/tinyara/config.h'
 
 def handle_macro_condition(macro_condition):
     defines = []
@@ -32,8 +32,8 @@ def generate_c_file(func, defines, undefines):
     return_type = func[3].replace('"', '').strip()
     parameters = [p.replace('"', '').strip() for p in func[4:]]
 
-    args_with_type = [f"{t} arg{i}" for i, t in enumerate(parameters) if t]
-    function_call = f"{function_name}({', '.join([f'arg{i}' for i in range(len(args_with_type))])});\n"
+    args_with_type = [f"{t} KLEE_arg{i}" for i, t in enumerate(parameters) if t]
+    function_call = f"{function_name}({', '.join([f'KLEE_arg{i}' for i in range(len(args_with_type))])});\n"
 
     content = []
     content.append('#include "klee_help.h"')
@@ -48,7 +48,7 @@ def generate_c_file(func, defines, undefines):
     content.append('g_readytorun.head = (dq_entry_t*)&klee_tcb;')
     content.append('\n'.join([f"{t};" for t in args_with_type]))
     for i in range(len(args_with_type)):
-        content.append(f'klee_make_symbolic_controllable(&arg{i}, sizeof(arg{i}), "arg{i}", true);')
+        content.append(f'klee_make_symbolic_controllable(&KLEE_arg{i}, sizeof(KLEE_arg{i}), "KLEE_arg{i}", true);')
     content.append(function_call)
     content.append('return 0;')
     content.append('}')
@@ -73,7 +73,8 @@ def main():
 
     # Remove any defines that are also in undefines
     all_defines = all_defines.difference(all_undefines)
-
+    
+       
     with open(CONFIG_FILE, 'a') as config_file:
         config_file.write("\n// Appended by script\n")
         for d in all_defines:
