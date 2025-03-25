@@ -829,7 +829,8 @@ void Executor::initializeGlobalObjects(ExecutionState &state) {
         addr = externalDispatcher->resolveSymbol(v.getName().str());
       }
       if (!addr) {
-        klee_error("Unable to load symbol(%.*s) while initializing globals",
+        addr = &__dso_handle;
+        klee_message("Unable to load symbol(%.*s) while initializing globals",
                    static_cast<int>(v.getName().size()), v.getName().data());
       }
       for (unsigned offset = 0; offset < mo->size; offset++) {
@@ -3017,6 +3018,8 @@ void Executor::executeInstruction(ExecutionState &state, KInstruction *ki) {
       ObjectPair op;
       bool needBound = false;
       if (state.addressSpace.address_mo_info.count(result) != 0) {
+        klee_debug_message("DEBUG: Dump the result");
+        result.get()->dump();
         klee_debug_message("DEBUG: BITCASTING CHANGE MO!!!");
         const MemoryObject *oldMo = state.addressSpace.address_mo_info[result];
 
@@ -4809,6 +4812,10 @@ void Executor::executeMemoryOperation(
     if (!state.addressSpace.lazyResolve(state, solver, address, op,
                                         needBound)) {
       klee_debug_message("DEBUG: FIX ME resolve failed");
+      for(auto constraint: state.constraints){
+        klee_debug_message("DEBUG: constraint:");
+        constraint.get()->dump();
+      }
       terminateStateOnError(state, "resolve failed", StateTerminationType::Ptr);
     }
   }
