@@ -102,7 +102,10 @@ static SpecialFunctionHandler::HandlerInfo handlerInfo[] = {
 #endif
   add("klee_is_symbolic", handleIsSymbolic, true),
   add("klee_make_symbolic", handleMakeSymbolic, false),
+  // Added by Xinhui Shao
   add("klee_make_symbolic_controllable",handleMakeSymbolicControllable,false),
+  add("klee_terminate_state",handleTerminateState,false),
+
   add("klee_mark_global", handleMarkGlobal, false),
   add("klee_open_merge", handleOpenMerge, false),
   add("klee_close_merge", handleCloseMerge, false),
@@ -907,6 +910,11 @@ void SpecialFunctionHandler::handleMakeSymbolicControllable(ExecutionState &stat
       executor.terminateStateOnUserError(*s, "Wrong size given to klee_make_symbolic");
     }
   }
+}
+
+void SpecialFunctionHandler::handleTerminateState(ExecutionState &state){
+  klee_debug_message("DEBUG: terminate state invoked from the tested program");
+  terminateState(state);
 }
 
 void SpecialFunctionHandler::handleMarkGlobal(ExecutionState &state,

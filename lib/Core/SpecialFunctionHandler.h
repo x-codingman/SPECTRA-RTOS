@@ -124,6 +124,7 @@ namespace klee {
     HANDLER(handleIsSymbolic);
     HANDLER(handleMakeSymbolic);
     HANDLER(handleMakeSymbolicControllable);
+    HANDLER(handleTerminateState);
     HANDLER(handleMalloc);
     HANDLER(handleMemalign);
     HANDLER(handleMarkGlobal);
