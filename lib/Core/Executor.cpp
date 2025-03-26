@@ -4946,14 +4946,14 @@ void Executor::executeMemoryOperation(
           std::string report_str = "Limited memory write vulnerability (V1)";
           vulnerabilityReport(report_str, target);  
         }else if(!canBeDesiredValue || !is_controlled_value){
-          std::string report_str = "arbitrary memory write vulnerability (V0)";
+          std::string report_str = "Limited memory write vulnerability (V2)";
           vulnerabilityReport(report_str, target);
         }else{
-          std::string report_str = "arbitrary memory write vulnerability (V2)";
+          std::string report_str = "arbitrary memory write vulnerability (V0)";
           vulnerabilityReport(report_str, target);
         }
       }else if(address_controllable && !canBeDesiredAddress){
-          std::string report_str = "arbitrary memory write vulnerability (V3)";
+          std::string report_str = "Limited memory write vulnerability (V3)";
           vulnerabilityReport(report_str, target);
       }
 

@@ -54,12 +54,14 @@ def vulnerability_analysis(root_folder, output_folder):
         func = vul['Function']
         if func not in vul_funcs:
             vul_funcs[func] = {
+                'File': {vul['File']},
                 'Function': func,
                 'Vulnerability Type': {vul['Vulnerability Type']}, # Use set to deduplicate
                 'Line Number': [vul['Line Number']],
                 'Number of Vulnerabilities': 1
             }
         else:
+            vul_funcs[func]['File'].add(vul['File'])
             vul_funcs[func]['Vulnerability Type'].add(vul['Vulnerability Type'])
             vul_funcs[func]['Line Number'].append(vul['Line Number'])
             vul_funcs[func]['Number of Vulnerabilities'] += 1
@@ -67,6 +69,7 @@ def vulnerability_analysis(root_folder, output_folder):
     # Convert to DataFrame
     vul_funcs_df = pd.DataFrame(vul_funcs.values())
     # Combine vulnerability types and line numbers into single cells
+    vul_funcs_df['File'] = vul_funcs_df['File'].apply(lambda x: '\n'.join(str(i) for i in x))
     vul_funcs_df['Vulnerability Type'] = vul_funcs_df['Vulnerability Type'].apply(lambda x: '\n'.join(str(i) for i in x))
     vul_funcs_df['Line Number'] = vul_funcs_df['Line Number'].apply(lambda x: '\n'.join(str(i) for i in x))
     
