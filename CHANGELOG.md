@@ -76,7 +76,6 @@
 - 增加偏移量为负的位置匹配过程
 - 增加对符号函数指针的处理
 - 限制了branch的次数来规避loop
-
 - 增加处理constant的未初始化的global pointer
 - 增加处理asm的情况，对asm的执行返回符号值（如果需要返回的话）
 - 修改loop的break机制，增加state的branch指令记录和全局的branch的指令记录
@@ -109,4 +108,9 @@
 * 在检测任意写漏洞时，通过判断约束的符号表达式中是否存在KLEE，来判断写的MO是否受到semantic的检查。
 
 ## 2025-03-25
+
 * 在KLEE中增加assert函数，可以让测试程序主动退出当前执行状态（execution state）。
+
+## 2025-0402
+
+* 修改hasSemanticCheck函数，之前的字符串匹配存在匹配不上的问题。

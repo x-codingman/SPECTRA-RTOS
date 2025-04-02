@@ -45,3 +45,8 @@
 
 * 对于**Detect a unintialzied constant pointer**，目前只是在load阶段发现未初始化就标记为**unintialzied constant pointer，这是不准确的。**
 * Constant指针，有的来源于未初始化比如为0，有的来源于数组的访问，对于数组我们无法获知其type类型。
+
+#### 2025-0402
+
+* controllable属性的变化会对检测造成一些误判。由于在对写操作做检查的时候，通过str匹配查看是否是controllable，然后这个信息是load阶段分配的，会根据对指针约束进行变化。
+* hassemanticcheck有问题，这种方法无法适用于已经concretized以后的memory object

@@ -49,6 +49,7 @@ def vulnerability_analysis(root_folder, output_folder):
     df = pd.DataFrame(vulnerabilities)
     
     # Create vulnerability functions report
+    # For a function, we need to separate the files and vulnerability types
     vul_funcs = {}
     for vul in vulnerabilities:
         func = vul['Function']

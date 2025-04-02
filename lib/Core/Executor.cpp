@@ -7003,33 +7003,8 @@ void Executor::detectInformationLeak(ExecutionState &state, ref<Expr> &address,
     address_offset = mo_pair.second;
     assert(address_test && "FIX ME: find mo with no existing record");
   }
-  if (ConstantExpr *CE = dyn_cast<ConstantExpr>(address_test)) {
-    return;
-  }
 
-  // There is an Information leak vulnerability when it satisfy two conditions.
-  // 1. The value is extracted from a lazy initialized memory object && the
-  // address points to the user space
-  // 2. The lazy initialized memory object is controllable (the location is
-  // determined by the attacker)
 
-  // If the value is a concrete value, there could be an information leak
-  // vulnerability. However, we cannot handle this case due to the complicated
-  // propogation related to that value.
-  if (isa<ConstantExpr>(value)) {
-    // If it is a concrete value, then check if it is an pointer of an
-    // initialized memory object
-    ConstantExpr *CE = dyn_cast<ConstantExpr>(value);
-    std::pair<MemoryObject *, uint64_t> mo_pair =
-        state.addressSpace.findMemoryObject(CE);
-    if (mo_pair.first == NULL) {
-      return;
-    } else {
-      // Check if the pointer is belong to an lazy initialized memory object
-      // TODO
-      return;
-    }
-  }
 
   // The value is a symbol, then we check if the symbol is belong to a
   // initialized memory object
@@ -7046,23 +7021,45 @@ void Executor::detectInformationLeak(ExecutionState &state, ref<Expr> &address,
   //   recordReadableLocationToJson(state, mo, offset, width);
   //   vulnerabilityReport(report_str, target);
   // }
-  bool value_controllable = false;
+
+
+  // There is an Information leak vulnerability when it satisfy two conditions.
+  // 1. The value is extracted from a lazy initialized memory object && the
+  // address points to the user space
+  // 2. The lazy initialized memory object is controllable (the location is
+  // determined by the attacker)
+
+
+  // Check if the value is read from privileged memory
+  bool is_value_from_privileged_memory= false;
+  bool success = false;
+  // If the value is a constant, then we check if it is concretized symbolic pointer
+  // from the lazy initialization.
+  if (ConstantExpr *CE = dyn_cast<ConstantExpr>(value)){
+    std::pair<MemoryObject *, uint64_t> mo_pair =
+        state.addressSpace.findMemoryObject(CE);
+    ref<Expr> symbolic_address_expr = state.addressSpace.getOriginalExprFromMo(mo_pair.first);
+    if (symbolic_address_expr){
+      // Check if the symbolic address is inside the privileged memory
+      std::string symbolic_address_expr_str = symbolic_address_expr->dump1();
+      if (symbolic_address_expr_str.find("KLEE_") == std::string::npos){
+          is_value_from_privileged_memory = true;
+      }
+    }
+  }else{
+    std::string value_str = value->dump1();
+    if (value_str.find("lazy_alloc") == std::string::npos){
+      is_value_from_privileged_memory = true;
+    }
+  }
 
 
 
+  
+  // Check if the pointing address is inside the user space.
   bool address_test_result = false;
   uint64_t desired_address_start = ATTACK_CAPABILITY_REGION_START;
   uint64_t desired_address_end = ATTACK_CAPABILITY_REGION_END;
-  bool success = false;
-  // We identify the READLSB expression by the "isa<ConcatExpr>" 
-  std::string value_name = value.get()->dump1();
-  if (isa<ConcatExpr>(value) && value_name.find("controllable") != std::string::npos) {
-    value_controllable = true;
-  }
-  if (value_controllable == false) {
-    return;
-  }
-  // Check if the pointing address is inside the user space.
   success = solver->mayBeTrue(
       state.addressConstraintsForTargetApp,
       UgeExpr::create(address_test,
@@ -7087,9 +7084,7 @@ void Executor::detectInformationLeak(ExecutionState &state, ref<Expr> &address,
     if (!has_semantic_check) {
       std::string report_str = "Information leak vulnerability";
       // recordReadableLocationToJson(state, mo, offset, width);
-      // dump the address and value
       vulnerabilityReport(report_str, target);
-      klee_test_info("Information leak vulnerability");
     } else {
       std::string report_str = "Limited information leak vulnerability";
       vulnerabilityReport(report_str, target);
@@ -7716,7 +7711,8 @@ bool Executor::testSymbolEqualValue(ExecutionState &state, ref<Expr> symbol, ref
 
 const MemoryObject* Executor::findMoWithName (ExecutionState &state, std::string &name){
   for(auto mo : state.addressSpace.record){
-    if(mo->name == name){
+    // string match
+    if(name.find(mo->name) != std::string::npos){
       return mo;
     }
   }
@@ -7728,13 +7724,13 @@ const MemoryObject* Executor::findMoWithName (ExecutionState &state, std::string
 bool Executor::hasSemanticCheck(ExecutionState &state){
   for(auto constraint : state.addressConstraintsForTargetApp){
     std::string constraint_string = constraint->dump1();
-    std::vector<std::string> result = findSpecificString(constraint_string, "uncontrollable");
+    //constraint->dump();
+    std::vector<std::string> result = findSpecificString(constraint_string, "lazy_alloc");
     if(result.size() > 0){
       for(auto res : result){
         const MemoryObject *mo = findMoWithName(state, res);
         if(mo != NULL){
           if(mo->isGlobal){
-            klee_debug_message("DEBUG: Kernel Object has semantic check");
             return true;
           }
         }
