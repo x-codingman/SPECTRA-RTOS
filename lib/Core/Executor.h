@@ -303,7 +303,7 @@ private:
  bool recordWritableLocationsToJson(ExecutionState &state,const MemoryObject *mo, uint64_t address_offset, Expr::Width width,bool value_controllabe);
  void recordReadableLocationToJson(ExecutionState &state, const MemoryObject *mo, uint64_t offset, Expr::Width width);
  bool getMoControllableInfo(ExecutionState &state, const MemoryObject* mo);
- void detectInformationLeak(ExecutionState &state, ref<Expr> &address, ref<Expr> &value, KInstruction *target);
+ void detectInformationLeak(ExecutionState &state, ref<Expr> &address, ref<Expr> &value, bool needTestAddress, KInstruction *target);
  void vulnerabilityReport(std::string report_str,KInstruction *target);
  void detectUnintializedPointersDereferencing(ExecutionState &state, ref<Expr> &address, KInstruction *target);
  void unitializedPointerDereferenceReport(KInstruction *target);
@@ -316,7 +316,8 @@ private:
  void interAnalysisMain(ExecutionState &state, std::string directoryPath);
  bool checkConstraints(ExecutionState &state);
  const MemoryObject* findMoWithName(ExecutionState &state, std::string &name);
- bool hasSemanticCheck(ExecutionState &state);
+ bool hasSemanticCheck(ExecutionState &state, ref<Expr> address);
+ std::vector<std::string> getLazyAllocedMoNameFromExpr(ref<Expr> expr);
  std::vector<std::string> findSpecificString(const std::string &input, const std::string &str);
   /// Allocate and bind a new object in a particular state. NOTE: This
   /// function may fork.

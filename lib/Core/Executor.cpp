@@ -4834,7 +4834,11 @@ void Executor::executeMemoryOperation(
     std::string report_str = "Pointer Out of Bound";
     vulnerabilityReport(report_str, target);
   }
-
+  std::string mo_name = mo->name;
+  // If the memory object is a return address, we need to detect the information leak vulnerability.
+  if(isWrite && mo_name.find("return")!=std::string::npos){
+    detectInformationLeak(state, address, value, false, target);
+  }
   if (state.addressSpace.isSymbolicBaseAddress(mo->getBaseExpr())) {
     if (isWrite) {
       // Detect the information leak vulnerability.
@@ -4843,7 +4847,7 @@ void Executor::executeMemoryOperation(
           getMoControllableInfo(state, mo) ||
           address_expr.find("KLEE") != std::string::npos;
       if (address_controllable) {
-        detectInformationLeak(state, address, value, target);
+        detectInformationLeak(state, address, value, true, target);
       }
 
       // Detect the arbitrary memory write vulnerability.
@@ -4931,7 +4935,7 @@ void Executor::executeMemoryOperation(
         // If no, it is a arbitrary memory write vulnerability.
 
         // check if the kernel object has semantic check
-        bool has_semantic_check = hasSemanticCheck(state);
+        bool has_semantic_check = hasSemanticCheck(state,address_test);
 
         bool is_controlled_value = false;  
         std::string value_str = value->dump1();
@@ -4942,7 +4946,6 @@ void Executor::executeMemoryOperation(
         }
         klee_debug_message("DEBUG: has_semantic_check:%d\n canBeDesiredValue: %d\n is_controlled_value: %d", has_semantic_check, canBeDesiredValue, is_controlled_value);
         if(has_semantic_check){
-
           std::string report_str = "Limited memory write vulnerability (V1)";
           vulnerabilityReport(report_str, target);  
         }else if(!canBeDesiredValue || !is_controlled_value){
@@ -5392,7 +5395,8 @@ void Executor::executeMakeSymbolic(ExecutionState &state,
     unsigned id = 0;
     std::string uniqueName = name;
     while (!state.arrayNames.insert(uniqueName).second) {
-      uniqueName = name + "_" + llvm::utostr(++id);
+      // Add a space at the end of the name to help identify the name.
+      uniqueName = name + "_" + llvm::utostr(++id)+" ";
     }
     // Assign the name to mo.
     mo->name = uniqueName;
@@ -6991,11 +6995,13 @@ void Executor::recordReadableLocationToJson(ExecutionState &state,
 }
 
 void Executor::detectInformationLeak(ExecutionState &state, ref<Expr> &address,
-                                     ref<Expr> &value, KInstruction *target) {
+                                     ref<Expr> &value, bool needTestAddress, KInstruction *target) {
   ref<Expr> address_test = address;
   uint64_t address_offset;
+  bool success = false;
   // Convert the concrete address to it symbolic expression
   // TODO: only symbolic expression for base address now
+  if (needTestAddress){
   if (ConstantExpr *CE = dyn_cast<ConstantExpr>(address)) {
     std::pair<MemoryObject *, uint64_t> mo_pair =
         state.addressSpace.findMemoryObject(CE);
@@ -7003,7 +7009,32 @@ void Executor::detectInformationLeak(ExecutionState &state, ref<Expr> &address,
     address_offset = mo_pair.second;
     assert(address_test && "FIX ME: find mo with no existing record");
   }
+      // Check if the pointing address is inside the user space.
+    bool address_test_result = false;
+    uint64_t desired_address_start = ATTACK_CAPABILITY_REGION_START;
+    uint64_t desired_address_end = ATTACK_CAPABILITY_REGION_END;
+    success = solver->mayBeTrue(
+        state.addressConstraintsForTargetApp,
+        UgeExpr::create(address_test,
+                        ConstantExpr::create(desired_address_start,
+                                            address_test->getWidth())),
+        address_test_result, state.queryMetaData);
+    assert(success && "FIXME: Unhandled solver failure");
 
+    // If so, then we check if address < desired_address_end has a solution
+    if (address_test_result) {
+      success = solver->mayBeTrue(
+          state.addressConstraintsForTargetApp,
+          UleExpr::create(address_test,
+                          ConstantExpr::create(desired_address_end,
+                                              address_test->getWidth())),
+          address_test_result, state.queryMetaData);
+    }
+    assert(success && "FIXME: Unhandled solver failure");
+    if(!address_test_result){
+      return;
+    }
+  }
 
 
   // The value is a symbol, then we check if the symbol is belong to a
@@ -7031,8 +7062,8 @@ void Executor::detectInformationLeak(ExecutionState &state, ref<Expr> &address,
 
 
   // Check if the value is read from privileged memory
-  bool is_value_from_privileged_memory= false;
-  bool success = false;
+  bool is_value_read_from_privileged_memory= false;
+  bool has_semantic_check = false;
   // If the value is a constant, then we check if it is concretized symbolic pointer
   // from the lazy initialization.
   if (ConstantExpr *CE = dyn_cast<ConstantExpr>(value)){
@@ -7040,56 +7071,36 @@ void Executor::detectInformationLeak(ExecutionState &state, ref<Expr> &address,
         state.addressSpace.findMemoryObject(CE);
     ref<Expr> symbolic_address_expr = state.addressSpace.getOriginalExprFromMo(mo_pair.first);
     if (symbolic_address_expr){
+      // Check if the symbolic address has relevant semantic check
+      has_semantic_check = hasSemanticCheck(state, symbolic_address_expr);
       // Check if the symbolic address is inside the privileged memory
       std::string symbolic_address_expr_str = symbolic_address_expr->dump1();
       if (symbolic_address_expr_str.find("KLEE_") == std::string::npos){
-          is_value_from_privileged_memory = true;
+          is_value_read_from_privileged_memory = true;
       }
     }
   }else{
     std::string value_str = value->dump1();
-    if (value_str.find("lazy_alloc") == std::string::npos){
-      is_value_from_privileged_memory = true;
+    if (value_str.find("lazy_alloc_controllable")!= std::string::npos){
+      is_value_read_from_privileged_memory = true;
     }
   }
 
 
 
   
-  // Check if the pointing address is inside the user space.
-  bool address_test_result = false;
-  uint64_t desired_address_start = ATTACK_CAPABILITY_REGION_START;
-  uint64_t desired_address_end = ATTACK_CAPABILITY_REGION_END;
-  success = solver->mayBeTrue(
-      state.addressConstraintsForTargetApp,
-      UgeExpr::create(address_test,
-                      ConstantExpr::create(desired_address_start,
-                                           address_test->getWidth())),
-      address_test_result, state.queryMetaData);
-  assert(success && "FIXME: Unhandled solver failure");
 
-  // If so, then we check if address < desired_address_end has a solution
-  if (address_test_result) {
-    success = solver->mayBeTrue(
-        state.addressConstraintsForTargetApp,
-        UleExpr::create(address_test,
-                        ConstantExpr::create(desired_address_end,
-                                             address_test->getWidth())),
-        address_test_result, state.queryMetaData);
-  }
-  assert(success && "FIXME: Unhandled solver failure");
-  bool has_semantic_check = hasSemanticCheck(state);
+ 
   
-  if (address_test_result) {
-    if (!has_semantic_check) {
-      std::string report_str = "Information leak vulnerability";
+  
+  if (is_value_read_from_privileged_memory && !has_semantic_check) {
+      std::string report_str = "Information leak vulnerability (unlimited)";
       // recordReadableLocationToJson(state, mo, offset, width);
       vulnerabilityReport(report_str, target);
     } else {
-      std::string report_str = "Limited information leak vulnerability";
+      std::string report_str = "Information leak vulnerability (limited)";
       vulnerabilityReport(report_str, target);
     }
-  }
 }
 
 // Detect pointers that is unintialized before dereferencing,
@@ -7721,17 +7732,25 @@ const MemoryObject* Executor::findMoWithName (ExecutionState &state, std::string
 
 
 // TODO, here, we need to distinguish the check for the kenrel objects and the global objects.
-bool Executor::hasSemanticCheck(ExecutionState &state){
+bool Executor::hasSemanticCheck(ExecutionState &state, ref<Expr> address){
+  // Get the lazy alloced mo names from the address expression
+  std::vector<std::string> lazy_alloc_strings = getLazyAllocedMoNameFromExpr(address);
   for(auto constraint : state.addressConstraintsForTargetApp){
     std::string constraint_string = constraint->dump1();
     //constraint->dump();
-    std::vector<std::string> result = findSpecificString(constraint_string, "lazy_alloc");
-    if(result.size() > 0){
-      for(auto res : result){
-        const MemoryObject *mo = findMoWithName(state, res);
-        if(mo != NULL){
-          if(mo->isGlobal){
-            return true;
+    // Check if the constraint string contains the lazy alloced mo names. 
+    // If so, it indicates that the address is constrained by the lazy alloced mo.
+    // TODO, Here, do we need to consider the constraints relavant to the global varabiles
+    for (auto lazy_alloc_string : lazy_alloc_strings){
+      std::vector<std::string> result = findSpecificString(constraint_string, lazy_alloc_string);
+      if(result.size() > 0){
+        for(auto res : result){
+          const MemoryObject *mo = findMoWithName(state, res);
+          if(mo != NULL){
+            if(mo->isGlobal){
+              // Here, it indicate that the address is constrained by the semantic check
+              return true;
+            }
           }
         }
       }
@@ -7739,6 +7758,17 @@ bool Executor::hasSemanticCheck(ExecutionState &state){
   }
   return false;
 }
+
+// bool Executor::hasGlobalConstraint(ExecutionState &state){
+//   for(auto constraint : state.addressConstraintsForTargetApp){
+//     std::string constraint_string = constraint->dump1();
+//     if(constraint_string.find("lazy_alloc_controllable")!=std::string::npos){
+//       return true;
+//     }
+//   }
+//   return false;
+// }
+
 
 std::vector<std::string> Executor::findSpecificString(const std::string &input, const std::string &str) {
     std::vector<std::string> result;
@@ -7752,4 +7782,13 @@ std::vector<std::string> Executor::findSpecificString(const std::string &input, 
     }
     
     return result;
+}
+
+std::vector<std::string> Executor::getLazyAllocedMoNameFromExpr(ref<Expr> expr){
+  std::string expr_string = expr->dump1();
+  std::vector<std::string> result;
+  // We need to ensure that the substring is end with a number. For example(lazy_alloc_controllable_1)
+  // So we need to find the last number in the string.
+  std::vector<std::string> lazy_alloc_strings = findSpecificString(expr_string, "lazy_alloc");
+  return lazy_alloc_strings;
 }

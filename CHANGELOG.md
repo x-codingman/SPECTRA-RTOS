@@ -114,3 +114,9 @@
 ## 2025-0402
 
 * 修改hasSemanticCheck函数，之前的字符串匹配存在匹配不上的问题。
+
+## 2025-0405
+
+* 修成hasSemanticCheck函数,在检查约束时，检查address是会否和value都与同一个lazy alloced的MO相关, 这样只考虑address相关的MO，但是忽略了其他lazy alloc的mo。
+* 修改detectInformationLeak函数，判断条件为，address是controllable且可以指向user space，value为从privileged memory读取的内容。
+*
