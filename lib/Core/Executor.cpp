@@ -6998,6 +6998,7 @@ void Executor::detectInformationLeak(ExecutionState &state, ref<Expr> &address,
                                      ref<Expr> &value, bool needTestAddress, KInstruction *target) {
   ref<Expr> address_test = address;
   uint64_t address_offset;
+  bool has_semantic_check = false;
   bool success = false;
   // Convert the concrete address to it symbolic expression
   // TODO: only symbolic expression for base address now
@@ -7031,6 +7032,7 @@ void Executor::detectInformationLeak(ExecutionState &state, ref<Expr> &address,
           address_test_result, state.queryMetaData);
     }
     assert(success && "FIXME: Unhandled solver failure");
+    has_semantic_check |= hasSemanticCheck(state,address_test);
     if(!address_test_result){
       return;
     }
@@ -7063,7 +7065,7 @@ void Executor::detectInformationLeak(ExecutionState &state, ref<Expr> &address,
 
   // Check if the value is read from privileged memory
   bool is_value_read_from_privileged_memory= false;
-  bool has_semantic_check = false;
+  
   // If the value is a constant, then we check if it is concretized symbolic pointer
   // from the lazy initialization.
   if (ConstantExpr *CE = dyn_cast<ConstantExpr>(value)){
@@ -7072,7 +7074,7 @@ void Executor::detectInformationLeak(ExecutionState &state, ref<Expr> &address,
     ref<Expr> symbolic_address_expr = state.addressSpace.getOriginalExprFromMo(mo_pair.first);
     if (symbolic_address_expr){
       // Check if the symbolic address has relevant semantic check
-      has_semantic_check = hasSemanticCheck(state, symbolic_address_expr);
+      has_semantic_check |= hasSemanticCheck(state, symbolic_address_expr);
       // Check if the symbolic address is inside the privileged memory
       std::string symbolic_address_expr_str = symbolic_address_expr->dump1();
       if (symbolic_address_expr_str.find("KLEE_") == std::string::npos){
