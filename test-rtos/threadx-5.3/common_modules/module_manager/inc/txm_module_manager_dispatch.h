@@ -2456,11 +2456,11 @@ static ALIGN_TYPE _txm_module_manager_tx_thread_reset_dispatch(TXM_MODULE_INSTAN
 
 ALIGN_TYPE return_value;
 
-    // if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
-    // {
-    //     if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_THREAD)))
-    //         return(TXM_MODULE_INVALID_MEMORY);
-    // }
+    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    {
+        if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_THREAD)))
+            return(TXM_MODULE_INVALID_MEMORY);
+    }
 
     return_value = (ALIGN_TYPE) _txm_module_manager_thread_reset(
         (TX_THREAD *) param_0

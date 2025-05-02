@@ -131,22 +131,39 @@
 
 extern bool is_unprivilged_memory(uint32_t ptr, uint32_t size);
 
-    #define TXM_MODULE_MANAGER_PARAM_CHECK_BUFFER_WRITE(module_instance, obj_ptr, obj_size) \
-    MAKE_SYMBOLIC_UNCONTROLLABLE(obj_ptr)
+    // #define TXM_MODULE_MANAGER_PARAM_CHECK_BUFFER_WRITE(module_instance, obj_ptr, obj_size) \
+    // MAKE_SYMBOLIC_UNCONTROLLABLE(obj_ptr)
+
+
+    // #define TXM_MODULE_MANAGER_CHECK_INSIDE_CODE(module_instance, obj_ptr, obj_size) \
+    // MAKE_SYMBOLIC_UNCONTROLLABLE(obj_ptr)
+
+    // #define TXM_MODULE_MANAGER_CHECK_INSIDE_DATA(module_instance, obj_ptr, obj_size) \
+    // MAKE_SYMBOLIC_UNCONTROLLABLE(obj_ptr)
+
+    // #define TXM_MODULE_MANAGER_CHECK_OUTSIDE_CODE(module_instance, obj_ptr, obj_size) \
+    // MAKE_SYMBOLIC_CONTROLLABLE(obj_ptr)
+
+    // #define TXM_MODULE_MANAGER_CHECK_INSIDE_OBJ_POOL(module_instance, obj_ptr, obj_size) \
+    // ((_txm_module_manager_object_pool_created == TX_TRUE) && \
+    // MAKE_SYMBOLIC_CONTROLLABLE(obj_ptr))
+
+        #define TXM_MODULE_MANAGER_PARAM_CHECK_BUFFER_WRITE(module_instance, obj_ptr, obj_size) \
+    (0x80000000 < obj_ptr  && obj_ptr < 0x8fffffff)
 
 
     #define TXM_MODULE_MANAGER_CHECK_INSIDE_CODE(module_instance, obj_ptr, obj_size) \
-    MAKE_SYMBOLIC_UNCONTROLLABLE(obj_ptr)
+    (0x80000000 < obj_ptr  && obj_ptr < 0x8fffffff)
 
     #define TXM_MODULE_MANAGER_CHECK_INSIDE_DATA(module_instance, obj_ptr, obj_size) \
-    MAKE_SYMBOLIC_UNCONTROLLABLE(obj_ptr)
+     (0x80000000 < obj_ptr  && obj_ptr < 0x8fffffff)
 
     #define TXM_MODULE_MANAGER_CHECK_OUTSIDE_CODE(module_instance, obj_ptr, obj_size) \
-    MAKE_SYMBOLIC_CONTROLLABLE(obj_ptr)
+    (0x80000000 > obj_ptr  || obj_ptr > 0x8fffffff)
 
     #define TXM_MODULE_MANAGER_CHECK_INSIDE_OBJ_POOL(module_instance, obj_ptr, obj_size) \
     ((_txm_module_manager_object_pool_created == TX_TRUE) && \
-    MAKE_SYMBOLIC_CONTROLLABLE(obj_ptr))
+    (0x90000000 < obj_ptr  && obj_ptr < 0x9fffffff))
 
 /* Define utility functions.  */
 

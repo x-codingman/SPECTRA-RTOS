@@ -78,7 +78,8 @@ def run_command(func_name):
     with open(temp_output_path, "w") as temp_file:
         command = [
             "/home/klee/klee_src/build/bin/klee", 
-            "--search=dfs", 
+            "--search=dfs",
+            "--stats",
             "-debug-print-instructions=all:stderr",
             "--test-info-output-dir="+test_info_dir+shlex.quote(func_name),
             "--output-dir="+output_dir+shlex.quote(func_name),

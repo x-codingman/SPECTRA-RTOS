@@ -9,6 +9,11 @@ import os
 
 
 def analyze_performance(result_folder, rtos_version, store_folder):
+    #check result folder exists. If not, create it
+    if not os.path.exists(result_folder):
+        print(f'{result_folder} does not exist, please run the data-analyze-all.py first')
+        return
+
     df = pd.read_excel(os.path.join(result_folder, f'{rtos_version}_runtime_info.xlsx'), engine='openpyxl')
 
     # Analyze the Elapsed time this table and give me the summary of the elapsed time
@@ -82,4 +87,7 @@ if __name__ == '__main__':
     result_folder = '/home/klee/klee_src/test-rtos/tizenrt/symbolic_execution/results'
     rtos_version = 'tizenrt'
     analyze_performance(result_folder, rtos_version, store_folder)
+    result_folder = '/home/klee/klee_src/test-rtos/threadx-5.3/symbolic_execution/results'
+    rtos_version = 'threadx-5.3'
+    analyze_performance(result_folder, rtos_version, store_folder)  
     
