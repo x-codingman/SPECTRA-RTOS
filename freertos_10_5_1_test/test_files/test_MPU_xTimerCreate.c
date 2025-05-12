@@ -21,13 +21,13 @@ int main()
 {
     TaskHandle_t initial_xTask;
     xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, &initial_xTask);
-    const char * const * KLEE_pcTimerName;
+    const char * KLEE_pcTimerName;
     klee_make_symbolic_controllable(&KLEE_pcTimerName, sizeof(KLEE_pcTimerName), "KLEE_pcTimerName", true);
     const TickType_t KLEE_xTimerPeriodInTicks;
     klee_make_symbolic_controllable(&KLEE_xTimerPeriodInTicks, sizeof(KLEE_xTimerPeriodInTicks), "KLEE_xTimerPeriodInTicks", true);
     const UBaseType_t KLEE_uxAutoReload;
     klee_make_symbolic_controllable(&KLEE_uxAutoReload, sizeof(KLEE_uxAutoReload), "KLEE_uxAutoReload", true);
-    void * const * KLEE_pvTimerID;
+    void * KLEE_pvTimerID;
     klee_make_symbolic_controllable(&KLEE_pvTimerID, sizeof(KLEE_pvTimerID), "KLEE_pvTimerID", true);
     TimerCallbackFunction_t KLEE_pxCallbackFunction;
     klee_make_symbolic_controllable(&KLEE_pxCallbackFunction, sizeof(KLEE_pxCallbackFunction), "KLEE_pxCallbackFunction", true);

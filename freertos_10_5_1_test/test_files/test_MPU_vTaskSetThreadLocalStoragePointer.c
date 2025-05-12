@@ -25,7 +25,7 @@ int main()
     klee_make_symbolic_controllable(&KLEE_xTaskToSet, sizeof(KLEE_xTaskToSet), "KLEE_kernel_xTaskToSet", true);
     BaseType_t KLEE_xIndex;
     klee_make_symbolic_controllable(&KLEE_xIndex, sizeof(KLEE_xIndex), "KLEE_xIndex", true);
-    void * * KLEE_pvValue;
+    void * KLEE_pvValue;
     klee_make_symbolic_controllable(&KLEE_pvValue, sizeof(KLEE_pvValue), "KLEE_pvValue", true);
     MPU_vTaskSetThreadLocalStoragePointer(KLEE_xTaskToSet, KLEE_xIndex, KLEE_pvValue);
     return 0;

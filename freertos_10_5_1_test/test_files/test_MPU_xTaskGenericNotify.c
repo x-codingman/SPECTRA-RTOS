@@ -29,7 +29,7 @@ int main()
     klee_make_symbolic_controllable(&KLEE_ulValue, sizeof(KLEE_ulValue), "KLEE_ulValue", true);
     eNotifyAction KLEE_eAction;
     klee_make_symbolic_controllable(&KLEE_eAction, sizeof(KLEE_eAction), "KLEE_eAction", true);
-    uint32_t * * KLEE_pulPreviousNotificationValue;
+    uint32_t * KLEE_pulPreviousNotificationValue;
     klee_make_symbolic_controllable(&KLEE_pulPreviousNotificationValue, sizeof(KLEE_pulPreviousNotificationValue), "KLEE_pulPreviousNotificationValue", true);
     BaseType_t KLEE_return_val;
     klee_make_symbolic_controllable(&KLEE_return_val, sizeof(KLEE_return_val), "KLEE_return_val", true);

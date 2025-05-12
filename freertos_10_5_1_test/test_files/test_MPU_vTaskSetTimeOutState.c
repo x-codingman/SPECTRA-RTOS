@@ -21,7 +21,7 @@ int main()
 {
     TaskHandle_t initial_xTask;
     xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, &initial_xTask);
-    TimeOut_t * const * KLEE_pxTimeOut;
+    TimeOut_t * KLEE_pxTimeOut;
     klee_make_symbolic_controllable(&KLEE_pxTimeOut, sizeof(KLEE_pxTimeOut), "KLEE_pxTimeOut", true);
     MPU_vTaskSetTimeOutState(KLEE_pxTimeOut);
     return 0;

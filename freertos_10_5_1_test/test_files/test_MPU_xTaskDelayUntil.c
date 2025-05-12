@@ -21,7 +21,7 @@ int main()
 {
     TaskHandle_t initial_xTask;
     xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, &initial_xTask);
-    TickType_t * const * KLEE_pxPreviousWakeTime;
+    TickType_t * KLEE_pxPreviousWakeTime;
     klee_make_symbolic_controllable(&KLEE_pxPreviousWakeTime, sizeof(KLEE_pxPreviousWakeTime), "KLEE_pxPreviousWakeTime", true);
     const TickType_t KLEE_xTimeIncrement;
     klee_make_symbolic_controllable(&KLEE_xTimeIncrement, sizeof(KLEE_xTimeIncrement), "KLEE_xTimeIncrement", true);

@@ -31,7 +31,7 @@ static ALIGN_TYPE _txm_module_manager_tx_block_allocate_dispatch(TXM_MODULE_INST
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_BLOCK_POOL)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -63,7 +63,7 @@ static ALIGN_TYPE _txm_module_manager_tx_block_pool_create_dispatch(TXM_MODULE_I
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_CREATION(module_instance, param_0, sizeof(TX_BLOCK_POOL)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -99,7 +99,7 @@ static ALIGN_TYPE _txm_module_manager_tx_block_pool_delete_dispatch(TXM_MODULE_I
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_BLOCK_POOL)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -133,7 +133,7 @@ static ALIGN_TYPE _txm_module_manager_tx_block_pool_info_get_dispatch(TXM_MODULE
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_BLOCK_POOL)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -186,7 +186,7 @@ static ALIGN_TYPE _txm_module_manager_tx_block_pool_performance_info_get_dispatc
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_BLOCK_POOL)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -230,7 +230,7 @@ static ALIGN_TYPE _txm_module_manager_tx_block_pool_performance_system_info_get_
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_BUFFER_WRITE(module_instance, param_0, sizeof(ULONG)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -267,7 +267,7 @@ static ALIGN_TYPE _txm_module_manager_tx_block_pool_prioritize_dispatch(TXM_MODU
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_BLOCK_POOL)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -290,7 +290,7 @@ static ALIGN_TYPE _txm_module_manager_tx_block_release_dispatch(TXM_MODULE_INSTA
 ALIGN_TYPE return_value;
 ALIGN_TYPE block_header_start;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         /* Is the pointer non-null?  */
         if ((void *) param_0 != TX_NULL)
@@ -333,7 +333,7 @@ static ALIGN_TYPE _txm_module_manager_tx_byte_allocate_dispatch(TXM_MODULE_INSTA
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_BYTE_POOL)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -368,7 +368,7 @@ static ALIGN_TYPE _txm_module_manager_tx_byte_pool_create_dispatch(TXM_MODULE_IN
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_CREATION(module_instance, param_0, sizeof(TX_BYTE_POOL)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -403,7 +403,7 @@ static ALIGN_TYPE _txm_module_manager_tx_byte_pool_delete_dispatch(TXM_MODULE_IN
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_BYTE_POOL)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -437,7 +437,7 @@ static ALIGN_TYPE _txm_module_manager_tx_byte_pool_info_get_dispatch(TXM_MODULE_
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_BYTE_POOL)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -493,7 +493,7 @@ static ALIGN_TYPE _txm_module_manager_tx_byte_pool_performance_info_get_dispatch
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_BYTE_POOL)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -552,7 +552,7 @@ static ALIGN_TYPE _txm_module_manager_tx_byte_pool_performance_system_info_get_d
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_BUFFER_WRITE(module_instance, param_0, sizeof(ULONG)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -601,7 +601,7 @@ static ALIGN_TYPE _txm_module_manager_tx_byte_pool_prioritize_dispatch(TXM_MODUL
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_BYTE_POOL)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -624,7 +624,7 @@ static ALIGN_TYPE _txm_module_manager_tx_byte_release_dispatch(TXM_MODULE_INSTAN
 ALIGN_TYPE return_value;
 ALIGN_TYPE block_header_start;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         /* Is the pointer non-null?  */
         if ((void *) param_0 != TX_NULL)
@@ -666,7 +666,7 @@ static ALIGN_TYPE _txm_module_manager_tx_event_flags_create_dispatch(TXM_MODULE_
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_CREATION(module_instance, param_0, sizeof(TX_EVENT_FLAGS_GROUP)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -693,7 +693,7 @@ static ALIGN_TYPE _txm_module_manager_tx_event_flags_delete_dispatch(TXM_MODULE_
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_EVENT_FLAGS_GROUP)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -725,7 +725,7 @@ static ALIGN_TYPE _txm_module_manager_tx_event_flags_get_dispatch(TXM_MODULE_INS
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_EVENT_FLAGS_GROUP)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -762,7 +762,7 @@ static ALIGN_TYPE _txm_module_manager_tx_event_flags_info_get_dispatch(TXM_MODUL
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_EVENT_FLAGS_GROUP)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -811,7 +811,7 @@ static ALIGN_TYPE _txm_module_manager_tx_event_flags_performance_info_get_dispat
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_EVENT_FLAGS_GROUP)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -855,7 +855,7 @@ static ALIGN_TYPE _txm_module_manager_tx_event_flags_performance_system_info_get
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_BUFFER_WRITE(module_instance, param_0, sizeof(ULONG)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -894,7 +894,7 @@ static ALIGN_TYPE _txm_module_manager_tx_event_flags_set_dispatch(TXM_MODULE_INS
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_EVENT_FLAGS_GROUP)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -921,7 +921,7 @@ ALIGN_TYPE return_value;
 TX_EVENT_FLAGS_GROUP *event_flags_ptr = (TX_EVENT_FLAGS_GROUP *)param_0;
 VOID (*events_set_notify)(TX_EVENT_FLAGS_GROUP *);
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_EVENT_FLAGS_GROUP)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -967,7 +967,7 @@ static ALIGN_TYPE _txm_module_manager_tx_mutex_create_dispatch(TXM_MODULE_INSTAN
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_CREATION(module_instance, param_0, sizeof(TX_MUTEX)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -998,7 +998,7 @@ static ALIGN_TYPE _txm_module_manager_tx_mutex_delete_dispatch(TXM_MODULE_INSTAN
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_MUTEX)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -1027,7 +1027,7 @@ static ALIGN_TYPE _txm_module_manager_tx_mutex_get_dispatch(TXM_MODULE_INSTANCE 
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_MUTEX)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -1056,7 +1056,7 @@ static ALIGN_TYPE _txm_module_manager_tx_mutex_info_get_dispatch(TXM_MODULE_INST
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_MUTEX)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -1111,7 +1111,7 @@ static ALIGN_TYPE _txm_module_manager_tx_mutex_performance_info_get_dispatch(TXM
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_MUTEX)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -1165,7 +1165,7 @@ static ALIGN_TYPE _txm_module_manager_tx_mutex_performance_system_info_get_dispa
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_BUFFER_WRITE(module_instance, param_0, sizeof(ULONG)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -1210,7 +1210,7 @@ static ALIGN_TYPE _txm_module_manager_tx_mutex_prioritize_dispatch(TXM_MODULE_IN
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_MUTEX)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -1232,7 +1232,7 @@ static ALIGN_TYPE _txm_module_manager_tx_mutex_put_dispatch(TXM_MODULE_INSTANCE 
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_MUTEX)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -1259,7 +1259,7 @@ static ALIGN_TYPE _txm_module_manager_tx_queue_create_dispatch(TXM_MODULE_INSTAN
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_CREATION(module_instance, param_0, sizeof(TX_QUEUE)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -1295,7 +1295,7 @@ static ALIGN_TYPE _txm_module_manager_tx_queue_delete_dispatch(TXM_MODULE_INSTAN
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_QUEUE)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -1323,7 +1323,7 @@ static ALIGN_TYPE _txm_module_manager_tx_queue_flush_dispatch(TXM_MODULE_INSTANC
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_QUEUE)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -1348,7 +1348,7 @@ static ALIGN_TYPE _txm_module_manager_tx_queue_front_send_dispatch(TXM_MODULE_IN
 ALIGN_TYPE return_value;
 TX_QUEUE *queue_ptr;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_QUEUE)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -1383,7 +1383,7 @@ static ALIGN_TYPE _txm_module_manager_tx_queue_info_get_dispatch(TXM_MODULE_INST
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_QUEUE)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -1438,7 +1438,7 @@ static ALIGN_TYPE _txm_module_manager_tx_queue_performance_info_get_dispatch(TXM
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_QUEUE)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -1492,7 +1492,7 @@ static ALIGN_TYPE _txm_module_manager_tx_queue_performance_system_info_get_dispa
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_BUFFER_WRITE(module_instance, param_0, sizeof(ULONG)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -1537,7 +1537,7 @@ static ALIGN_TYPE _txm_module_manager_tx_queue_prioritize_dispatch(TXM_MODULE_IN
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_QUEUE)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -1562,7 +1562,7 @@ static ALIGN_TYPE _txm_module_manager_tx_queue_receive_dispatch(TXM_MODULE_INSTA
 ALIGN_TYPE return_value;
 TX_QUEUE *queue_ptr;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_QUEUE)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -1594,7 +1594,7 @@ static ALIGN_TYPE _txm_module_manager_tx_queue_send_dispatch(TXM_MODULE_INSTANCE
 ALIGN_TYPE return_value;
 TX_QUEUE *queue_ptr;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_QUEUE)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -1626,7 +1626,7 @@ ALIGN_TYPE return_value;
 TX_QUEUE *queue_ptr = (TX_QUEUE *) param_0;
 VOID (*queue_send_notify)(TX_QUEUE *);
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_QUEUE)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -1670,7 +1670,7 @@ static ALIGN_TYPE _txm_module_manager_tx_semaphore_ceiling_put_dispatch(TXM_MODU
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_SEMAPHORE)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -1696,7 +1696,7 @@ static ALIGN_TYPE _txm_module_manager_tx_semaphore_create_dispatch(TXM_MODULE_IN
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_CREATION(module_instance, param_0, sizeof(TX_SEMAPHORE)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -1727,7 +1727,7 @@ static ALIGN_TYPE _txm_module_manager_tx_semaphore_delete_dispatch(TXM_MODULE_IN
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_SEMAPHORE)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -1756,7 +1756,7 @@ static ALIGN_TYPE _txm_module_manager_tx_semaphore_get_dispatch(TXM_MODULE_INSTA
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_SEMAPHORE)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -1784,7 +1784,7 @@ static ALIGN_TYPE _txm_module_manager_tx_semaphore_info_get_dispatch(TXM_MODULE_
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_SEMAPHORE)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -1833,7 +1833,7 @@ static ALIGN_TYPE _txm_module_manager_tx_semaphore_performance_info_get_dispatch
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_SEMAPHORE)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -1877,7 +1877,7 @@ static ALIGN_TYPE _txm_module_manager_tx_semaphore_performance_system_info_get_d
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_BUFFER_WRITE(module_instance, param_0, sizeof(ULONG)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -1914,7 +1914,7 @@ static ALIGN_TYPE _txm_module_manager_tx_semaphore_prioritize_dispatch(TXM_MODUL
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_SEMAPHORE)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -1936,7 +1936,7 @@ static ALIGN_TYPE _txm_module_manager_tx_semaphore_put_dispatch(TXM_MODULE_INSTA
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_SEMAPHORE)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -1961,7 +1961,7 @@ ALIGN_TYPE return_value;
 TX_SEMAPHORE *semaphore_ptr = (TX_SEMAPHORE *) param_0;
 VOID (*semaphore_put_notify)(TX_SEMAPHORE *);
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_SEMAPHORE)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -2014,7 +2014,7 @@ static ALIGN_TYPE _txm_module_manager_tx_thread_create_dispatch(TXM_MODULE_INSTA
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_CREATION(module_instance, param_0, sizeof(TX_THREAD)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -2063,7 +2063,7 @@ static ALIGN_TYPE _txm_module_manager_tx_thread_delete_dispatch(TXM_MODULE_INSTA
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_THREAD)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -2095,7 +2095,7 @@ TX_THREAD *thread_ptr = (TX_THREAD *) param_0;
 TXM_MODULE_THREAD_ENTRY_INFO *thread_entry_info_ptr;
 VOID (*thread_entry_exit_notify)(TX_THREAD *, UINT);
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_THREAD)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -2162,7 +2162,7 @@ static ALIGN_TYPE _txm_module_manager_tx_thread_info_get_dispatch(TXM_MODULE_INS
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_THREAD)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -2219,7 +2219,7 @@ static ALIGN_TYPE _txm_module_manager_tx_thread_interrupt_control_dispatch(TXM_M
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_USER_MODE)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_USER_MODE)
         return(TXM_MODULE_INVALID_PROPERTIES);
 
     return_value = (ALIGN_TYPE) _tx_thread_interrupt_control(
@@ -2248,7 +2248,7 @@ static ALIGN_TYPE _txm_module_manager_tx_thread_performance_info_get_dispatch(TX
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_THREAD)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -2323,7 +2323,7 @@ static ALIGN_TYPE _txm_module_manager_tx_thread_performance_system_info_get_disp
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_BUFFER_WRITE(module_instance, param_0, sizeof(ULONG)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -2390,7 +2390,7 @@ static ALIGN_TYPE _txm_module_manager_tx_thread_preemption_change_dispatch(TXM_M
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_THREAD)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -2419,7 +2419,7 @@ static ALIGN_TYPE _txm_module_manager_tx_thread_priority_change_dispatch(TXM_MOD
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_THREAD)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -2456,7 +2456,7 @@ static ALIGN_TYPE _txm_module_manager_tx_thread_reset_dispatch(TXM_MODULE_INSTAN
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_THREAD)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -2478,7 +2478,7 @@ static ALIGN_TYPE _txm_module_manager_tx_thread_resume_dispatch(TXM_MODULE_INSTA
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_THREAD)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -2516,7 +2516,7 @@ static ALIGN_TYPE _txm_module_manager_tx_thread_stack_error_notify_dispatch(TXM_
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_USER_MODE)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_USER_MODE)
         return(TXM_MODULE_INVALID_PROPERTIES);
 
     return_value = (ALIGN_TYPE) _tx_thread_stack_error_notify(
@@ -2535,7 +2535,7 @@ static ALIGN_TYPE _txm_module_manager_tx_thread_suspend_dispatch(TXM_MODULE_INST
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_THREAD)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -2559,7 +2559,7 @@ TX_INTERRUPT_SAVE_AREA
 
 TX_THREAD *thread_ptr;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         /* Ensure the thread is suspending itself.  */
         if (((TX_THREAD *) param_0) != _tx_thread_current_ptr)
@@ -2614,7 +2614,7 @@ static ALIGN_TYPE _txm_module_manager_tx_thread_terminate_dispatch(TXM_MODULE_IN
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_THREAD)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -2638,7 +2638,7 @@ static ALIGN_TYPE _txm_module_manager_tx_thread_time_slice_change_dispatch(TXM_M
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_THREAD)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -2665,7 +2665,7 @@ static ALIGN_TYPE _txm_module_manager_tx_thread_wait_abort_dispatch(TXM_MODULE_I
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_THREAD)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -2713,7 +2713,7 @@ static ALIGN_TYPE _txm_module_manager_tx_timer_activate_dispatch(TXM_MODULE_INST
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_TIMER)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -2737,7 +2737,7 @@ static ALIGN_TYPE _txm_module_manager_tx_timer_change_dispatch(TXM_MODULE_INSTAN
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_TIMER)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -2770,7 +2770,7 @@ ALIGN_TYPE return_value;
 TX_TIMER *timer_ptr;
 VOID (*expiration_function)(ULONG);
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_CREATION(module_instance, param_0, sizeof(TX_TIMER)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -2834,7 +2834,7 @@ static ALIGN_TYPE _txm_module_manager_tx_timer_deactivate_dispatch(TXM_MODULE_IN
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_TIMER)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -2856,7 +2856,7 @@ static ALIGN_TYPE _txm_module_manager_tx_timer_delete_dispatch(TXM_MODULE_INSTAN
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_TIMER)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -2889,7 +2889,7 @@ static ALIGN_TYPE _txm_module_manager_tx_timer_info_get_dispatch(TXM_MODULE_INST
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_TIMER)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -2939,7 +2939,7 @@ static ALIGN_TYPE _txm_module_manager_tx_timer_performance_info_get_dispatch(TXM
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_OBJECT_FOR_USE(module_instance, param_0, sizeof(TX_TIMER)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -2988,7 +2988,7 @@ static ALIGN_TYPE _txm_module_manager_tx_timer_performance_system_info_get_dispa
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_BUFFER_WRITE(module_instance, param_0, sizeof(ULONG)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -3043,7 +3043,7 @@ static ALIGN_TYPE _txm_module_manager_tx_trace_disable_dispatch(TXM_MODULE_INSTA
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_USER_MODE)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_USER_MODE)
         return(TXM_MODULE_INVALID_PROPERTIES);
 
     return_value = (ALIGN_TYPE) _tx_trace_disable();
@@ -3062,7 +3062,7 @@ static ALIGN_TYPE _txm_module_manager_tx_trace_enable_dispatch(TXM_MODULE_INSTAN
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_USER_MODE)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_USER_MODE)
         return(TXM_MODULE_INVALID_PROPERTIES);
 
     return_value = (ALIGN_TYPE) _tx_trace_enable(
@@ -3115,7 +3115,7 @@ static ALIGN_TYPE _txm_module_manager_tx_trace_interrupt_control_dispatch(TXM_MO
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_USER_MODE)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_USER_MODE)
         return(TXM_MODULE_INVALID_PROPERTIES);
 
     return_value = (ALIGN_TYPE) _tx_trace_interrupt_control(
@@ -3132,7 +3132,7 @@ ALIGN_TYPE return_value;
 static ALIGN_TYPE _txm_module_manager_tx_trace_isr_enter_insert_dispatch(TXM_MODULE_INSTANCE *module_instance, ALIGN_TYPE param_0)
 {
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_USER_MODE)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_USER_MODE)
         return(TXM_MODULE_INVALID_PROPERTIES);
 
     _tx_trace_isr_enter_insert(
@@ -3149,7 +3149,7 @@ static ALIGN_TYPE _txm_module_manager_tx_trace_isr_enter_insert_dispatch(TXM_MOD
 static ALIGN_TYPE _txm_module_manager_tx_trace_isr_exit_insert_dispatch(TXM_MODULE_INSTANCE *module_instance, ALIGN_TYPE param_0)
 {
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_USER_MODE)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_USER_MODE)
         return(TXM_MODULE_INVALID_PROPERTIES);
 
     _tx_trace_isr_exit_insert(
@@ -3172,7 +3172,7 @@ static ALIGN_TYPE _txm_module_manager_tx_trace_user_event_insert_dispatch(TXM_MO
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_ENSURE_INSIDE_MODULE_DATA(module_instance, (ALIGN_TYPE)extra_parameters, sizeof(ALIGN_TYPE[3])))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -3199,7 +3199,7 @@ static ALIGN_TYPE _txm_module_manager_txm_module_object_allocate_dispatch(TXM_MO
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_BUFFER_WRITE(module_instance, param_0, sizeof(VOID *)))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -3226,7 +3226,7 @@ TXM_MODULE_ALLOCATED_OBJECT *object_ptr;
 ALIGN_TYPE object_end;
 ALIGN_TYPE object_pool_end;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         /* Is the object pool created?  */
         if (_txm_module_manager_object_pool_created == TX_TRUE)
@@ -3276,7 +3276,7 @@ static ALIGN_TYPE _txm_module_manager_txm_module_object_pointer_get_dispatch(TXM
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_DEREFERENCE_STRING(module_instance, param_1))
             return(TXM_MODULE_INVALID_MEMORY);
@@ -3306,7 +3306,7 @@ static ALIGN_TYPE _txm_module_manager_txm_module_object_pointer_get_extended_dis
 
 ALIGN_TYPE return_value;
 
-    if (module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
+    if (1 || module_instance -> txm_module_instance_property_flags & TXM_MODULE_MEMORY_PROTECTION)
     {
         if (!TXM_MODULE_MANAGER_PARAM_CHECK_DEREFERENCE_STRING(module_instance, param_1))
             return(TXM_MODULE_INVALID_MEMORY);

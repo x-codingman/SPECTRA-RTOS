@@ -30,7 +30,7 @@ INCLUDES = -I$(RTT_ROOT)/components/dfs/dfs_v2/include \
 -I$(RTT_ROOT)/components/libc/posix/io/poll \
 -I$(RTT_ROOT)/components/libc/posix/ipc \
 -I$(RTT_ROOT)/components/lwp \
--I$(RTT_ROOT)/components/lwp/arch/x86/i386 \
+-I$(RTT_ROOT)/components/lwp/arch/arm/cortex-a \
 -I$(RTT_ROOT)/components/mm \
 -I$(RTT_ROOT)/components/net/netdev/include \
 -I$(RTT_ROOT)/components/net/netdev/include/arpa \
@@ -41,11 +41,11 @@ INCLUDES = -I$(RTT_ROOT)/components/dfs/dfs_v2/include \
 -I$(RTT_ROOT)/components/utilities/libadt/ref \
 -I$(RTT_ROOT)/include \
 -I$(RTT_ROOT)/include/klibc \
--I$(RTT_ROOT)/libcpu/x86/common64 \
--I$(RTT_ROOT)/bsp/test-x86/board \
--I$(RTT_ROOT)/bsp/test-x86/drivers \
--I$(RTT_ROOT)/bsp/test-x86 \
+-I$(RTT_ROOT)/libcpu/arm/cortex-a \
+-I$(RTT_ROOT)/bsp/qemu-vexpress-a9/drivers \
+-I$(RTT_ROOT)/bsp/qemu-vexpress-a9 \
 -I$(RTT_ROOT)/components/libc/compilers/common/extension \
+-I$(RTT_ROOT)/components/legacy \
 -I.
 
 # 编译选项（生成LLVM bitcode）

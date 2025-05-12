@@ -23,7 +23,7 @@ int main()
     xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, &initial_xTask);
     TaskHandle_t KLEE_xTask;
     klee_make_symbolic_controllable(&KLEE_xTask, sizeof(KLEE_xTask), "KLEE_kernel_xTask", true);
-    void * * KLEE_pvParameter;
+    void * KLEE_pvParameter;
     klee_make_symbolic_controllable(&KLEE_pvParameter, sizeof(KLEE_pvParameter), "KLEE_pvParameter", true);
     BaseType_t KLEE_return_val;
     klee_make_symbolic_controllable(&KLEE_return_val, sizeof(KLEE_return_val), "KLEE_return_val", true);

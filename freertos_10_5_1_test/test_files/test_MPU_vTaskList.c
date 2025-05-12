@@ -21,7 +21,7 @@ int main()
 {
     TaskHandle_t initial_xTask;
     xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, &initial_xTask);
-    char * * KLEE_pcWriteBuffer;
+    char * KLEE_pcWriteBuffer;
     klee_make_symbolic_controllable(&KLEE_pcWriteBuffer, sizeof(KLEE_pcWriteBuffer), "KLEE_pcWriteBuffer", true);
     MPU_vTaskList(KLEE_pcWriteBuffer);
     return 0;

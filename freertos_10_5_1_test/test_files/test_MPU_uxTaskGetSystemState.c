@@ -21,11 +21,11 @@ int main()
 {
     TaskHandle_t initial_xTask;
     xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, &initial_xTask);
-    TaskStatus_t * const * KLEE_pxTaskStatusArray;
+    TaskStatus_t * KLEE_pxTaskStatusArray;
     klee_make_symbolic_controllable(&KLEE_pxTaskStatusArray, sizeof(KLEE_pxTaskStatusArray), "KLEE_pxTaskStatusArray", true);
     const UBaseType_t KLEE_uxArraySize;
     klee_make_symbolic_controllable(&KLEE_uxArraySize, sizeof(KLEE_uxArraySize), "KLEE_uxArraySize", true);
-    configRUN_TIME_COUNTER_TYPE * const * KLEE_pulTotalRunTime;
+    configRUN_TIME_COUNTER_TYPE * KLEE_pulTotalRunTime;
     klee_make_symbolic_controllable(&KLEE_pulTotalRunTime, sizeof(KLEE_pulTotalRunTime), "KLEE_pulTotalRunTime", true);
     UBaseType_t KLEE_return_val;
     klee_make_symbolic_controllable(&KLEE_return_val, sizeof(KLEE_return_val), "KLEE_return_val", true);

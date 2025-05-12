@@ -32,10 +32,10 @@ SOURCE_FILES          += $(wildcard ${FREERTOS_DIR}/*.c)
 # SOURCE_FILES          += $(wildcard ${TARGET_DIR}/*.c)
 #SOURCE_FILES          += ${FREERTOS_DIR}/Source/portable/Common/mpu_wrappers.c
 # Memory manager (use malloc() / free() )
-SOURCE_FILES          += ${KERNEL_DIR}/portable/MemMang/heap_3.c
+#SOURCE_FILES          += ${KERNEL_DIR}/portable/MemMang/heap_3.c
 # posix port
-SOURCE_FILES          += ${KERNEL_DIR}/portable/ThirdParty/GCC/Posix/port.c
-SOURCE_FILES          += ${KERNEL_DIR}/portable/ThirdParty/GCC/Posix/utils/wait_for_event.c
+#SOURCE_FILES          += ${KERNEL_DIR}/portable/ThirdParty/GCC/Posix/port.c
+#SOURCE_FILES          += ${KERNEL_DIR}/portable/ThirdParty/GCC/Posix/utils/wait_for_event.c
 
 
 

@@ -228,32 +228,32 @@ bool AddressSpace::lazyResolve(ExecutionState &state,
     // for(auto constraint : state.constraints){
     //   constraint->dump();
     // }
-    if (!solver->getValue(state.constraints, address, cex, state.queryMetaData))
-      return false;
-    uint64_t example = cex->getZExtValue();
-    MemoryObject hack(example);
-    const auto res = objects.lookup_previous(&hack);
+    // if (!solver->getValue(state.constraints, address, cex, state.queryMetaData))
+    //   return false;
+    // uint64_t example = cex->getZExtValue();
+    // MemoryObject hack(example);
+    // const auto res = objects.lookup_previous(&hack);
 
-    if (res) {
-      const MemoryObject *mo = res->first;
-      if (example - mo->address < mo->size) {
-        bool mustBeTrue;
-        if (!solver->mustBeTrue(state.constraints,
-                               mo->getBoundsCheckPointer(address), mustBeTrue,
-                               state.queryMetaData)){
-          // klee_message("Error: solver timed out");
-        }
-        if (!mustBeTrue){
-          needBound = true;
-          //printf("Error: out of bound pointer\n");
-          klee_debug_message("ERROR: out of bound pointer");
-        }
-        result.first = res->first;
-        result.second = res->second.get();
-        // success = true;
-        return true;
-      }
-    }
+    // if (res) {
+    //   const MemoryObject *mo = res->first;
+    //   if (example - mo->address < mo->size) {
+    //     bool mustBeTrue;
+    //     if (!solver->mustBeTrue(state.constraints,
+    //                            mo->getBoundsCheckPointer(address), mustBeTrue,
+    //                            state.queryMetaData)){
+    //       // klee_message("Error: solver timed out");
+    //     }
+    //     if (!mustBeTrue){
+    //       needBound = true;
+    //       //printf("Error: out of bound pointer\n");
+    //       klee_debug_message("ERROR: out of bound pointer");
+    //     }
+    //     result.first = res->first;
+    //     result.second = res->second.get();
+    //     // success = true;
+    //     return true;
+    //   }
+    // }
 
     // the auxiliary method for getValue() 
     ref<Expr> kid;

@@ -25,9 +25,9 @@ int main()
     klee_make_symbolic_controllable(&KLEE_uxQueueLength, sizeof(KLEE_uxQueueLength), "KLEE_uxQueueLength", true);
     const UBaseType_t KLEE_uxItemSize;
     klee_make_symbolic_controllable(&KLEE_uxItemSize, sizeof(KLEE_uxItemSize), "KLEE_uxItemSize", true);
-    uint8_t * * KLEE_pucQueueStorage;
+    uint8_t * KLEE_pucQueueStorage;
     klee_make_symbolic_controllable(&KLEE_pucQueueStorage, sizeof(KLEE_pucQueueStorage), "KLEE_pucQueueStorage", true);
-    StaticQueue_t * * KLEE_pxStaticQueue;
+    StaticQueue_t * KLEE_pxStaticQueue;
     klee_make_symbolic_controllable(&KLEE_pxStaticQueue, sizeof(KLEE_pxStaticQueue), "KLEE_pxStaticQueue", true);
     const uint8_t KLEE_ucQueueType;
     klee_make_symbolic_controllable(&KLEE_ucQueueType, sizeof(KLEE_ucQueueType), "KLEE_ucQueueType", true);

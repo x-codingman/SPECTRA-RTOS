@@ -11,11 +11,9 @@ from rich.console import Console
 from rich.table import Table
 
 
-output_dir = "/home/klee/klee_src/test-rtos/threadx-5.3/symbolic_execution/output/"
-test_files_dir = "/home/klee/klee_src/threadx_test/build/test_bc_files/home/\
-klee/klee_src/threadx_test/\
-evaluation_files/"
-test_info_dir = "/home/klee/klee_src/test-rtos/threadx-5.3/symbolic_execution/test-info-output/"
+output_dir = "/home/klee/klee_src/test-rtos/rt-thread/symbolic_execution/output/"
+test_files_dir = "/home/klee/klee_src/rt-thread_test/test_bc_files/"
+test_info_dir = "/home/klee/klee_src/test-rtos/rt-thread/symbolic_execution/test-info-output/"
 
 # please clean the output and test-info-output directory before running the test
 # Clean output directory
@@ -42,15 +40,7 @@ subprocess.run(" ".join(command_clean_test_info), shell=True, check=True)
 # Create test-info-output directory if it doesn't exist
 os.makedirs(test_info_dir, exist_ok=True)
 
-
-
-
-
-
-
 func_names = []
-
-
 
 for dirpath, dirnames, filenames in os.walk(test_files_dir):
     for file in filenames:
@@ -164,7 +154,7 @@ def format_time(seconds):
     seconds = int(seconds % 60)
     return f"{hours:02}:{minutes:02}:{seconds:02}"
 
-num_workers = multiprocessing.cpu_count()-2
+num_workers = multiprocessing.cpu_count()-4
 if __name__ == "__main__":
     start_time = time.time()
     with concurrent.futures.ProcessPoolExecutor(max_workers=num_workers) as executor:

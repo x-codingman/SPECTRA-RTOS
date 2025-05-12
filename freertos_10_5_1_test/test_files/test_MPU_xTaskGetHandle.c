@@ -21,7 +21,7 @@ int main()
 {
     TaskHandle_t initial_xTask;
     xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, &initial_xTask);
-    const char * * KLEE_pcNameToQuery;
+    const char * KLEE_pcNameToQuery;
     klee_make_symbolic_controllable(&KLEE_pcNameToQuery, sizeof(KLEE_pcNameToQuery), "KLEE_pcNameToQuery", true);
     TaskHandle_t KLEE_return_val;
     klee_make_symbolic_controllable(&KLEE_return_val, sizeof(KLEE_return_val), "KLEE_kernel_return_val", true);

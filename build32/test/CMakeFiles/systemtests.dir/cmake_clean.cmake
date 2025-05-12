@@ -1,0 +1,42 @@
+file(REMOVE_RECURSE
+  "ArrayOpt/Output"
+  "CXX/Output"
+  "CXX/symex/Output"
+  "CXX/symex/basic_c++/Output"
+  "CXX/symex/libc++/Output"
+  "Concrete/Output"
+  "Coverage/Output"
+  "DeterministicAllocation/Output"
+  "Dogfood/Output"
+  "Expr/Output"
+  "Expr/Lexer/Output"
+  "Expr/Parser/Output"
+  "Feature/Output"
+  "Feature/klee-stats/Output"
+  "Feature/klee-stats/additional_column/Output"
+  "Feature/klee-stats/empty/Output"
+  "Feature/klee-stats/missing_column/Output"
+  "Feature/klee-stats/run/Output"
+  "Feature/ubsan/Output"
+  "Intrinsics/Output"
+  "Merging/Output"
+  "Programs/Output"
+  "Replay/Output"
+  "Replay/klee-replay/Output"
+  "Replay/libkleeruntest/Output"
+  "Runtime/Output"
+  "Runtime/FreeStanding/Output"
+  "Runtime/POSIX/Output"
+  "Runtime/POSIX/SELinux/Output"
+  "Runtime/Uclibc/Output"
+  "Runtime/klee-libc/Output"
+  "Solver/Output"
+  "VectorInstructions/Output"
+  "regression/Output"
+  "CMakeFiles/systemtests"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang )
+  include(CMakeFiles/systemtests.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

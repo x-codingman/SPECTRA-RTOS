@@ -76,15 +76,28 @@ RUN /bin/bash -c 'echo "export LD_LIBRARY_PATH=$(cd ${BASE}/metaSMT-*-deps/stp-g
 
 RUN mkdir /home/klee/klee_src/build
 WORKDIR /home/klee/klee_src/build
+# RUN cmake \
+# -DCMAKE_CXX_FLAGS_DEBUG="-g -fexceptions" \
+# -DCMAKE_C_FLAGS_DEBUG="-g -fexceptions" \
+# -DCMAKE_CXX_FLAGS_RELEASE="-O3 -DNDEBUG -fexceptions" \
+# -DCMAKE_C_FLAGS_RELEASE="-O3 -DNDEBUG -fexceptions" \
+# -DCMAKE_CXX_FLAGS_RELWITHDEBINFO="-O2 -g -DNDEBUG -fexceptions" \
+# -DCMAKE_C_FLAGS_RELWITHDEBINFO="-O2 -g -DNDEBUG -fexceptions" \
+# -DENABLE_SOLVER_STP=ON \
+# -DENABLE_POSIX_RUNTIME=ON \
+# -DSTP_DIR=/tmp/stp-2.3.3-install/lib/cmake/STP/ \
+# .. && \
+# make -j$(nproc)
+
 RUN cmake \
--DCMAKE_CXX_FLAGS_DEBUG="-g" \
--DCMAKE_C_FLAGS_DEBUG="-g" \
--DCMAKE_CXX_FLAGS_RELEASE="-O3 -DNDEBUG" \
--DCMAKE_C_FLAGS_RELEASE="-O3 -DNDEBUG" \
--DCMAKE_CXX_FLAGS_RELWITHDEBINFO="-O2 -g -DNDEBUG" \
--DCMAKE_C_FLAGS_RELWITHDEBINFO="-O2 -g -DNDEBUG" \
--DENABLE_SOLVER_STP=ON \
+-DCMAKE_CXX_FLAGS_DEBUG="-g -fexceptions" \
+-DCMAKE_C_FLAGS_DEBUG="-g -fexceptions" \
+-DCMAKE_CXX_FLAGS_RELEASE="-O3 -DNDEBUG -fexceptions" \
+-DCMAKE_C_FLAGS_RELEASE="-O3 -DNDEBUG -fexceptions" \
+-DCMAKE_CXX_FLAGS_RELWITHDEBINFO="-O2 -g -DNDEBUG -fexceptions" \
+-DCMAKE_C_FLAGS_RELWITHDEBINFO="-O2 -g -DNDEBUG -fexceptions" \
+-DENABLE_SOLVER_Z3=ON \
 -DENABLE_POSIX_RUNTIME=ON \
--DSTP_DIR=/tmp/stp-2.3.3-install/lib/cmake/STP/ \
+-DZ3_DIR=/tmp/z3-4.8.15-install/lib/ \
 .. && \
 make -j$(nproc)

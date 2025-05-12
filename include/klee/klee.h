@@ -37,7 +37,7 @@ extern "C" {
    */
   void klee_make_symbolic(void *addr, size_t nbytes, const char *name);
 
-
+  void klee_terminate_state(void);
   /* klee_make_symbolic_controllable - Add controllable info based on klee_make_symbolic.
    * \arg isControllable - the controllable info of the corresponding memory object. 
    */

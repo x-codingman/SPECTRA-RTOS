@@ -23,7 +23,7 @@ int main()
     xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, &initial_xTask);
     StreamBufferHandle_t KLEE_xStreamBuffer;
     klee_make_symbolic_controllable(&KLEE_xStreamBuffer, sizeof(KLEE_xStreamBuffer), "KLEE_kernel_xStreamBuffer", true);
-    void * * KLEE_pvRxData;
+    void * KLEE_pvRxData;
     klee_make_symbolic_controllable(&KLEE_pvRxData, sizeof(KLEE_pvRxData), "KLEE_pvRxData", true);
     size_t KLEE_xBufferLengthBytes;
     klee_make_symbolic_controllable(&KLEE_xBufferLengthBytes, sizeof(KLEE_xBufferLengthBytes), "KLEE_xBufferLengthBytes", true);

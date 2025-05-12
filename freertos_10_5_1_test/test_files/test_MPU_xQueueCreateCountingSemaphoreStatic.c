@@ -25,7 +25,7 @@ int main()
     klee_make_symbolic_controllable(&KLEE_uxMaxCount, sizeof(KLEE_uxMaxCount), "KLEE_uxMaxCount", true);
     const UBaseType_t KLEE_uxInitialCount;
     klee_make_symbolic_controllable(&KLEE_uxInitialCount, sizeof(KLEE_uxInitialCount), "KLEE_uxInitialCount", true);
-    StaticQueue_t * * KLEE_pxStaticQueue;
+    StaticQueue_t * KLEE_pxStaticQueue;
     klee_make_symbolic_controllable(&KLEE_pxStaticQueue, sizeof(KLEE_pxStaticQueue), "KLEE_pxStaticQueue", true);
     QueueHandle_t KLEE_return_val;
     klee_make_symbolic_controllable(&KLEE_return_val, sizeof(KLEE_return_val), "KLEE_kernel_return_val", true);

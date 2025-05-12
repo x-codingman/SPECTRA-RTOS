@@ -23,7 +23,7 @@ int main()
     xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, &initial_xTask);
     PendedFunction_t KLEE_xFunctionToPend;
     klee_make_symbolic_controllable(&KLEE_xFunctionToPend, sizeof(KLEE_xFunctionToPend), "KLEE_xFunctionToPend", true);
-    void * * KLEE_pvParameter1;
+    void * KLEE_pvParameter1;
     klee_make_symbolic_controllable(&KLEE_pvParameter1, sizeof(KLEE_pvParameter1), "KLEE_pvParameter1", true);
     uint32_t KLEE_ulParameter2;
     klee_make_symbolic_controllable(&KLEE_ulParameter2, sizeof(KLEE_ulParameter2), "KLEE_ulParameter2", true);

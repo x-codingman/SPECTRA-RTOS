@@ -23,7 +23,7 @@ int main()
     xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, &initial_xTask);
     TaskHandle_t KLEE_xTask;
     klee_make_symbolic_controllable(&KLEE_xTask, sizeof(KLEE_xTask), "KLEE_kernel_xTask", true);
-    TaskStatus_t * * KLEE_pxTaskStatus;
+    TaskStatus_t * KLEE_pxTaskStatus;
     klee_make_symbolic_controllable(&KLEE_pxTaskStatus, sizeof(KLEE_pxTaskStatus), "KLEE_pxTaskStatus", true);
     BaseType_t KLEE_xGetFreeStackSpace;
     klee_make_symbolic_controllable(&KLEE_xGetFreeStackSpace, sizeof(KLEE_xGetFreeStackSpace), "KLEE_xGetFreeStackSpace", true);

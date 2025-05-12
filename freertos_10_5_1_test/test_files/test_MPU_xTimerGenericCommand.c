@@ -27,7 +27,7 @@ int main()
     klee_make_symbolic_controllable(&KLEE_xCommandID, sizeof(KLEE_xCommandID), "KLEE_xCommandID", true);
     const TickType_t KLEE_xOptionalValue;
     klee_make_symbolic_controllable(&KLEE_xOptionalValue, sizeof(KLEE_xOptionalValue), "KLEE_xOptionalValue", true);
-    BaseType_t * const * KLEE_pxHigherPriorityTaskWoken;
+    BaseType_t * KLEE_pxHigherPriorityTaskWoken;
     klee_make_symbolic_controllable(&KLEE_pxHigherPriorityTaskWoken, sizeof(KLEE_pxHigherPriorityTaskWoken), "KLEE_pxHigherPriorityTaskWoken", true);
     const TickType_t KLEE_xTicksToWait;
     klee_make_symbolic_controllable(&KLEE_xTicksToWait, sizeof(KLEE_xTicksToWait), "KLEE_xTicksToWait", true);

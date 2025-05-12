@@ -23,7 +23,7 @@ int main()
     xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, &initial_xTask);
     TimerHandle_t KLEE_xTimer;
     klee_make_symbolic_controllable(&KLEE_xTimer, sizeof(KLEE_xTimer), "KLEE_kernel_xTimer", true);
-    void * * KLEE_pvNewID;
+    void * KLEE_pvNewID;
     klee_make_symbolic_controllable(&KLEE_pvNewID, sizeof(KLEE_pvNewID), "KLEE_pvNewID", true);
     MPU_vTimerSetTimerID(KLEE_xTimer, KLEE_pvNewID);
     return 0;

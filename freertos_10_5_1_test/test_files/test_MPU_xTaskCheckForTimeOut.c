@@ -21,9 +21,9 @@ int main()
 {
     TaskHandle_t initial_xTask;
     xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, &initial_xTask);
-    TimeOut_t * const * KLEE_pxTimeOut;
+    TimeOut_t * KLEE_pxTimeOut;
     klee_make_symbolic_controllable(&KLEE_pxTimeOut, sizeof(KLEE_pxTimeOut), "KLEE_pxTimeOut", true);
-    TickType_t * const * KLEE_pxTicksToWait;
+    TickType_t * KLEE_pxTicksToWait;
     klee_make_symbolic_controllable(&KLEE_pxTicksToWait, sizeof(KLEE_pxTicksToWait), "KLEE_pxTicksToWait", true);
     BaseType_t KLEE_return_val;
     klee_make_symbolic_controllable(&KLEE_return_val, sizeof(KLEE_return_val), "KLEE_return_val", true);

@@ -55,8 +55,10 @@ def process_function_declaration(declaration):
             parts = arg.split()
             # Handle pointer parameters
             if '*' in arg:
-                param_name = parts[-1].replace('*', '').strip()
-                param_type = ' '.join(parts[:-1]) + ' *'
+                # Find the last * in the type
+                last_star_index = arg.rfind('*')
+                param_name = arg[last_star_index+1:].strip()
+                param_type = arg[:last_star_index+1].strip()
             else:
                 param_name = parts[-1].strip()
                 param_type = ' '.join(parts[:-1])

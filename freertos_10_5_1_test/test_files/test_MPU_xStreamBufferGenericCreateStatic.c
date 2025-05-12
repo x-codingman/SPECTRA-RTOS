@@ -27,9 +27,9 @@ int main()
     klee_make_symbolic_controllable(&KLEE_xTriggerLevelBytes, sizeof(KLEE_xTriggerLevelBytes), "KLEE_xTriggerLevelBytes", true);
     BaseType_t KLEE_xIsMessageBuffer;
     klee_make_symbolic_controllable(&KLEE_xIsMessageBuffer, sizeof(KLEE_xIsMessageBuffer), "KLEE_xIsMessageBuffer", true);
-    uint8_t * const * KLEE_pucStreamBufferStorageArea;
+    uint8_t * KLEE_pucStreamBufferStorageArea;
     klee_make_symbolic_controllable(&KLEE_pucStreamBufferStorageArea, sizeof(KLEE_pucStreamBufferStorageArea), "KLEE_pucStreamBufferStorageArea", true);
-    StaticStreamBuffer_t * const * KLEE_pxStaticStreamBuffer;
+    StaticStreamBuffer_t * KLEE_pxStaticStreamBuffer;
     klee_make_symbolic_controllable(&KLEE_pxStaticStreamBuffer, sizeof(KLEE_pxStaticStreamBuffer), "KLEE_pxStaticStreamBuffer", true);
     StreamBufferCallbackFunction_t KLEE_pxSendCompletedCallback;
     klee_make_symbolic_controllable(&KLEE_pxSendCompletedCallback, sizeof(KLEE_pxSendCompletedCallback), "KLEE_pxSendCompletedCallback", true);

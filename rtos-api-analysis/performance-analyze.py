@@ -54,7 +54,7 @@ def analyze_performance(result_folder, rtos_version, store_folder):
     })
     # 11 Save the summary table to a excel file
     summary_table.to_excel(os.path.join(store_folder, f'{rtos_version}_elapsed_time_summary.xlsx'), index=False)
-
+    print(f'{rtos_version} elapsed time summary table is saved to {os.path.join(store_folder, f"{rtos_version}_elapsed_time_summary.xlsx")}')
     # Analyze the Elapsed time this table and draw the Pareto Chart
     # 1. Calculate the total elapsed time for each API
     total_elapsed_time = df['Elapsed'].sum()
@@ -80,14 +80,14 @@ def analyze_performance(result_folder, rtos_version, store_folder):
 if __name__ == '__main__':
     # Read the existing table
     # Specify the result folder
-    result_folder = '/home/klee/klee_src/test-rtos/freertos-10.5.1/symbolic_execution/results'
+    result_folder = '/home/klee/klee_src/rtos-api-analysis/results'
     rtos_version = 'freertos-10.5.1'
     store_folder = '/home/klee/klee_src/rtos-api-analysis/results'
     analyze_performance(result_folder, rtos_version, store_folder)
-    result_folder = '/home/klee/klee_src/test-rtos/tizenrt/symbolic_execution/results'
     rtos_version = 'tizenrt'
     analyze_performance(result_folder, rtos_version, store_folder)
-    result_folder = '/home/klee/klee_src/test-rtos/threadx-5.3/symbolic_execution/results'
     rtos_version = 'threadx-5.3'
+    analyze_performance(result_folder, rtos_version, store_folder)
+    rtos_version = 'rt-thread'
     analyze_performance(result_folder, rtos_version, store_folder)  
     

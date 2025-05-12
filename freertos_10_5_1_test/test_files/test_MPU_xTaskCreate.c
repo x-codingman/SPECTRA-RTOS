@@ -23,15 +23,15 @@ int main()
     xTaskCreate(vTaskFunction1, "Task1", STACK_SIZE, NULL, 1, &initial_xTask);
     TaskFunction_t KLEE_pxTaskCode;
     klee_make_symbolic_controllable(&KLEE_pxTaskCode, sizeof(KLEE_pxTaskCode), "KLEE_pxTaskCode", true);
-    const char * const * KLEE_pcName;
+    const char * KLEE_pcName;
     klee_make_symbolic_controllable(&KLEE_pcName, sizeof(KLEE_pcName), "KLEE_pcName", true);
     const uint16_t KLEE_usStackDepth;
     klee_make_symbolic_controllable(&KLEE_usStackDepth, sizeof(KLEE_usStackDepth), "KLEE_usStackDepth", true);
-    void * const * KLEE_pvParameters;
+    void * KLEE_pvParameters;
     klee_make_symbolic_controllable(&KLEE_pvParameters, sizeof(KLEE_pvParameters), "KLEE_pvParameters", true);
     UBaseType_t KLEE_uxPriority;
     klee_make_symbolic_controllable(&KLEE_uxPriority, sizeof(KLEE_uxPriority), "KLEE_uxPriority", true);
-    TaskHandle_t * const * KLEE_pxCreatedTask;
+    TaskHandle_t * KLEE_pxCreatedTask;
     klee_make_symbolic_controllable(&KLEE_pxCreatedTask, sizeof(KLEE_pxCreatedTask), "KLEE_kernel_pxCreatedTask", true);
     BaseType_t KLEE_return_val;
     klee_make_symbolic_controllable(&KLEE_return_val, sizeof(KLEE_return_val), "KLEE_return_val", true);

@@ -27,7 +27,7 @@ int main()
     klee_make_symbolic_controllable(&KLEE_ulBitsToClearOnEntry, sizeof(KLEE_ulBitsToClearOnEntry), "KLEE_ulBitsToClearOnEntry", true);
     uint32_t KLEE_ulBitsToClearOnExit;
     klee_make_symbolic_controllable(&KLEE_ulBitsToClearOnExit, sizeof(KLEE_ulBitsToClearOnExit), "KLEE_ulBitsToClearOnExit", true);
-    uint32_t * * KLEE_pulNotificationValue;
+    uint32_t * KLEE_pulNotificationValue;
     klee_make_symbolic_controllable(&KLEE_pulNotificationValue, sizeof(KLEE_pulNotificationValue), "KLEE_pulNotificationValue", true);
     TickType_t KLEE_xTicksToWait;
     klee_make_symbolic_controllable(&KLEE_xTicksToWait, sizeof(KLEE_xTicksToWait), "KLEE_xTicksToWait", true);
