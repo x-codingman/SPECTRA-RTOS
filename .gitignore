@@ -40,6 +40,6 @@ test-rtos/freertos-10.6.0/symbolic_execution/
 test-rtos/threadx-5.3/symbolic_execution/
 test-rtos/tizenRT/
 test-rtos/tizenrt/
-
+test-rtos/threadx-6.4.2/
 # macOS files
 .DS_Store

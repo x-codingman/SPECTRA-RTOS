@@ -100,10 +100,10 @@ def vulnerability_analysis(root_folder, output_folder):
         lambda x: '✔' if 'Information leak vulnerability (unlimited)' in x else 'X'
     )
     def memory_write_mark(vul_type):
-        if 'Limited memory write vulnerability(Uninitialized pointer dereference) (V2)' in vul_type:
-            return 'II'
-        elif 'Arbitrary memory write vulnerability (V0)' in vul_type:
+        if 'Arbitrary memory write vulnerability (V0)' in vul_type:
             return 'I'
+        elif 'Limited memory write vulnerability(Uninitialized pointer dereference) (V2)' in vul_type:
+            return 'II'
         else:
             return 'X'
     filtered_df['Memory Write'] = filtered_df['Vulnerability Type'].apply(memory_write_mark)

@@ -4845,7 +4845,7 @@ void Executor::executeMemoryOperation(
   // to be bounded
   // What will happed if we do not add constraint?
   if (needBound) {
-    addConstraint(state, mo->getBoundsCheckPointer(address));
+    //addConstraint(state, mo->getBoundsCheckPointer(address));
     klee_debug_message("DEBUG: Pointer Out of Bound");
     std::string report_str = "Pointer Out of Bound";
     vulnerabilityReport(report_str, target);
