@@ -1,0 +1,100 @@
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1094
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1094 9:8205:1:  br i1 %cmp39, label %if.then40, label %if.else47, !dbg !673
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1094
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1030 0:8228:1:  br label %if.end48
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1030
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1111 1:8231:1:  ret void, !dbg !686
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1111
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:807 21:8548:1:  store i64 1, i64* %xReturn, align 8, !dbg !686
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:807
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+102218936812224
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:808 9:8549:1:  br label %if.end14, !dbg !687
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:808
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:814 16:8556:1:  %22 = load i64, i64* %xReturn, align 8, !dbg !690
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:814
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+102218936812224
+KLEE: DEBUG: dump the resolve result of address
+1
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:814 9:8557:1:  ret i64 %22, !dbg !691
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:814
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/xTimerGetTimerDaemonTaskHandle.c:19 1:16923:1:  %call1 = call %struct.tskTaskControlBlock* @xTimerGetTimerDaemonTaskHandle(), !dbg !612
+KLEE: Execute: test_files/xTimerGetTimerDaemonTaskHandle.c:19
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:437 9:16431:1:  %0 = load %struct.tskTaskControlBlock*, %struct.tskTaskControlBlock** @xTimerTaskHandle, align 8, !dbg !611
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:437
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+102218936811800
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: Detect a unintialzied constant pointer.
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable28
+KLEE: DEBUG: Alloc a new uncontrollable memory object for the constant pointer. Alloc size:280 and address:102218928055584
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:437 9:16432:1:  %cmp = icmp ne %struct.tskTaskControlBlock* %0, null, !dbg !611
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:437
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:437 9:16433:1:  %conv = zext i1 %cmp to i32, !dbg !611
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:437
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:437 9:16434:1:  %cmp1 = icmp eq i32 %conv, 0, !dbg !611
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:437
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:437 9:16435:1:  br i1 %cmp1, label %if.then, label %if.end, !dbg !613
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:437
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:438 16:16442:1:  %1 = load %struct.tskTaskControlBlock*, %struct.tskTaskControlBlock** @xTimerTaskHandle, align 8, !dbg !614
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:438
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+102218936811800
+KLEE: DEBUG: dump the resolve result of address
+102218928055584
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:438 9:16443:1:  ret %struct.tskTaskControlBlock* %1, !dbg !615
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:438
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/xTimerGetTimerDaemonTaskHandle.c:20 1:16924:1:  ret i32 0, !dbg !613
+KLEE: Execute: test_files/xTimerGetTimerDaemonTaskHandle.c:20
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 0
+
+KLEE: done: total instructions = 875
+KLEE: done: completed paths = 5
+KLEE: done: partially completed paths = 0
+KLEE: done: generated tests = 5
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+5822 bitcode-reader - Number of Metadata records loaded
+ 897 bitcode-reader - Number of MDStrings loaded
+

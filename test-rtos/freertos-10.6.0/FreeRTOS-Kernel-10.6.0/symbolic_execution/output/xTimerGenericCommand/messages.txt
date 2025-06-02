@@ -1,0 +1,4124 @@
+KLEE: Execute: test_files/xTimerGenericCommand.c:16
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_files/xTimerGenericCommand.c:16
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276630864
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_files/xTimerGenericCommand.c:16
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276630856
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_files/xTimerGenericCommand.c:16
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276630888
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_files/xTimerGenericCommand.c:16
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276630904
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_files/xTimerGenericCommand.c:16
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276630920
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_files/xTimerGenericCommand.c:16
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_files/xTimerGenericCommand.c:18
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:725
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455273818664
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:725
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276630952
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:725
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:725
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276630976
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:725
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276630992
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:725
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276631008
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:725
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276631024
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:725
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276631040
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:725
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276631056
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:725
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:725
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:725
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:726
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:725
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:727
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:725
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:728
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:725
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:729
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:725
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:730
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:732
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:733
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:764
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:767
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:767
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:767
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:767
+KLEE: DEBUG: Detect __asm__ external function!
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:767
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:767
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:769
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable1
+KLEE: mo address: 105455276631056
+KLEE: newMo address: 105455276631136
+KLEE: alloc uncontrollable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 8,            alloc address: 105455276631136
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:769
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:769
+KLEE: Print condition:
+
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:790
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:725
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:795
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: Detect a unintialzied constant pointer.
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable2
+KLEE: DEBUG: Alloc a new uncontrollable memory object for the constant pointer. Alloc size:280 and address:105455267798912
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:795
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:795
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:801
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:801
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:801
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: address controllable flag: 1
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:1
+ canBeDesiredAddress: 0
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:805
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable3
+KLEE: mo address: 105455273818664
+KLEE: newMo address: 105455276631256
+KLEE: alloc uncontrollable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 8,            alloc address: 105455276631256
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:805
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:805
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:805
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:805
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: Detect a unintialzied constant pointer.
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable4
+KLEE: DEBUG: Alloc a new uncontrollable memory object for the constant pointer. Alloc size:1 and address:105455276631280
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:805
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:805
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: Detect a unintialzied constant pointer.
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable5
+KLEE: DEBUG: Alloc a new uncontrollable memory object for the constant pointer. Alloc size:8 and address:105455276631376
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:805
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:805
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:820
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276631432
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:820
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276631456
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:820
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:820
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276631480
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:820
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276631496
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:820
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276631512
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:820
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276631528
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:820
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276631544
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:820
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276631560
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:820
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276631576
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:820
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276631592
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:820
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:820
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:820
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:821
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:820
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:822
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:820
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:823
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:820
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:824
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:820
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:825
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:820
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:826
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:820
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:827
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:829
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:830
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:834
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:836
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:836
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:836
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:836
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:842
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:820
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:844
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:844
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:851
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:851
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:851
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Allocate global memory!!!alloc size: 8, states size: 2
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable6
+KLEE: mo address: 105455267798912
+KLEE: newMo address: 105455276631608
+KLEE: alloc uncontrollable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 8,            alloc address: 105455276631608
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:851
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:851
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:851
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:851
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:851
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276631616
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276631672
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276631704
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:13
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:13
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:13
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:14
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:14
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:14
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:14
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:14
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:15
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:15
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:15
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:15
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:15
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:15
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: lazyResolve failed, found a symbolic pointer
+KLEE: DEBUG: dump the address expression
+KLEE: DEBUG: Binding a symbolic pointer with address expression:
+KLEE: DEBUG: address controllable flag: 1
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:1
+ canBeDesiredAddress: 1
+ canBeDesiredValue: 0
+KLEE: DEBUG: has_semantic_check:0
+ canBeDesiredValue: 0
+ is_controlled_value: 0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:15
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:16
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:16
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:861
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:861
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:861
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:861
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:861
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:861
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:861
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:861
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:862
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: Detect a unintialzied constant pointer.
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable7
+KLEE: DEBUG: Alloc a new uncontrollable memory object for the constant pointer. Alloc size:8 and address:105455276631704
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:862
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:862
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:862
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:862
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:865
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:865
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:865
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:865
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:865
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:865
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:865
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:889
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:889
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:889
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:911
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:918
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:918
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:918
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:918
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:918
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:920
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:920
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:920
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:820
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:929
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:929
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:929
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:929
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: address controllable flag: 1
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:1
+ canBeDesiredAddress: 0
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:936
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:936
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:936
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/list.c:86
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276631712
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/list.c:86
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/list.c:86
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/list.c:89
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/list.c:89
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/list.c:89
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: address controllable flag: 1
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:1
+ canBeDesiredAddress: 0
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/list.c:95
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:937
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:937
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:937
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/list.c:86
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276631616
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/list.c:86
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/list.c:86
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/list.c:89
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/list.c:89
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/list.c:89
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: address controllable flag: 1
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:1
+ canBeDesiredAddress: 0
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/list.c:95
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:941
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:941
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:941
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:941
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:941
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:941
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: address controllable flag: 1
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:1
+ canBeDesiredAddress: 0
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:944
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:944
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:944
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:944
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:944
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:944
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: address controllable flag: 1
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:1
+ canBeDesiredAddress: 0
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:945
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:945
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:945
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:945
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:945
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:945
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: address controllable flag: 1
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:1
+ canBeDesiredAddress: 0
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1017
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1017
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1017
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1021
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1021
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1021
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: address controllable flag: 1
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:1
+ canBeDesiredAddress: 0
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1022
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1027
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:806
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:806
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1030
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276631592
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1030
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276631584
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1030
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1030
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1034
+KLEE: DEBUG: Detect __asm__ external function!
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1036
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1036
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1036
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1038
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: Detect a unintialzied constant pointer.
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable8
+KLEE: DEBUG: Alloc a new uncontrollable memory object for the constant pointer. Alloc size:280 and address:105455267799776
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1038
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1038
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1061
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1061
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1061
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1063
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1063
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1063
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1063
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1063
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1063
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1063
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1063
+KLEE: Print condition:
+
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1030
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1071
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1030
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1078
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1078
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1078
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1083
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1083
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1083
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1083
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: address controllable flag: 1
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:1
+ canBeDesiredAddress: 0
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: Detect a unintialzied constant pointer.
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable9
+KLEE: DEBUG: Alloc a new uncontrollable memory object for the constant pointer. Alloc size:40 and address:105455276677696
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: address controllable flag: 1
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:1
+ canBeDesiredAddress: 0
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Allocate global memory!!!alloc size: 40, states size: 3
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable10
+KLEE: mo address: 105455276677696
+KLEE: newMo address: 105455276942512
+KLEE: alloc uncontrollable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 40,            alloc address: 105455276942512
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: address controllable flag: 1
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: address_controllable:1
+ canBeDesiredAddress: 0
+ canBeDesiredValue: 1
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: lazyResolve failed, found a symbolic pointer
+KLEE: DEBUG: dump the address expression
+KLEE: DEBUG: Binding a symbolic pointer with address expression:
+KLEE: DEBUG: address controllable flag: 1
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:1
+ canBeDesiredAddress: 1
+ canBeDesiredValue: 0
+KLEE: DEBUG: has_semantic_check:0
+ canBeDesiredValue: 0
+ is_controlled_value: 0
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: address controllable flag: 1
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:1
+ canBeDesiredAddress: 0
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: address controllable flag: 1
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:1
+ canBeDesiredAddress: 0
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1088
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1090
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1092
+KLEE: DEBUG: Detect __asm__ external function!
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1094
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1094
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1094
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1030
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1111
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:807
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:808
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:814
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:814
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_files/xTimerGenericCommand.c:19
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_files/xTimerGenericCommand.c:20
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_files/xTimerGenericCommand.c:21
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_files/xTimerGenericCommand.c:22
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_files/xTimerGenericCommand.c:23
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_files/xTimerGenericCommand.c:24
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_files/xTimerGenericCommand.c:24
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_files/xTimerGenericCommand.c:25
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_files/xTimerGenericCommand.c:25
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_files/xTimerGenericCommand.c:26
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_files/xTimerGenericCommand.c:26
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_files/xTimerGenericCommand.c:27
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_files/xTimerGenericCommand.c:27
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_files/xTimerGenericCommand.c:28
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_files/xTimerGenericCommand.c:28
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_files/xTimerGenericCommand.c:29
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_controllable11
+KLEE: DEBUG: detect controllable address
+KLEE: mo address: 105455276630864
+KLEE: newMo address: 105455271550656
+KLEE: alloc controllable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 88,            alloc address: 105455271550656
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_files/xTimerGenericCommand.c:29
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_files/xTimerGenericCommand.c:29
+KLEE: Print condition:
+
+KLEE: DEBUG: add constraints in addressConstraintsForTargetApp
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 4
+KLEE: Execute: test_files/xTimerGenericCommand.c:29
+KLEE: DEBUG: state id 4
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test_files/xTimerGenericCommand.c:29
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test_files/xTimerGenericCommand.c:29
+KLEE: Print condition:
+
+KLEE: DEBUG: add constraints in addressConstraintsForTargetApp
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 5
+KLEE: Execute: test_files/xTimerGenericCommand.c:30
+KLEE: DEBUG: state id 5
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_controllable12
+KLEE: DEBUG: detect controllable address
+KLEE: mo address: 105455276630904
+KLEE: newMo address: 105455276631768
+KLEE: alloc controllable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 8,            alloc address: 105455276631768
+KLEE: DEBUG: states size 5
+KLEE: DEBUG: states size 5
+KLEE: Execute: test_files/xTimerGenericCommand.c:30
+KLEE: DEBUG: states size 5
+KLEE: DEBUG: states size 5
+KLEE: Execute: test_files/xTimerGenericCommand.c:30
+KLEE: Print condition:
+
+KLEE: DEBUG: add constraints in addressConstraintsForTargetApp
+KLEE: DEBUG: states size 5
+KLEE: DEBUG: states size 6
+KLEE: Execute: test_files/xTimerGenericCommand.c:30
+KLEE: DEBUG: state id 6
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 6
+KLEE: DEBUG: states size 6
+KLEE: Execute: test_files/xTimerGenericCommand.c:30
+KLEE: DEBUG: states size 6
+KLEE: DEBUG: states size 6
+KLEE: Execute: test_files/xTimerGenericCommand.c:30
+KLEE: Print condition:
+
+KLEE: DEBUG: add constraints in addressConstraintsForTargetApp
+KLEE: DEBUG: states size 6
+KLEE: DEBUG: states size 7
+KLEE: Execute: test_files/xTimerGenericCommand.c:31
+KLEE: DEBUG: state id 7
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 7
+KLEE: DEBUG: states size 7
+KLEE: Execute: test_files/xTimerGenericCommand.c:31
+KLEE: DEBUG: state id 7
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 7
+KLEE: DEBUG: states size 7
+KLEE: Execute: test_files/xTimerGenericCommand.c:31
+KLEE: DEBUG: state id 7
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 7
+KLEE: DEBUG: states size 7
+KLEE: Execute: test_files/xTimerGenericCommand.c:31
+KLEE: DEBUG: state id 7
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 7
+KLEE: DEBUG: states size 7
+KLEE: Execute: test_files/xTimerGenericCommand.c:31
+KLEE: DEBUG: state id 7
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 7
+KLEE: DEBUG: states size 7
+KLEE: Execute: test_files/xTimerGenericCommand.c:31
+KLEE: DEBUG: states size 7
+KLEE: DEBUG: states size 7
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:386
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276631992
+KLEE: DEBUG: states size 7
+KLEE: DEBUG: states size 7
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:386
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276632016
+KLEE: DEBUG: states size 7
+KLEE: DEBUG: states size 7
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:386
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276632048
+KLEE: DEBUG: states size 7
+KLEE: DEBUG: states size 7
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:386
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276631904
+KLEE: DEBUG: states size 7
+KLEE: DEBUG: states size 7
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:386
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276632000
+KLEE: DEBUG: states size 7
+KLEE: DEBUG: states size 7
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:386
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276632064
+KLEE: DEBUG: states size 7
+KLEE: DEBUG: states size 7
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:386
+KLEE: DEBUG: states size 7
+KLEE: DEBUG: states size 7
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:386
+KLEE: DEBUG: state id 7
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 7
+KLEE: DEBUG: states size 7
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:386
+KLEE: DEBUG: states size 7
+KLEE: DEBUG: states size 7
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:386
+KLEE: DEBUG: state id 7
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 7
+KLEE: DEBUG: states size 7
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:387
+KLEE: DEBUG: states size 7
+KLEE: DEBUG: states size 7
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:386
+KLEE: DEBUG: state id 7
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 7
+KLEE: DEBUG: states size 7
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:388
+KLEE: DEBUG: states size 7
+KLEE: DEBUG: states size 7
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:386
+KLEE: DEBUG: state id 7
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 7
+KLEE: DEBUG: states size 7
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:389
+KLEE: DEBUG: states size 7
+KLEE: DEBUG: states size 7
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:386
+KLEE: DEBUG: state id 7
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 7
+KLEE: DEBUG: states size 7
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:390
+KLEE: DEBUG: states size 7
+KLEE: DEBUG: states size 7
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:392
+KLEE: DEBUG: states size 7
+KLEE: DEBUG: states size 7
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:392
+KLEE: DEBUG: state id 7
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 7
+KLEE: DEBUG: states size 7
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:393
+KLEE: DEBUG: states size 7
+KLEE: DEBUG: states size 7
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:395
+KLEE: DEBUG: state id 7
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 7
+KLEE: DEBUG: states size 7
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:395
+KLEE: DEBUG: states size 7
+KLEE: DEBUG: states size 7
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:395
+KLEE: Print condition:
+
+KLEE: DEBUG: states size 7
+KLEE: DEBUG: states size 8
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:399
+KLEE: DEBUG: state id 8
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: Detect a unintialzied constant pointer.
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable13
+KLEE: DEBUG: Alloc a new uncontrollable memory object for the constant pointer. Alloc size:168 and address:105455271269792
+KLEE: DEBUG: states size 8
+KLEE: DEBUG: states size 8
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:399
+KLEE: DEBUG: states size 8
+KLEE: DEBUG: states size 8
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:399
+KLEE: DEBUG: states size 8
+KLEE: DEBUG: states size 8
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:402
+KLEE: DEBUG: state id 8
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 8
+KLEE: DEBUG: states size 8
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:402
+KLEE: DEBUG: states size 8
+KLEE: DEBUG: states size 8
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:402
+KLEE: DEBUG: state id 8
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 8
+KLEE: DEBUG: states size 8
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:403
+KLEE: DEBUG: state id 8
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 8
+KLEE: DEBUG: states size 8
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:403
+KLEE: DEBUG: states size 8
+KLEE: DEBUG: states size 8
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:403
+KLEE: DEBUG: states size 8
+KLEE: DEBUG: states size 8
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:403
+KLEE: DEBUG: states size 8
+KLEE: DEBUG: states size 8
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:403
+KLEE: DEBUG: state id 8
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 8
+KLEE: DEBUG: states size 8
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:404
+KLEE: DEBUG: state id 8
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 8
+KLEE: DEBUG: states size 8
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:404
+KLEE: DEBUG: states size 8
+KLEE: DEBUG: states size 8
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:404
+KLEE: DEBUG: states size 8
+KLEE: DEBUG: states size 8
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:404
+KLEE: DEBUG: states size 8
+KLEE: DEBUG: states size 8
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:404
+KLEE: DEBUG: state id 8
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 8
+KLEE: DEBUG: states size 8
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:406
+KLEE: DEBUG: state id 8
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 8
+KLEE: DEBUG: states size 8
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:406
+KLEE: DEBUG: states size 8
+KLEE: DEBUG: states size 8
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:406
+KLEE: Print condition:
+
+KLEE: DEBUG: states size 8
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:419
+KLEE: DEBUG: state id 9
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:419
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:419
+KLEE: DEBUG: state id 9
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:419
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1096
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276632232
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1096
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276632288
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1096
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276632312
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1096
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276632320
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1096
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276632168
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1096
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276632208
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1096
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276633480
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1096
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1096
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276633448
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1096
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276633432
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1096
+KLEE: DEBUG: state id 9
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1096
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1096
+KLEE: DEBUG: state id 9
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1097
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1096
+KLEE: DEBUG: state id 9
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1098
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1096
+KLEE: DEBUG: state id 9
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1099
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1101
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1102
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1103
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1103
+KLEE: DEBUG: state id 9
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1103
+KLEE: DEBUG: state id 9
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1105
+KLEE: DEBUG: state id 9
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1105
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1105
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1106
+KLEE: DEBUG: state id 9
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1106
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1106
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1106
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1106
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1106
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1106
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1106
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1107
+KLEE: DEBUG: state id 9
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1107
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1107
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1107
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1107
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1107
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1107
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1107
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1130
+KLEE: DEBUG: Detect __asm__ external function!
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1130
+KLEE: DEBUG: state id 9
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1132
+KLEE: DEBUG: state id 9
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1132
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1132
+KLEE: DEBUG: state id 9
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1132
+KLEE: DEBUG: state id 9
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1132
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1132
+KLEE: DEBUG: state id 9
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1132
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1132
+KLEE: Print condition:
+
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1132
+KLEE: DEBUG: state id 10
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1132
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1132
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1252
+KLEE: DEBUG: state id 10
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1096
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1255
+KLEE: DEBUG: state id 10
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1255
+KLEE: DEBUG: Detect __asm__ external function!
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1257
+KLEE: DEBUG: state id 10
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1257
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:419
+KLEE: DEBUG: state id 10
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:386
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:423
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:429
+KLEE: DEBUG: state id 10
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:429
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: test_files/xTimerGenericCommand.c:32
+KLEE: DEBUG: state id 10
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: test_files/xTimerGenericCommand.c:32
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: test_files/xTimerGenericCommand.c:33
+KLEE: DEBUG: state id 10
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: test_files/xTimerGenericCommand.c:33
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1134
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1134
+KLEE: DEBUG: state id 9
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1134
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1134
+KLEE: DEBUG: state id 9
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1134
+KLEE: DEBUG: state id 9
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1135
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1135
+KLEE: DEBUG: state id 9
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1135
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1135
+KLEE: DEBUG: state id 9
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1135
+KLEE: DEBUG: state id 9
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1144
+KLEE: DEBUG: state id 9
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1144
+KLEE: DEBUG: state id 9
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1144
+KLEE: DEBUG: state id 9
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1144
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2230
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276633056
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2230
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276633240
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2230
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276633224
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2230
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276633192
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2230
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276633288
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2230
+KLEE: DEBUG: state id 9
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2230
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2230
+KLEE: DEBUG: state id 9
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2231
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2230
+KLEE: DEBUG: state id 9
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2232
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2234
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2234
+KLEE: DEBUG: state id 9
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2235
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2239
+KLEE: DEBUG: state id 9
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2239
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2239
+KLEE: DEBUG: state id 9
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2239
+KLEE: DEBUG: state id 9
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2241
+KLEE: DEBUG: state id 9
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2241
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2241
+KLEE: DEBUG: state id 9
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2241
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 9
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2241
+KLEE: Print condition:
+
+KLEE: DEBUG: states size 9
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2258
+KLEE: DEBUG: state id 11
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2258
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2258
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2260
+KLEE: DEBUG: state id 11
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2260
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2260
+KLEE: DEBUG: state id 11
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Allocate global memory!!!alloc size: 1, states size: 10
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable14
+KLEE: mo address: 105455271269792
+KLEE: newMo address: 105455276633128
+KLEE: alloc uncontrollable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 1,            alloc address: 105455276633128
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2260
+KLEE: DEBUG: state id 11
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2260
+KLEE: DEBUG: state id 11
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2260
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2260
+KLEE: DEBUG: state id 11
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2260
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: runtime/Freestanding/memcpy.c:12
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276633264
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: runtime/Freestanding/memcpy.c:12
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276633096
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: runtime/Freestanding/memcpy.c:12
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276633144
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: runtime/Freestanding/memcpy.c:12
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276633296
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: runtime/Freestanding/memcpy.c:12
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276633120
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: runtime/Freestanding/memcpy.c:12
+KLEE: DEBUG: state id 11
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: runtime/Freestanding/memcpy.c:12
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: runtime/Freestanding/memcpy.c:12
+KLEE: DEBUG: state id 11
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: runtime/Freestanding/memcpy.c:12
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: runtime/Freestanding/memcpy.c:12
+KLEE: DEBUG: state id 11
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: runtime/Freestanding/memcpy.c:12
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: runtime/Freestanding/memcpy.c:13
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: runtime/Freestanding/memcpy.c:13
+KLEE: DEBUG: state id 11
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: runtime/Freestanding/memcpy.c:13
+KLEE: DEBUG: state id 11
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: runtime/Freestanding/memcpy.c:14
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: runtime/Freestanding/memcpy.c:14
+KLEE: DEBUG: state id 11
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: runtime/Freestanding/memcpy.c:14
+KLEE: DEBUG: state id 11
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: runtime/Freestanding/memcpy.c:16
+KLEE: DEBUG: state id 11
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: runtime/Freestanding/memcpy.c:16
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: runtime/Freestanding/memcpy.c:16
+KLEE: DEBUG: state id 11
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: runtime/Freestanding/memcpy.c:16
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: runtime/Freestanding/memcpy.c:16
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: runtime/Freestanding/memcpy.c:17
+KLEE: DEBUG: state id 11
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: runtime/Freestanding/memcpy.c:17
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: runtime/Freestanding/memcpy.c:17
+KLEE: DEBUG: state id 11
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: runtime/Freestanding/memcpy.c:17
+KLEE: DEBUG: state id 11
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: runtime/Freestanding/memcpy.c:17
+KLEE: DEBUG: state id 11
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: runtime/Freestanding/memcpy.c:17
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: runtime/Freestanding/memcpy.c:17
+KLEE: DEBUG: state id 11
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: runtime/Freestanding/memcpy.c:17
+KLEE: DEBUG: state id 11
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: lazyResolve failed, found a symbolic pointer
+KLEE: DEBUG: dump the address expression
+KLEE: DEBUG: Binding a symbolic pointer with address expression:
+KLEE: DEBUG: address controllable flag: 1
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: address_controllable:1
+ canBeDesiredAddress: 1
+ canBeDesiredValue: 1
+KLEE: DEBUG: has_semantic_check:0
+ canBeDesiredValue: 1
+ is_controlled_value: 1
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: runtime/Freestanding/memcpy.c:17
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: runtime/Freestanding/memcpy.c:18
+KLEE: DEBUG: state id 11
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: runtime/Freestanding/memcpy.c:18
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2261
+KLEE: DEBUG: state id 11
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2261
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2261
+KLEE: DEBUG: state id 11
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2261
+KLEE: DEBUG: state id 11
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2261
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2261
+KLEE: DEBUG: state id 11
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2261
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2261
+KLEE: DEBUG: state id 11
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: address controllable flag: 1
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: address_controllable:1
+ canBeDesiredAddress: 0
+ canBeDesiredValue: 1
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2263
+KLEE: DEBUG: state id 11
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2263
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2263
+KLEE: DEBUG: state id 11
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: ERROR: out of bound pointer
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2263
+KLEE: DEBUG: state id 11
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2263
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2263
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2263
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2263
+KLEE: DEBUG: state id 11
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Allocate global memory!!!alloc size: 1, states size: 10
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable15
+KLEE: mo address: 105455271269792
+KLEE: newMo address: 105455276632832
+KLEE: alloc uncontrollable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 1,            alloc address: 105455276632832
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2263
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 10
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2263
+KLEE: Print condition:
+
+KLEE: DEBUG: states size 10
+KLEE: DEBUG: states size 11
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2230
+KLEE: DEBUG: states size 11
+KLEE: DEBUG: states size 11
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2271
+KLEE: DEBUG: states size 11
+KLEE: DEBUG: states size 11
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2230
+KLEE: DEBUG: states size 11
+KLEE: DEBUG: states size 11
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2307
+KLEE: DEBUG: state id 12
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 11
+KLEE: DEBUG: states size 11
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2307
+KLEE: DEBUG: states size 11
+KLEE: DEBUG: states size 11
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2307
+KLEE: DEBUG: state id 12
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 11
+KLEE: DEBUG: states size 11
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2307
+KLEE: DEBUG: states size 11
+KLEE: DEBUG: states size 11
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2307
+KLEE: DEBUG: state id 12
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: address controllable flag: 1
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:1
+ canBeDesiredAddress: 0
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 11
+KLEE: DEBUG: states size 11
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2309
+KLEE: DEBUG: state id 12
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 11
+KLEE: DEBUG: states size 11
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2309
+KLEE: DEBUG: states size 11
+KLEE: DEBUG: states size 11
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1148
+KLEE: DEBUG: state id 12
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 11
+KLEE: DEBUG: states size 11
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1148
+KLEE: DEBUG: states size 11
+KLEE: DEBUG: states size 11
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1148
+KLEE: DEBUG: states size 11
+KLEE: DEBUG: states size 11
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1148
+KLEE: Print condition:
+
+KLEE: DEBUG: states size 11
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1244
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1244
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1244
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:2350
+KLEE: DEBUG: state id 13
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:2350
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1244
+KLEE: DEBUG: state id 13
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1244
+KLEE: DEBUG: state id 13
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1244
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1244
+KLEE: DEBUG: state id 13
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1244
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1244
+KLEE: Print condition:
+
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1244
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1096
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1247
+KLEE: DEBUG: state id 14
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1248
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1255
+KLEE: DEBUG: state id 14
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1255
+KLEE: DEBUG: Detect __asm__ external function!
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1257
+KLEE: DEBUG: state id 14
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1257
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:419
+KLEE: DEBUG: state id 14
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:386
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:423
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:429
+KLEE: DEBUG: state id 14
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:429
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: test_files/xTimerGenericCommand.c:32
+KLEE: DEBUG: state id 14
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: test_files/xTimerGenericCommand.c:32
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: test_files/xTimerGenericCommand.c:33
+KLEE: DEBUG: state id 14
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: test_files/xTimerGenericCommand.c:33
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1244
+KLEE: DEBUG: state id 13
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1244
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1244
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1244
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1244
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1244
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1244
+KLEE: DEBUG: state id 13
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1244
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1244
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1244
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1244
+KLEE: DEBUG: state id 13
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1244
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1244
+KLEE: DEBUG: state id 13
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: address controllable flag: 1
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:1
+ canBeDesiredAddress: 0
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1244
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1244
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1096
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1247
+KLEE: DEBUG: state id 13
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1248
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1255
+KLEE: DEBUG: state id 13
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1255
+KLEE: DEBUG: Detect __asm__ external function!
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1257
+KLEE: DEBUG: state id 13
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1257
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:419
+KLEE: DEBUG: state id 13
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:386
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:423
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:429
+KLEE: DEBUG: state id 13
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:429
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: test_files/xTimerGenericCommand.c:32
+KLEE: DEBUG: state id 13
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: test_files/xTimerGenericCommand.c:32
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: test_files/xTimerGenericCommand.c:33
+KLEE: DEBUG: state id 13
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: test_files/xTimerGenericCommand.c:33
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 11
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1152
+KLEE: DEBUG: state id 12
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 11
+KLEE: DEBUG: states size 11
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1152
+KLEE: DEBUG: states size 11
+KLEE: DEBUG: states size 11
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1152
+KLEE: DEBUG: state id 12
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Allocate global memory!!!alloc size: 168, states size: 11
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable16
+KLEE: mo address: 105455271269792
+KLEE: newMo address: 105455271267680
+KLEE: alloc uncontrollable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 168,            alloc address: 105455271267680
+KLEE: DEBUG: states size 11
+KLEE: DEBUG: states size 11
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1152
+KLEE: DEBUG: states size 11
+KLEE: DEBUG: states size 11
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1152
+KLEE: Print condition:
+
+KLEE: DEBUG: states size 11
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1182
+KLEE: DEBUG: state id 15
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1182
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1182
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1182
+KLEE: DEBUG: state id 15
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1182
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1182
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1182
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1182
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1182
+KLEE: Print condition:
+
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1096
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1096
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1239
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1247
+KLEE: DEBUG: state id 16
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1248
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1255
+KLEE: DEBUG: state id 16
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1255
+KLEE: DEBUG: Detect __asm__ external function!
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1257
+KLEE: DEBUG: state id 16
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1257
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:419
+KLEE: DEBUG: state id 16
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:386
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:423
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:429
+KLEE: DEBUG: state id 16
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:429
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: test_files/xTimerGenericCommand.c:32
+KLEE: DEBUG: state id 16
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: test_files/xTimerGenericCommand.c:32
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: test_files/xTimerGenericCommand.c:33
+KLEE: DEBUG: state id 16
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: test_files/xTimerGenericCommand.c:33
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1184
+KLEE: DEBUG: state id 15
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1184
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:1184
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3230
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276633168
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3230
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276632736
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3230
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276633296
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3230
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276632912
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3230
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276632816
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3230
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276632928
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3230
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 105455276633264
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3230
+KLEE: DEBUG: state id 15
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3230
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3232
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3233
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3248
+KLEE: DEBUG: state id 15
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3248
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3248
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3248
+KLEE: DEBUG: state id 15
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Allocate global memory!!!alloc size: 40, states size: 12
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable17
+KLEE: mo address: 105455271269792
+KLEE: newMo address: 105455277101232
+KLEE: alloc uncontrollable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 40,            alloc address: 105455277101232
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3248
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3248
+KLEE: DEBUG: state id 15
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: lazyResolve failed, found a symbolic pointer
+KLEE: DEBUG: dump the address expression
+KLEE: DEBUG: Binding a symbolic pointer with address expression:
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Allocate global memory!!!alloc size: 1, states size: 12
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable18
+KLEE: mo address: 105455277101232
+KLEE: newMo address: 105455276632800
+KLEE: alloc uncontrollable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 1,            alloc address: 105455276632800
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3248
+KLEE: DEBUG: Dump the result
+KLEE: DEBUG: BITCASTING CHANGE MO!!!
+KLEE: DEBUG: alloc TCB in executeMemoryOperation!!
+KLEE: DEBUG: Allocate global memory for TCB!!!states size: 12
+KLEE: DEBUG: Alloc stack, top address: 105455276582912
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3248
+KLEE: DEBUG: state id 15
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3249
+KLEE: DEBUG: state id 15
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3249
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 12
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3249
+KLEE: Print condition:
+
+KLEE: DEBUG: states size 12
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: state id 17
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: state id 17
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: lazyResolve failed, found a symbolic pointer
+KLEE: DEBUG: dump the address expression
+KLEE: DEBUG: Binding a symbolic pointer with address expression:
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Allocate global memory!!!alloc size: 40, states size: 13
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable21
+KLEE: mo address: 105455267804096
+KLEE: newMo address: 105455277102768
+KLEE: alloc uncontrollable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 40,            alloc address: 105455277102768
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: state id 17
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: state id 17
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: state id 17
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Allocate global memory!!!alloc size: 40, states size: 13
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable22
+KLEE: mo address: 105455267804096
+KLEE: newMo address: 105455277150288
+KLEE: alloc uncontrollable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 40,            alloc address: 105455277150288
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: state id 17
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: state id 17
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Allocate global memory!!!alloc size: 40, states size: 13
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable23
+KLEE: mo address: 105455267804096
+KLEE: newMo address: 105455277126480
+KLEE: alloc uncontrollable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 40,            alloc address: 105455277126480
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: state id 17
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: lazyResolve failed, found a symbolic pointer
+KLEE: DEBUG: dump the address expression
+KLEE: DEBUG: Binding a symbolic pointer with address expression:
+KLEE: DEBUG: address controllable flag: 1
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: address_controllable:1
+ canBeDesiredAddress: 1
+ canBeDesiredValue: 1
+KLEE: DEBUG: has_semantic_check:0
+ canBeDesiredValue: 1
+ is_controlled_value: 0
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: state id 17
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: state id 17
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: state id 17
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: state id 17
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: state id 17
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: lazyResolve failed, found a symbolic pointer
+KLEE: DEBUG: dump the address expression
+KLEE: DEBUG: Binding a symbolic pointer with address expression:
+KLEE: DEBUG: address controllable flag: 1
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:1
+ canBeDesiredAddress: 1
+ canBeDesiredValue: 0
+KLEE: DEBUG: has_semantic_check:0
+ canBeDesiredValue: 0
+ is_controlled_value: 0
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: state id 17
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: state id 17
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: lazyResolve failed, found a symbolic pointer
+KLEE: DEBUG: dump the address expression
+KLEE: DEBUG: Binding a symbolic pointer with address expression:
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Allocate global memory!!!alloc size: 40, states size: 13
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable24
+KLEE: mo address: 105455277102768
+KLEE: newMo address: 105455277150336
+KLEE: alloc uncontrollable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 40,            alloc address: 105455277150336
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: state id 17
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 13
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: Print condition:
+
+KLEE: DEBUG: states size 13
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: state id 18
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: state id 18
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: address controllable flag: 1
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:1
+ canBeDesiredAddress: 1
+ canBeDesiredValue: 0
+KLEE: DEBUG: has_semantic_check:0
+ canBeDesiredValue: 0
+ is_controlled_value: 0
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: state id 18
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: state id 18
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: state id 18
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: address controllable flag: 1
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: address_controllable:1
+ canBeDesiredAddress: 1
+ canBeDesiredValue: 1
+KLEE: DEBUG: has_semantic_check:1
+ canBeDesiredValue: 1
+ is_controlled_value: 0
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3250
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3252
+KLEE: DEBUG: state id 18
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3252
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3252
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: state id 18
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: state id 18
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Allocate global memory!!!alloc size: 40, states size: 14
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable25
+KLEE: mo address: 105455267804096
+KLEE: newMo address: 105455277171888
+KLEE: alloc uncontrollable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 40,            alloc address: 105455277171888
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: state id 18
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: state id 18
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: state id 18
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Allocate global memory!!!alloc size: 40, states size: 14
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable26
+KLEE: mo address: 105455267804096
+KLEE: newMo address: 105455277147600
+KLEE: alloc uncontrollable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 40,            alloc address: 105455277147600
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: state id 18
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: state id 18
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Allocate global memory!!!alloc size: 40, states size: 14
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable27
+KLEE: mo address: 105455267804096
+KLEE: newMo address: 105455277147552
+KLEE: alloc uncontrollable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 40,            alloc address: 105455277147552
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: state id 18
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: lazyResolve failed, found a symbolic pointer
+KLEE: DEBUG: dump the address expression
+KLEE: DEBUG: Binding a symbolic pointer with address expression:
+KLEE: DEBUG: address controllable flag: 1
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: address_controllable:1
+ canBeDesiredAddress: 1
+ canBeDesiredValue: 1
+KLEE: DEBUG: has_semantic_check:0
+ canBeDesiredValue: 1
+ is_controlled_value: 0
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: state id 18
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: state id 18
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: state id 18
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: state id 18
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: state id 18
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: lazyResolve failed, found a symbolic pointer
+KLEE: DEBUG: dump the address expression
+KLEE: DEBUG: Binding a symbolic pointer with address expression:
+KLEE: DEBUG: address controllable flag: 1
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:1
+ canBeDesiredAddress: 1
+ canBeDesiredValue: 0
+KLEE: DEBUG: has_semantic_check:0
+ canBeDesiredValue: 0
+ is_controlled_value: 0
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: state id 18
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: state id 18
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: lazyResolve failed, found a symbolic pointer
+KLEE: DEBUG: dump the address expression
+KLEE: DEBUG: Binding a symbolic pointer with address expression:
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Allocate global memory!!!alloc size: 40, states size: 14
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable28
+KLEE: mo address: 105455277171888
+KLEE: newMo address: 105455277199200
+KLEE: alloc uncontrollable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 40,            alloc address: 105455277199200
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: state id 18
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 14
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: Print condition:
+
+KLEE: DEBUG: states size 14
+KLEE: DEBUG: states size 15
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: state id 19
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 15
+KLEE: DEBUG: states size 15
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: states size 15
+KLEE: DEBUG: states size 15
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: states size 15
+KLEE: DEBUG: states size 15
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: state id 19
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: address controllable flag: 1
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:1
+ canBeDesiredAddress: 1
+ canBeDesiredValue: 0
+KLEE: DEBUG: has_semantic_check:0
+ canBeDesiredValue: 0
+ is_controlled_value: 0
+KLEE: DEBUG: states size 15
+KLEE: DEBUG: states size 15
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: state id 19
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 15
+KLEE: DEBUG: states size 15
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: states size 15
+KLEE: DEBUG: states size 15
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: state id 19
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 15
+KLEE: DEBUG: states size 15
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: states size 15
+KLEE: DEBUG: states size 15
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: state id 19
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: address controllable flag: 1
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: address_controllable:1
+ canBeDesiredAddress: 1
+ canBeDesiredValue: 1
+KLEE: DEBUG: has_semantic_check:1
+ canBeDesiredValue: 1
+ is_controlled_value: 0
+KLEE: DEBUG: states size 15
+KLEE: DEBUG: states size 15
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3254
+KLEE: DEBUG: states size 15
+KLEE: DEBUG: states size 15
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: states size 15
+KLEE: DEBUG: states size 15
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: states size 15
+KLEE: DEBUG: states size 15
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: state id 19
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 15
+KLEE: DEBUG: states size 15
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: states size 15
+KLEE: DEBUG: states size 15
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: state id 19
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 15
+KLEE: DEBUG: states size 15
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: state id 19
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 15
+KLEE: DEBUG: states size 15
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: states size 15
+KLEE: DEBUG: states size 15
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: Print condition:
+
+KLEE: DEBUG: states size 15
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: state id 20
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: state id 20
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: state id 20
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Allocate global memory!!!alloc size: 40, states size: 16
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable29
+KLEE: mo address: 105455267502512
+KLEE: newMo address: 105455277237424
+KLEE: alloc uncontrollable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 40,            alloc address: 105455277237424
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: state id 20
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: state id 20
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: state id 20
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: state id 20
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: address controllable flag: 1
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:1
+ canBeDesiredAddress: 1
+ canBeDesiredValue: 0
+KLEE: DEBUG: has_semantic_check:1
+ canBeDesiredValue: 0
+ is_controlled_value: 0
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: state id 20
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: state id 20
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: lazyResolve failed, found a symbolic pointer
+KLEE: DEBUG: dump the address expression
+KLEE: DEBUG: Binding a symbolic pointer with address expression:
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Allocate global memory!!!alloc size: 40, states size: 16
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable30
+KLEE: mo address: 105455277237424
+KLEE: newMo address: 105455277240352
+KLEE: alloc uncontrollable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 40,            alloc address: 105455277240352
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: state id 20
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: state id 20
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: address controllable flag: 1
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: address_controllable:1
+ canBeDesiredAddress: 1
+ canBeDesiredValue: 1
+KLEE: DEBUG: has_semantic_check:1
+ canBeDesiredValue: 1
+ is_controlled_value: 0
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: state id 20
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: state id 20
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: state id 20
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: state id 20
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: lazyResolve failed, found a symbolic pointer
+KLEE: DEBUG: dump the address expression
+KLEE: DEBUG: Binding a symbolic pointer with address expression:
+KLEE: DEBUG: address controllable flag: 1
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:1
+ canBeDesiredAddress: 1
+ canBeDesiredValue: 0
+KLEE: DEBUG: has_semantic_check:0
+ canBeDesiredValue: 0
+ is_controlled_value: 0
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: state id 20
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: state id 20
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: state id 20
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: address controllable flag: 1
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:1
+ canBeDesiredAddress: 1
+ canBeDesiredValue: 0
+KLEE: DEBUG: has_semantic_check:0
+ canBeDesiredValue: 0
+ is_controlled_value: 0
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: state id 20
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: state id 20
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: state id 20
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: state id 20
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: address controllable flag: 1
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:1
+ canBeDesiredAddress: 1
+ canBeDesiredValue: 0
+KLEE: DEBUG: has_semantic_check:1
+ canBeDesiredValue: 0
+ is_controlled_value: 0
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: state id 20
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: state id 20
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: state id 20
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: state id 20
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3255
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3270
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3278
+KLEE: DEBUG: state id 20
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3278
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3278
+KLEE: DEBUG: state id 20
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3278
+KLEE: DEBUG: state id 20
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3278
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3278
+KLEE: DEBUG: state id 20
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3278
+KLEE: DEBUG: states size 16
+KLEE: DEBUG: states size 16
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3278

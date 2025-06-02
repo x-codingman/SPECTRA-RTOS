@@ -78,7 +78,7 @@ int main()
 {
     rt_mq_t KLEE_mq;
     klee_make_symbolic_controllable(&KLEE_mq, sizeof(KLEE_mq), "KLEE_mq", true);
-    void   * KLEE_buffer;
+    void * KLEE_buffer;
     klee_make_symbolic_controllable(&KLEE_buffer, sizeof(KLEE_buffer), "KLEE_buffer", true);
     rt_size_t KLEE_size;
     klee_make_symbolic_controllable(&KLEE_size, sizeof(KLEE_size), "KLEE_size", true);

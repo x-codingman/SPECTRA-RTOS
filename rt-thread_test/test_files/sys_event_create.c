@@ -80,7 +80,9 @@ int main()
     klee_make_symbolic_controllable(&KLEE_name, sizeof(KLEE_name), "KLEE_name", true);
     rt_uint8_t KLEE_flag;
     klee_make_symbolic_controllable(&KLEE_flag, sizeof(KLEE_flag), "KLEE_flag", true);
-    rt_event_t KLEE_return_sys_event_create;
+    endif
+
+rt_event_t KLEE_return_sys_event_create;
     klee_make_symbolic_controllable(&KLEE_return_sys_event_create, sizeof(KLEE_return_sys_event_create), "KLEE_return_sys_event_create", true);
     KLEE_return_sys_event_create = sys_event_create(KLEE_name, KLEE_flag);
     return 0;

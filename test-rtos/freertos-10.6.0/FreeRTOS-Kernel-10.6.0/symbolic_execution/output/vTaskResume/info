@@ -1,0 +1,20 @@
+/home/klee/klee_src/build/bin/klee --search=dfs --stats -debug-print-instructions=all:stderr --test-info-output-dir=/home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/symbolic_execution/test-info-output/vTaskResume --output-dir=/home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/symbolic_execution/output/vTaskResume --test-target-name=vTaskResume /home/klee/klee_src/freertos_10_6_0_test/test_bc_files/vTaskResume.test.bc
+PID: 3515851
+Using monotonic steady clock with 1/1000000000s resolution
+Started: 2025-05-15 11:42:57
+BEGIN searcher description
+DFSSearcher
+END searcher description
+Finished: 2025-05-15 11:42:59
+Elapsed: 00:00:02
+KLEE: done: explored paths = 15
+KLEE: done: avg. constructs per query = 27
+KLEE: done: total queries = 26
+KLEE: done: valid queries = 0
+KLEE: done: invalid queries = 26
+KLEE: done: query cex = 26
+
+KLEE: done: total instructions = 946
+KLEE: done: completed paths = 15
+KLEE: done: partially completed paths = 0
+KLEE: done: generated tests = 15

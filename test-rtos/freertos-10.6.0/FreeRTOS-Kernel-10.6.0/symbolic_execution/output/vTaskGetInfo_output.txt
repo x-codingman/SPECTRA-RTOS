@@ -1,0 +1,100 @@
+KLEE: Execute: test_files/vTaskGetInfo.c:28
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+     test_files/vTaskGetInfo.c:31 1:16980:194:  %12 = load i32, i32* %retval, align 4, !dbg !667
+KLEE: Execute: test_files/vTaskGetInfo.c:31
+KLEE: DEBUG: state id 194
+KLEE: DEBUG: dump the address expression before symplifying
+106381323346720
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+     test_files/vTaskGetInfo.c:31 1:16981:194:  ret i32 %12, !dbg !667
+KLEE: Execute: test_files/vTaskGetInfo.c:31
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 3
+     test_files/vTaskGetInfo.c:28 111:16967:193:  store i32 0, i32* %retval, align 4, !dbg !659
+KLEE: Execute: test_files/vTaskGetInfo.c:28
+KLEE: DEBUG: state id 193
+KLEE: DEBUG: dump the address expression before symplifying
+106381323346720
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/vTaskGetInfo.c:28 111:16968:193:  br label %return, !dbg !659
+KLEE: Execute: test_files/vTaskGetInfo.c:28
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/vTaskGetInfo.c:31 1:16980:193:  %12 = load i32, i32* %retval, align 4, !dbg !667
+KLEE: Execute: test_files/vTaskGetInfo.c:31
+KLEE: DEBUG: state id 193
+KLEE: DEBUG: dump the address expression before symplifying
+106381323346720
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/vTaskGetInfo.c:31 1:16981:193:  ret i32 %12, !dbg !667
+KLEE: Execute: test_files/vTaskGetInfo.c:31
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 2
+     test_files/vTaskGetInfo.c:27 75:16953:192:  store i32 0, i32* %retval, align 4, !dbg !650
+KLEE: Execute: test_files/vTaskGetInfo.c:27
+KLEE: DEBUG: state id 192
+KLEE: DEBUG: dump the address expression before symplifying
+106381323346720
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/vTaskGetInfo.c:27 75:16954:192:  br label %return, !dbg !650
+KLEE: Execute: test_files/vTaskGetInfo.c:27
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/vTaskGetInfo.c:31 1:16980:192:  %12 = load i32, i32* %retval, align 4, !dbg !667
+KLEE: Execute: test_files/vTaskGetInfo.c:31
+KLEE: DEBUG: state id 192
+KLEE: DEBUG: dump the address expression before symplifying
+106381323346720
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/vTaskGetInfo.c:31 1:16981:192:  ret i32 %12, !dbg !667
+KLEE: Execute: test_files/vTaskGetInfo.c:31
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 1
+     test_files/vTaskGetInfo.c:27 75:16953:1:  store i32 0, i32* %retval, align 4, !dbg !650
+KLEE: Execute: test_files/vTaskGetInfo.c:27
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+106381323346720
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/vTaskGetInfo.c:27 75:16954:1:  br label %return, !dbg !650
+KLEE: Execute: test_files/vTaskGetInfo.c:27
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/vTaskGetInfo.c:31 1:16980:1:  %12 = load i32, i32* %retval, align 4, !dbg !667
+KLEE: Execute: test_files/vTaskGetInfo.c:31
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+106381323346720
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/vTaskGetInfo.c:31 1:16981:1:  ret i32 %12, !dbg !667
+KLEE: Execute: test_files/vTaskGetInfo.c:31
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 0
+
+KLEE: done: total instructions = 7681
+KLEE: done: completed paths = 135
+KLEE: done: partially completed paths = 101
+KLEE: done: generated tests = 135
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+5848 bitcode-reader - Number of Metadata records loaded
+ 901 bitcode-reader - Number of MDStrings loaded
+

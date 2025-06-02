@@ -1,0 +1,20 @@
+/home/klee/klee_src/build/bin/klee --search=dfs --stats -debug-print-instructions=all:stderr --test-info-output-dir=/home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/symbolic_execution/test-info-output/xTimerGetReloadMode --output-dir=/home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/symbolic_execution/output/xTimerGetReloadMode --test-target-name=xTimerGetReloadMode /home/klee/klee_src/freertos_10_6_0_test/test_bc_files/xTimerGetReloadMode.test.bc
+PID: 3505639
+Using monotonic steady clock with 1/1000000000s resolution
+Started: 2025-05-15 11:42:23
+BEGIN searcher description
+DFSSearcher
+END searcher description
+Finished: 2025-05-15 11:42:25
+Elapsed: 00:00:02
+KLEE: done: explored paths = 25
+KLEE: done: avg. constructs per query = 26
+KLEE: done: total queries = 35
+KLEE: done: valid queries = 1
+KLEE: done: invalid queries = 34
+KLEE: done: query cex = 35
+
+KLEE: done: total instructions = 1146
+KLEE: done: completed paths = 25
+KLEE: done: partially completed paths = 0
+KLEE: done: generated tests = 25

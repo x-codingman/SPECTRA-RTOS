@@ -1,0 +1,100 @@
+KLEE: DEBUG: states size 3
+     test_files/xQueueGiveMutexRecursive.c:22 26:16942:15:  %3 = load %struct.QueueDefinition*, %struct.QueueDefinition** %KLEE_pxMutex, align 8, !dbg !625
+KLEE: Execute: test_files/xQueueGiveMutexRecursive.c:22
+KLEE: DEBUG: state id 15
+KLEE: DEBUG: dump the address expression before symplifying
+102113865065176
+KLEE: DEBUG: dump the resolve result of address
+(ReadLSB w64 0 KLEE_pxMutex)
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/xQueueGiveMutexRecursive.c:22 1:16943:15:  %call2 = call i64 @xQueueGiveMutexRecursive(%struct.QueueDefinition* %3), !dbg !626
+KLEE: Execute: test_files/xQueueGiveMutexRecursive.c:22
+KLEE: DEBUG: Detect __asm__ external function!
+(ReadLSB w64 0 lazy_alloc_external_return7)
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/xQueueGiveMutexRecursive.c:23 1:16944:15:  store i32 0, i32* %retval, align 4, !dbg !627
+KLEE: Execute: test_files/xQueueGiveMutexRecursive.c:23
+KLEE: DEBUG: state id 15
+KLEE: DEBUG: dump the address expression before symplifying
+102113865065152
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/xQueueGiveMutexRecursive.c:23 1:16945:15:  br label %return, !dbg !627
+KLEE: Execute: test_files/xQueueGiveMutexRecursive.c:23
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/xQueueGiveMutexRecursive.c:24 1:16948:15:  %4 = load i32, i32* %retval, align 4, !dbg !628
+KLEE: Execute: test_files/xQueueGiveMutexRecursive.c:24
+KLEE: DEBUG: state id 15
+KLEE: DEBUG: dump the address expression before symplifying
+102113865065152
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/xQueueGiveMutexRecursive.c:24 1:16949:15:  ret i32 %4, !dbg !628
+KLEE: Execute: test_files/xQueueGiveMutexRecursive.c:24
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 2
+     test_files/xQueueGiveMutexRecursive.c:21 79:16938:14:  store i32 0, i32* %retval, align 4, !dbg !623
+KLEE: Execute: test_files/xQueueGiveMutexRecursive.c:21
+KLEE: DEBUG: state id 14
+KLEE: DEBUG: dump the address expression before symplifying
+102113865065152
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/xQueueGiveMutexRecursive.c:21 79:16939:14:  br label %return, !dbg !623
+KLEE: Execute: test_files/xQueueGiveMutexRecursive.c:21
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/xQueueGiveMutexRecursive.c:24 1:16948:14:  %4 = load i32, i32* %retval, align 4, !dbg !628
+KLEE: Execute: test_files/xQueueGiveMutexRecursive.c:24
+KLEE: DEBUG: state id 14
+KLEE: DEBUG: dump the address expression before symplifying
+102113865065152
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/xQueueGiveMutexRecursive.c:24 1:16949:14:  ret i32 %4, !dbg !628
+KLEE: Execute: test_files/xQueueGiveMutexRecursive.c:24
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 1
+     test_files/xQueueGiveMutexRecursive.c:21 79:16938:1:  store i32 0, i32* %retval, align 4, !dbg !623
+KLEE: Execute: test_files/xQueueGiveMutexRecursive.c:21
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+102113865065152
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/xQueueGiveMutexRecursive.c:21 79:16939:1:  br label %return, !dbg !623
+KLEE: Execute: test_files/xQueueGiveMutexRecursive.c:21
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/xQueueGiveMutexRecursive.c:24 1:16948:1:  %4 = load i32, i32* %retval, align 4, !dbg !628
+KLEE: Execute: test_files/xQueueGiveMutexRecursive.c:24
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+102113865065152
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/xQueueGiveMutexRecursive.c:24 1:16949:1:  ret i32 %4, !dbg !628
+KLEE: Execute: test_files/xQueueGiveMutexRecursive.c:24
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 0
+
+KLEE: done: total instructions = 946
+KLEE: done: completed paths = 15
+KLEE: done: partially completed paths = 0
+KLEE: done: generated tests = 15
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+5826 bitcode-reader - Number of Metadata records loaded
+ 898 bitcode-reader - Number of MDStrings loaded
+

@@ -11,3 +11,21 @@ lwp_mutex_release_safe lwp_mutex_take_safe
 rt_list_insert_after
 sal_socket.c
 device.c
+
+lwp_ipc:961:
+fdt = dfs_fdtable_get();  ----> fdt = dfs_fdtable_get_global();
+
+
+sys_epoll_ctl           
+
+  sys_select            
+
+  sys_shmrm             
+
+  sys_mutex_take          
+
+  sys_shmat             
+
+  sys_event_recv          
+
+  sys_exit_group    

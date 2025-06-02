@@ -1,0 +1,20 @@
+/home/klee/klee_src/build/bin/klee --search=dfs --stats -debug-print-instructions=all:stderr --test-info-output-dir=/home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/symbolic_execution/test-info-output/ulTaskGetRunTimeCounter --output-dir=/home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/symbolic_execution/output/ulTaskGetRunTimeCounter --test-target-name=ulTaskGetRunTimeCounter /home/klee/klee_src/freertos_10_6_0_test/test_bc_files/ulTaskGetRunTimeCounter.test.bc
+PID: 3513673
+Using monotonic steady clock with 1/1000000000s resolution
+Started: 2025-05-15 11:42:50
+BEGIN searcher description
+DFSSearcher
+END searcher description
+Finished: 2025-05-15 11:42:52
+Elapsed: 00:00:02
+KLEE: done: explored paths = 15
+KLEE: done: avg. constructs per query = 28
+KLEE: done: total queries = 31
+KLEE: done: valid queries = 1
+KLEE: done: invalid queries = 30
+KLEE: done: query cex = 31
+
+KLEE: done: total instructions = 981
+KLEE: done: completed paths = 15
+KLEE: done: partially completed paths = 0
+KLEE: done: generated tests = 15

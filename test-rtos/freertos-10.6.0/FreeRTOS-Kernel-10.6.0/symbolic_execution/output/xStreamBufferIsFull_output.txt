@@ -1,0 +1,100 @@
+KLEE: DEBUG: state id 47
+KLEE: DEBUG: dump the address expression before symplifying
+100453003961304
+KLEE: DEBUG: dump the resolve result of address
+(ReadLSB w64 0 KLEE_xStreamBuffer)
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/stream_buffer.c:1191 27:2293:47:  %ucFlags = getelementptr inbounds %struct.StreamBufferDef_t, %struct.StreamBufferDef_t* %2, i32 0, i32 7, !dbg !628
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/stream_buffer.c:1191
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/stream_buffer.c:1191 27:2294:47:  %3 = load i8, i8* %ucFlags, align 8, !dbg !628
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/stream_buffer.c:1191
+KLEE: DEBUG: state id 47
+KLEE: DEBUG: dump the address expression before symplifying
+(Add w64 56
+          (ReadLSB w64 0 KLEE_xStreamBuffer))
+KLEE: DEBUG: dump the address expression
+56
+KLEE: DEBUG: lazyResolve failed, found a constant address, its value is: 56
+KLEE: DEBUG: dump the address expression
+56
+KLEE: DEBUG: FIX ME resolve failed
+KLEE: DEBUG: constraint:
+(Eq 100452995440512
+     (ReadLSB w64 0 lazy_alloc_external_return4))
+KLEE: DEBUG: constraint:
+(Eq 100453003961240
+     (ReadLSB w64 0 lazy_alloc_external_return1))
+KLEE: DEBUG: constraint:
+(Ule (ReadLSB w64 160 lazy_alloc_uncontrollable22)
+      1)
+KLEE: DEBUG: constraint:
+(Eq 100453004308992
+     (ReadLSB w64 16 lazy_alloc_uncontrollable26))
+KLEE: DEBUG: constraint:
+(Eq 0
+     (ReadLSB w64 0 KLEE_xStreamBuffer))
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 2
+     test_files/xStreamBufferIsFull.c:21 91:16938:46:  store i32 0, i32* %retval, align 4, !dbg !626
+KLEE: Execute: test_files/xStreamBufferIsFull.c:21
+KLEE: DEBUG: state id 46
+KLEE: DEBUG: dump the address expression before symplifying
+100453003961008
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/xStreamBufferIsFull.c:21 91:16939:46:  br label %return, !dbg !626
+KLEE: Execute: test_files/xStreamBufferIsFull.c:21
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/xStreamBufferIsFull.c:24 1:16948:46:  %4 = load i32, i32* %retval, align 4, !dbg !631
+KLEE: Execute: test_files/xStreamBufferIsFull.c:24
+KLEE: DEBUG: state id 46
+KLEE: DEBUG: dump the address expression before symplifying
+100453003961008
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/xStreamBufferIsFull.c:24 1:16949:46:  ret i32 %4, !dbg !631
+KLEE: Execute: test_files/xStreamBufferIsFull.c:24
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 1
+     test_files/xStreamBufferIsFull.c:21 91:16938:1:  store i32 0, i32* %retval, align 4, !dbg !626
+KLEE: Execute: test_files/xStreamBufferIsFull.c:21
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+100453003961008
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/xStreamBufferIsFull.c:21 91:16939:1:  br label %return, !dbg !626
+KLEE: Execute: test_files/xStreamBufferIsFull.c:21
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/xStreamBufferIsFull.c:24 1:16948:1:  %4 = load i32, i32* %retval, align 4, !dbg !631
+KLEE: Execute: test_files/xStreamBufferIsFull.c:24
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+100453003961008
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/xStreamBufferIsFull.c:24 1:16949:1:  ret i32 %4, !dbg !631
+KLEE: Execute: test_files/xStreamBufferIsFull.c:24
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 0
+
+KLEE: done: total instructions = 2086
+KLEE: done: completed paths = 55
+KLEE: done: partially completed paths = 0
+KLEE: done: generated tests = 55
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+5829 bitcode-reader - Number of Metadata records loaded
+ 898 bitcode-reader - Number of MDStrings loaded
+

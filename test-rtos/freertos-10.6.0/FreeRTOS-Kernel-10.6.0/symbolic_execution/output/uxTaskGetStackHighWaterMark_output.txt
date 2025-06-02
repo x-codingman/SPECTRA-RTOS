@@ -1,0 +1,100 @@
+KLEE: DEBUG: dump the address expression before symplifying
+97012707894520
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3930 9:11751:31:  br label %while.cond, !dbg !615
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3930
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3930 17:11754:31:  %0 = load i8*, i8** %pucStackByte.addr, align 8, !dbg !616
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3930
+KLEE: DEBUG: state id 31
+KLEE: DEBUG: dump the address expression before symplifying
+97012707894392
+KLEE: DEBUG: dump the resolve result of address
+97012707894168
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3930 16:11755:31:  %1 = load i8, i8* %0, align 1, !dbg !617
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3930
+KLEE: DEBUG: state id 31
+KLEE: DEBUG: dump the address expression before symplifying
+97012707894168
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+165
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3930 16:11756:31:  %conv = zext i8 %1 to i32, !dbg !617
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3930
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3930 30:11757:31:  %cmp = icmp eq i32 %conv, 165, !dbg !618
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3930
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3930 9:11758:31:  br i1 %cmp, label %while.body, label %while.end, !dbg !615
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3930
+KLEE: DEBUG: terminate the State, try to break the loop
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 2
+     test_files/uxTaskGetStackHighWaterMark.c:21 75:16938:30:  store i32 0, i32* %retval, align 4, !dbg !623
+KLEE: Execute: test_files/uxTaskGetStackHighWaterMark.c:21
+KLEE: DEBUG: state id 30
+KLEE: DEBUG: dump the address expression before symplifying
+97012707893936
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/uxTaskGetStackHighWaterMark.c:21 75:16939:30:  br label %return, !dbg !623
+KLEE: Execute: test_files/uxTaskGetStackHighWaterMark.c:21
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/uxTaskGetStackHighWaterMark.c:24 1:16948:30:  %4 = load i32, i32* %retval, align 4, !dbg !628
+KLEE: Execute: test_files/uxTaskGetStackHighWaterMark.c:24
+KLEE: DEBUG: state id 30
+KLEE: DEBUG: dump the address expression before symplifying
+97012707893936
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/uxTaskGetStackHighWaterMark.c:24 1:16949:30:  ret i32 %4, !dbg !628
+KLEE: Execute: test_files/uxTaskGetStackHighWaterMark.c:24
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 1
+     test_files/uxTaskGetStackHighWaterMark.c:21 75:16938:1:  store i32 0, i32* %retval, align 4, !dbg !623
+KLEE: Execute: test_files/uxTaskGetStackHighWaterMark.c:21
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+97012707893936
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/uxTaskGetStackHighWaterMark.c:21 75:16939:1:  br label %return, !dbg !623
+KLEE: Execute: test_files/uxTaskGetStackHighWaterMark.c:21
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/uxTaskGetStackHighWaterMark.c:24 1:16948:1:  %4 = load i32, i32* %retval, align 4, !dbg !628
+KLEE: Execute: test_files/uxTaskGetStackHighWaterMark.c:24
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+97012707893936
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/uxTaskGetStackHighWaterMark.c:24 1:16949:1:  ret i32 %4, !dbg !628
+KLEE: Execute: test_files/uxTaskGetStackHighWaterMark.c:24
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 0
+
+KLEE: done: total instructions = 1542
+KLEE: done: completed paths = 23
+KLEE: done: partially completed paths = 9
+KLEE: done: generated tests = 23
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+5826 bitcode-reader - Number of Metadata records loaded
+ 898 bitcode-reader - Number of MDStrings loaded
+

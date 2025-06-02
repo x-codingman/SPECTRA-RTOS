@@ -1,0 +1,4 @@
+/home/klee/klee_src/build/bin/klee --search=dfs --stats -debug-print-instructions=all:stderr --test-info-output-dir=/home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/symbolic_execution/test-info-output/xStreamBufferSend --output-dir=/home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/symbolic_execution/output/xStreamBufferSend --test-target-name=xStreamBufferSend /home/klee/klee_src/freertos_10_6_0_test/test_bc_files/xStreamBufferSend.test.bc
+PID: 3516906
+Using monotonic steady clock with 1/1000000000s resolution
+Started: 2025-05-15 11:43:01

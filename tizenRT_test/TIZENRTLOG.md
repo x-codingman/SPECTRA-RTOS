@@ -33,3 +33,13 @@
 
 ## 2025-0325
 file_generate 存在一些问题，比如有些函数的声明无法很好的识别；有些从syscall.csv里面的声明是重复的，对此，目前是手动的修改，大概在10个system call左右的数量需要修改。
+
+
+
+mq_send              
+
+task_restart           
+
+pthread_join           
+
+timer_settime 

@@ -317,6 +317,7 @@ private:
  bool checkConstraints(ExecutionState &state);
  const MemoryObject* findMoWithName(ExecutionState &state, std::string &name);
  bool hasSemanticCheck(ExecutionState &state, const MemoryObject *mo);
+ bool CheckSemanticOnValue(ExecutionState &state, ref<Expr> value);
  std::vector<std::string> getLazyAllocedMoNameFromExpr(ref<Expr> expr);
  std::vector<std::string> findSpecificString(const std::string &input, const std::string &str);
   /// Allocate and bind a new object in a particular state. NOTE: This

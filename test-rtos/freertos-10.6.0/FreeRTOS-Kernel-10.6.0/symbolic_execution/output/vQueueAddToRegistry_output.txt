@@ -1,0 +1,100 @@
+98406740397560
+98406740397552
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:1
+ canBeDesiredAddress: 0
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2864 9:6093:67:  br label %if.end21, !dbg !681
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2864
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2865 5:6096:67:  ret void, !dbg !682
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2865
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/vQueueAddToRegistry.c:25 1:16950:67:  store i32 0, i32* %retval, align 4, !dbg !632
+KLEE: Execute: test_files/vQueueAddToRegistry.c:25
+KLEE: DEBUG: state id 67
+KLEE: DEBUG: dump the address expression before symplifying
+98406740353728
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/vQueueAddToRegistry.c:25 1:16951:67:  br label %return, !dbg !632
+KLEE: Execute: test_files/vQueueAddToRegistry.c:25
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/vQueueAddToRegistry.c:26 1:16954:67:  %6 = load i32, i32* %retval, align 4, !dbg !633
+KLEE: Execute: test_files/vQueueAddToRegistry.c:26
+KLEE: DEBUG: state id 67
+KLEE: DEBUG: dump the address expression before symplifying
+98406740353728
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/vQueueAddToRegistry.c:26 1:16955:67:  ret i32 %6, !dbg !633
+KLEE: Execute: test_files/vQueueAddToRegistry.c:26
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 2
+     test_files/vQueueAddToRegistry.c:23 77:16943:66:  store i32 0, i32* %retval, align 4, !dbg !627
+KLEE: Execute: test_files/vQueueAddToRegistry.c:23
+KLEE: DEBUG: state id 66
+KLEE: DEBUG: dump the address expression before symplifying
+98406740353728
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/vQueueAddToRegistry.c:23 77:16944:66:  br label %return, !dbg !627
+KLEE: Execute: test_files/vQueueAddToRegistry.c:23
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/vQueueAddToRegistry.c:26 1:16954:66:  %6 = load i32, i32* %retval, align 4, !dbg !633
+KLEE: Execute: test_files/vQueueAddToRegistry.c:26
+KLEE: DEBUG: state id 66
+KLEE: DEBUG: dump the address expression before symplifying
+98406740353728
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/vQueueAddToRegistry.c:26 1:16955:66:  ret i32 %6, !dbg !633
+KLEE: Execute: test_files/vQueueAddToRegistry.c:26
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 1
+     test_files/vQueueAddToRegistry.c:23 77:16943:1:  store i32 0, i32* %retval, align 4, !dbg !627
+KLEE: Execute: test_files/vQueueAddToRegistry.c:23
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+98406740353728
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/vQueueAddToRegistry.c:23 77:16944:1:  br label %return, !dbg !627
+KLEE: Execute: test_files/vQueueAddToRegistry.c:23
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/vQueueAddToRegistry.c:26 1:16954:1:  %6 = load i32, i32* %retval, align 4, !dbg !633
+KLEE: Execute: test_files/vQueueAddToRegistry.c:26
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+98406740353728
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/vQueueAddToRegistry.c:26 1:16955:1:  ret i32 %6, !dbg !633
+KLEE: Execute: test_files/vQueueAddToRegistry.c:26
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 0
+
+KLEE: done: total instructions = 4557
+KLEE: done: completed paths = 80
+KLEE: done: partially completed paths = 0
+KLEE: done: generated tests = 80
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+5828 bitcode-reader - Number of Metadata records loaded
+ 899 bitcode-reader - Number of MDStrings loaded
+

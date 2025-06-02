@@ -137,8 +137,14 @@ def extract_syscalls_from_file(file_path):
 h_syscalls = extract_syscalls_from_file(os.path.join(lwp_dir, 'lwp_syscall.h'))
 c_syscalls = extract_syscalls_from_file(os.path.join(lwp_dir, 'lwp_syscall.c'))
 
-# 合并两个文件中的syscall定义
-all_syscalls = h_syscalls.union(c_syscalls)
+# 合并两个文件中的syscall定义，只保留唯一的func_name
+syscall_dict = {}
+for return_type, func_name, param_str in h_syscalls.union(c_syscalls):
+    # 只保留第一个遇到的声明/定义
+    if func_name not in syscall_dict:
+        syscall_dict[func_name] = (return_type, param_str)
+
+all_syscalls = [(v[0], k, v[1]) for k, v in syscall_dict.items()]
 
 count = 0
 for return_type, func_name, param_str in all_syscalls:
@@ -148,6 +154,23 @@ for return_type, func_name, param_str in all_syscalls:
         f.write(c_content)
     count += 1
 print("done, total count: ", count)
+
+# --------- 新增统计逻辑 ---------
+pointer_syscall_count = 0
+non_pointer_syscalls = []
+for return_type, func_name, param_str in all_syscalls:
+    params = extract_params(param_str)
+    if any('*' in param_type or 'rt_' in param_type for param_type, param_name in params):
+        pointer_syscall_count += 1
+    else:
+        non_pointer_syscalls.append(func_name)
+
+print(f"Total number of syscalls: {len(all_syscalls)}")
+print(f"Number of syscalls with pointer parameters: {pointer_syscall_count}")
+print(f"Ratio: {pointer_syscall_count/len(all_syscalls):.2%}")
+print("\nSyscalls WITHOUT pointer parameters:")
+for name in non_pointer_syscalls:
+    print(name)
 
 
 

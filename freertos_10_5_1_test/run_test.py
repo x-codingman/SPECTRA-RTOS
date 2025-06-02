@@ -80,6 +80,7 @@ def run_command(func_name):
             "/home/klee/klee_src/build/bin/klee", 
             "--search=dfs",
             "--stats",
+            "--only-output-states-covering-new",
             "-debug-print-instructions=all:stderr",
             "--test-info-output-dir="+test_info_dir+shlex.quote(func_name),
             "--output-dir="+output_dir+shlex.quote(func_name),

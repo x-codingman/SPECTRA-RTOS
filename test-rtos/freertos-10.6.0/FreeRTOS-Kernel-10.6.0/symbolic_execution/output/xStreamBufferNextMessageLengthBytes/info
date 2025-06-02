@@ -1,0 +1,20 @@
+/home/klee/klee_src/build/bin/klee --search=dfs --stats -debug-print-instructions=all:stderr --test-info-output-dir=/home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/symbolic_execution/test-info-output/xStreamBufferNextMessageLengthBytes --output-dir=/home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/symbolic_execution/output/xStreamBufferNextMessageLengthBytes --test-target-name=xStreamBufferNextMessageLengthBytes /home/klee/klee_src/freertos_10_6_0_test/test_bc_files/xStreamBufferNextMessageLengthBytes.test.bc
+PID: 3511424
+Using monotonic steady clock with 1/1000000000s resolution
+Started: 2025-05-15 11:42:43
+BEGIN searcher description
+DFSSearcher
+END searcher description
+Finished: 2025-05-15 11:43:27
+Elapsed: 00:00:44
+KLEE: done: explored paths = 100
+KLEE: done: avg. constructs per query = 186
+KLEE: done: total queries = 241
+KLEE: done: valid queries = 61
+KLEE: done: invalid queries = 180
+KLEE: done: query cex = 241
+
+KLEE: done: total instructions = 6091
+KLEE: done: completed paths = 100
+KLEE: done: partially completed paths = 0
+KLEE: done: generated tests = 100

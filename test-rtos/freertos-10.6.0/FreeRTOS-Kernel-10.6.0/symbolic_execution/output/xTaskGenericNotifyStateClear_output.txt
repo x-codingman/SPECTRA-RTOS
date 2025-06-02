@@ -1,0 +1,100 @@
+KLEE: DEBUG: Detect __asm__ external function!
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:5295 16:15219:43:  %9 = load i64, i64* %xReturn, align 8, !dbg !642
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:5295
+KLEE: DEBUG: state id 43
+KLEE: DEBUG: dump the address expression before symplifying
+105088709608176
+KLEE: DEBUG: dump the resolve result of address
+1
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:5295 9:15220:43:  ret i64 %9, !dbg !643
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:5295
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/xTaskGenericNotifyStateClear.c:25 1:16950:43:  store i32 0, i32* %retval, align 4, !dbg !632
+KLEE: Execute: test_files/xTaskGenericNotifyStateClear.c:25
+KLEE: DEBUG: state id 43
+KLEE: DEBUG: dump the address expression before symplifying
+105088709608128
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/xTaskGenericNotifyStateClear.c:25 1:16951:43:  br label %return, !dbg !632
+KLEE: Execute: test_files/xTaskGenericNotifyStateClear.c:25
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/xTaskGenericNotifyStateClear.c:26 1:16954:43:  %6 = load i32, i32* %retval, align 4, !dbg !633
+KLEE: Execute: test_files/xTaskGenericNotifyStateClear.c:26
+KLEE: DEBUG: state id 43
+KLEE: DEBUG: dump the address expression before symplifying
+105088709608128
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/xTaskGenericNotifyStateClear.c:26 1:16955:43:  ret i32 %6, !dbg !633
+KLEE: Execute: test_files/xTaskGenericNotifyStateClear.c:26
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 2
+     test_files/xTaskGenericNotifyStateClear.c:23 75:16943:42:  store i32 0, i32* %retval, align 4, !dbg !627
+KLEE: Execute: test_files/xTaskGenericNotifyStateClear.c:23
+KLEE: DEBUG: state id 42
+KLEE: DEBUG: dump the address expression before symplifying
+105088709608128
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/xTaskGenericNotifyStateClear.c:23 75:16944:42:  br label %return, !dbg !627
+KLEE: Execute: test_files/xTaskGenericNotifyStateClear.c:23
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/xTaskGenericNotifyStateClear.c:26 1:16954:42:  %6 = load i32, i32* %retval, align 4, !dbg !633
+KLEE: Execute: test_files/xTaskGenericNotifyStateClear.c:26
+KLEE: DEBUG: state id 42
+KLEE: DEBUG: dump the address expression before symplifying
+105088709608128
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/xTaskGenericNotifyStateClear.c:26 1:16955:42:  ret i32 %6, !dbg !633
+KLEE: Execute: test_files/xTaskGenericNotifyStateClear.c:26
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 1
+     test_files/xTaskGenericNotifyStateClear.c:23 75:16943:1:  store i32 0, i32* %retval, align 4, !dbg !627
+KLEE: Execute: test_files/xTaskGenericNotifyStateClear.c:23
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+105088709608128
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/xTaskGenericNotifyStateClear.c:23 75:16944:1:  br label %return, !dbg !627
+KLEE: Execute: test_files/xTaskGenericNotifyStateClear.c:23
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/xTaskGenericNotifyStateClear.c:26 1:16954:1:  %6 = load i32, i32* %retval, align 4, !dbg !633
+KLEE: Execute: test_files/xTaskGenericNotifyStateClear.c:26
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+105088709608128
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/xTaskGenericNotifyStateClear.c:26 1:16955:1:  ret i32 %6, !dbg !633
+KLEE: Execute: test_files/xTaskGenericNotifyStateClear.c:26
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 0
+
+KLEE: done: total instructions = 1782
+KLEE: done: completed paths = 50
+KLEE: done: partially completed paths = 0
+KLEE: done: generated tests = 50
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+5828 bitcode-reader - Number of Metadata records loaded
+ 899 bitcode-reader - Number of MDStrings loaded
+

@@ -1,0 +1,100 @@
+KLEE: Execute: test_files/xTaskCheckForTimeOut.c:24
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+     test_files/xTaskCheckForTimeOut.c:27 1:16968:64:  %8 = load i32, i32* %retval, align 4, !dbg !649
+KLEE: Execute: test_files/xTaskCheckForTimeOut.c:27
+KLEE: DEBUG: state id 64
+KLEE: DEBUG: dump the address expression before symplifying
+104886905512688
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+     test_files/xTaskCheckForTimeOut.c:27 1:16969:64:  ret i32 %8, !dbg !649
+KLEE: Execute: test_files/xTaskCheckForTimeOut.c:27
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 3
+     test_files/xTaskCheckForTimeOut.c:24 113:16957:63:  store i32 0, i32* %retval, align 4, !dbg !643
+KLEE: Execute: test_files/xTaskCheckForTimeOut.c:24
+KLEE: DEBUG: state id 63
+KLEE: DEBUG: dump the address expression before symplifying
+104886905512688
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/xTaskCheckForTimeOut.c:24 113:16958:63:  br label %return, !dbg !643
+KLEE: Execute: test_files/xTaskCheckForTimeOut.c:24
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/xTaskCheckForTimeOut.c:27 1:16968:63:  %8 = load i32, i32* %retval, align 4, !dbg !649
+KLEE: Execute: test_files/xTaskCheckForTimeOut.c:27
+KLEE: DEBUG: state id 63
+KLEE: DEBUG: dump the address expression before symplifying
+104886905512688
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/xTaskCheckForTimeOut.c:27 1:16969:63:  ret i32 %8, !dbg !649
+KLEE: Execute: test_files/xTaskCheckForTimeOut.c:27
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 2
+     test_files/xTaskCheckForTimeOut.c:23 105:16943:62:  store i32 0, i32* %retval, align 4, !dbg !634
+KLEE: Execute: test_files/xTaskCheckForTimeOut.c:23
+KLEE: DEBUG: state id 62
+KLEE: DEBUG: dump the address expression before symplifying
+104886905512688
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/xTaskCheckForTimeOut.c:23 105:16944:62:  br label %return, !dbg !634
+KLEE: Execute: test_files/xTaskCheckForTimeOut.c:23
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/xTaskCheckForTimeOut.c:27 1:16968:62:  %8 = load i32, i32* %retval, align 4, !dbg !649
+KLEE: Execute: test_files/xTaskCheckForTimeOut.c:27
+KLEE: DEBUG: state id 62
+KLEE: DEBUG: dump the address expression before symplifying
+104886905512688
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/xTaskCheckForTimeOut.c:27 1:16969:62:  ret i32 %8, !dbg !649
+KLEE: Execute: test_files/xTaskCheckForTimeOut.c:27
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 1
+     test_files/xTaskCheckForTimeOut.c:23 105:16943:1:  store i32 0, i32* %retval, align 4, !dbg !634
+KLEE: Execute: test_files/xTaskCheckForTimeOut.c:23
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+104886905512688
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/xTaskCheckForTimeOut.c:23 105:16944:1:  br label %return, !dbg !634
+KLEE: Execute: test_files/xTaskCheckForTimeOut.c:23
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/xTaskCheckForTimeOut.c:27 1:16968:1:  %8 = load i32, i32* %retval, align 4, !dbg !649
+KLEE: Execute: test_files/xTaskCheckForTimeOut.c:27
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+104886905512688
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/xTaskCheckForTimeOut.c:27 1:16969:1:  ret i32 %8, !dbg !649
+KLEE: Execute: test_files/xTaskCheckForTimeOut.c:27
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 0
+
+KLEE: done: total instructions = 2227
+KLEE: done: completed paths = 75
+KLEE: done: partially completed paths = 0
+KLEE: done: generated tests = 75
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+5836 bitcode-reader - Number of Metadata records loaded
+ 899 bitcode-reader - Number of MDStrings loaded
+

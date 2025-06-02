@@ -1,41 +1,20 @@
-KLEE: Error: arbitrary memory write vulnerability (V1)on file tasks.c: line 4941. desired value: 0, desired address 4026478592-4026478592
-KLEE: Error: arbitrary memory write vulnerability (V1)on file tasks.c: line 4993. desired value: 0, desired address 4026478592-4026478592
-KLEE: Error: arbitrary memory write vulnerability (V1)on file tasks.c: line 4994. desired value: 0, desired address 4026478592-4026478592
-KLEE: Error: arbitrary memory write vulnerability (V1)on file tasks.c: line 4961. desired value: 0, desired address 4026478592-4026478592
-KLEE: Error: unresolved address test on file tasks.c: line 4961.
-KLEE: Error: arbitrary memory write vulnerability (V1)on file tasks.c: line 4954. desired value: 0, desired address 4026478592-4026478592
-KLEE: Error: unresolved address test on file tasks.c: line 4954.
-KLEE: Error: arbitrary memory write vulnerability (V1)on file tasks.c: line 4950. desired value: 0, desired address 4026478592-4026478592
-KLEE: Error: unresolved address test on file tasks.c: line 4950.
-KLEE: Error: arbitrary memory write vulnerability (V1)on file tasks.c: line 4946. desired value: 0, desired address 4026478592-4026478592
-KLEE: Error: unresolved address test on file tasks.c: line 4946.
-KLEE: Error: arbitrary memory write vulnerability (V1)on file tasks.c: line 4936. desired value: 0, desired address 4026478592-4026478592
-KLEE: Error: unresolved address test on file tasks.c: line 4961.
-KLEE: Error: unresolved address test on file tasks.c: line 4954.
-KLEE: Error: unresolved address test on file tasks.c: line 4950.
-KLEE: Error: unresolved address test on file tasks.c: line 4946.
-KLEE: Error: unresolved address test on file tasks.c: line 4961.
-KLEE: Error: unresolved address test on file tasks.c: line 4954.
-KLEE: Error: unresolved address test on file tasks.c: line 4950.
-KLEE: Error: unresolved address test on file tasks.c: line 4946.
-KLEE: Error: unresolved address test on file tasks.c: line 4961.
-KLEE: Error: unresolved address test on file tasks.c: line 4954.
-KLEE: Error: unresolved address test on file tasks.c: line 4950.
-KLEE: Error: unresolved address test on file tasks.c: line 4946.
-KLEE: Error: Pointer Out of Boundon file tasks.c: line 4939. 
-KLEE: Error: unresolved address test on file tasks.c: line 4961.
-KLEE: Error: unresolved address test on file tasks.c: line 4954.
-KLEE: Error: unresolved address test on file tasks.c: line 4950.
-KLEE: Error: unresolved address test on file tasks.c: line 4946.
-KLEE: Error: unresolved address test on file tasks.c: line 4961.
-KLEE: Error: unresolved address test on file tasks.c: line 4954.
-KLEE: Error: unresolved address test on file tasks.c: line 4950.
-KLEE: Error: unresolved address test on file tasks.c: line 4946.
-KLEE: Error: unresolved address test on file tasks.c: line 4961.
-KLEE: Error: unresolved address test on file tasks.c: line 4954.
-KLEE: Error: unresolved address test on file tasks.c: line 4950.
-KLEE: Error: unresolved address test on file tasks.c: line 4946.
-KLEE: Error: unresolved address test on file tasks.c: line 4961.
-KLEE: Error: unresolved address test on file tasks.c: line 4954.
-KLEE: Error: unresolved address test on file tasks.c: line 4950.
-KLEE: Error: unresolved address test on file tasks.c: line 4946.
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 801. 
+KLEE: Error: Limited memory write vulnerability(Uninitialized pointer dereference) (V2)on file runtime/Freestanding/memset.c: line 15. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 929. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/list.c: line 89. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 941. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 944. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 945. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 1021. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 1083. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 1088. 
+KLEE: Error: Limited memory write vulnerability(Uninitialized pointer dereference) (V2)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 1088. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 4941. 
+KLEE: Error: Arbitrary memory write vulnerability (V0)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 4993. 
+KLEE: Error: Limited memory write vulnerability(Uninitialized pointer dereference) (V2)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 4993. 
+KLEE: Error: Uninitialized pointer dereference(read) vulnerabilityon file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 4993. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 4993. 
+KLEE: Error: Limited memory write vulnerability (V1)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 4993. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 4994. 
+KLEE: Error: Uninitialized pointer dereference(read) vulnerabilityon file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 4994. 
+KLEE: Error: Limited memory write vulnerability(Uninitialized pointer dereference) (V2)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 4994. 

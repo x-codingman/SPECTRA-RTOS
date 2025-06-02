@@ -1,0 +1,100 @@
+KLEE: DEBUG: dump the address expression before symplifying
+(Add w64 160
+          (ReadLSB w64 32 lazy_alloc_controllable11))
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+(ReadLSB w64 160 lazy_alloc_controllable17)
+KLEE: DEBUG: states size 20
+KLEE: DEBUG: states size 20
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:5015 41:14412:26:  %77 = load volatile %struct.tskTaskControlBlock*, %struct.tskTaskControlBlock** @pxCurrentTCB, align 8, !dbg !730
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:5015
+KLEE: DEBUG: state id 26
+KLEE: DEBUG: dump the address expression before symplifying
+110700225536288
+KLEE: DEBUG: dump the resolve result of address
+110700217484000
+KLEE: DEBUG: states size 20
+KLEE: DEBUG: states size 20
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:5015 55:14413:26:  %uxPriority103 = getelementptr inbounds %struct.tskTaskControlBlock, %struct.tskTaskControlBlock* %77, i32 0, i32 4, !dbg !731
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:5015
+KLEE: DEBUG: states size 20
+KLEE: DEBUG: states size 20
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:5015 55:14414:26:  %78 = load i64, i64* %uxPriority103, align 8, !dbg !731
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:5015
+KLEE: DEBUG: state id 26
+KLEE: DEBUG: dump the address expression before symplifying
+110700217484160
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: dump the resolve result of address
+(ReadLSB w64 160 lazy_alloc_uncontrollable8)
+KLEE: DEBUG: states size 20
+KLEE: DEBUG: states size 20
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:5015 39:14415:26:  %cmp104 = icmp ugt i64 %76, %78, !dbg !732
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:5015
+KLEE: DEBUG: states size 20
+KLEE: DEBUG: states size 20
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:5015 21:14416:26:  br i1 %cmp104, label %if.then106, label %if.else107, !dbg !733
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:5015
+ #0 0x00007bf51a99e5fa llvm::sys::PrintStackTrace(llvm::raw_ostream&) /tmp/llvm-110/llvm/lib/Support/Unix/Signals.inc:568:0
+ #1 0x00007bf51a99c304 llvm::sys::RunSignalHandlers() /tmp/llvm-110/llvm/lib/Support/Signals.cpp:68:0
+ #2 0x00007bf51a99cdd5 SignalHandler(int) /tmp/llvm-110/llvm/lib/Support/Unix/Signals.inc:396:0
+ #3 0x00007bf519d2bf10 (/lib/x86_64-linux-gnu/libc.so.6+0x3ef10)
+ #4 0x000064ae5ae727d4 std::_Rb_tree<klee::Array const*, std::pair<klee::Array const* const, std::vector<unsigned char, std::allocator<unsigned char> > >, std::_Select1st<std::pair<klee::Array const* const, std::vector<unsigned char, std::allocator<unsigned char> > > >, std::less<klee::Array const*>, std::allocator<std::pair<klee::Array const* const, std::vector<unsigned char, std::allocator<unsigned char> > > > >::find(klee::Array const* const&) const /usr/include/c++/7/bits/stl_tree.h:2536:0
+ #5 0x000064ae5ae727d4 std::map<klee::Array const*, std::vector<unsigned char, std::allocator<unsigned char> >, std::less<klee::Array const*>, std::allocator<std::pair<klee::Array const* const, std::vector<unsigned char, std::allocator<unsigned char> > > > >::find(klee::Array const* const&) const /usr/include/c++/7/bits/stl_map.h:1188:0
+ #6 0x000064ae5ae727d4 klee::Assignment::evaluate(klee::Array const*, unsigned int) const /tmp/klee_src/include/klee/Expr/Assignment.h:72:0
+ #7 0x000064ae5ae727d4 klee::AssignmentEvaluator::getInitialValue(klee::Array const&, unsigned int) /tmp/klee_src/include/klee/Expr/Assignment.h:60:0
+ #8 0x000064ae5af1b105 klee::ref<klee::Expr>::ref(klee::ref<klee::Expr> const&) /tmp/klee_src/include/klee/ADT/Ref.h:110:0
+ #9 0x000064ae5af1b105 klee::ExprVisitor::Action::Action(klee::ExprVisitor::Action::Kind, klee::ref<klee::Expr> const&) /tmp/klee_src/include/klee/Expr/ExprVisitor.h:28:0
+#10 0x000064ae5af1b105 klee::ExprVisitor::Action::changeTo(klee::ref<klee::Expr> const&) /tmp/klee_src/include/klee/Expr/ExprVisitor.h:37:0
+#11 0x000064ae5af1b105 klee::ExprEvaluator::evalRead(klee::UpdateList const&, unsigned int) /tmp/klee_src/lib/Expr/ExprEvaluator.cpp:36:0
+#12 0x000064ae5af1bb2d klee::ExprEvaluator::visitRead(klee::ReadExpr const&) /tmp/klee_src/lib/Expr/ExprEvaluator.cpp:64:0
+#13 0x000064ae5af34d98 klee::ref<klee::Expr>::dec() const /tmp/klee_src/include/klee/ADT/Ref.h:97:0
+#14 0x000064ae5af34d98 klee::ref<klee::Expr>::operator=(klee::ref<klee::Expr>&&) /tmp/klee_src/include/klee/ADT/Ref.h:180:0
+#15 0x000064ae5af34d98 klee::ExprVisitor::Action::operator=(klee::ExprVisitor::Action&&) /tmp/klee_src/include/klee/Expr/ExprVisitor.h:19:0
+#16 0x000064ae5af34d98 klee::ExprVisitor::visitActual(klee::ref<klee::Expr> const&) /tmp/klee_src/lib/Expr/ExprVisitor.cpp:90:0
+#17 0x000064ae5af349b0 klee::ref<klee::Expr>::ref(klee::ref<klee::Expr> const&) /tmp/klee_src/include/klee/ADT/Ref.h:110:0
+#18 0x000064ae5af349b0 std::pair<klee::ref<klee::Expr>, klee::ref<klee::Expr> >::pair<klee::ref<klee::Expr>&, true>(klee::ref<klee::Expr> const&, klee::ref<klee::Expr>&) /usr/include/c++/7/bits/stl_pair.h:326:0
+#19 0x000064ae5af349b0 std::pair<std::__decay_and_strip<klee::ref<klee::Expr> const&>::__type, std::__decay_and_strip<klee::ref<klee::Expr>&>::__type> std::make_pair<klee::ref<klee::Expr> const&, klee::ref<klee::Expr>&>(klee::ref<klee::Expr> const&, klee::ref<klee::Expr>&) /usr/include/c++/7/bits/stl_pair.h:529:0
+#20 0x000064ae5af349b0 klee::ExprVisitor::visit(klee::ref<klee::Expr> const&) /tmp/klee_src/lib/Expr/ExprVisitor.cpp:36:0
+#21 0x000064ae5af34ca4 klee::ref<klee::Expr>::dec() const /tmp/klee_src/include/klee/ADT/Ref.h:97:0
+#22 0x000064ae5af34ca4 klee::ref<klee::Expr>::operator=(klee::ref<klee::Expr>&&) /tmp/klee_src/include/klee/ADT/Ref.h:180:0
+#23 0x000064ae5af34ca4 klee::ExprVisitor::visitActual(klee::ref<klee::Expr> const&) /tmp/klee_src/lib/Expr/ExprVisitor.cpp:105:0
+#24 0x000064ae5af349b0 klee::ref<klee::Expr>::ref(klee::ref<klee::Expr> const&) /tmp/klee_src/include/klee/ADT/Ref.h:110:0
+#25 0x000064ae5af349b0 std::pair<klee::ref<klee::Expr>, klee::ref<klee::Expr> >::pair<klee::ref<klee::Expr>&, true>(klee::ref<klee::Expr> const&, klee::ref<klee::Expr>&) /usr/include/c++/7/bits/stl_pair.h:326:0
+#26 0x000064ae5af349b0 std::pair<std::__decay_and_strip<klee::ref<klee::Expr> const&>::__type, std::__decay_and_strip<klee::ref<klee::Expr>&>::__type> std::make_pair<klee::ref<klee::Expr> const&, klee::ref<klee::Expr>&>(klee::ref<klee::Expr> const&, klee::ref<klee::Expr>&) /usr/include/c++/7/bits/stl_pair.h:529:0
+#27 0x000064ae5af349b0 klee::ExprVisitor::visit(klee::ref<klee::Expr> const&) /tmp/klee_src/lib/Expr/ExprVisitor.cpp:36:0
+#28 0x000064ae5af34ca4 klee::ref<klee::Expr>::dec() const /tmp/klee_src/include/klee/ADT/Ref.h:97:0
+#29 0x000064ae5af34ca4 klee::ref<klee::Expr>::operator=(klee::ref<klee::Expr>&&) /tmp/klee_src/include/klee/ADT/Ref.h:180:0
+#30 0x000064ae5af34ca4 klee::ExprVisitor::visitActual(klee::ref<klee::Expr> const&) /tmp/klee_src/lib/Expr/ExprVisitor.cpp:105:0
+#31 0x000064ae5af349b0 klee::ref<klee::Expr>::ref(klee::ref<klee::Expr> const&) /tmp/klee_src/include/klee/ADT/Ref.h:110:0
+#32 0x000064ae5af349b0 std::pair<klee::ref<klee::Expr>, klee::ref<klee::Expr> >::pair<klee::ref<klee::Expr>&, true>(klee::ref<klee::Expr> const&, klee::ref<klee::Expr>&) /usr/include/c++/7/bits/stl_pair.h:326:0
+#33 0x000064ae5af349b0 std::pair<std::__decay_and_strip<klee::ref<klee::Expr> const&>::__type, std::__decay_and_strip<klee::ref<klee::Expr>&>::__type> std::make_pair<klee::ref<klee::Expr> const&, klee::ref<klee::Expr>&>(klee::ref<klee::Expr> const&, klee::ref<klee::Expr>&) /usr/include/c++/7/bits/stl_pair.h:529:0
+#34 0x000064ae5af349b0 klee::ExprVisitor::visit(klee::ref<klee::Expr> const&) /tmp/klee_src/lib/Expr/ExprVisitor.cpp:36:0
+#35 0x000064ae5aee82f8 klee::ExprVisitor::~ExprVisitor() /tmp/klee_src/include/klee/Expr/ExprVisitor.h:46:0
+#36 0x000064ae5aee82f8 klee::ExprEvaluator::~ExprEvaluator() /tmp/klee_src/include/klee/Expr/ExprEvaluator.h:17:0
+#37 0x000064ae5aee82f8 klee::AssignmentEvaluator::~AssignmentEvaluator() /tmp/klee_src/include/klee/Expr/Assignment.h:55:0
+#38 0x000064ae5aee82f8 klee::Assignment::evaluate(klee::ref<klee::Expr>) /tmp/klee_src/include/klee/Expr/Assignment.h:86:0
+#39 0x000064ae5aee82f8 CexCachingSolver::computeValidity(klee::Query const&, klee::Solver::Validity&) /tmp/klee_src/lib/Solver/CexCachingSolver.cpp:281:0
+#40 0x000064ae5aee63bd CachingSolver::computeValidity(klee::Query const&, klee::Solver::Validity&) /tmp/klee_src/lib/Solver/CachingSolver.cpp:194:0
+#41 0x000064ae5aedc13b klee::ref<klee::Expr>::dec() const /tmp/klee_src/include/klee/ADT/Ref.h:97:0
+#42 0x000064ae5aedc13b klee::ref<klee::Expr>::~ref() /tmp/klee_src/include/klee/ADT/Ref.h:88:0
+#43 0x000064ae5aedc13b klee::Query::~Query() /tmp/klee_src/include/klee/Solver/Solver.h:32:0
+#44 0x000064ae5aedc13b IndependentSolver::computeValidity(klee::Query const&, klee::Solver::Validity&) /tmp/klee_src/lib/Solver/IndependentSolver.cpp:416:0
+#45 0x000064ae5aea6c1d klee::ref<klee::Expr>::dec() const /tmp/klee_src/include/klee/ADT/Ref.h:97:0
+#46 0x000064ae5aea6c1d klee::ref<klee::Expr>::~ref() /tmp/klee_src/include/klee/ADT/Ref.h:88:0
+#47 0x000064ae5aea6c1d klee::Query::~Query() /tmp/klee_src/include/klee/Solver/Solver.h:32:0
+#48 0x000064ae5aea6c1d klee::TimingSolver::evaluate(klee::ConstraintSet const&, klee::ref<klee::Expr>, klee::Solver::Validity&, klee::SolverQueryMetaData&) /tmp/klee_src/lib/Core/TimingSolver.cpp:40:0
+#49 0x000064ae5ae5d132 klee::ref<klee::Expr>::dec() const /tmp/klee_src/include/klee/ADT/Ref.h:97:0
+#50 0x000064ae5ae5d132 klee::ref<klee::Expr>::~ref() /tmp/klee_src/include/klee/ADT/Ref.h:88:0
+#51 0x000064ae5ae5d132 klee::Executor::fork(klee::ExecutionState&, klee::ref<klee::Expr>, bool, BranchType) /tmp/klee_src/lib/Core/Executor.cpp:1114:0
+#52 0x000064ae5ae66078 klee::ref<klee::Expr>::dec() const /tmp/klee_src/include/klee/ADT/Ref.h:97:0
+#53 0x000064ae5ae66078 klee::ref<klee::Expr>::~ref() /tmp/klee_src/include/klee/ADT/Ref.h:88:0
+#54 0x000064ae5ae66078 klee::Executor::executeInstruction(klee::ExecutionState&, klee::KInstruction*) /tmp/klee_src/lib/Core/Executor.cpp:2364:0
+#55 0x000064ae5ae6a975 klee::Executor::run(klee::ExecutionState&) /tmp/klee_src/lib/Core/Executor.cpp:3984:0
+#56 0x000064ae5ae6b274 _ZSt4swapIPN4klee5PTreeEENSt9enable_ifIXsrSt6__and_IJSt6__not_ISt15__is_tuple_likeIT_EESt21is_move_constructibleIS7_ESt18is_move_assignableIS7_EEE5valueEvE4typeERS7_SH_ /usr/include/c++/7/bits/move.h:198:0
+#57 0x000064ae5ae6b274 std::unique_ptr<klee::PTree, std::default_delete<klee::PTree> >::reset(klee::PTree*) /usr/include/c++/7/bits/unique_ptr.h:369:0
+#58 0x000064ae5ae6b274 std::unique_ptr<klee::PTree, std::default_delete<klee::PTree> >::operator=(std::nullptr_t) /usr/include/c++/7/bits/unique_ptr.h:307:0
+#59 0x000064ae5ae6b274 klee::Executor::runFunctionAsMain(llvm::Function*, int, char**, char**) /tmp/klee_src/lib/Core/Executor.cpp:5646:0
+#60 0x000064ae5ae2697a main /tmp/klee_src/tools/klee/main.cpp:1629:0
+#61 0x00007bf519d0ec87 __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21c87)
+#62 0x000064ae5ae3467a _start (/home/klee/klee_src/build/bin/klee+0x3467a)

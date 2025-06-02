@@ -81,33 +81,43 @@ def vulnerability_analysis(root_folder, output_folder):
 
     # 1. 你自定义的 vulnerability type 列表
     my_vul_types = [
-        "Information leak vulnerability (unlimited)",
+        "Information leak vulnerability (V0)",
         "Uninitialized pointer dereference(read) vulnerability",
         "Arbitrary memory write vulnerability (V0)",
-        "Limited memory write vulnerability(Uninitialized pointer dereference) (V2)"
+        "Limited memory write vulnerability (V2)"
     ]
 
     # 2. 只保留 my_vul_types在vul_funcs_df的Vulnerability Type中，但其Vulnerability Type是字符串组合，需要做字符串匹配
     pattern = '|'.join(map(re.escape, my_vul_types))  # 用re.escape防止特殊字符
-    filtered_df = vul_funcs_df[vul_funcs_df['Vulnerability Type'].str.contains(pattern, regex=True, na=False)]
+    filtered_df = vul_funcs_df[vul_funcs_df['Vulnerability Type'].str.contains(pattern, regex=True, na=False)].copy()
     
     # 3. 去重，只保留 Function唯一组合, vulnerability type合并
     filtered_df = filtered_df.drop_duplicates(subset=['Function'])
 
     # 新增三列并初始化
-    filtered_df['DoS'] = '✔'
+    filtered_df['DoS'] = "✔"
+    filtered_df['FP'] = filtered_df['Vulnerability Type'].apply(
+        lambda x: '✔' if 'Potential Function pointer dereference vulnerability' in x else 'X'
+    )
     filtered_df['Memory Read'] = filtered_df['Vulnerability Type'].apply(
-        lambda x: '✔' if 'Information leak vulnerability (unlimited)' in x else 'X'
+        lambda x: '✔' if 'Information leak vulnerability (V0)' in x else 'X'
     )
     def memory_write_mark(vul_type):
         if 'Arbitrary memory write vulnerability (V0)' in vul_type:
             return 'I'
-        elif 'Limited memory write vulnerability(Uninitialized pointer dereference) (V2)' in vul_type:
+        elif 'Limited memory write vulnerability (V2)' in vul_type:
             return 'II'
         else:
             return 'X'
     filtered_df['Memory Write'] = filtered_df['Vulnerability Type'].apply(memory_write_mark)
     
+    for vul_type in my_vul_types:
+        mask = (df['Vulnerability Type'] == vul_type)
+        location_count = df[mask].groupby('Function')['Line Number'].nunique().reset_index()
+        location_count = location_count.rename(columns={'Line Number': f'Num of {vul_type} Locations'})
+        filtered_df = filtered_df.merge(location_count, on='Function', how='left')
+        filtered_df[f'Num of {vul_type} Locations'] = filtered_df[f'Num of {vul_type} Locations'].fillna(0).astype(int)
+
     # 统计数量
     summary_row = {
         'Function': '总计',
@@ -116,6 +126,7 @@ def vulnerability_analysis(root_folder, output_folder):
         'Number of Vulnerabilities': '',
         'File': '',
         'DoS': filtered_df['DoS'].value_counts().get('✔', 0),
+        'FP': filtered_df['FP'].value_counts().get('✔', 0),
         'Memory Read': filtered_df['Memory Read'].value_counts().get('✔', 0),
         'Memory Write': (
             'I:' + str(filtered_df['Memory Write'].value_counts().get('I', 0)) +
@@ -123,8 +134,57 @@ def vulnerability_analysis(root_folder, output_folder):
             ' X:' + str(filtered_df['Memory Write'].value_counts().get('X', 0))
         )
     }
+    for vul_type in my_vul_types:
+        col_name = f'Num of {vul_type} Locations'
+        if col_name in filtered_df.columns:
+            summary_row[col_name] = filtered_df[col_name].sum()
 
     filtered_df = pd.concat([filtered_df, pd.DataFrame([summary_row])], ignore_index=True)
+    
+    # vulnerability without semantic check
+    without_semantic_vul_types = [
+        "Information leak vulnerability (V0)",
+        "Information leak vulnerability (V1)",
+        "Limited memory write vulnerability (V1)",
+        "Uninitialized pointer dereference(read) vulnerability",
+        "Arbitrary memory write vulnerability (V0)",
+        "Limited memory write vulnerability (V2)"
+    ]
+    pattern = '|'.join(map(re.escape, without_semantic_vul_types))  # 用re.escape防止特殊字符   
+    without_semantic_vul_df = vul_funcs_df[vul_funcs_df['Vulnerability Type'].str.contains(pattern, regex=True, na=False)].copy()
+    without_semantic_vul_df['DoS'] = "✔"
+    without_semantic_vul_df['FP'] = without_semantic_vul_df['Vulnerability Type'].apply(
+        lambda x: '✔' if 'Potential Function pointer dereference vulnerability' in x else 'X'
+    )
+    without_semantic_vul_df['Memory Read'] = without_semantic_vul_df['Vulnerability Type'].apply(
+        lambda x: '✔' if 'Information leak vulnerability (V0)' in x 
+        or 'Information leak vulnerability (V1)' in x
+        else 'X'
+    )
+    without_semantic_vul_df['Memory Write'] = without_semantic_vul_df['Vulnerability Type'].apply(
+        lambda x: 'I' if 'Arbitrary memory write vulnerability (V0)' in x 
+        or 'Arbitrary memory write vulnerability (V1)' in x
+        else 'II' if 'Limited memory write vulnerability (V2)' in x 
+        or 'Limited memory write vulnerability (V3)' in x
+        else 'X'
+    )
+    
+    summary_row = {
+        'Function': '总计',
+        'Vulnerability Type': '',
+        'Line Number': '',
+        'Number of Vulnerabilities': '',
+        'File': '',
+        'DoS': without_semantic_vul_df['DoS'].value_counts().get('✔', 0),
+        'FP': without_semantic_vul_df['FP'].value_counts().get('✔', 0),
+        'Memory Read': without_semantic_vul_df['Memory Read'].value_counts().get('✔', 0),
+        'Memory Write': (
+            'I:' + str(without_semantic_vul_df['Memory Write'].value_counts().get('I', 0)) +
+            ' II:' + str(without_semantic_vul_df['Memory Write'].value_counts().get('II', 0)) +
+            ' X:' + str(without_semantic_vul_df['Memory Write'].value_counts().get('X', 0))
+        )
+    }
+    without_semantic_vul_df = pd.concat([without_semantic_vul_df, pd.DataFrame([summary_row])], ignore_index=True)
     
     # Save both reports to a single Excel file with two sheets
     rtos_name = root_folder.split('/')[-3]  # Get the actual RTOS name from the path
@@ -134,11 +194,12 @@ def vulnerability_analysis(root_folder, output_folder):
         df.to_excel(writer, sheet_name='Detailed Report', index=False)
         vul_funcs_df.to_excel(writer, sheet_name='Vulnerability Functions Report', index=False)
         filtered_df.to_excel(writer, sheet_name='My Vulnerability Types', index=False)
-    
+        without_semantic_vul_df.to_excel(writer, sheet_name='Without Semantic Check', index=False)  
     print(f'Vulnerability Report with both sheets saved to: {excel_path}')
 
 def get_rtos_folder():
     print("Please select the RTOS folder:")
+    print("0. All RTOS")
     print("1. FreeRTOS-10.5.1")
     print("2. FreeRTOS-10.6.0")
     print("3. TizenRT")
@@ -149,18 +210,25 @@ def get_rtos_folder():
     choice = input("Enter the number of the RTOS folder: ")
     # give a default path
     default_path = "/home/klee/klee_src/test-rtos/freertos-10.5.1/symbolic_execution/"
-    
+    if choice == "0":
+        return {
+            "freertos-10.5.1": "/home/klee/klee_src/test-rtos/freertos-10.5.1/symbolic_execution/",
+            "freertos-10.6.0": "/home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/symbolic_execution/",
+            "tizenrt": "/home/klee/klee_src/test-rtos/tizenrt/symbolic_execution/",
+            "rt-thread": "/home/klee/klee_src/test-rtos/rt-thread/symbolic_execution/",
+            "threadx-6.4.2": "/home/klee/klee_src/test-rtos/threadx-6.4.2/symbolic_execution/"
+        }
     if choice == "1":
         return "/home/klee/klee_src/test-rtos/freertos-10.5.1/symbolic_execution/"
     elif choice == "2":
-        return "/home/klee/klee_src/test-rtos/freertos-10.6.0/symbolic_execution/"
+        return "/home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/symbolic_execution/"
     # These two are not ready yet, so print a message
     elif choice == "3": 
         return "/home/klee/klee_src/test-rtos/tizenrt/symbolic_execution/"
     elif choice == "4":
         return "/home/klee/klee_src/test-rtos/rt-thread/symbolic_execution/" 
     elif choice == "5":
-        return "/home/klee/klee_src/test-rtos/threadx-5.3/symbolic_execution/"
+        return "/home/klee/klee_src/test-rtos/threadx-6.4.2/symbolic_execution/"
     else:
         return default_path
         
@@ -239,17 +307,103 @@ def extract_info(directory, output_folder):
     df.to_excel(os.path.join(output_folder, f'{rtos_name}_runtime_info.xlsx'), index=False)
     print(f'RTOS runtime info saved to: {rtos_name}_runtime_info.xlsx')
 
+def generate_summary_excel(root_folder, output_folder, split_size=80):
+    summary_excel_path = os.path.join(output_folder, 'vulnerability_summary.xlsx')
+    with pd.ExcelWriter(summary_excel_path, engine='openpyxl') as writer:
+        merged_df = None
+        for rtos_name, rtos_path in root_folder.items():
+            print(f"Merging vulnerability report of {rtos_name}")
+            rtos_vul_path = os.path.join(output_folder, f'{rtos_name}_vulnerability_report.xlsx')
+            try:
+                my_vul_df = pd.read_excel(rtos_vul_path, sheet_name='My Vulnerability Types', engine='openpyxl')
+                my_vul_df = my_vul_df.drop('File', axis=1, errors='ignore')
+                my_vul_df = my_vul_df[~my_vul_df['Function'].isin(['总计', 'Total'])]
+                my_vul_df['RTOS'] = rtos_name
+                if merged_df is None:
+                    merged_df = my_vul_df
+                else:
+                    merged_df = pd.concat([merged_df, my_vul_df], ignore_index=True)
+            except KeyError:
+                print(f"Warning: Sheet 'My Vulnerability Types' not found in {rtos_name} vulnerability report. Skipping...")
+                continue
 
+        columns = ['RTOS'] + [col for col in merged_df.columns if col != 'RTOS']
+        merged_df = merged_df[columns]
+        merged_df = merged_df.drop(['Vulnerability Type', 'Line Number'], axis=1, errors='ignore')
 
+        prev_rtos = None
+        for idx, row in merged_df.iterrows():
+            if row['RTOS'] == prev_rtos:
+                merged_df.at[idx, 'RTOS'] = ''
+            else:
+                prev_rtos = row['RTOS']
 
+        summary_row = {
+            'RTOS': 'Total',
+            'Function': '',
+            'Number of Vulnerabilities': '',
+            'DoS': merged_df['DoS'].value_counts().get('✔', 0),
+            'FP': merged_df['FP'].value_counts().get('✔', 0),
+            'Memory Read': merged_df['Memory Read'].value_counts().get('✔', 0),
+            'Memory Write': (
+                'I:' + str(merged_df['Memory Write'].value_counts().get('I', 0)) +
+                ' II:' + str(merged_df['Memory Write'].value_counts().get('II', 0)) +
+                ' X:' + str(merged_df['Memory Write'].value_counts().get('X', 0))
+            )
+        }
+        for col in merged_df.columns:
+            if col not in summary_row:
+                summary_row[col] = ''
+        merged_df = pd.concat([merged_df, pd.DataFrame([summary_row])], ignore_index=True)
+
+        if merged_df is not None:
+            n = len(merged_df)
+            index_col = list(range(1, n)) + ['']
+            merged_df.insert(0, 'Index', index_col)
+
+        # 拆分表格，每split_size行为一组，横向拼接
+        data_df = merged_df.iloc[:-1].reset_index(drop=True)
+        total_row = merged_df.iloc[[-1]].reset_index(drop=True)
+        n_rows = data_df.shape[0]
+        n_splits = (n_rows + split_size - 1) // split_size
+        split_dfs = []
+        for i in range(n_splits):
+            chunk = data_df.iloc[i*split_size:(i+1)*split_size].reset_index(drop=True)
+            if len(chunk) < split_size:
+                chunk = pd.concat([chunk, pd.DataFrame([['']*chunk.shape[1]]*(split_size-len(chunk)), columns=chunk.columns)], ignore_index=True)
+            split_dfs.append(chunk)
+        wide_df = pd.concat(split_dfs, axis=1)
+        total_row_wide = pd.DataFrame([['']*wide_df.shape[1]], columns=wide_df.columns)
+        for i in range(n_splits):
+            col_offset = i * split_dfs[0].shape[1]
+            for col in total_row.columns:
+                if col in split_dfs[0].columns:
+                    total_row_wide.iloc[0, col_offset + split_dfs[0].columns.get_loc(col)] = total_row.iloc[0][col]
+        wide_df = pd.concat([wide_df, total_row_wide], ignore_index=True)
+
+        replace_dict = {
+            '✔': '\\tickYes',
+            'X': '-'
+        }
+        wide_df = wide_df.replace(replace_dict)
+        wide_df.to_excel(writer, sheet_name='Merged My Vulnerability Types', index=False)
 
 if __name__ == "__main__":
-    root_folder = get_rtos_folder()
-    # Replace 'your_folder_path' with the path to your main folder
-    # Create a folder to store the output inside the root folder
-    #output_folder = os.path.join(root_folder, 'results')  
+
+    root_folder_path = get_rtos_folder()
     output_folder = "results"
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
-    vulnerability_analysis(root_folder, output_folder)
-    extract_info(root_folder, output_folder)
+       
+    vulnerability_analysis(root_folder_path, output_folder)
+    extract_info(root_folder_path, output_folder)
+    all_rtos_folder_path = { # This is for the summary excel file
+        "freertos-10.5.1": "/home/klee/klee_src/test-rtos/freertos-10.5.1/symbolic_execution/",
+        "freertos-10.6.0": "/home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/symbolic_execution/",
+        "tizenrt": "/home/klee/klee_src/test-rtos/tizenrt/symbolic_execution/",
+        "rt-thread": "/home/klee/klee_src/test-rtos/rt-thread/symbolic_execution/",
+        "threadx-6.4.2": "/home/klee/klee_src/test-rtos/threadx-6.4.2/symbolic_execution/"
+    }
+    generate_summary_excel(all_rtos_folder_path, output_folder, split_size=80)
+    
+    

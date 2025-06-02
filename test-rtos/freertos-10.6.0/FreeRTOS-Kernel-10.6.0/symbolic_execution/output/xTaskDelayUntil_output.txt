@@ -1,0 +1,100 @@
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1235
+KLEE: DEBUG: state id 157
+KLEE: DEBUG: dump the address expression before symplifying
+102395599521864
+KLEE: DEBUG: dump the resolve result of address
+(ReadLSB w64 0 KLEE_pxPreviousWakeTime)
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1235 27:8843:157:  %5 = load i64, i64* %4, align 8, !dbg !639
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1235
+KLEE: DEBUG: state id 157
+KLEE: DEBUG: dump the address expression before symplifying
+(ReadLSB w64 0 KLEE_pxPreviousWakeTime)
+KLEE: DEBUG: dump the address expression
+0
+KLEE: DEBUG: lazyResolve failed, found a constant address, its value is: 0
+KLEE: DEBUG: dump the address expression
+0
+KLEE: DEBUG: FIX ME resolve failed
+KLEE: DEBUG: constraint:
+(Eq 102395591229312
+     (ReadLSB w64 0 lazy_alloc_external_return8))
+KLEE: DEBUG: constraint:
+(Eq 102395599520696
+     (ReadLSB w64 0 lazy_alloc_external_return1))
+KLEE: DEBUG: constraint:
+(Ule (ReadLSB w64 160 lazy_alloc_uncontrollable175)
+      1)
+KLEE: DEBUG: constraint:
+(Eq 102395599834496
+     (ReadLSB w64 16 lazy_alloc_uncontrollable259))
+KLEE: DEBUG: constraint:
+(Eq 0
+     (ReadLSB w64 0 KLEE_pxPreviousWakeTime))
+KLEE: DEBUG: constraint:
+(Eq false
+     (Ult 0
+          (ReadLSB w64 0 KLEE_xTimeIncrement)))
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 2
+     test_files/xTaskDelayUntil.c:23 123:16943:156:  store i32 0, i32* %retval, align 4, !dbg !628
+KLEE: Execute: test_files/xTaskDelayUntil.c:23
+KLEE: DEBUG: state id 156
+KLEE: DEBUG: dump the address expression before symplifying
+102395599520448
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/xTaskDelayUntil.c:23 123:16944:156:  br label %return, !dbg !628
+KLEE: Execute: test_files/xTaskDelayUntil.c:23
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/xTaskDelayUntil.c:26 1:16954:156:  %6 = load i32, i32* %retval, align 4, !dbg !634
+KLEE: Execute: test_files/xTaskDelayUntil.c:26
+KLEE: DEBUG: state id 156
+KLEE: DEBUG: dump the address expression before symplifying
+102395599520448
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/xTaskDelayUntil.c:26 1:16955:156:  ret i32 %6, !dbg !634
+KLEE: Execute: test_files/xTaskDelayUntil.c:26
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 1
+     test_files/xTaskDelayUntil.c:23 123:16943:1:  store i32 0, i32* %retval, align 4, !dbg !628
+KLEE: Execute: test_files/xTaskDelayUntil.c:23
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+102395599520448
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/xTaskDelayUntil.c:23 123:16944:1:  br label %return, !dbg !628
+KLEE: Execute: test_files/xTaskDelayUntil.c:23
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/xTaskDelayUntil.c:26 1:16954:1:  %6 = load i32, i32* %retval, align 4, !dbg !634
+KLEE: Execute: test_files/xTaskDelayUntil.c:26
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+102395599520448
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/xTaskDelayUntil.c:26 1:16955:1:  ret i32 %6, !dbg !634
+KLEE: Execute: test_files/xTaskDelayUntil.c:26
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 0
+
+KLEE: done: total instructions = 16198
+KLEE: done: completed paths = 176
+KLEE: done: partially completed paths = 0
+KLEE: done: generated tests = 176
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+5828 bitcode-reader - Number of Metadata records loaded
+ 899 bitcode-reader - Number of MDStrings loaded
+

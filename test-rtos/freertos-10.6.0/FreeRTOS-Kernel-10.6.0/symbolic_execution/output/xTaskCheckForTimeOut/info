@@ -1,0 +1,20 @@
+/home/klee/klee_src/build/bin/klee --search=dfs --stats -debug-print-instructions=all:stderr --test-info-output-dir=/home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/symbolic_execution/test-info-output/xTaskCheckForTimeOut --output-dir=/home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/symbolic_execution/output/xTaskCheckForTimeOut --test-target-name=xTaskCheckForTimeOut /home/klee/klee_src/freertos_10_6_0_test/test_bc_files/xTaskCheckForTimeOut.test.bc
+PID: 3508206
+Using monotonic steady clock with 1/1000000000s resolution
+Started: 2025-05-15 11:42:32
+BEGIN searcher description
+DFSSearcher
+END searcher description
+Finished: 2025-05-15 11:42:38
+Elapsed: 00:00:06
+KLEE: done: explored paths = 75
+KLEE: done: avg. constructs per query = 41
+KLEE: done: total queries = 79
+KLEE: done: valid queries = 7
+KLEE: done: invalid queries = 72
+KLEE: done: query cex = 79
+
+KLEE: done: total instructions = 2227
+KLEE: done: completed paths = 75
+KLEE: done: partially completed paths = 0
+KLEE: done: generated tests = 75

@@ -1,0 +1,100 @@
+KLEE: DEBUG: dump the resolve result of address
+10
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2911 42:5816:59:  %cmp1 = icmp ult i64 %1, 10, !dbg !623
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2911
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2911 9:5817:59:  br i1 %cmp1, label %for.body, label %for.end, !dbg !624
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2911
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2929 5:5852:59:  ret void, !dbg !648
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/queue.c:2929
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/vQueueUnregisterQueue.c:23 1:16944:59:  store i32 0, i32* %retval, align 4, !dbg !627
+KLEE: Execute: test_files/vQueueUnregisterQueue.c:23
+KLEE: DEBUG: state id 59
+KLEE: DEBUG: dump the address expression before symplifying
+101157327045296
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/vQueueUnregisterQueue.c:23 1:16945:59:  br label %return, !dbg !627
+KLEE: Execute: test_files/vQueueUnregisterQueue.c:23
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/vQueueUnregisterQueue.c:24 1:16948:59:  %4 = load i32, i32* %retval, align 4, !dbg !628
+KLEE: Execute: test_files/vQueueUnregisterQueue.c:24
+KLEE: DEBUG: state id 59
+KLEE: DEBUG: dump the address expression before symplifying
+101157327045296
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/vQueueUnregisterQueue.c:24 1:16949:59:  ret i32 %4, !dbg !628
+KLEE: Execute: test_files/vQueueUnregisterQueue.c:24
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 2
+     test_files/vQueueUnregisterQueue.c:21 77:16938:58:  store i32 0, i32* %retval, align 4, !dbg !623
+KLEE: Execute: test_files/vQueueUnregisterQueue.c:21
+KLEE: DEBUG: state id 58
+KLEE: DEBUG: dump the address expression before symplifying
+101157327045296
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/vQueueUnregisterQueue.c:21 77:16939:58:  br label %return, !dbg !623
+KLEE: Execute: test_files/vQueueUnregisterQueue.c:21
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/vQueueUnregisterQueue.c:24 1:16948:58:  %4 = load i32, i32* %retval, align 4, !dbg !628
+KLEE: Execute: test_files/vQueueUnregisterQueue.c:24
+KLEE: DEBUG: state id 58
+KLEE: DEBUG: dump the address expression before symplifying
+101157327045296
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/vQueueUnregisterQueue.c:24 1:16949:58:  ret i32 %4, !dbg !628
+KLEE: Execute: test_files/vQueueUnregisterQueue.c:24
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 1
+     test_files/vQueueUnregisterQueue.c:21 77:16938:1:  store i32 0, i32* %retval, align 4, !dbg !623
+KLEE: Execute: test_files/vQueueUnregisterQueue.c:21
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+101157327045296
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/vQueueUnregisterQueue.c:21 77:16939:1:  br label %return, !dbg !623
+KLEE: Execute: test_files/vQueueUnregisterQueue.c:21
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/vQueueUnregisterQueue.c:24 1:16948:1:  %4 = load i32, i32* %retval, align 4, !dbg !628
+KLEE: Execute: test_files/vQueueUnregisterQueue.c:24
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+101157327045296
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/vQueueUnregisterQueue.c:24 1:16949:1:  ret i32 %4, !dbg !628
+KLEE: Execute: test_files/vQueueUnregisterQueue.c:24
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 0
+
+KLEE: done: total instructions = 3376
+KLEE: done: completed paths = 70
+KLEE: done: partially completed paths = 0
+KLEE: done: generated tests = 70
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+5826 bitcode-reader - Number of Metadata records loaded
+ 898 bitcode-reader - Number of MDStrings loaded
+

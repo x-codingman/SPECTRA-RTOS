@@ -1,0 +1,100 @@
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/stream_buffer.c:1164
+KLEE: DEBUG: state id 23
+KLEE: DEBUG: dump the address expression before symplifying
+102362882261808
+KLEE: DEBUG: dump the resolve result of address
+(ReadLSB w64 0 KLEE_xStreamBuffer)
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/stream_buffer.c:1164 29:2246:23:  %xTail1 = getelementptr inbounds %struct.StreamBufferDef_t, %struct.StreamBufferDef_t* %2, i32 0, i32 0, !dbg !627
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/stream_buffer.c:1164
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/stream_buffer.c:1164 29:2247:23:  %3 = load volatile i64, i64* %xTail1, align 8, !dbg !627
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/stream_buffer.c:1164
+KLEE: DEBUG: state id 23
+KLEE: DEBUG: dump the address expression before symplifying
+(ReadLSB w64 0 KLEE_xStreamBuffer)
+KLEE: DEBUG: dump the address expression
+0
+KLEE: DEBUG: lazyResolve failed, found a constant address, its value is: 0
+KLEE: DEBUG: dump the address expression
+0
+KLEE: DEBUG: FIX ME resolve failed
+KLEE: DEBUG: constraint:
+(Eq 102362873732992
+     (ReadLSB w64 0 lazy_alloc_external_return4))
+KLEE: DEBUG: constraint:
+(Eq 102362882261912
+     (ReadLSB w64 0 lazy_alloc_external_return1))
+KLEE: DEBUG: constraint:
+(Ule (ReadLSB w64 160 lazy_alloc_uncontrollable22)
+      1)
+KLEE: DEBUG: constraint:
+(Eq 102362882575888
+     (ReadLSB w64 16 lazy_alloc_uncontrollable26))
+KLEE: DEBUG: constraint:
+(Eq 0
+     (ReadLSB w64 0 KLEE_xStreamBuffer))
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 2
+     test_files/xStreamBufferIsEmpty.c:21 91:16938:22:  store i32 0, i32* %retval, align 4, !dbg !626
+KLEE: Execute: test_files/xStreamBufferIsEmpty.c:21
+KLEE: DEBUG: state id 22
+KLEE: DEBUG: dump the address expression before symplifying
+102362882261680
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/xStreamBufferIsEmpty.c:21 91:16939:22:  br label %return, !dbg !626
+KLEE: Execute: test_files/xStreamBufferIsEmpty.c:21
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/xStreamBufferIsEmpty.c:24 1:16948:22:  %4 = load i32, i32* %retval, align 4, !dbg !631
+KLEE: Execute: test_files/xStreamBufferIsEmpty.c:24
+KLEE: DEBUG: state id 22
+KLEE: DEBUG: dump the address expression before symplifying
+102362882261680
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/xStreamBufferIsEmpty.c:24 1:16949:22:  ret i32 %4, !dbg !631
+KLEE: Execute: test_files/xStreamBufferIsEmpty.c:24
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 1
+     test_files/xStreamBufferIsEmpty.c:21 91:16938:1:  store i32 0, i32* %retval, align 4, !dbg !626
+KLEE: Execute: test_files/xStreamBufferIsEmpty.c:21
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+102362882261680
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/xStreamBufferIsEmpty.c:21 91:16939:1:  br label %return, !dbg !626
+KLEE: Execute: test_files/xStreamBufferIsEmpty.c:21
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/xStreamBufferIsEmpty.c:24 1:16948:1:  %4 = load i32, i32* %retval, align 4, !dbg !631
+KLEE: Execute: test_files/xStreamBufferIsEmpty.c:24
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+102362882261680
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/xStreamBufferIsEmpty.c:24 1:16949:1:  ret i32 %4, !dbg !631
+KLEE: Execute: test_files/xStreamBufferIsEmpty.c:24
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 0
+
+KLEE: done: total instructions = 1151
+KLEE: done: completed paths = 25
+KLEE: done: partially completed paths = 0
+KLEE: done: generated tests = 25
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+5829 bitcode-reader - Number of Metadata records loaded
+ 898 bitcode-reader - Number of MDStrings loaded
+

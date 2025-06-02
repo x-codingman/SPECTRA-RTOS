@@ -1,0 +1,100 @@
+KLEE: DEBUG: Detect __asm__ external function!
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1472 16:10097:19:  %5 = load i64, i64* %uxReturn, align 8, !dbg !628
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1472
+KLEE: DEBUG: state id 19
+KLEE: DEBUG: dump the address expression before symplifying
+107561673122568
+KLEE: DEBUG: dump the resolve result of address
+1
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1472 9:10098:19:  ret i64 %5, !dbg !629
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1472
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/uxTaskPriorityGet.c:23 1:16944:19:  store i32 0, i32* %retval, align 4, !dbg !627
+KLEE: Execute: test_files/uxTaskPriorityGet.c:23
+KLEE: DEBUG: state id 19
+KLEE: DEBUG: dump the address expression before symplifying
+107561673122480
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/uxTaskPriorityGet.c:23 1:16945:19:  br label %return, !dbg !627
+KLEE: Execute: test_files/uxTaskPriorityGet.c:23
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/uxTaskPriorityGet.c:24 1:16948:19:  %4 = load i32, i32* %retval, align 4, !dbg !628
+KLEE: Execute: test_files/uxTaskPriorityGet.c:24
+KLEE: DEBUG: state id 19
+KLEE: DEBUG: dump the address expression before symplifying
+107561673122480
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/uxTaskPriorityGet.c:24 1:16949:19:  ret i32 %4, !dbg !628
+KLEE: Execute: test_files/uxTaskPriorityGet.c:24
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 2
+     test_files/uxTaskPriorityGet.c:21 75:16938:18:  store i32 0, i32* %retval, align 4, !dbg !623
+KLEE: Execute: test_files/uxTaskPriorityGet.c:21
+KLEE: DEBUG: state id 18
+KLEE: DEBUG: dump the address expression before symplifying
+107561673122480
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/uxTaskPriorityGet.c:21 75:16939:18:  br label %return, !dbg !623
+KLEE: Execute: test_files/uxTaskPriorityGet.c:21
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/uxTaskPriorityGet.c:24 1:16948:18:  %4 = load i32, i32* %retval, align 4, !dbg !628
+KLEE: Execute: test_files/uxTaskPriorityGet.c:24
+KLEE: DEBUG: state id 18
+KLEE: DEBUG: dump the address expression before symplifying
+107561673122480
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/uxTaskPriorityGet.c:24 1:16949:18:  ret i32 %4, !dbg !628
+KLEE: Execute: test_files/uxTaskPriorityGet.c:24
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 1
+     test_files/uxTaskPriorityGet.c:21 75:16938:1:  store i32 0, i32* %retval, align 4, !dbg !623
+KLEE: Execute: test_files/uxTaskPriorityGet.c:21
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+107561673122480
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/uxTaskPriorityGet.c:21 75:16939:1:  br label %return, !dbg !623
+KLEE: Execute: test_files/uxTaskPriorityGet.c:21
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/uxTaskPriorityGet.c:24 1:16948:1:  %4 = load i32, i32* %retval, align 4, !dbg !628
+KLEE: Execute: test_files/uxTaskPriorityGet.c:24
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+107561673122480
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/uxTaskPriorityGet.c:24 1:16949:1:  ret i32 %4, !dbg !628
+KLEE: Execute: test_files/uxTaskPriorityGet.c:24
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 0
+
+KLEE: done: total instructions = 1131
+KLEE: done: completed paths = 20
+KLEE: done: partially completed paths = 0
+KLEE: done: generated tests = 20
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+5826 bitcode-reader - Number of Metadata records loaded
+ 898 bitcode-reader - Number of MDStrings loaded
+

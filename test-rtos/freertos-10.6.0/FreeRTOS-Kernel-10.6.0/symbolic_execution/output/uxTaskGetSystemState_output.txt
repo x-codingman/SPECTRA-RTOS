@@ -1,0 +1,100 @@
+KLEE: Execute: test_files/uxTaskGetSystemState.c:26
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+     test_files/uxTaskGetSystemState.c:29 1:16974:115:  %10 = load i32, i32* %retval, align 4, !dbg !663
+KLEE: Execute: test_files/uxTaskGetSystemState.c:29
+KLEE: DEBUG: state id 115
+KLEE: DEBUG: dump the address expression before symplifying
+100146976817928
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+     test_files/uxTaskGetSystemState.c:29 1:16975:115:  ret i32 %10, !dbg !663
+KLEE: Execute: test_files/uxTaskGetSystemState.c:29
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 3
+     test_files/uxTaskGetSystemState.c:26 95:16962:114:  store i32 0, i32* %retval, align 4, !dbg !656
+KLEE: Execute: test_files/uxTaskGetSystemState.c:26
+KLEE: DEBUG: state id 114
+KLEE: DEBUG: dump the address expression before symplifying
+100146976817928
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/uxTaskGetSystemState.c:26 95:16963:114:  br label %return, !dbg !656
+KLEE: Execute: test_files/uxTaskGetSystemState.c:26
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/uxTaskGetSystemState.c:29 1:16974:114:  %10 = load i32, i32* %retval, align 4, !dbg !663
+KLEE: Execute: test_files/uxTaskGetSystemState.c:29
+KLEE: DEBUG: state id 114
+KLEE: DEBUG: dump the address expression before symplifying
+100146976817928
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/uxTaskGetSystemState.c:29 1:16975:114:  ret i32 %10, !dbg !663
+KLEE: Execute: test_files/uxTaskGetSystemState.c:29
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 2
+     test_files/uxTaskGetSystemState.c:25 87:16948:113:  store i32 0, i32* %retval, align 4, !dbg !647
+KLEE: Execute: test_files/uxTaskGetSystemState.c:25
+KLEE: DEBUG: state id 113
+KLEE: DEBUG: dump the address expression before symplifying
+100146976817928
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/uxTaskGetSystemState.c:25 87:16949:113:  br label %return, !dbg !647
+KLEE: Execute: test_files/uxTaskGetSystemState.c:25
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/uxTaskGetSystemState.c:29 1:16974:113:  %10 = load i32, i32* %retval, align 4, !dbg !663
+KLEE: Execute: test_files/uxTaskGetSystemState.c:29
+KLEE: DEBUG: state id 113
+KLEE: DEBUG: dump the address expression before symplifying
+100146976817928
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/uxTaskGetSystemState.c:29 1:16975:113:  ret i32 %10, !dbg !663
+KLEE: Execute: test_files/uxTaskGetSystemState.c:29
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 1
+     test_files/uxTaskGetSystemState.c:25 87:16948:1:  store i32 0, i32* %retval, align 4, !dbg !647
+KLEE: Execute: test_files/uxTaskGetSystemState.c:25
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+100146976817928
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/uxTaskGetSystemState.c:25 87:16949:1:  br label %return, !dbg !647
+KLEE: Execute: test_files/uxTaskGetSystemState.c:25
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/uxTaskGetSystemState.c:29 1:16974:1:  %10 = load i32, i32* %retval, align 4, !dbg !663
+KLEE: Execute: test_files/uxTaskGetSystemState.c:29
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+100146976817928
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/uxTaskGetSystemState.c:29 1:16975:1:  ret i32 %10, !dbg !663
+KLEE: Execute: test_files/uxTaskGetSystemState.c:29
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 0
+
+KLEE: done: total instructions = 9651
+KLEE: done: completed paths = 56
+KLEE: done: partially completed paths = 63
+KLEE: done: generated tests = 56
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+5846 bitcode-reader - Number of Metadata records loaded
+ 900 bitcode-reader - Number of MDStrings loaded
+

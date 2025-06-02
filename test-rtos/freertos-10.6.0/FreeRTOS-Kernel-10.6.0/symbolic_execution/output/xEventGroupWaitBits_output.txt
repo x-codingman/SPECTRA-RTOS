@@ -1,0 +1,100 @@
+(ReadLSB w64 0 KLEE_xEventGroup)
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/event_groups.c:346 61:7203:1052:  %uxEventBits = getelementptr inbounds %struct.EventGroupDef_t, %struct.EventGroupDef_t* %6, i32 0, i32 0, !dbg !657
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/event_groups.c:346
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/event_groups.c:346 61:7204:1052:  %7 = load i64, i64* %uxEventBits, align 8, !dbg !657
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/event_groups.c:346
+KLEE: DEBUG: state id 1052
+KLEE: DEBUG: dump the address expression before symplifying
+(ReadLSB w64 0 KLEE_xEventGroup)
+KLEE: DEBUG: dump the address expression
+0
+KLEE: DEBUG: lazyResolve failed, found a constant address, its value is: 0
+KLEE: DEBUG: dump the address expression
+0
+KLEE: DEBUG: FIX ME resolve failed
+KLEE: DEBUG: constraint:
+(Eq 95401090007200
+     (ReadLSB w64 0 lazy_alloc_external_return12))
+KLEE: DEBUG: constraint:
+(Eq 95401098535984
+     (ReadLSB w64 0 lazy_alloc_external_return1))
+KLEE: DEBUG: constraint:
+(Ule (ReadLSB w64 160 lazy_alloc_uncontrollable962)
+      1)
+KLEE: DEBUG: constraint:
+(Eq 95401098862272
+     (ReadLSB w64 16 lazy_alloc_uncontrollable1471))
+KLEE: DEBUG: constraint:
+(Eq 0
+     (ReadLSB w64 0 KLEE_xEventGroup))
+KLEE: DEBUG: constraint:
+(Eq false
+     (Eq 0
+         (And w64 (ReadLSB w64 0 KLEE_uxBitsToWaitFor)
+                  4278190080)))
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 2
+     test_files/xEventGroupWaitBits.c:29 87:16958:1051:  store i32 0, i32* %retval, align 4, !dbg !644
+KLEE: Execute: test_files/xEventGroupWaitBits.c:29
+KLEE: DEBUG: state id 1051
+KLEE: DEBUG: dump the address expression before symplifying
+95401098535688
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/xEventGroupWaitBits.c:29 87:16959:1051:  br label %return, !dbg !644
+KLEE: Execute: test_files/xEventGroupWaitBits.c:29
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/xEventGroupWaitBits.c:32 1:16972:1051:  %12 = load i32, i32* %retval, align 4, !dbg !653
+KLEE: Execute: test_files/xEventGroupWaitBits.c:32
+KLEE: DEBUG: state id 1051
+KLEE: DEBUG: dump the address expression before symplifying
+95401098535688
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/xEventGroupWaitBits.c:32 1:16973:1051:  ret i32 %12, !dbg !653
+KLEE: Execute: test_files/xEventGroupWaitBits.c:32
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 1
+     test_files/xEventGroupWaitBits.c:29 87:16958:1:  store i32 0, i32* %retval, align 4, !dbg !644
+KLEE: Execute: test_files/xEventGroupWaitBits.c:29
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+95401098535688
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/xEventGroupWaitBits.c:29 87:16959:1:  br label %return, !dbg !644
+KLEE: Execute: test_files/xEventGroupWaitBits.c:29
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/xEventGroupWaitBits.c:32 1:16972:1:  %12 = load i32, i32* %retval, align 4, !dbg !653
+KLEE: Execute: test_files/xEventGroupWaitBits.c:32
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+95401098535688
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/xEventGroupWaitBits.c:32 1:16973:1:  ret i32 %12, !dbg !653
+KLEE: Execute: test_files/xEventGroupWaitBits.c:32
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 0
+
+KLEE: done: total instructions = 139602
+KLEE: done: completed paths = 1168
+KLEE: done: partially completed paths = 0
+KLEE: done: generated tests = 1168
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+5837 bitcode-reader - Number of Metadata records loaded
+ 902 bitcode-reader - Number of MDStrings loaded
+

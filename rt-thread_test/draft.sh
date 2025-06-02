@@ -56,5 +56,26 @@ rm -rf /home/klee/klee_src/test-rtos/rt-thread/symbolic_execution/test-info-outp
   /home/klee/klee_src/rt-thread_test/test_bc_files/sys_channel_send.test.bc
 
 
-#sys_channel_recv
+#sys_mq_send
+rm -rf /home/klee/klee_src/test-rtos/rt-thread/symbolic_execution/output/sys_mq_send &&\
+rm -rf /home/klee/klee_src/test-rtos/rt-thread/symbolic_execution/test-info-output/sys_mq_send &&\
+/home/klee/klee_src/build/bin/klee \
+  --search=dfs \
+  -debug-print-instructions=all:stderr \
+  --test-info-output-dir=/home/klee/klee_src/test-rtos/rt-thread/symbolic_execution/test-info-output/sys_mq_send \
+  --output-dir=/home/klee/klee_src/test-rtos/rt-thread/symbolic_execution/output/sys_mq_send \
+  --test-target-name=sys_mq_send \
+  /home/klee/klee_src/rt-thread_test/test_bc_files/sys_mq_send.test.bc
+
+#sys_timer_settime
+rm -rf /home/klee/klee_src/test-rtos/rt-thread/symbolic_execution/output/sys_timer_settime &&\
+rm -rf /home/klee/klee_src/test-rtos/rt-thread/symbolic_execution/test-info-output/sys_timer_settime &&\
+/home/klee/klee_src/build/bin/klee \
+  --search=dfs \
+  -debug-print-instructions=all:stderr \
+  --test-info-output-dir=/home/klee/klee_src/test-rtos/rt-thread/symbolic_execution/test-info-output/sys_timer_settime \
+  --output-dir=/home/klee/klee_src/test-rtos/rt-thread/symbolic_execution/output/sys_timer_settime \
+  --test-target-name=sys_timer_settime \
+  /home/klee/klee_src/rt-thread_test/test_bc_files/sys_timer_settime.test.bc
+
 

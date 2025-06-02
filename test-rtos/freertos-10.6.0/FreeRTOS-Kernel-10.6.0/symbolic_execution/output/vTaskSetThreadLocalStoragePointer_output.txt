@@ -1,0 +1,100 @@
+(Add w64 108778565910904
+          (Mul w64 8
+                   (ReadLSB w64 0 KLEE_xIndex)))
+KLEE: DEBUG: address_controllable:1
+ canBeDesiredAddress: 0
+ canBeDesiredValue: 1
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3665 9:13280:27:  br label %if.end7, !dbg !637
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3665
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3666 5:13283:27:  ret void, !dbg !638
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3666
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/vTaskSetThreadLocalStoragePointer.c:27 1:16956:27:  store i32 0, i32* %retval, align 4, !dbg !637
+KLEE: Execute: test_files/vTaskSetThreadLocalStoragePointer.c:27
+KLEE: DEBUG: state id 27
+KLEE: DEBUG: dump the address expression before symplifying
+108778574668504
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/vTaskSetThreadLocalStoragePointer.c:27 1:16957:27:  br label %return, !dbg !637
+KLEE: Execute: test_files/vTaskSetThreadLocalStoragePointer.c:27
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/vTaskSetThreadLocalStoragePointer.c:28 1:16960:27:  %8 = load i32, i32* %retval, align 4, !dbg !638
+KLEE: Execute: test_files/vTaskSetThreadLocalStoragePointer.c:28
+KLEE: DEBUG: state id 27
+KLEE: DEBUG: dump the address expression before symplifying
+108778574668504
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/vTaskSetThreadLocalStoragePointer.c:28 1:16961:27:  ret i32 %8, !dbg !638
+KLEE: Execute: test_files/vTaskSetThreadLocalStoragePointer.c:28
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 2
+     test_files/vTaskSetThreadLocalStoragePointer.c:25 89:16948:26:  store i32 0, i32* %retval, align 4, !dbg !631
+KLEE: Execute: test_files/vTaskSetThreadLocalStoragePointer.c:25
+KLEE: DEBUG: state id 26
+KLEE: DEBUG: dump the address expression before symplifying
+108778574668504
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/vTaskSetThreadLocalStoragePointer.c:25 89:16949:26:  br label %return, !dbg !631
+KLEE: Execute: test_files/vTaskSetThreadLocalStoragePointer.c:25
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/vTaskSetThreadLocalStoragePointer.c:28 1:16960:26:  %8 = load i32, i32* %retval, align 4, !dbg !638
+KLEE: Execute: test_files/vTaskSetThreadLocalStoragePointer.c:28
+KLEE: DEBUG: state id 26
+KLEE: DEBUG: dump the address expression before symplifying
+108778574668504
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/vTaskSetThreadLocalStoragePointer.c:28 1:16961:26:  ret i32 %8, !dbg !638
+KLEE: Execute: test_files/vTaskSetThreadLocalStoragePointer.c:28
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 1
+     test_files/vTaskSetThreadLocalStoragePointer.c:25 89:16948:1:  store i32 0, i32* %retval, align 4, !dbg !631
+KLEE: Execute: test_files/vTaskSetThreadLocalStoragePointer.c:25
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+108778574668504
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/vTaskSetThreadLocalStoragePointer.c:25 89:16949:1:  br label %return, !dbg !631
+KLEE: Execute: test_files/vTaskSetThreadLocalStoragePointer.c:25
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/vTaskSetThreadLocalStoragePointer.c:28 1:16960:1:  %8 = load i32, i32* %retval, align 4, !dbg !638
+KLEE: Execute: test_files/vTaskSetThreadLocalStoragePointer.c:28
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+108778574668504
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/vTaskSetThreadLocalStoragePointer.c:28 1:16961:1:  ret i32 %8, !dbg !638
+KLEE: Execute: test_files/vTaskSetThreadLocalStoragePointer.c:28
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 0
+
+KLEE: done: total instructions = 1328
+KLEE: done: completed paths = 30
+KLEE: done: partially completed paths = 0
+KLEE: done: generated tests = 30
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+5830 bitcode-reader - Number of Metadata records loaded
+ 900 bitcode-reader - Number of MDStrings loaded
+

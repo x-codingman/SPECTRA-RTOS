@@ -1,0 +1,4 @@
+/home/klee/klee_src/build/bin/klee --search=dfs --stats -debug-print-instructions=all:stderr --test-info-output-dir=/home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/symbolic_execution/test-info-output/ulTaskGenericNotifyTake --output-dir=/home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/symbolic_execution/output/ulTaskGenericNotifyTake --test-target-name=ulTaskGenericNotifyTake /home/klee/klee_src/freertos_10_6_0_test/test_bc_files/ulTaskGenericNotifyTake.test.bc
+PID: 3513624
+Using monotonic steady clock with 1/1000000000s resolution
+Started: 2025-05-15 11:42:50

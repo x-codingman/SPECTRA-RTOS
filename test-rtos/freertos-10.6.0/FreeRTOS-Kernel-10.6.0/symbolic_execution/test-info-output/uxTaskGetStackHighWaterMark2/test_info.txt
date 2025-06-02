@@ -1,0 +1,25 @@
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 801. 
+KLEE: Error: Limited memory write vulnerability(Uninitialized pointer dereference) (V2)on file runtime/Freestanding/memset.c: line 15. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 929. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/list.c: line 89. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 941. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 944. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 945. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 1021. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 1083. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 1088. 
+KLEE: Error: Limited memory write vulnerability(Uninitialized pointer dereference) (V2)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 1088. 
+KLEE: Error: Uninitialized pointer dereference(read) vulnerabilityon file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 3930. 
+KLEE: Error: Limited memory write vulnerability(Uninitialized pointer dereference) (V2)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 779. 
+KLEE: Error: Limited memory write vulnerability(Uninitialized pointer dereference) (V2)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 801. 
+KLEE: Error: Uninitialized pointer dereference(read) vulnerabilityon file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 851. 
+KLEE: Error: Uninitialized pointer dereference(read) vulnerabilityon file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 861. 
+KLEE: Error: Limited memory write vulnerability(Uninitialized pointer dereference) (V2)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 929. 
+KLEE: Error: Limited memory write vulnerability(Uninitialized pointer dereference) (V2)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/list.c: line 89. 
+KLEE: Error: Limited memory write vulnerability(Uninitialized pointer dereference) (V2)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 941. 
+KLEE: Error: Limited memory write vulnerability(Uninitialized pointer dereference) (V2)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 944. 
+KLEE: Error: Limited memory write vulnerability(Uninitialized pointer dereference) (V2)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 945. 
+KLEE: Error: Uninitialized pointer dereference(read) vulnerabilityon file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 1063. 
+KLEE: Error: Limited memory write vulnerability(Uninitialized pointer dereference) (V2)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 1083. 
+KLEE: Error: Uninitialized pointer dereference(read) vulnerabilityon file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 1088. 
+KLEE: Error: Uninitialized pointer dereference(read) vulnerabilityon file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 3968. 

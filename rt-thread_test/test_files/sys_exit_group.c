@@ -76,10 +76,10 @@
 
 int main()
 {
-    int KLEE_value;
-    klee_make_symbolic_controllable(&KLEE_value, sizeof(KLEE_value), "KLEE_value", true);
+    int KLEE_status;
+    klee_make_symbolic_controllable(&KLEE_status, sizeof(KLEE_status), "KLEE_status", true);
     sysret_t KLEE_return_sys_exit_group;
     klee_make_symbolic_controllable(&KLEE_return_sys_exit_group, sizeof(KLEE_return_sys_exit_group), "KLEE_return_sys_exit_group", true);
-    KLEE_return_sys_exit_group = sys_exit_group(KLEE_value);
+    KLEE_return_sys_exit_group = sys_exit_group(KLEE_status);
     return 0;
 }

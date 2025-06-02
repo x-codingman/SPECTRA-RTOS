@@ -1,0 +1,100 @@
+KLEE: DEBUG: Binding a symbolic pointer with address expression:
+(ReadLSB w64 0 KLEE_xEventGroup)
+KLEE: DEBUG: address controllable flag: 1
+KLEE: DEBUG: TEST here, address is:
+(Add w64 48
+          (ReadLSB w64 0 KLEE_xEventGroup))
+(ReadLSB w64 0 KLEE_xEventGroup)
+KLEE: DEBUG: address_controllable:1
+ canBeDesiredAddress: 0
+ canBeDesiredValue: 1
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/event_groups.c:816 5:7777:15:  ret void, !dbg !620
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/event_groups.c:816
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/vEventGroupSetNumber.c:25 1:16950:15:  store i32 0, i32* %retval, align 4, !dbg !632
+KLEE: Execute: test_files/vEventGroupSetNumber.c:25
+KLEE: DEBUG: state id 15
+KLEE: DEBUG: dump the address expression before symplifying
+109511463920320
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/vEventGroupSetNumber.c:25 1:16951:15:  br label %return, !dbg !632
+KLEE: Execute: test_files/vEventGroupSetNumber.c:25
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/vEventGroupSetNumber.c:26 1:16954:15:  %6 = load i32, i32* %retval, align 4, !dbg !633
+KLEE: Execute: test_files/vEventGroupSetNumber.c:26
+KLEE: DEBUG: state id 15
+KLEE: DEBUG: dump the address expression before symplifying
+109511463920320
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/vEventGroupSetNumber.c:26 1:16955:15:  ret i32 %6, !dbg !633
+KLEE: Execute: test_files/vEventGroupSetNumber.c:26
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 2
+     test_files/vEventGroupSetNumber.c:23 87:16943:14:  store i32 0, i32* %retval, align 4, !dbg !627
+KLEE: Execute: test_files/vEventGroupSetNumber.c:23
+KLEE: DEBUG: state id 14
+KLEE: DEBUG: dump the address expression before symplifying
+109511463920320
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/vEventGroupSetNumber.c:23 87:16944:14:  br label %return, !dbg !627
+KLEE: Execute: test_files/vEventGroupSetNumber.c:23
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/vEventGroupSetNumber.c:26 1:16954:14:  %6 = load i32, i32* %retval, align 4, !dbg !633
+KLEE: Execute: test_files/vEventGroupSetNumber.c:26
+KLEE: DEBUG: state id 14
+KLEE: DEBUG: dump the address expression before symplifying
+109511463920320
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/vEventGroupSetNumber.c:26 1:16955:14:  ret i32 %6, !dbg !633
+KLEE: Execute: test_files/vEventGroupSetNumber.c:26
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 1
+     test_files/vEventGroupSetNumber.c:23 87:16943:1:  store i32 0, i32* %retval, align 4, !dbg !627
+KLEE: Execute: test_files/vEventGroupSetNumber.c:23
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+109511463920320
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/vEventGroupSetNumber.c:23 87:16944:1:  br label %return, !dbg !627
+KLEE: Execute: test_files/vEventGroupSetNumber.c:23
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/vEventGroupSetNumber.c:26 1:16954:1:  %6 = load i32, i32* %retval, align 4, !dbg !633
+KLEE: Execute: test_files/vEventGroupSetNumber.c:26
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+109511463920320
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/vEventGroupSetNumber.c:26 1:16955:1:  ret i32 %6, !dbg !633
+KLEE: Execute: test_files/vEventGroupSetNumber.c:26
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 0
+
+KLEE: done: total instructions = 1027
+KLEE: done: completed paths = 15
+KLEE: done: partially completed paths = 0
+KLEE: done: generated tests = 15
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+5828 bitcode-reader - Number of Metadata records loaded
+ 899 bitcode-reader - Number of MDStrings loaded
+

@@ -1,0 +1,20 @@
+/home/klee/klee_src/build/bin/klee --search=dfs --stats -debug-print-instructions=all:stderr --test-info-output-dir=/home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/symbolic_execution/test-info-output/pvTaskGetThreadLocalStoragePointer --output-dir=/home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/symbolic_execution/output/pvTaskGetThreadLocalStoragePointer --test-target-name=pvTaskGetThreadLocalStoragePointer /home/klee/klee_src/freertos_10_6_0_test/test_bc_files/pvTaskGetThreadLocalStoragePointer.test.bc
+PID: 3507007
+Using monotonic steady clock with 1/1000000000s resolution
+Started: 2025-05-15 11:42:28
+BEGIN searcher description
+DFSSearcher
+END searcher description
+Finished: 2025-05-15 11:42:31
+Elapsed: 00:00:03
+KLEE: done: explored paths = 30
+KLEE: done: avg. constructs per query = 48
+KLEE: done: total queries = 44
+KLEE: done: valid queries = 6
+KLEE: done: invalid queries = 38
+KLEE: done: query cex = 44
+
+KLEE: done: total instructions = 1297
+KLEE: done: completed paths = 30
+KLEE: done: partially completed paths = 0
+KLEE: done: generated tests = 30

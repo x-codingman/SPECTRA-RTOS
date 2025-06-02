@@ -1,0 +1,20 @@
+/home/klee/klee_src/build/bin/klee --search=dfs --stats -debug-print-instructions=all:stderr --test-info-output-dir=/home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/symbolic_execution/test-info-output/xEventGroupClearBits --output-dir=/home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/symbolic_execution/output/xEventGroupClearBits --test-target-name=xEventGroupClearBits /home/klee/klee_src/freertos_10_6_0_test/test_bc_files/xEventGroupClearBits.test.bc
+PID: 3514252
+Using monotonic steady clock with 1/1000000000s resolution
+Started: 2025-05-15 11:42:52
+BEGIN searcher description
+DFSSearcher
+END searcher description
+Finished: 2025-05-15 11:42:55
+Elapsed: 00:00:03
+KLEE: done: explored paths = 30
+KLEE: done: avg. constructs per query = 41
+KLEE: done: total queries = 44
+KLEE: done: valid queries = 6
+KLEE: done: invalid queries = 38
+KLEE: done: query cex = 44
+
+KLEE: done: total instructions = 1342
+KLEE: done: completed paths = 30
+KLEE: done: partially completed paths = 0
+KLEE: done: generated tests = 30

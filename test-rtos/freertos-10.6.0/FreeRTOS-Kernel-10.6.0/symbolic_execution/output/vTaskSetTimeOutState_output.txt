@@ -1,0 +1,100 @@
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3352
+KLEE: DEBUG: state id 19
+KLEE: DEBUG: dump the address expression before symplifying
+108846667178800
+KLEE: DEBUG: dump the resolve result of address
+(ReadLSB w64 0 KLEE_pxTimeOut)
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3352 20:13001:19:  %xOverflowCount = getelementptr inbounds %struct.xTIME_OUT, %struct.xTIME_OUT* %2, i32 0, i32 0, !dbg !627
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3352
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3352 35:13002:19:  store i64 %1, i64* %xOverflowCount, align 8, !dbg !628
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3352
+KLEE: DEBUG: state id 19
+KLEE: DEBUG: dump the address expression before symplifying
+(ReadLSB w64 0 KLEE_pxTimeOut)
+KLEE: DEBUG: dump the address expression
+0
+KLEE: DEBUG: lazyResolve failed, found a constant address, its value is: 0
+KLEE: DEBUG: dump the address expression
+0
+KLEE: DEBUG: FIX ME resolve failed
+KLEE: DEBUG: constraint:
+(Eq 108846658649984
+     (ReadLSB w64 0 lazy_alloc_external_return4))
+KLEE: DEBUG: constraint:
+(Eq 108846667178904
+     (ReadLSB w64 0 lazy_alloc_external_return1))
+KLEE: DEBUG: constraint:
+(Ule (ReadLSB w64 160 lazy_alloc_uncontrollable22)
+      1)
+KLEE: DEBUG: constraint:
+(Eq 108846667454368
+     (ReadLSB w64 16 lazy_alloc_uncontrollable26))
+KLEE: DEBUG: constraint:
+(Eq 0
+     (ReadLSB w64 0 KLEE_pxTimeOut))
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 2
+     test_files/vTaskSetTimeOutState.c:21 105:16938:18:  store i32 0, i32* %retval, align 4, !dbg !629
+KLEE: Execute: test_files/vTaskSetTimeOutState.c:21
+KLEE: DEBUG: state id 18
+KLEE: DEBUG: dump the address expression before symplifying
+108846667178672
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/vTaskSetTimeOutState.c:21 105:16939:18:  br label %return, !dbg !629
+KLEE: Execute: test_files/vTaskSetTimeOutState.c:21
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/vTaskSetTimeOutState.c:24 1:16948:18:  %4 = load i32, i32* %retval, align 4, !dbg !634
+KLEE: Execute: test_files/vTaskSetTimeOutState.c:24
+KLEE: DEBUG: state id 18
+KLEE: DEBUG: dump the address expression before symplifying
+108846667178672
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/vTaskSetTimeOutState.c:24 1:16949:18:  ret i32 %4, !dbg !634
+KLEE: Execute: test_files/vTaskSetTimeOutState.c:24
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 1
+     test_files/vTaskSetTimeOutState.c:21 105:16938:1:  store i32 0, i32* %retval, align 4, !dbg !629
+KLEE: Execute: test_files/vTaskSetTimeOutState.c:21
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+108846667178672
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/vTaskSetTimeOutState.c:21 105:16939:1:  br label %return, !dbg !629
+KLEE: Execute: test_files/vTaskSetTimeOutState.c:21
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/vTaskSetTimeOutState.c:24 1:16948:1:  %4 = load i32, i32* %retval, align 4, !dbg !634
+KLEE: Execute: test_files/vTaskSetTimeOutState.c:24
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+108846667178672
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/vTaskSetTimeOutState.c:24 1:16949:1:  ret i32 %4, !dbg !634
+KLEE: Execute: test_files/vTaskSetTimeOutState.c:24
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 0
+
+KLEE: done: total instructions = 1066
+KLEE: done: completed paths = 20
+KLEE: done: partially completed paths = 0
+KLEE: done: generated tests = 20
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+5832 bitcode-reader - Number of Metadata records loaded
+ 898 bitcode-reader - Number of MDStrings loaded
+

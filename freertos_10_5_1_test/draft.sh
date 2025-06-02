@@ -31,6 +31,25 @@ rm -rf /home/klee/klee_src/test-rtos/freertos-10.5.1/symbolic_execution/test-inf
   --test-target-name=xStreamBufferReceive \
   /home/klee/klee_src/freertos_10_5_1_test/test_bc_files/test_MPU_xStreamBufferReceive.test.bc
 
-#xStreamBufferSend
-rm -rf /home/klee/klee_src/test-rtos/freertos-10.5.1/symbolic_execution/output/xStreamBufferSend &&\
-rm -rf /home/klee/klee_src/test-rtos/freertos-10.5.1/symbolic_execution/test-info-output/xStreamBufferSend &&\
+#vTimerSetReloadMode
+rm -rf   /home/klee/klee_src/test-rtos/freertos-10.5.1/symbolic_execution/output/vTimerSetReloadMode &&\
+rm -rf /home/klee/klee_src/test-rtos/freertos-10.5.1/symbolic_execution/test-info-output/vTimerSetReloadMode &&\
+/home/klee/klee_src/build/bin/klee \
+  --search=dfs \
+  -debug-print-instructions=all:stderr \
+  --test-info-output-dir=/home/klee/klee_src/test-rtos/freertos-10.5.1/symbolic_execution/test-info-output/vTimerSetReloadMode \
+  --output-dir=/home/klee/klee_src/test-rtos/freertos-10.5.1/symbolic_execution/output/vTimerSetReloadMode \
+  --test-target-name=vTimerSetReloadMode \
+  /home/klee/klee_src/freertos_10_5_1_test/test_bc_files/test_MPU_vTimerSetReloadMode.test.bc
+
+
+#xTaskCallApplicationTaskHook 
+rm -rf /home/klee/klee_src/test-rtos/freertos-10.5.1/symbolic_execution/output/xTaskCallApplicationTaskHook &&\
+rm -rf /home/klee/klee_src/test-rtos/freertos-10.5.1/symbolic_execution/test-info-output/xTaskCallApplicationTaskHook &&\
+/home/klee/klee_src/build/bin/klee \
+  --search=dfs \
+  -debug-print-instructions=all:stderr \
+    --test-info-output-dir=/home/klee/klee_src/test-rtos/freertos-10.5.1/symbolic_execution/test-info-output/xTaskCallApplicationTaskHook \
+  --output-dir=/home/klee/klee_src/test-rtos/freertos-10.5.1/symbolic_execution/output/xTaskCallApplicationTaskHook \
+  --test-target-name=xTaskCallApplicationTaskHook \
+  /home/klee/klee_src/freertos_10_5_1_test/test_bc_files/test_MPU_xTaskCallApplicationTaskHook.test.bc  

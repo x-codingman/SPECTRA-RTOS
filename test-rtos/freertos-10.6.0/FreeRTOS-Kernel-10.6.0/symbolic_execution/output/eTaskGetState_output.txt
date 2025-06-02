@@ -1,0 +1,100 @@
+(ReadLSB w64 0 KLEE_xTask)
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1370 31:9936:63:  %xStateListItem = getelementptr inbounds %struct.tskTaskControlBlock, %struct.tskTaskControlBlock* %4, i32 0, i32 2, !dbg !645
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1370
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1370 31:9937:63:  %pxContainer = getelementptr inbounds %struct.xLIST_ITEM, %struct.xLIST_ITEM* %xStateListItem, i32 0, i32 4, !dbg !645
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1370
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1370 31:9938:63:  %5 = load %struct.xLIST*, %struct.xLIST** %pxContainer, align 8, !dbg !645
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1370
+KLEE: DEBUG: state id 63
+KLEE: DEBUG: dump the address expression before symplifying
+(Add w64 112
+          (ReadLSB w64 0 KLEE_xTask))
+KLEE: DEBUG: dump the address expression
+112
+KLEE: DEBUG: lazyResolve failed, found a constant address, its value is: 112
+KLEE: DEBUG: dump the address expression
+112
+KLEE: DEBUG: FIX ME resolve failed
+KLEE: DEBUG: constraint:
+(Eq 98251030683520
+     (ReadLSB w64 0 lazy_alloc_external_return4))
+KLEE: DEBUG: constraint:
+(Eq 98251038679960
+     (ReadLSB w64 0 lazy_alloc_external_return1))
+KLEE: DEBUG: constraint:
+(Ule (ReadLSB w64 160 lazy_alloc_uncontrollable39)
+      1)
+KLEE: DEBUG: constraint:
+(Eq 98251039286928
+     (ReadLSB w64 16 lazy_alloc_uncontrollable48))
+KLEE: DEBUG: constraint:
+(Eq 0
+     (ReadLSB w64 0 KLEE_xTask))
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 2
+     test_files/eTaskGetState.c:21 75:16938:62:  store i32 0, i32* %retval, align 4, !dbg !623
+KLEE: Execute: test_files/eTaskGetState.c:21
+KLEE: DEBUG: state id 62
+KLEE: DEBUG: dump the address expression before symplifying
+98251038679728
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/eTaskGetState.c:21 75:16939:62:  br label %return, !dbg !623
+KLEE: Execute: test_files/eTaskGetState.c:21
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/eTaskGetState.c:24 1:16948:62:  %4 = load i32, i32* %retval, align 4, !dbg !628
+KLEE: Execute: test_files/eTaskGetState.c:24
+KLEE: DEBUG: state id 62
+KLEE: DEBUG: dump the address expression before symplifying
+98251038679728
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/eTaskGetState.c:24 1:16949:62:  ret i32 %4, !dbg !628
+KLEE: Execute: test_files/eTaskGetState.c:24
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 1
+     test_files/eTaskGetState.c:21 75:16938:1:  store i32 0, i32* %retval, align 4, !dbg !623
+KLEE: Execute: test_files/eTaskGetState.c:21
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+98251038679728
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/eTaskGetState.c:21 75:16939:1:  br label %return, !dbg !623
+KLEE: Execute: test_files/eTaskGetState.c:21
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/eTaskGetState.c:24 1:16948:1:  %4 = load i32, i32* %retval, align 4, !dbg !628
+KLEE: Execute: test_files/eTaskGetState.c:24
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+98251038679728
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/eTaskGetState.c:24 1:16949:1:  ret i32 %4, !dbg !628
+KLEE: Execute: test_files/eTaskGetState.c:24
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 0
+
+KLEE: done: total instructions = 2266
+KLEE: done: completed paths = 75
+KLEE: done: partially completed paths = 0
+KLEE: done: generated tests = 75
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+5826 bitcode-reader - Number of Metadata records loaded
+ 898 bitcode-reader - Number of MDStrings loaded
+

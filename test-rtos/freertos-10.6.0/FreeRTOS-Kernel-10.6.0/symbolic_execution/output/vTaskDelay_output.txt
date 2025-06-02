@@ -1,0 +1,100 @@
+93897998221536
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:2274 35:9401:1:  %cmp118 = icmp ne i64 %80, 0, !dbg !714
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:2274
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:2274 21:9402:1:  br i1 %cmp118, label %if.then120, label %if.else121, !dbg !715
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:2274
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:2188 0:9410:1:  br label %if.end122
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:2188
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:2287 13:9413:1:  br label %if.end123, !dbg !721
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:2287
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:2288 9:9416:1:  br label %if.end125, !dbg !722
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:2288
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:2294 5:9422:1:  call void @vPortExitCritical(), !dbg !723
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:2294
+KLEE: DEBUG: Detect __asm__ external function!
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:2296 12:9423:1:  %81 = load i64, i64* %xAlreadyYielded, align 8, !dbg !724
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:2296
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+93897998223352
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:2296 5:9424:1:  ret i64 %81, !dbg !725
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:2296
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1326 29:9872:1:  store i64 %call5, i64* %xAlreadyYielded, align 8, !dbg !629
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1326
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+93897998223576
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1327 9:9873:1:  br label %if.end6, !dbg !630
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1327
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1335 13:9879:1:  %3 = load i64, i64* %xAlreadyYielded, align 8, !dbg !631
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1335
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+93897998223576
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1335 29:9880:1:  %cmp7 = icmp eq i64 %3, 0, !dbg !633
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1335
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1335 13:9881:1:  br i1 %cmp7, label %if.then9, label %if.else10, !dbg !634
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1335
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1337 13:9884:1:  call void @vPortYield(), !dbg !635
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1337
+KLEE: DEBUG: Detect __asm__ external function!
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1338 9:9885:1:  br label %if.end11, !dbg !637
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1338
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1343 5:9891:1:  ret void, !dbg !638
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:1343
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/vTaskDelay.c:22 1:16930:1:  ret i32 0, !dbg !618
+KLEE: Execute: test_files/vTaskDelay.c:22
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 0
+
+KLEE: done: total instructions = 8093
+KLEE: done: completed paths = 77
+KLEE: done: partially completed paths = 0
+KLEE: done: generated tests = 77
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+5824 bitcode-reader - Number of Metadata records loaded
+ 898 bitcode-reader - Number of MDStrings loaded
+

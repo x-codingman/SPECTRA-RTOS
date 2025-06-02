@@ -1,0 +1,100 @@
+(ReadLSB w64 0 KLEE_xTimer)
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:461 26:16502:27:  %ucStatus = getelementptr inbounds %struct.tmrTimerControl, %struct.tmrTimerControl* %3, i32 0, i32 6, !dbg !630
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:461
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:461 35:16503:27:  %4 = load i8, i8* %ucStatus, align 8, !dbg !631
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/timers.c:461
+KLEE: DEBUG: state id 27
+KLEE: DEBUG: dump the address expression before symplifying
+(Add w64 80
+          (ReadLSB w64 0 KLEE_xTimer))
+KLEE: DEBUG: dump the address expression
+80
+KLEE: DEBUG: lazyResolve failed, found a constant address, its value is: 80
+KLEE: DEBUG: dump the address expression
+80
+KLEE: DEBUG: FIX ME resolve failed
+KLEE: DEBUG: constraint:
+(Eq 95942778249088
+     (ReadLSB w64 0 lazy_alloc_external_return4))
+KLEE: DEBUG: constraint:
+(Eq 95942786769848
+     (ReadLSB w64 0 lazy_alloc_external_return1))
+KLEE: DEBUG: constraint:
+(Ule (ReadLSB w64 160 lazy_alloc_uncontrollable22)
+      1)
+KLEE: DEBUG: constraint:
+(Eq 95942787088112
+     (ReadLSB w64 16 lazy_alloc_uncontrollable26))
+KLEE: DEBUG: constraint:
+(Eq 0
+     (ReadLSB w64 0 KLEE_xTimer))
+KLEE: DEBUG: constraint:
+(Eq false
+     (Eq 0
+         (ReadLSB w64 0 KLEE_uxAutoReload)))
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 2
+     test_files/vTimerSetReloadMode.c:23 77:16943:26:  store i32 0, i32* %retval, align 4, !dbg !631
+KLEE: Execute: test_files/vTimerSetReloadMode.c:23
+KLEE: DEBUG: state id 26
+KLEE: DEBUG: dump the address expression before symplifying
+95942786769600
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/vTimerSetReloadMode.c:23 77:16944:26:  br label %return, !dbg !631
+KLEE: Execute: test_files/vTimerSetReloadMode.c:23
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/vTimerSetReloadMode.c:26 1:16954:26:  %6 = load i32, i32* %retval, align 4, !dbg !637
+KLEE: Execute: test_files/vTimerSetReloadMode.c:26
+KLEE: DEBUG: state id 26
+KLEE: DEBUG: dump the address expression before symplifying
+95942786769600
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/vTimerSetReloadMode.c:26 1:16955:26:  ret i32 %6, !dbg !637
+KLEE: Execute: test_files/vTimerSetReloadMode.c:26
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 1
+     test_files/vTimerSetReloadMode.c:23 77:16943:1:  store i32 0, i32* %retval, align 4, !dbg !631
+KLEE: Execute: test_files/vTimerSetReloadMode.c:23
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+95942786769600
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/vTimerSetReloadMode.c:23 77:16944:1:  br label %return, !dbg !631
+KLEE: Execute: test_files/vTimerSetReloadMode.c:23
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/vTimerSetReloadMode.c:26 1:16954:1:  %6 = load i32, i32* %retval, align 4, !dbg !637
+KLEE: Execute: test_files/vTimerSetReloadMode.c:26
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+95942786769600
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/vTimerSetReloadMode.c:26 1:16955:1:  ret i32 %6, !dbg !637
+KLEE: Execute: test_files/vTimerSetReloadMode.c:26
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 0
+
+KLEE: done: total instructions = 1232
+KLEE: done: completed paths = 30
+KLEE: done: partially completed paths = 0
+KLEE: done: generated tests = 30
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+5831 bitcode-reader - Number of Metadata records loaded
+ 899 bitcode-reader - Number of MDStrings loaded
+

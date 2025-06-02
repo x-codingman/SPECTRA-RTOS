@@ -1,0 +1,20 @@
+/home/klee/klee_src/build/bin/klee --search=dfs --stats -debug-print-instructions=all:stderr --test-info-output-dir=/home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/symbolic_execution/test-info-output/ulTaskGenericNotifyValueClear --output-dir=/home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/symbolic_execution/output/ulTaskGenericNotifyValueClear --test-target-name=ulTaskGenericNotifyValueClear /home/klee/klee_src/freertos_10_6_0_test/test_bc_files/ulTaskGenericNotifyValueClear.test.bc
+PID: 3508427
+Using monotonic steady clock with 1/1000000000s resolution
+Started: 2025-05-15 11:42:33
+BEGIN searcher description
+DFSSearcher
+END searcher description
+Finished: 2025-05-15 11:42:37
+Elapsed: 00:00:04
+KLEE: done: explored paths = 20
+KLEE: done: avg. constructs per query = 48
+KLEE: done: total queries = 49
+KLEE: done: valid queries = 0
+KLEE: done: invalid queries = 49
+KLEE: done: query cex = 49
+
+KLEE: done: total instructions = 1318
+KLEE: done: completed paths = 20
+KLEE: done: partially completed paths = 0
+KLEE: done: generated tests = 20

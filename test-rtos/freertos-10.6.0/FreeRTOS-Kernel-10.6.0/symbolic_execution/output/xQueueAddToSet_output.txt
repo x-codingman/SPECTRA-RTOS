@@ -1,0 +1,100 @@
+KLEE: Execute: test_files/xQueueAddToSet.c:24
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+     test_files/xQueueAddToSet.c:27 1:16968:32:  %8 = load i32, i32* %retval, align 4, !dbg !644
+KLEE: Execute: test_files/xQueueAddToSet.c:27
+KLEE: DEBUG: state id 32
+KLEE: DEBUG: dump the address expression before symplifying
+100127276098288
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+     test_files/xQueueAddToSet.c:27 1:16969:32:  ret i32 %8, !dbg !644
+KLEE: Execute: test_files/xQueueAddToSet.c:27
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 3
+     test_files/xQueueAddToSet.c:24 83:16957:31:  store i32 0, i32* %retval, align 4, !dbg !638
+KLEE: Execute: test_files/xQueueAddToSet.c:24
+KLEE: DEBUG: state id 31
+KLEE: DEBUG: dump the address expression before symplifying
+100127276098288
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/xQueueAddToSet.c:24 83:16958:31:  br label %return, !dbg !638
+KLEE: Execute: test_files/xQueueAddToSet.c:24
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/xQueueAddToSet.c:27 1:16968:31:  %8 = load i32, i32* %retval, align 4, !dbg !644
+KLEE: Execute: test_files/xQueueAddToSet.c:27
+KLEE: DEBUG: state id 31
+KLEE: DEBUG: dump the address expression before symplifying
+100127276098288
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/xQueueAddToSet.c:27 1:16969:31:  ret i32 %8, !dbg !644
+KLEE: Execute: test_files/xQueueAddToSet.c:27
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 2
+     test_files/xQueueAddToSet.c:23 99:16943:30:  store i32 0, i32* %retval, align 4, !dbg !629
+KLEE: Execute: test_files/xQueueAddToSet.c:23
+KLEE: DEBUG: state id 30
+KLEE: DEBUG: dump the address expression before symplifying
+100127276098288
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/xQueueAddToSet.c:23 99:16944:30:  br label %return, !dbg !629
+KLEE: Execute: test_files/xQueueAddToSet.c:23
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/xQueueAddToSet.c:27 1:16968:30:  %8 = load i32, i32* %retval, align 4, !dbg !644
+KLEE: Execute: test_files/xQueueAddToSet.c:27
+KLEE: DEBUG: state id 30
+KLEE: DEBUG: dump the address expression before symplifying
+100127276098288
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/xQueueAddToSet.c:27 1:16969:30:  ret i32 %8, !dbg !644
+KLEE: Execute: test_files/xQueueAddToSet.c:27
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 1
+     test_files/xQueueAddToSet.c:23 99:16943:1:  store i32 0, i32* %retval, align 4, !dbg !629
+KLEE: Execute: test_files/xQueueAddToSet.c:23
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+100127276098288
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/xQueueAddToSet.c:23 99:16944:1:  br label %return, !dbg !629
+KLEE: Execute: test_files/xQueueAddToSet.c:23
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/xQueueAddToSet.c:27 1:16968:1:  %8 = load i32, i32* %retval, align 4, !dbg !644
+KLEE: Execute: test_files/xQueueAddToSet.c:27
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+100127276098288
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/xQueueAddToSet.c:27 1:16969:1:  ret i32 %8, !dbg !644
+KLEE: Execute: test_files/xQueueAddToSet.c:27
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 0
+
+KLEE: done: total instructions = 1277
+KLEE: done: completed paths = 35
+KLEE: done: partially completed paths = 0
+KLEE: done: generated tests = 35
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+5832 bitcode-reader - Number of Metadata records loaded
+ 899 bitcode-reader - Number of MDStrings loaded
+

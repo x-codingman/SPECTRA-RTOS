@@ -1,0 +1,100 @@
+KLEE: DEBUG: dump the resolve result of address
+101316009688960
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:2362 22:10887:19:  %pcTaskName = getelementptr inbounds %struct.tskTaskControlBlock, %struct.tskTaskControlBlock* %4, i32 0, i32 6, !dbg !622
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:2362
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:2362 15:10888:19:  %arrayidx = getelementptr inbounds [16 x i8], [16 x i8]* %pcTaskName, i64 0, i64 0, !dbg !621
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:2362
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:2362 5:10889:19:  ret i8* %arrayidx, !dbg !623
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:2362
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/pcTaskGetName.c:23 1:16944:19:  store i32 0, i32* %retval, align 4, !dbg !627
+KLEE: Execute: test_files/pcTaskGetName.c:23
+KLEE: DEBUG: state id 19
+KLEE: DEBUG: dump the address expression before symplifying
+101316017668784
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/pcTaskGetName.c:23 1:16945:19:  br label %return, !dbg !627
+KLEE: Execute: test_files/pcTaskGetName.c:23
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/pcTaskGetName.c:24 1:16948:19:  %4 = load i32, i32* %retval, align 4, !dbg !628
+KLEE: Execute: test_files/pcTaskGetName.c:24
+KLEE: DEBUG: state id 19
+KLEE: DEBUG: dump the address expression before symplifying
+101316017668784
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/pcTaskGetName.c:24 1:16949:19:  ret i32 %4, !dbg !628
+KLEE: Execute: test_files/pcTaskGetName.c:24
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 2
+     test_files/pcTaskGetName.c:21 89:16938:18:  store i32 0, i32* %retval, align 4, !dbg !623
+KLEE: Execute: test_files/pcTaskGetName.c:21
+KLEE: DEBUG: state id 18
+KLEE: DEBUG: dump the address expression before symplifying
+101316017668784
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/pcTaskGetName.c:21 89:16939:18:  br label %return, !dbg !623
+KLEE: Execute: test_files/pcTaskGetName.c:21
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/pcTaskGetName.c:24 1:16948:18:  %4 = load i32, i32* %retval, align 4, !dbg !628
+KLEE: Execute: test_files/pcTaskGetName.c:24
+KLEE: DEBUG: state id 18
+KLEE: DEBUG: dump the address expression before symplifying
+101316017668784
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/pcTaskGetName.c:24 1:16949:18:  ret i32 %4, !dbg !628
+KLEE: Execute: test_files/pcTaskGetName.c:24
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 1
+     test_files/pcTaskGetName.c:21 89:16938:1:  store i32 0, i32* %retval, align 4, !dbg !623
+KLEE: Execute: test_files/pcTaskGetName.c:21
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+101316017668784
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/pcTaskGetName.c:21 89:16939:1:  br label %return, !dbg !623
+KLEE: Execute: test_files/pcTaskGetName.c:21
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/pcTaskGetName.c:24 1:16948:1:  %4 = load i32, i32* %retval, align 4, !dbg !628
+KLEE: Execute: test_files/pcTaskGetName.c:24
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+101316017668784
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/pcTaskGetName.c:24 1:16949:1:  ret i32 %4, !dbg !628
+KLEE: Execute: test_files/pcTaskGetName.c:24
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 0
+
+KLEE: done: total instructions = 1116
+KLEE: done: completed paths = 20
+KLEE: done: partially completed paths = 0
+KLEE: done: generated tests = 20
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+5826 bitcode-reader - Number of Metadata records loaded
+ 898 bitcode-reader - Number of MDStrings loaded
+

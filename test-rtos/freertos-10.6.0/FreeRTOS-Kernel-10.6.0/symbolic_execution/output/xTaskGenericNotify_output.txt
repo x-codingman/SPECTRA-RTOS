@@ -1,0 +1,100 @@
+ #6 0x00006499770727d4 klee::Assignment::evaluate(klee::Array const*, unsigned int) const /tmp/klee_src/include/klee/Expr/Assignment.h:72:0
+ #7 0x00006499770727d4 klee::AssignmentEvaluator::getInitialValue(klee::Array const&, unsigned int) /tmp/klee_src/include/klee/Expr/Assignment.h:60:0
+ #8 0x000064997711b105 klee::ref<klee::Expr>::ref(klee::ref<klee::Expr> const&) /tmp/klee_src/include/klee/ADT/Ref.h:110:0
+ #9 0x000064997711b105 klee::ExprVisitor::Action::Action(klee::ExprVisitor::Action::Kind, klee::ref<klee::Expr> const&) /tmp/klee_src/include/klee/Expr/ExprVisitor.h:28:0
+#10 0x000064997711b105 klee::ExprVisitor::Action::changeTo(klee::ref<klee::Expr> const&) /tmp/klee_src/include/klee/Expr/ExprVisitor.h:37:0
+#11 0x000064997711b105 klee::ExprEvaluator::evalRead(klee::UpdateList const&, unsigned int) /tmp/klee_src/lib/Expr/ExprEvaluator.cpp:36:0
+#12 0x000064997711bb2d klee::ExprEvaluator::visitRead(klee::ReadExpr const&) /tmp/klee_src/lib/Expr/ExprEvaluator.cpp:64:0
+#13 0x0000649977134d98 klee::ref<klee::Expr>::dec() const /tmp/klee_src/include/klee/ADT/Ref.h:97:0
+#14 0x0000649977134d98 klee::ref<klee::Expr>::operator=(klee::ref<klee::Expr>&&) /tmp/klee_src/include/klee/ADT/Ref.h:180:0
+#15 0x0000649977134d98 klee::ExprVisitor::Action::operator=(klee::ExprVisitor::Action&&) /tmp/klee_src/include/klee/Expr/ExprVisitor.h:19:0
+#16 0x0000649977134d98 klee::ExprVisitor::visitActual(klee::ref<klee::Expr> const&) /tmp/klee_src/lib/Expr/ExprVisitor.cpp:90:0
+#17 0x00006499771349b0 klee::ref<klee::Expr>::ref(klee::ref<klee::Expr> const&) /tmp/klee_src/include/klee/ADT/Ref.h:110:0
+#18 0x00006499771349b0 std::pair<klee::ref<klee::Expr>, klee::ref<klee::Expr> >::pair<klee::ref<klee::Expr>&, true>(klee::ref<klee::Expr> const&, klee::ref<klee::Expr>&) /usr/include/c++/7/bits/stl_pair.h:326:0
+#19 0x00006499771349b0 std::pair<std::__decay_and_strip<klee::ref<klee::Expr> const&>::__type, std::__decay_and_strip<klee::ref<klee::Expr>&>::__type> std::make_pair<klee::ref<klee::Expr> const&, klee::ref<klee::Expr>&>(klee::ref<klee::Expr> const&, klee::ref<klee::Expr>&) /usr/include/c++/7/bits/stl_pair.h:529:0
+#20 0x00006499771349b0 klee::ExprVisitor::visit(klee::ref<klee::Expr> const&) /tmp/klee_src/lib/Expr/ExprVisitor.cpp:36:0
+#21 0x0000649977134ca4 klee::ref<klee::Expr>::dec() const /tmp/klee_src/include/klee/ADT/Ref.h:97:0
+#22 0x0000649977134ca4 klee::ref<klee::Expr>::operator=(klee::ref<klee::Expr>&&) /tmp/klee_src/include/klee/ADT/Ref.h:180:0
+#23 0x0000649977134ca4 klee::ExprVisitor::visitActual(klee::ref<klee::Expr> const&) /tmp/klee_src/lib/Expr/ExprVisitor.cpp:105:0
+#24 0x00006499771349b0 klee::ref<klee::Expr>::ref(klee::ref<klee::Expr> const&) /tmp/klee_src/include/klee/ADT/Ref.h:110:0
+#25 0x00006499771349b0 std::pair<klee::ref<klee::Expr>, klee::ref<klee::Expr> >::pair<klee::ref<klee::Expr>&, true>(klee::ref<klee::Expr> const&, klee::ref<klee::Expr>&) /usr/include/c++/7/bits/stl_pair.h:326:0
+#26 0x00006499771349b0 std::pair<std::__decay_and_strip<klee::ref<klee::Expr> const&>::__type, std::__decay_and_strip<klee::ref<klee::Expr>&>::__type> std::make_pair<klee::ref<klee::Expr> const&, klee::ref<klee::Expr>&>(klee::ref<klee::Expr> const&, klee::ref<klee::Expr>&) /usr/include/c++/7/bits/stl_pair.h:529:0
+#27 0x00006499771349b0 klee::ExprVisitor::visit(klee::ref<klee::Expr> const&) /tmp/klee_src/lib/Expr/ExprVisitor.cpp:36:0
+#28 0x0000649977134ca4 klee::ref<klee::Expr>::dec() const /tmp/klee_src/include/klee/ADT/Ref.h:97:0
+#29 0x0000649977134ca4 klee::ref<klee::Expr>::operator=(klee::ref<klee::Expr>&&) /tmp/klee_src/include/klee/ADT/Ref.h:180:0
+#30 0x0000649977134ca4 klee::ExprVisitor::visitActual(klee::ref<klee::Expr> const&) /tmp/klee_src/lib/Expr/ExprVisitor.cpp:105:0
+#31 0x00006499771349b0 klee::ref<klee::Expr>::ref(klee::ref<klee::Expr> const&) /tmp/klee_src/include/klee/ADT/Ref.h:110:0
+#32 0x00006499771349b0 std::pair<klee::ref<klee::Expr>, klee::ref<klee::Expr> >::pair<klee::ref<klee::Expr>&, true>(klee::ref<klee::Expr> const&, klee::ref<klee::Expr>&) /usr/include/c++/7/bits/stl_pair.h:326:0
+#33 0x00006499771349b0 std::pair<std::__decay_and_strip<klee::ref<klee::Expr> const&>::__type, std::__decay_and_strip<klee::ref<klee::Expr>&>::__type> std::make_pair<klee::ref<klee::Expr> const&, klee::ref<klee::Expr>&>(klee::ref<klee::Expr> const&, klee::ref<klee::Expr>&) /usr/include/c++/7/bits/stl_pair.h:529:0
+#34 0x00006499771349b0 klee::ExprVisitor::visit(klee::ref<klee::Expr> const&) /tmp/klee_src/lib/Expr/ExprVisitor.cpp:36:0
+#35 0x0000649977134ca4 klee::ref<klee::Expr>::dec() const /tmp/klee_src/include/klee/ADT/Ref.h:97:0
+#36 0x0000649977134ca4 klee::ref<klee::Expr>::operator=(klee::ref<klee::Expr>&&) /tmp/klee_src/include/klee/ADT/Ref.h:180:0
+#37 0x0000649977134ca4 klee::ExprVisitor::visitActual(klee::ref<klee::Expr> const&) /tmp/klee_src/lib/Expr/ExprVisitor.cpp:105:0
+#38 0x00006499771349b0 klee::ref<klee::Expr>::ref(klee::ref<klee::Expr> const&) /tmp/klee_src/include/klee/ADT/Ref.h:110:0
+#39 0x00006499771349b0 std::pair<klee::ref<klee::Expr>, klee::ref<klee::Expr> >::pair<klee::ref<klee::Expr>&, true>(klee::ref<klee::Expr> const&, klee::ref<klee::Expr>&) /usr/include/c++/7/bits/stl_pair.h:326:0
+#40 0x00006499771349b0 std::pair<std::__decay_and_strip<klee::ref<klee::Expr> const&>::__type, std::__decay_and_strip<klee::ref<klee::Expr>&>::__type> std::make_pair<klee::ref<klee::Expr> const&, klee::ref<klee::Expr>&>(klee::ref<klee::Expr> const&, klee::ref<klee::Expr>&) /usr/include/c++/7/bits/stl_pair.h:529:0
+#41 0x00006499771349b0 klee::ExprVisitor::visit(klee::ref<klee::Expr> const&) /tmp/klee_src/lib/Expr/ExprVisitor.cpp:36:0
+#42 0x000064997711ad0f klee::ref<klee::Expr>::get() const /tmp/klee_src/include/klee/ADT/Ref.h:130:0
+#43 0x000064997711ad0f llvm::simplify_type<klee::ref<klee::Expr> const>::getSimplifiedValue(klee::ref<klee::Expr> const&) /tmp/klee_src/include/klee/ADT/Ref.h:253:0
+#44 0x000064997711ad0f llvm::isa_impl_wrap<klee::ConstantExpr, klee::ref<klee::Expr> const, klee::Expr*>::doit(klee::ref<klee::Expr> const&) /tmp/llvm-110-install_O_D_A/include/llvm/Support/Casting.h:123:0
+#45 0x000064997711ad0f bool llvm::isa<klee::ConstantExpr, klee::ref<klee::Expr> >(klee::ref<klee::Expr> const&) /tmp/llvm-110-install_O_D_A/include/llvm/Support/Casting.h:143:0
+#46 0x000064997711ad0f llvm::cast_retty<klee::ConstantExpr, klee::ref<klee::Expr> >::ret_type llvm::dyn_cast<klee::ConstantExpr, klee::ref<klee::Expr> >(klee::ref<klee::Expr>&) /tmp/llvm-110-install_O_D_A/include/llvm/Support/Casting.h:340:0
+#47 0x000064997711ad0f klee::ExprEvaluator::evalRead(klee::UpdateList const&, unsigned int) /tmp/klee_src/lib/Expr/ExprEvaluator.cpp:19:0
+#48 0x000064997711bb2d klee::ExprEvaluator::visitRead(klee::ReadExpr const&) /tmp/klee_src/lib/Expr/ExprEvaluator.cpp:64:0
+#49 0x0000649977134d98 klee::ref<klee::Expr>::dec() const /tmp/klee_src/include/klee/ADT/Ref.h:97:0
+#50 0x0000649977134d98 klee::ref<klee::Expr>::operator=(klee::ref<klee::Expr>&&) /tmp/klee_src/include/klee/ADT/Ref.h:180:0
+#51 0x0000649977134d98 klee::ExprVisitor::Action::operator=(klee::ExprVisitor::Action&&) /tmp/klee_src/include/klee/Expr/ExprVisitor.h:19:0
+#52 0x0000649977134d98 klee::ExprVisitor::visitActual(klee::ref<klee::Expr> const&) /tmp/klee_src/lib/Expr/ExprVisitor.cpp:90:0
+#53 0x00006499771349b0 klee::ref<klee::Expr>::ref(klee::ref<klee::Expr> const&) /tmp/klee_src/include/klee/ADT/Ref.h:110:0
+#54 0x00006499771349b0 std::pair<klee::ref<klee::Expr>, klee::ref<klee::Expr> >::pair<klee::ref<klee::Expr>&, true>(klee::ref<klee::Expr> const&, klee::ref<klee::Expr>&) /usr/include/c++/7/bits/stl_pair.h:326:0
+#55 0x00006499771349b0 std::pair<std::__decay_and_strip<klee::ref<klee::Expr> const&>::__type, std::__decay_and_strip<klee::ref<klee::Expr>&>::__type> std::make_pair<klee::ref<klee::Expr> const&, klee::ref<klee::Expr>&>(klee::ref<klee::Expr> const&, klee::ref<klee::Expr>&) /usr/include/c++/7/bits/stl_pair.h:529:0
+#56 0x00006499771349b0 klee::ExprVisitor::visit(klee::ref<klee::Expr> const&) /tmp/klee_src/lib/Expr/ExprVisitor.cpp:36:0
+#57 0x0000649977134ca4 klee::ref<klee::Expr>::dec() const /tmp/klee_src/include/klee/ADT/Ref.h:97:0
+#58 0x0000649977134ca4 klee::ref<klee::Expr>::operator=(klee::ref<klee::Expr>&&) /tmp/klee_src/include/klee/ADT/Ref.h:180:0
+#59 0x0000649977134ca4 klee::ExprVisitor::visitActual(klee::ref<klee::Expr> const&) /tmp/klee_src/lib/Expr/ExprVisitor.cpp:105:0
+#60 0x00006499771349b0 klee::ref<klee::Expr>::ref(klee::ref<klee::Expr> const&) /tmp/klee_src/include/klee/ADT/Ref.h:110:0
+#61 0x00006499771349b0 std::pair<klee::ref<klee::Expr>, klee::ref<klee::Expr> >::pair<klee::ref<klee::Expr>&, true>(klee::ref<klee::Expr> const&, klee::ref<klee::Expr>&) /usr/include/c++/7/bits/stl_pair.h:326:0
+#62 0x00006499771349b0 std::pair<std::__decay_and_strip<klee::ref<klee::Expr> const&>::__type, std::__decay_and_strip<klee::ref<klee::Expr>&>::__type> std::make_pair<klee::ref<klee::Expr> const&, klee::ref<klee::Expr>&>(klee::ref<klee::Expr> const&, klee::ref<klee::Expr>&) /usr/include/c++/7/bits/stl_pair.h:529:0
+#63 0x00006499771349b0 klee::ExprVisitor::visit(klee::ref<klee::Expr> const&) /tmp/klee_src/lib/Expr/ExprVisitor.cpp:36:0
+#64 0x0000649977134ca4 klee::ref<klee::Expr>::dec() const /tmp/klee_src/include/klee/ADT/Ref.h:97:0
+#65 0x0000649977134ca4 klee::ref<klee::Expr>::operator=(klee::ref<klee::Expr>&&) /tmp/klee_src/include/klee/ADT/Ref.h:180:0
+#66 0x0000649977134ca4 klee::ExprVisitor::visitActual(klee::ref<klee::Expr> const&) /tmp/klee_src/lib/Expr/ExprVisitor.cpp:105:0
+#67 0x00006499771349b0 klee::ref<klee::Expr>::ref(klee::ref<klee::Expr> const&) /tmp/klee_src/include/klee/ADT/Ref.h:110:0
+#68 0x00006499771349b0 std::pair<klee::ref<klee::Expr>, klee::ref<klee::Expr> >::pair<klee::ref<klee::Expr>&, true>(klee::ref<klee::Expr> const&, klee::ref<klee::Expr>&) /usr/include/c++/7/bits/stl_pair.h:326:0
+#69 0x00006499771349b0 std::pair<std::__decay_and_strip<klee::ref<klee::Expr> const&>::__type, std::__decay_and_strip<klee::ref<klee::Expr>&>::__type> std::make_pair<klee::ref<klee::Expr> const&, klee::ref<klee::Expr>&>(klee::ref<klee::Expr> const&, klee::ref<klee::Expr>&) /usr/include/c++/7/bits/stl_pair.h:529:0
+#70 0x00006499771349b0 klee::ExprVisitor::visit(klee::ref<klee::Expr> const&) /tmp/klee_src/lib/Expr/ExprVisitor.cpp:36:0
+#71 0x0000649977134ca4 klee::ref<klee::Expr>::dec() const /tmp/klee_src/include/klee/ADT/Ref.h:97:0
+#72 0x0000649977134ca4 klee::ref<klee::Expr>::operator=(klee::ref<klee::Expr>&&) /tmp/klee_src/include/klee/ADT/Ref.h:180:0
+#73 0x0000649977134ca4 klee::ExprVisitor::visitActual(klee::ref<klee::Expr> const&) /tmp/klee_src/lib/Expr/ExprVisitor.cpp:105:0
+#74 0x00006499771349b0 klee::ref<klee::Expr>::ref(klee::ref<klee::Expr> const&) /tmp/klee_src/include/klee/ADT/Ref.h:110:0
+#75 0x00006499771349b0 std::pair<klee::ref<klee::Expr>, klee::ref<klee::Expr> >::pair<klee::ref<klee::Expr>&, true>(klee::ref<klee::Expr> const&, klee::ref<klee::Expr>&) /usr/include/c++/7/bits/stl_pair.h:326:0
+#76 0x00006499771349b0 std::pair<std::__decay_and_strip<klee::ref<klee::Expr> const&>::__type, std::__decay_and_strip<klee::ref<klee::Expr>&>::__type> std::make_pair<klee::ref<klee::Expr> const&, klee::ref<klee::Expr>&>(klee::ref<klee::Expr> const&, klee::ref<klee::Expr>&) /usr/include/c++/7/bits/stl_pair.h:529:0
+#77 0x00006499771349b0 klee::ExprVisitor::visit(klee::ref<klee::Expr> const&) /tmp/klee_src/lib/Expr/ExprVisitor.cpp:36:0
+#78 0x00006499770e82f8 klee::ExprVisitor::~ExprVisitor() /tmp/klee_src/include/klee/Expr/ExprVisitor.h:46:0
+#79 0x00006499770e82f8 klee::ExprEvaluator::~ExprEvaluator() /tmp/klee_src/include/klee/Expr/ExprEvaluator.h:17:0
+#80 0x00006499770e82f8 klee::AssignmentEvaluator::~AssignmentEvaluator() /tmp/klee_src/include/klee/Expr/Assignment.h:55:0
+#81 0x00006499770e82f8 klee::Assignment::evaluate(klee::ref<klee::Expr>) /tmp/klee_src/include/klee/Expr/Assignment.h:86:0
+#82 0x00006499770e82f8 CexCachingSolver::computeValidity(klee::Query const&, klee::Solver::Validity&) /tmp/klee_src/lib/Solver/CexCachingSolver.cpp:281:0
+#83 0x00006499770e63bd CachingSolver::computeValidity(klee::Query const&, klee::Solver::Validity&) /tmp/klee_src/lib/Solver/CachingSolver.cpp:194:0
+#84 0x00006499770dc13b klee::ref<klee::Expr>::dec() const /tmp/klee_src/include/klee/ADT/Ref.h:97:0
+#85 0x00006499770dc13b klee::ref<klee::Expr>::~ref() /tmp/klee_src/include/klee/ADT/Ref.h:88:0
+#86 0x00006499770dc13b klee::Query::~Query() /tmp/klee_src/include/klee/Solver/Solver.h:32:0
+#87 0x00006499770dc13b IndependentSolver::computeValidity(klee::Query const&, klee::Solver::Validity&) /tmp/klee_src/lib/Solver/IndependentSolver.cpp:416:0
+#88 0x00006499770a6c1d klee::ref<klee::Expr>::dec() const /tmp/klee_src/include/klee/ADT/Ref.h:97:0
+#89 0x00006499770a6c1d klee::ref<klee::Expr>::~ref() /tmp/klee_src/include/klee/ADT/Ref.h:88:0
+#90 0x00006499770a6c1d klee::Query::~Query() /tmp/klee_src/include/klee/Solver/Solver.h:32:0
+#91 0x00006499770a6c1d klee::TimingSolver::evaluate(klee::ConstraintSet const&, klee::ref<klee::Expr>, klee::Solver::Validity&, klee::SolverQueryMetaData&) /tmp/klee_src/lib/Core/TimingSolver.cpp:40:0
+#92 0x000064997705d132 klee::ref<klee::Expr>::dec() const /tmp/klee_src/include/klee/ADT/Ref.h:97:0
+#93 0x000064997705d132 klee::ref<klee::Expr>::~ref() /tmp/klee_src/include/klee/ADT/Ref.h:88:0
+#94 0x000064997705d132 klee::Executor::fork(klee::ExecutionState&, klee::ref<klee::Expr>, bool, BranchType) /tmp/klee_src/lib/Core/Executor.cpp:1114:0
+#95 0x0000649977066078 klee::ref<klee::Expr>::dec() const /tmp/klee_src/include/klee/ADT/Ref.h:97:0
+#96 0x0000649977066078 klee::ref<klee::Expr>::~ref() /tmp/klee_src/include/klee/ADT/Ref.h:88:0
+#97 0x0000649977066078 klee::Executor::executeInstruction(klee::ExecutionState&, klee::KInstruction*) /tmp/klee_src/lib/Core/Executor.cpp:2364:0
+#98 0x000064997706a975 klee::Executor::run(klee::ExecutionState&) /tmp/klee_src/lib/Core/Executor.cpp:3984:0
+#99 0x000064997706b274 _ZSt4swapIPN4klee5PTreeEENSt9enable_ifIXsrSt6__and_IJSt6__not_ISt15__is_tuple_likeIT_EESt21is_move_constructibleIS7_ESt18is_move_assignableIS7_EEE5valueEvE4typeERS7_SH_ /usr/include/c++/7/bits/move.h:198:0
+#100 0x000064997706b274 std::unique_ptr<klee::PTree, std::default_delete<klee::PTree> >::reset(klee::PTree*) /usr/include/c++/7/bits/unique_ptr.h:369:0
+#101 0x000064997706b274 std::unique_ptr<klee::PTree, std::default_delete<klee::PTree> >::operator=(std::nullptr_t) /usr/include/c++/7/bits/unique_ptr.h:307:0
+#102 0x000064997706b274 klee::Executor::runFunctionAsMain(llvm::Function*, int, char**, char**) /tmp/klee_src/lib/Core/Executor.cpp:5646:0
+#103 0x000064997702697a main /tmp/klee_src/tools/klee/main.cpp:1629:0
+#104 0x00007071d37bec87 __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x21c87)
+#105 0x000064997703467a _start (/home/klee/klee_src/build/bin/klee+0x3467a)

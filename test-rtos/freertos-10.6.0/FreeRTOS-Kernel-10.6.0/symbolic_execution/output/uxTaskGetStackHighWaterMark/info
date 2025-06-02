@@ -1,0 +1,20 @@
+/home/klee/klee_src/build/bin/klee --search=dfs --stats -debug-print-instructions=all:stderr --test-info-output-dir=/home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/symbolic_execution/test-info-output/uxTaskGetStackHighWaterMark --output-dir=/home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/symbolic_execution/output/uxTaskGetStackHighWaterMark --test-target-name=uxTaskGetStackHighWaterMark /home/klee/klee_src/freertos_10_6_0_test/test_bc_files/uxTaskGetStackHighWaterMark.test.bc
+PID: 3505640
+Using monotonic steady clock with 1/1000000000s resolution
+Started: 2025-05-15 11:42:23
+BEGIN searcher description
+DFSSearcher
+END searcher description
+Finished: 2025-05-15 11:42:26
+Elapsed: 00:00:03
+KLEE: done: explored paths = 32
+KLEE: done: avg. constructs per query = 23
+KLEE: done: total queries = 56
+KLEE: done: valid queries = 1
+KLEE: done: invalid queries = 55
+KLEE: done: query cex = 56
+
+KLEE: done: total instructions = 1542
+KLEE: done: completed paths = 23
+KLEE: done: partially completed paths = 9
+KLEE: done: generated tests = 23

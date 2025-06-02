@@ -1,0 +1,100 @@
+                                                                                     168=(Read w8 0 lazy_alloc_external_return1),
+                                                                                     167=0, 166=0, 165=0, 164=0, 163=0, 162=0, 161=0, 160=1, 159=0, 158=0, 157=0, 156=0, 155=0, 154=0, 153=0, 152=0, 151=0, 150=0, 149=101, 148=23, 147=240, 146=141, 145=32, 144=160, 127=0, 126=0, 125=0, 124=0, 123=0, 122=0, 121=0, 120=4, 119=0, 118=0, 117=101, 116=23, 115=240, 114=151, 113=115, 112=168, 111=0, 110=0, 109=101, 108=23, 107=240, 106=141, 105=32, 104=160, 103=(Read w8 23 lazy_alloc_uncontrollable47),
+                                                                                     102=(Read w8 22 lazy_alloc_uncontrollable47),
+                                                                                     101=(Read w8 21 lazy_alloc_uncontrollable47),
+                                                                                     100=(Read w8 20 lazy_alloc_uncontrollable47),
+                                                                                     99=(Read w8 19 lazy_alloc_uncontrollable47),
+                                                                                     98=(Read w8 18 lazy_alloc_uncontrollable47),
+                                                                                     97=(Read w8 17 lazy_alloc_uncontrollable47),
+                                                                                     96=(Read w8 16 lazy_alloc_uncontrollable47),
+                                                                                     95=0, 94=0, 93=101, 92=23, 91=241, 90=23, 89=153, 88=32, 7=0, 6=0, 5=101, 4=23, 3=241, 2=17, 1=136, 0=0] @ lazy_alloc_uncontrollable26)
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3690 9:13338:27:  ret i8* %8, !dbg !637
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:3690
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/pvTaskGetThreadLocalStoragePointer.c:25 1:16950:27:  store i32 0, i32* %retval, align 4, !dbg !632
+KLEE: Execute: test_files/pvTaskGetThreadLocalStoragePointer.c:25
+KLEE: DEBUG: state id 27
+KLEE: DEBUG: dump the address expression before symplifying
+111153503167168
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/pvTaskGetThreadLocalStoragePointer.c:25 1:16951:27:  br label %return, !dbg !632
+KLEE: Execute: test_files/pvTaskGetThreadLocalStoragePointer.c:25
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/pvTaskGetThreadLocalStoragePointer.c:26 1:16954:27:  %6 = load i32, i32* %retval, align 4, !dbg !633
+KLEE: Execute: test_files/pvTaskGetThreadLocalStoragePointer.c:26
+KLEE: DEBUG: state id 27
+KLEE: DEBUG: dump the address expression before symplifying
+111153503167168
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/pvTaskGetThreadLocalStoragePointer.c:26 1:16955:27:  ret i32 %6, !dbg !633
+KLEE: Execute: test_files/pvTaskGetThreadLocalStoragePointer.c:26
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 2
+     test_files/pvTaskGetThreadLocalStoragePointer.c:23 89:16943:26:  store i32 0, i32* %retval, align 4, !dbg !627
+KLEE: Execute: test_files/pvTaskGetThreadLocalStoragePointer.c:23
+KLEE: DEBUG: state id 26
+KLEE: DEBUG: dump the address expression before symplifying
+111153503167168
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/pvTaskGetThreadLocalStoragePointer.c:23 89:16944:26:  br label %return, !dbg !627
+KLEE: Execute: test_files/pvTaskGetThreadLocalStoragePointer.c:23
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/pvTaskGetThreadLocalStoragePointer.c:26 1:16954:26:  %6 = load i32, i32* %retval, align 4, !dbg !633
+KLEE: Execute: test_files/pvTaskGetThreadLocalStoragePointer.c:26
+KLEE: DEBUG: state id 26
+KLEE: DEBUG: dump the address expression before symplifying
+111153503167168
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/pvTaskGetThreadLocalStoragePointer.c:26 1:16955:26:  ret i32 %6, !dbg !633
+KLEE: Execute: test_files/pvTaskGetThreadLocalStoragePointer.c:26
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 1
+     test_files/pvTaskGetThreadLocalStoragePointer.c:23 89:16943:1:  store i32 0, i32* %retval, align 4, !dbg !627
+KLEE: Execute: test_files/pvTaskGetThreadLocalStoragePointer.c:23
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+111153503167168
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/pvTaskGetThreadLocalStoragePointer.c:23 89:16944:1:  br label %return, !dbg !627
+KLEE: Execute: test_files/pvTaskGetThreadLocalStoragePointer.c:23
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/pvTaskGetThreadLocalStoragePointer.c:26 1:16954:1:  %6 = load i32, i32* %retval, align 4, !dbg !633
+KLEE: Execute: test_files/pvTaskGetThreadLocalStoragePointer.c:26
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+111153503167168
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/pvTaskGetThreadLocalStoragePointer.c:26 1:16955:1:  ret i32 %6, !dbg !633
+KLEE: Execute: test_files/pvTaskGetThreadLocalStoragePointer.c:26
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 0
+
+KLEE: done: total instructions = 1297
+KLEE: done: completed paths = 30
+KLEE: done: partially completed paths = 0
+KLEE: done: generated tests = 30
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+5828 bitcode-reader - Number of Metadata records loaded
+ 899 bitcode-reader - Number of MDStrings loaded
+

@@ -1,0 +1,100 @@
+                                                                                             168=(Read w8 0 lazy_alloc_external_return1),
+                                                                                             167=0, 166=0, 165=0, 164=0, 163=0, 162=0, 161=0, 160=1, 159=0, 158=0, 157=0, 156=0, 155=0, 154=0, 153=0, 152=0, 151=0, 150=0, 149=94, 148=36, 147=253, 146=239, 145=63, 144=128, 127=0, 126=0, 125=0, 124=0, 123=0, 122=0, 121=0, 120=4, 119=0, 118=0, 117=94, 116=36, 115=253, 114=234, 113=149, 112=72, 111=0, 110=0, 109=94, 108=36, 107=253, 106=239, 105=63, 104=128, 103=(Read w8 23 lazy_alloc_uncontrollable31),
+                                                                                             102=(Read w8 22 lazy_alloc_uncontrollable31),
+                                                                                             101=(Read w8 21 lazy_alloc_uncontrollable31),
+                                                                                             100=(Read w8 20 lazy_alloc_uncontrollable31),
+                                                                                             99=(Read w8 19 lazy_alloc_uncontrollable31),
+                                                                                             98=(Read w8 18 lazy_alloc_uncontrollable31),
+                                                                                             97=(Read w8 17 lazy_alloc_uncontrollable31),
+                                                                                             96=(Read w8 16 lazy_alloc_uncontrollable31),
+                                                                                             95=0, 94=0, 93=94, 92=36, 91=254, 90=123, 89=55, 88=16, 7=0, 6=0, 5=94, 4=36, 3=254, 2=116, 1=104, 0=0] @ lazy_alloc_uncontrollable18)
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:5323 9:15273:19:  ret i32 %10, !dbg !637
+KLEE: Execute: /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c:5323
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/ulTaskGenericNotifyValueClear.c:27 1:16956:19:  store i32 0, i32* %retval, align 4, !dbg !637
+KLEE: Execute: test_files/ulTaskGenericNotifyValueClear.c:27
+KLEE: DEBUG: state id 19
+KLEE: DEBUG: dump the address expression before symplifying
+103512980931288
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/ulTaskGenericNotifyValueClear.c:27 1:16957:19:  br label %return, !dbg !637
+KLEE: Execute: test_files/ulTaskGenericNotifyValueClear.c:27
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/ulTaskGenericNotifyValueClear.c:28 1:16960:19:  %8 = load i32, i32* %retval, align 4, !dbg !638
+KLEE: Execute: test_files/ulTaskGenericNotifyValueClear.c:28
+KLEE: DEBUG: state id 19
+KLEE: DEBUG: dump the address expression before symplifying
+103512980931288
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+     test_files/ulTaskGenericNotifyValueClear.c:28 1:16961:19:  ret i32 %8, !dbg !638
+KLEE: Execute: test_files/ulTaskGenericNotifyValueClear.c:28
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 2
+     test_files/ulTaskGenericNotifyValueClear.c:25 75:16948:18:  store i32 0, i32* %retval, align 4, !dbg !631
+KLEE: Execute: test_files/ulTaskGenericNotifyValueClear.c:25
+KLEE: DEBUG: state id 18
+KLEE: DEBUG: dump the address expression before symplifying
+103512980931288
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/ulTaskGenericNotifyValueClear.c:25 75:16949:18:  br label %return, !dbg !631
+KLEE: Execute: test_files/ulTaskGenericNotifyValueClear.c:25
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/ulTaskGenericNotifyValueClear.c:28 1:16960:18:  %8 = load i32, i32* %retval, align 4, !dbg !638
+KLEE: Execute: test_files/ulTaskGenericNotifyValueClear.c:28
+KLEE: DEBUG: state id 18
+KLEE: DEBUG: dump the address expression before symplifying
+103512980931288
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+     test_files/ulTaskGenericNotifyValueClear.c:28 1:16961:18:  ret i32 %8, !dbg !638
+KLEE: Execute: test_files/ulTaskGenericNotifyValueClear.c:28
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 1
+     test_files/ulTaskGenericNotifyValueClear.c:25 75:16948:1:  store i32 0, i32* %retval, align 4, !dbg !631
+KLEE: Execute: test_files/ulTaskGenericNotifyValueClear.c:25
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+103512980931288
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/ulTaskGenericNotifyValueClear.c:25 75:16949:1:  br label %return, !dbg !631
+KLEE: Execute: test_files/ulTaskGenericNotifyValueClear.c:25
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/ulTaskGenericNotifyValueClear.c:28 1:16960:1:  %8 = load i32, i32* %retval, align 4, !dbg !638
+KLEE: Execute: test_files/ulTaskGenericNotifyValueClear.c:28
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+103512980931288
+KLEE: DEBUG: dump the resolve result of address
+0
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+     test_files/ulTaskGenericNotifyValueClear.c:28 1:16961:1:  ret i32 %8, !dbg !638
+KLEE: Execute: test_files/ulTaskGenericNotifyValueClear.c:28
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 0
+
+KLEE: done: total instructions = 1318
+KLEE: done: completed paths = 20
+KLEE: done: partially completed paths = 0
+KLEE: done: generated tests = 20
+===-------------------------------------------------------------------------===
+                          ... Statistics Collected ...
+===-------------------------------------------------------------------------===
+
+5830 bitcode-reader - Number of Metadata records loaded
+ 900 bitcode-reader - Number of MDStrings loaded
+

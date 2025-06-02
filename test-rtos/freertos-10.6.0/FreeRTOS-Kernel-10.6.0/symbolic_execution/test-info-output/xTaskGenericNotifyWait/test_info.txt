@@ -1,7 +1,56 @@
-KLEE: Error: Information leak vulnerabilityon file tasks.c: line 4886. 
-KLEE: Error: Pointer Out of Boundon file tasks.c: line 4845. 
-KLEE: Error: Pointer Out of Boundon file tasks.c: line 4850. 
-KLEE: Error: Pointer Out of Boundon file list.c: line 206. 
-KLEE: Error: Pointer Out of Boundon file list.c: line 207. 
-KLEE: Error: Pointer Out of Boundon file list.c: line 213. 
-KLEE: Error: Pointer Out of Boundon file list.c: line 223. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 801. 
+KLEE: Error: Limited memory write vulnerability(Uninitialized pointer dereference) (V2)on file runtime/Freestanding/memset.c: line 15. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 929. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/list.c: line 89. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 941. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 944. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 945. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 1021. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 1083. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 1088. 
+KLEE: Error: Limited memory write vulnerability(Uninitialized pointer dereference) (V2)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 1088. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 4902. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 4906. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 4886. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 4850. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 4853. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 5397. 
+KLEE: Error: Arbitrary memory write vulnerability (V0)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/list.c: line 206. 
+KLEE: Error: Limited memory write vulnerability(Uninitialized pointer dereference) (V2)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/list.c: line 207. 
+KLEE: Error: Uninitialized pointer dereference(read) vulnerabilityon file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/list.c: line 213. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/list.c: line 222. 
+KLEE: Error: Uninitialized pointer dereference(read) vulnerabilityon file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/list.c: line 223. 
+KLEE: Error: Limited memory write vulnerability (V1)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/list.c: line 223. 
+KLEE: Error: Uninitialized pointer dereference(read) vulnerabilityon file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/list.c: line 225. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 5431. 
+KLEE: Error: Uninitialized pointer dereference(read) vulnerabilityon file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/list.c: line 179. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/list.c: line 187. 
+KLEE: Error: Limited memory write vulnerability (V1)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/list.c: line 188. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/list.c: line 189. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/list.c: line 190. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/list.c: line 194. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/list.c: line 196. 
+KLEE: Error: Uninitialized pointer dereference(read) vulnerabilityon file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/list.c: line 187. 
+KLEE: Error: Limited memory write vulnerability(Uninitialized pointer dereference) (V2)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/list.c: line 188. 
+KLEE: Error: Limited memory write vulnerability (V1)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/list.c: line 190. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 5421. 
+KLEE: Error: Limited memory write vulnerability(Uninitialized pointer dereference) (V2)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 5421. 
+KLEE: Error: Limited memory write vulnerability (V1)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/list.c: line 215. 
+KLEE: Error: Pointer Out of Boundon file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 4845. 
+KLEE: Error: Uninitialized pointer dereference(read) vulnerabilityon file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 4845. 
+KLEE: Error: Pointer Out of Boundon file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 4893. 
+KLEE: Error: Uninitialized pointer dereference(read) vulnerabilityon file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 4893. 
+KLEE: Error: Pointer Out of Boundon file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 4902. 
+KLEE: Error: Uninitialized pointer dereference(read) vulnerabilityon file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 4902. 
+KLEE: Error: Limited memory write vulnerability (V1)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 4902. 
+KLEE: Error: Pointer Out of Boundon file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 4906. 
+KLEE: Error: Limited memory write vulnerability (V1)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 4906. 
+KLEE: Error: Pointer Out of Boundon file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 4886. 
+KLEE: Error: Uninitialized pointer dereference(read) vulnerabilityon file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 4886. 
+KLEE: Error: Pointer Out of Boundon file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 4850. 
+KLEE: Error: Uninitialized pointer dereference(read) vulnerabilityon file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 4850. 
+KLEE: Error: Limited memory write vulnerability (V1)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 4850. 
+KLEE: Error: Pointer Out of Boundon file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 4853. 
+KLEE: Error: Limited memory write vulnerability (V1)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/tasks.c: line 4853. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/list.c: line 206. 
+KLEE: Error: Limited memory write vulnerability (V3)on file /home/klee/klee_src/test-rtos/freertos-10.6.0/FreeRTOS-Kernel-10.6.0/list.c: line 223. 

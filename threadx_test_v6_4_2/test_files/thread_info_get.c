@@ -1,0 +1,42 @@
+#include "tx_api.h"
+#include "txm_module.h"
+#include "klee/klee.h"
+#include "klee_help.h"
+
+extern TX_THREAD *    _tx_thread_current_ptr;
+
+UCHAR                   pool_start[9120];
+
+int main()
+{
+    _txm_module_manager_object_pool_created = true;
+    klee_make_symbolic_controllable(&_tx_thread_current_ptr, sizeof(_tx_thread_current_ptr), "_tx_thread_current_ptr", false);
+    TXM_MODULE_INSTANCE *module_instance = _tx_thread_current_ptr -> tx_thread_module_instance_ptr;
+    TX_THREAD * KLEE_TX_thread_ptr;
+    klee_make_symbolic_controllable(&KLEE_TX_thread_ptr, sizeof(KLEE_TX_thread_ptr), "KLEE_TX_thread_ptr", true);
+    CHAR ** KLEE_TX_name;
+    klee_make_symbolic_controllable(&KLEE_TX_name, sizeof(KLEE_TX_name), "KLEE_TX_name", true);
+    UINT * KLEE_TX_state;
+    klee_make_symbolic_controllable(&KLEE_TX_state, sizeof(KLEE_TX_state), "KLEE_TX_state", true);
+    ULONG * KLEE_TX_run_count;
+    klee_make_symbolic_controllable(&KLEE_TX_run_count, sizeof(KLEE_TX_run_count), "KLEE_TX_run_count", true);
+    UINT * KLEE_TX_priority;
+    klee_make_symbolic_controllable(&KLEE_TX_priority, sizeof(KLEE_TX_priority), "KLEE_TX_priority", true);
+    UINT * KLEE_TX_preemption_threshold;
+    klee_make_symbolic_controllable(&KLEE_TX_preemption_threshold, sizeof(KLEE_TX_preemption_threshold), "KLEE_TX_preemption_threshold", true);
+    ULONG * KLEE_TX_time_slice;
+    klee_make_symbolic_controllable(&KLEE_TX_time_slice, sizeof(KLEE_TX_time_slice), "KLEE_TX_time_slice", true);
+    TX_THREAD ** KLEE_TX_next_thread;
+    klee_make_symbolic_controllable(&KLEE_TX_next_thread, sizeof(KLEE_TX_next_thread), "KLEE_TX_next_thread", true);
+    TX_THREAD ** KLEE_TX_next_suspended_thread;
+    klee_make_symbolic_controllable(&KLEE_TX_next_suspended_thread, sizeof(KLEE_TX_next_suspended_thread), "KLEE_TX_next_suspended_thread", true);
+    ALIGN_TYPE extra_parameters[7];
+    extra_parameters[0] = (ALIGN_TYPE) KLEE_TX_state;
+    extra_parameters[1] = (ALIGN_TYPE) KLEE_TX_run_count;
+    extra_parameters[2] = (ALIGN_TYPE) KLEE_TX_priority;
+    extra_parameters[3] = (ALIGN_TYPE) KLEE_TX_preemption_threshold;
+    extra_parameters[4] = (ALIGN_TYPE) KLEE_TX_time_slice;
+    extra_parameters[5] = (ALIGN_TYPE) KLEE_TX_next_thread;
+    extra_parameters[6] = (ALIGN_TYPE) KLEE_TX_next_suspended_thread;
+    _txm_module_manager_tx_thread_info_get_dispatch(module_instance, KLEE_TX_thread_ptr, KLEE_TX_name, extra_parameters);
+}
