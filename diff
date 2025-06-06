@@ -1,0 +1,21 @@
+ lib/Core/AddressSpace.cpp           |  292 ++-
+ lib/Core/AddressSpace.h             |   58 +-
+ lib/Core/ArchAddressSpaceInfo.h     |   13 +
+ lib/Core/CMakeLists.txt             |    1 +
+ lib/Core/ExecutionState.cpp         |   18 +-
+ lib/Core/ExecutionState.h           |    9 +
+ lib/Core/Executor.cpp               | 4595 +++++++++++++++++++++++++++++------
+ lib/Core/Executor.h                 |   63 +
+ lib/Core/InterAnalyzer.cpp          |  191 ++
+ lib/Core/KernelObjects.h            |    0
+ lib/Core/Memory.cpp                 |   26 +
+ lib/Core/Memory.h                   |   16 +
+ lib/Core/SpecialFunctionHandler.cpp |   64 +
+ lib/Core/SpecialFunctionHandler.h   |    2 +
+ lib/Core/TestInfoRecord.h           |   12 +
+ lib/Core/klee_test.code-workspace   |    7 +
+ lib/Core/record                     |   19 +
+ lib/Expr/Constraints.cpp            |   59 +
+ lib/Expr/Expr.cpp                   |    7 +
+ lib/Support/ErrorHandling.cpp       |   46 +-
+ 20 files changed, 4788 insertions(+), 710 deletions(-)

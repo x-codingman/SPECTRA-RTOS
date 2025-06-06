@@ -81,9 +81,9 @@ def plot_memory(df, rtos_name, output_folder):
     tick_positions = np.linspace(0, len(df)-1, num_ticks, dtype=int)
     tick_labels = [f"{i+1}" for i in tick_positions]
     
-    plt.xticks(tick_positions, tick_labels, rotation=0, fontsize=24, weight='bold')
-    plt.xlabel('System Call Index', fontsize=24, weight='bold')
-    plt.ylabel('Memory Usage (MB)', fontsize=24, weight='bold')
+    plt.xticks(tick_positions, tick_labels, rotation=0, fontsize=32, weight='bold')
+    plt.xlabel('System Call Index', fontsize=45, weight='bold')
+    plt.ylabel('Memory Usage (MB)', fontsize=45, weight='bold')
     plt.grid(True, linestyle='--', alpha=0.7)
     
     plt.yscale('log', base=10)
@@ -93,7 +93,7 @@ def plot_memory(df, rtos_name, output_folder):
     y_max = np.ceil(np.log10(df['Memory Usage (MB)'].max()))
     y_ticks = [10**i for i in range(int(y_min), int(y_max)+1)]
     y_labels = [f'10^{i}' for i in range(int(y_min), int(y_max)+1)]
-    plt.yticks(y_ticks, y_labels, fontsize=24, weight='bold')
+    plt.yticks(y_ticks, y_labels, fontsize=32, weight='bold')
     
     plt.tight_layout()
     plt.savefig(os.path.join(output_folder, f'{rtos_name}_memory.png'), dpi=300, bbox_inches='tight')
@@ -107,9 +107,9 @@ def plot_coverage(df, rtos_name, output_folder):
     tick_positions = np.linspace(0, len(df)-1, num_ticks, dtype=int)
     tick_labels = [f"{i+1}" for i in tick_positions]
     
-    plt.xticks(tick_positions, tick_labels, rotation=0, fontsize=24, weight='bold')
-    plt.xlabel('System Call Index', fontsize=24, weight='bold') 
-    plt.ylabel('Coverage', fontsize=24, weight='bold')
+    plt.xticks(tick_positions, tick_labels, rotation=0, fontsize=28, weight='bold')
+    plt.xlabel('System Call Index', fontsize=28, weight='bold') 
+    plt.ylabel('Coverage', fontsize=28, weight='bold')
     plt.grid(True, linestyle='--', alpha=0.7)
     
     # Set y-axis limits from 0 to 1 since coverage is a ratio

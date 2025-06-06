@@ -79,13 +79,13 @@ namespace klee {
     std::map<ref<Expr>, const MemoryObject*> address_mo_info;
     /// add a list to record the MemoryObject allocated to symbolic pointers
     std::list<const MemoryObject*> record;
-
+    std::map<ref<Expr>, ref<Expr>> fp_mo2pointer_info;
     // Add a map to record the relationship between the allocated mo and its pointer
     std::map<const MemoryObject*, bool> pointer_of_mo_controllable_info;
   
 
     AddressSpace() : cowKey(1) {}
-    AddressSpace(const AddressSpace &b) : cowKey(++b.cowKey), objects(b.objects), record(b.record),pointer_of_mo_controllable_info(b.pointer_of_mo_controllable_info), mo_controllable_info(b.mo_controllable_info), address_mo_info(b.address_mo_info) { } // add the initialization of record 
+    AddressSpace(const AddressSpace &b) : cowKey(++b.cowKey), objects(b.objects), record(b.record),pointer_of_mo_controllable_info(b.pointer_of_mo_controllable_info), mo_controllable_info(b.mo_controllable_info), address_mo_info(b.address_mo_info), fp_mo2pointer_info(b.fp_mo2pointer_info) { } // add the initialization of record 
     ~AddressSpace() {}
 
     /// add

@@ -2592,19 +2592,6 @@ void Executor::executeInstruction(ExecutionState &state, KInstruction *ki) {
     if (isa<DbgInfoIntrinsic>(i))
       break;
 
-    ref<Expr> fp_expr = eval(ki, 0, state).value;
-    if(state.addressSpace.address_mo_info.count(fp_expr)) {
-      const MemoryObject *mo = state.addressSpace.address_mo_info[fp_expr];
-      bool is_controllable = state.addressSpace.mo_controllable_info[mo].first;
-      if(is_controllable) {
-        klee_debug_message("DEBUG: Find symbolic function pointer");
-        std::string report_str =
-            "Potential Function pointer dereference vulnerability";
-        vulnerabilityReport(report_str, ki);
-      }
-      terminateStateOnExecError(state, "invalid function pointer");
-      break;
-    }
 
     const CallBase &cb = cast<CallBase>(*i);
     Value *fp = cb.getCalledOperand();
@@ -2627,6 +2614,19 @@ void Executor::executeInstruction(ExecutionState &state, KInstruction *ki) {
         terminateStateOnExecError(
             state, "external calls disallowed (in particular inline asm)");
       }
+      break;
+    }
+        ref<Expr> fp_expr = eval(ki, 0, state).value;
+    if(state.addressSpace.address_mo_info.count(fp_expr)) {
+      const MemoryObject *mo = state.addressSpace.address_mo_info[fp_expr];
+      bool is_controllable = state.addressSpace.mo_controllable_info[mo].first;
+      if(is_controllable) {
+        klee_debug_message("DEBUG: Find symbolic function pointer");
+        std::string report_str =
+            "Potential Function pointer dereference vulnerability";
+        vulnerabilityReport(report_str, ki);
+      }
+      terminateStateOnExit(state);
       break;
     }
 
