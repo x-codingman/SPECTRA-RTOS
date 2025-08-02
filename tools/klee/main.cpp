@@ -67,6 +67,9 @@ extern std::string test_target_name;
 extern std::string dereference_location_file;
 extern std::string writable_location_file;
 extern std::string description_file;
+extern uint64_t forks_time;
+extern uint64_t kernel_objects_caused_forks_time;
+extern uint64_t parameter_caused_forks_time;
 extern bool isFirstAPI;
 extern std::vector<std::string> dereference_locations_files;
 
@@ -1699,6 +1702,16 @@ int main(int argc, char **argv, char **envp) {
         << handler->getNumPathsExplored() - handler->getNumPathsCompleted()
         << '\n'
         << "KLEE: done: generated tests = " << handler->getNumTestCases()
+        << '\n'
+        << "KLEE: done: forks time = " << forks_time
+        << '\n'
+        << "KLEE: done: kernel objects forks time = " << kernel_objects_caused_forks_time 
+        << '\n'
+        << "KLEE: done: kernel objects forks time percentage = " << (double)kernel_objects_caused_forks_time / forks_time * 100 << '%'
+        << '\n'
+        << "KLEE: done: parameter caused forks time = " << parameter_caused_forks_time
+        << '\n'
+        << "KLEE: done: parameter caused forks time percentage = " << (double)parameter_caused_forks_time / forks_time * 100 << '%'
         << '\n';
 
   bool useColors = llvm::errs().is_displayed();

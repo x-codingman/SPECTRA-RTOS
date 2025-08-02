@@ -34,3 +34,8 @@ docker build -t klee/klee .
 Please refer to the `README` files in [symbolic-execution-engine](./symbolic-execution-engine), [Proof-of-Concept](./Proof-of-Concept) for detailed instructions.
 
 Note that the symbolic execution takes ~10 hours. 
+
+
+
+## Build RTOS
+RT-Thread and TizenRT is built on the host, other is built in docker.

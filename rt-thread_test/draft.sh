@@ -79,3 +79,14 @@ rm -rf /home/klee/klee_src/test-rtos/rt-thread/symbolic_execution/test-info-outp
   /home/klee/klee_src/rt-thread_test/test_bc_files/sys_timer_settime.test.bc
 
 
+#sys_device_close
+rm -rf /home/klee/klee_src/test-rtos/rt-thread/symbolic_execution/output/sys_device_close &&\
+rm -rf /home/klee/klee_src/test-rtos/rt-thread/symbolic_execution/test-info-output/sys_device_close &&\
+/home/klee/klee_src/build/bin/klee \
+  --search=dfs \
+  -debug-print-instructions=all:stderr \
+  --test-info-output-dir=/home/klee/klee_src/test-rtos/rt-thread/symbolic_execution/test-info-output/sys_device_close \
+  --output-dir=/home/klee/klee_src/test-rtos/rt-thread/symbolic_execution/output/sys_device_close \
+  --test-target-name=sys_device_close \
+  /home/klee/klee_src/rt-thread_test/test_bc_files/sys_device_close.test.bc
+

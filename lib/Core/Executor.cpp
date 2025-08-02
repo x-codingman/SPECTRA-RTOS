@@ -438,6 +438,9 @@ std::string writable_location_file;
 std::string description_file;
 unsigned writable_location_id = 0;
 unsigned readable_location_id = 0;
+uint64_t forks_time = 0;
+uint64_t kernel_objects_caused_forks_time = 0;
+uint64_t parameter_caused_forks_time = 0;
 bool isFirstAPI = true;
 uint64_t V2allocNameCount = 0;
 uint64_t allocLocationCount = 0;
@@ -1090,6 +1093,7 @@ ref<Expr> Executor::maxStaticPctChecks(ExecutionState &current,
 Executor::StatePair Executor::fork(ExecutionState &current, ref<Expr> condition,
                                    bool isInternal, BranchType reason) {
   Solver::Validity res;
+  forks_time += 1;
 
   std::map<ExecutionState *, std::vector<SeedInfo>>::iterator it =
       seedMap.find(&current);
@@ -1190,6 +1194,15 @@ Executor::StatePair Executor::fork(ExecutionState &current, ref<Expr> condition,
     }
   }
 
+  // record the time of kernel objects forks
+  std::string condition_expression = condition->dump1();
+  if (condition_expression.find("KLEE") != std::string::npos){
+    parameter_caused_forks_time += 1;
+  }else if(condition_expression.find("lazy_alloc") != std::string::npos){
+    kernel_objects_caused_forks_time += 1;
+  }
+
+
   // XXX - even if the constraint is provable one way or the other we
   // can probably benefit by adding this constraint and allowing it to
   // reduce the other constraints. For example, if we do a binary
@@ -1288,7 +1301,7 @@ Executor::StatePair Executor::fork(ExecutionState &current, ref<Expr> condition,
     // left_value->dump();
     // right_value->dump();
     // If the condition contains special address space info ,we just ingore it.
-    std::string condition_expression = condition->dump1();
+    
     if (condition_expression.find("2147483648") != std::string::npos ||
         condition_expression.find("2415919103") != std::string::npos ||
         condition_expression.find("2415919104") != std::string::npos ||
