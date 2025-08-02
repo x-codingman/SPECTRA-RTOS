@@ -1,41 +1,76 @@
-# UCSE-RTOS Experiments
+# SPECTRA: Symbolic Pointer Exposure Checking and TRacking Architecture
 
-This directory contains the data required to reproduce the experiments described in our USENIX 2025 paper: The Cost of Performance: Breaking ThreadX with Kernel Object Masquerading Attacks.
+**SPECTRA** is a symbolic execution-based framework for detecting **Shared Legacy Object Pointers (SLOP)** vulnerabilities in **Real-Time Operating Systems (RTOSs)**. These vulnerabilities arise from exposing internal kernel object pointers to untrusted user threads, even in privilege-separated architectures.
 
+> 📢 This repository is part of an anonymous artifact submission. All identifiers that may reveal authorship have been removed or anonymized.
 
-## Requirements
-### Hardware Dependencies
-* **Processor**: We recommend using a machine with two Intel Xeon E5-2620 v2 CPUs (12 cores, 24 threads) to reproduce the experiment. However, comparable hardware may also suffice.
-* **Memory**: At least 64GB of RAM
-* **Storage**: At least 256GB.
-* **Board**: NUCLEO-U575ZI-Q is used as one of the platform in the PoC experiment.
-### Software Dependencies
-* **OS**: We used Ubuntu 24.04. Other systems are not tested.
-* **Misc**: git, qemu and Docker
+---
 
-## Preparations
-It is assumed that you have built the experiment platform with Docker as described [here](https://github.com/VoodooChild99/perry?tab=readme-ov-file#build-with-docker).
-All experiments should be conducted within the built container (execute `run_docker.sh` to launch a shell). 
+## 🔍 Overview
 
-## Directory Layout
-| Directories/Files                                        | Experiment                                                   |
-| :------------------------------------------------------- | :----------------------------------------------------------- |
-| [symbolic-execution-engine](./symbolic-execution-engine) | Symbolic execution for ThreadX system calls as described in Section 6.2 (Vulnerable System Call" and "Performance of Symbolic Execution Engine"). |
-| [Proof-of-Concept](./Proof-of-Concept)                   | Proof of Concept for KOM attacks as described in Section 6.2 ("Implications of Attacks") and A.2 (Proof of Concept). |
-| [modification-ThreadX.md](./modification-ThreadX.md)     | The modifications we made to the ThreadX source code.        |
+RTOS kernels often expose internal object pointers (e.g., task descriptors, mutex handles) to user code for performance. However, this legacy practice violates memory isolation in modern deployments and leads to:
+- Denial-of-Service (DoS)
+- Unauthorized memory access
+- Control-flow hijacking
 
-#### Building With Docker
+**SPECTRA** addresses this with:
+- Hardware-free kernel service harnessing
+- Attacker-aware symbolic pointer tracking
+- Dual-layer boundary & semantic validation
+
+---
+
+## ⚙️ Features
+
+- ⚡ Lightweight kernel service testing without full RTOS emulation
+- 🎯 Taint-aware symbolic execution for attacker-controlled memory tracking
+- 🔎 Detection of exploitable pointer dereferences
+- 📊 Evaluated on 4 widely-used RTOSs: FreeRTOS, TizenRT, RT-Thread, ThreadX
+
+---
+
+## 🛠️ Architecture
+
+SPECTRA consists of three main phases:
+
+1. **Phase I: Kernel Harness Generation**
+   - Strip platform-specific code
+   - Compile RTOS as host-executable library
+   - Auto-generate test harnesses for kernel services
+
+2. **Phase II: Symbolic Execution**
+   - Under-constrained symbolic execution
+   - Lazy memory initialization
+   - Attacker-aware pointer taint tracking
+
+3. **Phase III: Exploitability Analysis**
+   - Boundary + semantic validation
+   - Detect DoS, memory access violations, control hijacks
+
+---
+
+## 📁 Repository Structure
+```text
+.
+├── rtos/                  # Refined RTOS source trees
+├── harnesses/             # Generated test harnesses
+├── spectra-core/          # Core engine (symbolic pointer tracker, validator)
+├── scripts/               # Automation scripts for build and testing
+└── README.md              # Project documentation
 ```
-docker build -t klee/klee .
+
+## 📬 Ethic Consideration
+
+
+## 🚀 Quick Start
 ```
+# Step 1: Build the RTOS kernel as LLVM bitcode library
+cd rtos/freertos
+make llvm-lib
 
+# Step 2: Generate a test harness for a system call
+python3 scripts/gen_harness.py --rtos freertos --syscall xTaskCreate
 
-## Running the Experiments
-Please refer to the `README` files in [symbolic-execution-engine](./symbolic-execution-engine), [Proof-of-Concept](./Proof-of-Concept) for detailed instructions.
-
-Note that the symbolic execution takes ~10 hours. 
-
-
-
-## Build RTOS
-RT-Thread and TizenRT is built on the host, other is built in docker.
+# Step 3: Run symbolic execution
+klee --spectra-mode harnesses/freertos/xTaskCreate.bc
+```
