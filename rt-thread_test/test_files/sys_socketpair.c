@@ -83,9 +83,9 @@ int main()
     int KLEE_protocol;
     klee_make_symbolic_controllable(&KLEE_protocol, sizeof(KLEE_protocol), "KLEE_protocol", true);
     int KLEE_fd[2];
-    klee_make_symbolic_controllable(&KLEE_fd[2], sizeof(KLEE_fd[2]), "KLEE_fd[2]", true);
+    klee_make_symbolic_controllable(KLEE_fd, sizeof(KLEE_fd), "KLEE_fd", true);
     sysret_t KLEE_return_sys_socketpair;
     klee_make_symbolic_controllable(&KLEE_return_sys_socketpair, sizeof(KLEE_return_sys_socketpair), "KLEE_return_sys_socketpair", true);
-    KLEE_return_sys_socketpair = sys_socketpair(KLEE_domain, KLEE_type, KLEE_protocol, KLEE_fd[2]);
+    KLEE_return_sys_socketpair = sys_socketpair(KLEE_domain, KLEE_type, KLEE_protocol, KLEE_fd);
     return 0;
 }

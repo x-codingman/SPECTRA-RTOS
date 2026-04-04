@@ -1,6 +1,8 @@
 import os
 import pandas as pd
 
+from output_utils import dated_copy
+
 
 
 def time_tranform(time_str):
@@ -73,8 +75,12 @@ def extract_info(directory):
 # 注意：请将 'your_directory_path' 替换为实际的目录路径
 test_rtos = 'FreeRTOS-Kernel-10.6.0'
 #test_rtos = 'threadx'
-directory_path = '/home/klee/'+ test_rtos + '/symbolic_execution/output'
+directory_path = '/home/klee/' + test_rtos + '/symbolic_execution/output'
 dataframe = extract_info(directory_path)
 print(dataframe)
-dataframe.to_excel('/home/klee/klee_test/rtos-api-analysis/results/'+test_rtos+'-symbolic-execution-run-time-evaluation.xlsx', index=False)
+_results = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'results')
+os.makedirs(_results, exist_ok=True)
+_out = os.path.join(_results, f'{test_rtos}-symbolic-execution-run-time-evaluation.xlsx')
+dataframe.to_excel(_out, index=False)
+dated_copy(_out)
 

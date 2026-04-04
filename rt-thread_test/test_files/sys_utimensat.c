@@ -80,12 +80,12 @@ int main()
     klee_make_symbolic_controllable(&KLEE___fd, sizeof(KLEE___fd), "KLEE___fd", true);
     const char * KLEE___path;
     klee_make_symbolic_controllable(&KLEE___path, sizeof(KLEE___path), "KLEE___path", true);
-    const struct timespec KLEE___times[2];
-    klee_make_symbolic_controllable(&KLEE___times[2], sizeof(KLEE___times[2]), "KLEE___times[2]", true);
+    struct timespec KLEE___times[2];
+    klee_make_symbolic_controllable(KLEE___times, sizeof(KLEE___times), "KLEE___times", true);
     int KLEE___flags;
     klee_make_symbolic_controllable(&KLEE___flags, sizeof(KLEE___flags), "KLEE___flags", true);
     sysret_t KLEE_return_sys_utimensat;
     klee_make_symbolic_controllable(&KLEE_return_sys_utimensat, sizeof(KLEE_return_sys_utimensat), "KLEE_return_sys_utimensat", true);
-    KLEE_return_sys_utimensat = sys_utimensat(KLEE___fd, KLEE___path, KLEE___times[2], KLEE___flags);
+    KLEE_return_sys_utimensat = sys_utimensat(KLEE___fd, KLEE___path, KLEE___times, KLEE___flags);
     return 0;
 }

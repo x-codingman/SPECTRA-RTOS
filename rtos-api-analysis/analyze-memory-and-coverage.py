@@ -5,6 +5,8 @@ import re
 import sqlite3
 import numpy as np
 
+from output_utils import dated_copy
+
 
 def get_max_memory_usage(stats_path):
     if not os.path.exists(stats_path):
@@ -70,7 +72,9 @@ def plot_instructions(df, rtos_name, output_folder):
     plt.yticks(y_ticks, y_labels)
     
     plt.tight_layout()
-    plt.savefig(os.path.join(output_folder, f'{rtos_name}_instructions.png'), dpi=300, bbox_inches='tight')
+    _p = os.path.join(output_folder, f'{rtos_name}_instructions.png')
+    plt.savefig(_p, dpi=300, bbox_inches='tight')
+    dated_copy(_p)
 
 def plot_memory(df, rtos_name, output_folder):
     plt.figure(figsize=(12, 8))
@@ -96,7 +100,9 @@ def plot_memory(df, rtos_name, output_folder):
     plt.yticks(y_ticks, y_labels, fontsize=32, weight='bold')
     
     plt.tight_layout()
-    plt.savefig(os.path.join(output_folder, f'{rtos_name}_memory.png'), dpi=300, bbox_inches='tight')
+    _p = os.path.join(output_folder, f'{rtos_name}_memory.png')
+    plt.savefig(_p, dpi=300, bbox_inches='tight')
+    dated_copy(_p)
     
 def plot_coverage(df, rtos_name, output_folder):
     plt.figure(figsize=(12, 8))
@@ -121,7 +127,9 @@ def plot_coverage(df, rtos_name, output_folder):
     plt.yticks(y_ticks, y_labels, fontsize=24, weight='bold')
     
     plt.tight_layout()
-    plt.savefig(os.path.join(output_folder, f'{rtos_name}_coverage.png'), dpi=300, bbox_inches='tight')
+    _p = os.path.join(output_folder, f'{rtos_name}_coverage.png')
+    plt.savefig(_p, dpi=300, bbox_inches='tight')
+    dated_copy(_p)
     
 
 def analyze_memory_and_coverage(root_folder, output_folder, rtos_name):
@@ -159,6 +167,7 @@ def analyze_memory_and_coverage(root_folder, output_folder, rtos_name):
     with pd.ExcelWriter(excel_path, engine='openpyxl') as writer:
         df.to_excel(writer, sheet_name='Detailed Memory Usage', index=False)
         summary_df.to_excel(writer, sheet_name='Summary Statistics', index=False)
+    dated_copy(excel_path)
     print(f'Memory analysis results saved to: {excel_path}')
     plot_memory(df, rtos_name, output_folder)
     plot_instructions(df, rtos_name, output_folder)

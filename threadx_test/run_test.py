@@ -114,18 +114,34 @@ def clear_line():
     sys.stdout.write("\033[K")  # ANSI 转义序列，清空光标所在行
     sys.stdout.flush()
 
+def get_running_time(func_name):
+    """Get how long the given function has been running (since its output dir was created)."""
+    folder = os.path.join(output_dir, func_name)
+    if not os.path.isdir(folder):
+        return None  # not started yet
+    try:
+        mtime = os.path.getmtime(folder)
+        return time.time() - mtime
+    except OSError:
+        return None
+
+
 def render_progress(completed_tasks, total_tasks, remaining_tasks, elapsed_time_str, remaining_functions):
     """渲染进度和剩余任务的动态 UI"""
     table = Table(title=f"[bold black]Task Progress[/bold black]", box=None)
     table.add_row(f"[bold green]Progress:[/bold green] {completed_tasks}/{total_tasks} tasks completed.")
     table.add_row(f"[bold yellow]Remaining:[/bold yellow] {remaining_tasks} tasks left.")
     table.add_row(f"[bold cyan]Elapsed Time:[/bold cyan] {elapsed_time_str}")
-    # 限制最多 10 个 remaining functions 显示
     num_show = 50
     if remaining_tasks <= num_show:
-        table.add_row("[bold magenta]Remaining Functions:[/bold magenta]")
+        table.add_row("[bold magenta]Remaining Functions (name : running time):[/bold magenta]")
         for func in remaining_functions[:num_show]:
-            table.add_row(f"  [white]{func}[/white]")
+            running_sec = get_running_time(func)
+            if running_sec is not None:
+                running_str = format_time(running_sec)
+                table.add_row(f"  [white]{func}[/white] : [cyan]{running_str}[/cyan]")
+            else:
+                table.add_row(f"  [white]{func}[/white] : [dim]waiting[/dim]")
     
     return table
 

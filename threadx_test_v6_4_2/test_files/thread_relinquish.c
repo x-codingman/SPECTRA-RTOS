@@ -12,5 +12,6 @@ int main()
     _txm_module_manager_object_pool_created = true;
     klee_make_symbolic_controllable(&_tx_thread_current_ptr, sizeof(_tx_thread_current_ptr), "_tx_thread_current_ptr", false);
     TXM_MODULE_INSTANCE *module_instance = _tx_thread_current_ptr -> tx_thread_module_instance_ptr;
-    _txm_module_manager_tx_thread_relinquish_dispatch(module_instance);
+    _txm_module_manager_tx_thread_relinquish_dispatch(module_instance, 0, 0, NULL);
+    return 0;
 }

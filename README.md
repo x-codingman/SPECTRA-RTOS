@@ -58,6 +58,7 @@ SPECTRA consists of three main phases:
 ├── rtos-api-analysis/        # Automation scripts for analysis the vulnerability detection results
 ├── freertos_10_5_1_test/     # Harnesses and scripts for building and testing FreeRTOS v10.5.1
 ├── freertos_10_6_0_test/     # Harnesses and scripts for building and testing FreeRTOS v10.6.0 (patched)
+├── rt-thread_test/     # Harnesses and scripts for building and testing RT-Thread
 ├── threadx_test_v6_4_2/      # Harnesses and scripts for building and testing ThreadX v6.4.2
 ├── tizenRT_test/             # Harnesses and scripts for building and testing TizenRT (commit 3954496)
 └── README.md                 # Project documentation (this file)

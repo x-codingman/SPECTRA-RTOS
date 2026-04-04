@@ -1,6 +1,9 @@
 import os
 import re
 import pandas as pd
+import sqlite3
+
+from output_utils import dated_copy
 
 def vulnerability_analysis(root_folder, output_folder):
     # Create lists to store the data
@@ -80,11 +83,15 @@ def vulnerability_analysis(root_folder, output_folder):
         vul_funcs_df = pd.DataFrame(columns=['File', 'Function', 'Vulnerability Type', 'Line Number', 'Number of Vulnerabilities'])
 
     # 1. 你自定义的 vulnerability type 列表
+    # MPU violation (T): checkMPUViolation true — path + fixed MPU register snapshot UNSAT
+    # MPU violation (F): checkMPUViolation false — snapshot satisfiable with path constraints
     my_vul_types = [
         "Information leak vulnerability (V0)",
         "Uninitialized pointer dereference(read) vulnerability",
         "Arbitrary memory write vulnerability (V0)",
-        "Limited memory write vulnerability (V2)"
+        "Limited memory write vulnerability (V2)",
+        "MPU violation (T)",
+        "MPU violation (F)",
     ]
 
     # 2. 只保留 my_vul_types在vul_funcs_df的Vulnerability Type中，但其Vulnerability Type是字符串组合，需要做字符串匹配
@@ -110,7 +117,13 @@ def vulnerability_analysis(root_folder, output_folder):
         else:
             return 'X'
     filtered_df['Memory Write'] = filtered_df['Vulnerability Type'].apply(memory_write_mark)
-    
+    filtered_df['MPU (T)'] = filtered_df['Vulnerability Type'].apply(
+        lambda x: '✔' if 'MPU violation (T)' in x else 'X'
+    )
+    filtered_df['MPU (F)'] = filtered_df['Vulnerability Type'].apply(
+        lambda x: '✔' if 'MPU violation (F)' in x else 'X'
+    )
+
     for vul_type in my_vul_types:
         mask = (df['Vulnerability Type'] == vul_type)
         location_count = df[mask].groupby('Function')['Line Number'].nunique().reset_index()
@@ -132,7 +145,9 @@ def vulnerability_analysis(root_folder, output_folder):
             'I:' + str(filtered_df['Memory Write'].value_counts().get('I', 0)) +
             ' II:' + str(filtered_df['Memory Write'].value_counts().get('II', 0)) +
             ' X:' + str(filtered_df['Memory Write'].value_counts().get('X', 0))
-        )
+        ),
+        'MPU (T)': filtered_df['MPU (T)'].value_counts().get('✔', 0),
+        'MPU (F)': filtered_df['MPU (F)'].value_counts().get('✔', 0),
     }
     for vul_type in my_vul_types:
         col_name = f'Num of {vul_type} Locations'
@@ -196,6 +211,7 @@ def vulnerability_analysis(root_folder, output_folder):
         filtered_df.to_excel(writer, sheet_name='My Vulnerability Types', index=False)
         without_semantic_vul_df.to_excel(writer, sheet_name='Without Semantic Check', index=False)  
     print(f'Vulnerability Report with both sheets saved to: {excel_path}')
+    dated_copy(excel_path)
 
 def get_rtos_folder():
     print("Please select the RTOS folder:")
@@ -242,11 +258,77 @@ def time_tranform(time_str):
     total_seconds = hours * 3600 + minutes * 60 + seconds
     return total_seconds
 
+
+def get_walltime_seconds(stats_path):
+    """
+    Get total elapsed wall time from run.stats (KLEE SQLite).
+    WallTime is stored in microseconds; returns seconds (float).
+    Returns None if run.stats not found or error.
+    """
+    if not os.path.isfile(stats_path):
+        return None
+    try:
+        conn = sqlite3.connect(stats_path)
+        cursor = conn.cursor()
+        cursor.execute("SELECT MAX(WallTime) FROM stats;")
+        result = cursor.fetchone()
+        conn.close()
+        if result and result[0] is not None:
+            return float(result[0]) / 1e6  # microseconds -> seconds
+    except Exception as e:
+        print(f"Error reading {stats_path}: {e}")
+    return None
+
+
+def get_instruction_coverage(stats_path):
+    """
+    Get instruction coverage from run.stats: CoveredInstructions / (Covered + Uncovered).
+    Returns None if run.stats not found or error.
+    """
+    if not os.path.isfile(stats_path):
+        return None
+    try:
+        conn = sqlite3.connect(stats_path)
+        cursor = conn.cursor()
+        cursor.execute("""
+            SELECT CoveredInstructions, UncoveredInstructions FROM stats
+            ORDER BY Instructions DESC LIMIT 1;
+        """)
+        result = cursor.fetchone()
+        conn.close()
+        if result and (result[0] + result[1]) > 0:
+            return round(float(result[0]) / (result[0] + result[1]), 4)
+    except Exception as e:
+        print(f"Error reading instruction coverage from {stats_path}: {e}")
+    return None
+
+
+# KLEE logs this when --max-time fires (see Executor.cpp Timer callback).
+_HALT_TIMER_MARKER = "HaltTimer invoked"
+
+
+def halted_by_max_time_label(folder_path):
+    """
+    Detect whether this harness run stopped due to --max-time.
+    Reads messages.txt under folder_path. Returns 'yes', 'no', or 'unknown'.
+    """
+    msg_path = os.path.join(folder_path, "messages.txt")
+    if not os.path.isfile(msg_path):
+        return "unknown"
+    try:
+        with open(msg_path, "r", encoding="utf-8", errors="ignore") as f:
+            text = f.read()
+        return "yes" if _HALT_TIMER_MARKER in text else "no"
+    except Exception as e:
+        print(f"Warning: could not read {msg_path}: {e}")
+        return "unknown"
+
+
 def extract_info(directory, output_folder):
     # 创建一个空的DataFrame来存储结果
-    df = pd.DataFrame(columns=['System Call', 'Elapsed', 'Explored Paths', 
-                               'Total Instructions', 'Completed Paths', 'Partially Completed Paths', 
-                               'Generated Tests'])
+    df = pd.DataFrame(columns=['System Call', 'Elapsed', 'Explored Paths',
+                               'Total Instructions', 'Completed Paths', 'Partially Completed Paths',
+                               'Generated Tests', 'StoppedByMaxTime', 'Last Instruction'])
 
     # 遍历目录下的每个子文件夹  
     directory = os.path.join(directory, 'output')
@@ -268,9 +350,10 @@ def extract_info(directory, output_folder):
                         completed_paths = content.split('completed paths = ')[1].split('\n')[0]
                         partially_completed_paths = content.split('partially completed paths = ')[1].split('\n')[0]
                         generated_tests = content.split('generated tests = ')[1].split('\n')[0]
-                        df = df.append({'System Call': folder, 'Elapsed': time_tranform(elapsed), 'Explored Paths': explored_paths,'Total Instructions': total_instructions, 
-                                        'Completed Paths': completed_paths, 'Partially Completed Paths': partially_completed_paths, 
+                        df = df.append({'System Call': folder, 'Elapsed': time_tranform(elapsed), 'Explored Paths': explored_paths,'Total Instructions': total_instructions,
+                                        'Completed Paths': completed_paths, 'Partially Completed Paths': partially_completed_paths,
                                         'Generated Tests': generated_tests,
+                                        'StoppedByMaxTime': halted_by_max_time_label(folder_path),
                                         'Last Instruction': 'NA'}, ignore_index=True)
                     except IndexError:
                         # If the info file is not found, read the message file 
@@ -284,9 +367,10 @@ def extract_info(directory, output_folder):
                                 if line.startswith("KLEE: Execute:"):
                                     klee_execute_line = line
                                     break
-                        df = df.append({'System Call': folder, 'Elapsed': 'NA', 'Explored Paths': 'NA', 
-                                        'Completed Paths': 'NA', 'Partially Completed Paths': 'NA', 
+                        df = df.append({'System Call': folder, 'Elapsed': 'NA', 'Explored Paths': 'NA',
+                                        'Completed Paths': 'NA', 'Partially Completed Paths': 'NA',
                                         'Generated Tests': 'NA',
+                                        'StoppedByMaxTime': halted_by_max_time_label(folder_path),
                                         'Last Instruction': klee_execute_line}, ignore_index=True)
     # Satatistic the API finished and not finished
     # For each row, check the 'Elapsed' column
@@ -296,97 +380,203 @@ def extract_info(directory, output_folder):
     finished_count = df[df['Elapsed'] != 'NA'].shape[0]
     all_count = df.shape[0]
     # Add a new row to the DataFrame
-    df = df.append({'System Call': 'Total Finished', 'Elapsed': finished_count/all_count, 'Explored Paths': 'NA', 
-                    'Completed Paths': 'NA', 'Partially Completed Paths': 'NA', 
+    df = df.append({'System Call': 'Total Finished', 'Elapsed': finished_count/all_count, 'Explored Paths': 'NA',
+                    'Completed Paths': 'NA', 'Partially Completed Paths': 'NA',
                     'Generated Tests': 'NA',
+                    'StoppedByMaxTime': 'NA',
                     'Last Instruction': 'NA'}, ignore_index=True)
-    
-    
+
     # generate a excel file
     rtos_name = directory.split('/')[-3]  # Get the actual RTOS name from the path
-    df.to_excel(os.path.join(output_folder, f'{rtos_name}_runtime_info.xlsx'), index=False)
-    print(f'RTOS runtime info saved to: {rtos_name}_runtime_info.xlsx')
+    ri_path = os.path.join(output_folder, f'{rtos_name}_runtime_info.xlsx')
+    df.to_excel(ri_path, index=False)
+    _regular = df[df['System Call'] != 'Total Finished']
+    _n_max = (_regular['StoppedByMaxTime'] == 'yes').sum()
+    print(f'RTOS runtime info saved to: {rtos_name}_runtime_info.xlsx (StoppedByMaxTime=yes: {_n_max})')
+    dated_copy(ri_path)
+
+
+def extract_info_from_run_stats(directory, output_folder):
+    """
+    Extract Elapsed from run.stats (WallTime, microsecond precision) when available,
+    else fall back to info (second precision). Saves to *_runtime_info_walltime.xlsx.
+    """
+    directory = os.path.join(directory, 'output')
+    df = pd.DataFrame(columns=['System Call', 'Elapsed', 'Source', 'InstructionCoverage',
+                               'Explored Paths', 'Total Instructions', 'Completed Paths',
+                               'Partially Completed Paths', 'Generated Tests', 'StoppedByMaxTime'])
+
+    for folder in os.listdir(directory):
+        folder_path = os.path.join(directory, folder)
+        if not os.path.isdir(folder_path):
+            continue
+
+        elapsed = None
+        source = 'info'
+        instruction_coverage = None
+
+        stats_path = os.path.join(folder_path, 'run.stats')
+        walltime_sec = get_walltime_seconds(stats_path)
+        if walltime_sec is not None:
+            elapsed = round(walltime_sec, 4)
+            source = 'run.stats'
+        instruction_coverage = get_instruction_coverage(stats_path)
+
+        if elapsed is None:
+            info_file = os.path.join(folder_path, 'info')
+            if os.path.isfile(info_file):
+                try:
+                    with open(info_file, 'r') as f:
+                        content = f.read()
+                    elapsed_str = content.split('Elapsed: ')[1].split('\n')[0]
+                    elapsed = time_tranform(elapsed_str)
+                except (IndexError, ValueError):
+                    elapsed = 'NA'
+
+        if elapsed is None:
+            elapsed = 'NA'
+
+        info_file = os.path.join(folder_path, 'info')
+        explored_paths = total_instructions = completed = partial = generated = 'NA'
+        if os.path.isfile(info_file):
+            try:
+                with open(info_file, 'r') as f:
+                    content = f.read()
+                explored_paths = content.split('explored paths = ')[1].split('\n')[0]
+                total_instructions = content.split('total instructions = ')[1].split('\n')[0]
+                completed = content.split('completed paths = ')[1].split('\n')[0]
+                partial = content.split('partially completed paths = ')[1].split('\n')[0]
+                generated = content.split('generated tests = ')[1].split('\n')[0]
+            except IndexError:
+                pass
+
+        df = df.append({'System Call': folder, 'Elapsed': elapsed, 'Source': source,
+                        'InstructionCoverage': instruction_coverage if instruction_coverage is not None else 'NA',
+                        'Explored Paths': explored_paths, 'Total Instructions': total_instructions,
+                        'Completed Paths': completed, 'Partially Completed Paths': partial,
+                        'Generated Tests': generated,
+                        'StoppedByMaxTime': halted_by_max_time_label(folder_path)}, ignore_index=True)
+
+    finished = df[df['Elapsed'] != 'NA'].shape[0]
+    total = df.shape[0]
+    _n_max = (df['StoppedByMaxTime'] == 'yes').sum()
+    df = df.append({'System Call': 'Total Finished', 'Elapsed': finished / total if total else 0,
+                    'Source': '', 'InstructionCoverage': 'NA', 'Explored Paths': 'NA',
+                    'Total Instructions': 'NA', 'Completed Paths': 'NA',
+                    'Partially Completed Paths': 'NA', 'Generated Tests': 'NA',
+                    'StoppedByMaxTime': 'NA'}, ignore_index=True)
+
+    rtos_name = directory.split('/')[-3]
+    out_path = os.path.join(output_folder, f'{rtos_name}_runtime_info_walltime.xlsx')
+    df.to_excel(out_path, index=False)
+    walltime_count = (df['Source'] == 'run.stats').sum()
+    print(f'RTOS runtime info (walltime) saved to: {rtos_name}_runtime_info_walltime.xlsx '
+          f'({walltime_count} from run.stats, StoppedByMaxTime=yes: {_n_max})')
+    dated_copy(out_path)
+
 
 def generate_summary_excel(root_folder, output_folder, split_size=80):
     summary_excel_path = os.path.join(output_folder, 'vulnerability_summary.xlsx')
-    with pd.ExcelWriter(summary_excel_path, engine='openpyxl') as writer:
-        merged_df = None
-        for rtos_name, rtos_path in root_folder.items():
-            print(f"Merging vulnerability report of {rtos_name}")
-            rtos_vul_path = os.path.join(output_folder, f'{rtos_name}_vulnerability_report.xlsx')
-            try:
-                my_vul_df = pd.read_excel(rtos_vul_path, sheet_name='My Vulnerability Types', engine='openpyxl')
-                my_vul_df = my_vul_df.drop('File', axis=1, errors='ignore')
-                my_vul_df = my_vul_df[~my_vul_df['Function'].isin(['总计', 'Total'])]
-                my_vul_df['RTOS'] = rtos_name
-                if merged_df is None:
-                    merged_df = my_vul_df
-                else:
-                    merged_df = pd.concat([merged_df, my_vul_df], ignore_index=True)
-            except KeyError:
-                print(f"Warning: Sheet 'My Vulnerability Types' not found in {rtos_name} vulnerability report. Skipping...")
-                continue
-
-        columns = ['RTOS'] + [col for col in merged_df.columns if col != 'RTOS']
-        merged_df = merged_df[columns]
-        merged_df = merged_df.drop(['Vulnerability Type', 'Line Number'], axis=1, errors='ignore')
-
-        prev_rtos = None
-        for idx, row in merged_df.iterrows():
-            if row['RTOS'] == prev_rtos:
-                merged_df.at[idx, 'RTOS'] = ''
+    merged_df = None
+    for rtos_name, rtos_path in root_folder.items():
+        print(f"Merging vulnerability report of {rtos_name}")
+        rtos_vul_path = os.path.join(output_folder, f'{rtos_name}_vulnerability_report.xlsx')
+        if not os.path.isfile(rtos_vul_path):
+            print(f"Warning: {rtos_vul_path} not found. Skipping...")
+            continue
+        try:
+            my_vul_df = pd.read_excel(rtos_vul_path, sheet_name='My Vulnerability Types', engine='openpyxl')
+            my_vul_df = my_vul_df.drop('File', axis=1, errors='ignore')
+            my_vul_df = my_vul_df[~my_vul_df['Function'].isin(['总计', 'Total'])]
+            my_vul_df['RTOS'] = rtos_name
+            if merged_df is None:
+                merged_df = my_vul_df
             else:
-                prev_rtos = row['RTOS']
+                merged_df = pd.concat([merged_df, my_vul_df], ignore_index=True)
+        except KeyError:
+            print(f"Warning: Sheet 'My Vulnerability Types' not found in {rtos_name} vulnerability report. Skipping...")
+            continue
+        except Exception as e:
+            print(f"Warning: Could not read {rtos_vul_path}: {e}. Skipping...")
+            continue
 
-        summary_row = {
-            'RTOS': 'Total',
-            'Function': '',
-            'Number of Vulnerabilities': '',
-            'DoS': merged_df['DoS'].value_counts().get('✔', 0),
-            'FP': merged_df['FP'].value_counts().get('✔', 0),
-            'Memory Read': merged_df['Memory Read'].value_counts().get('✔', 0),
-            'Memory Write': (
-                'I:' + str(merged_df['Memory Write'].value_counts().get('I', 0)) +
-                ' II:' + str(merged_df['Memory Write'].value_counts().get('II', 0)) +
-                ' X:' + str(merged_df['Memory Write'].value_counts().get('X', 0))
-            )
-        }
-        for col in merged_df.columns:
-            if col not in summary_row:
-                summary_row[col] = ''
-        merged_df = pd.concat([merged_df, pd.DataFrame([summary_row])], ignore_index=True)
+    if merged_df is None or merged_df.empty:
+        placeholder = pd.DataFrame({
+            'Message': ['No vulnerability reports merged (missing xlsx files or empty data). '
+                        'Run vulnerability_analysis for each RTOS first.']
+        })
+        with pd.ExcelWriter(summary_excel_path, engine='openpyxl') as writer:
+            placeholder.to_excel(writer, sheet_name='Merged My Vulnerability Types', index=False)
+        dated_copy(summary_excel_path)
+        print(f'vulnerability_summary.xlsx written with placeholder (no merged data): {summary_excel_path}')
+        return
 
-        if merged_df is not None:
-            n = len(merged_df)
-            index_col = list(range(1, n)) + ['']
-            merged_df.insert(0, 'Index', index_col)
+    columns = ['RTOS'] + [col for col in merged_df.columns if col != 'RTOS']
+    merged_df = merged_df[columns]
+    merged_df = merged_df.drop(['Vulnerability Type', 'Line Number'], axis=1, errors='ignore')
 
-        # 拆分表格，每split_size行为一组，横向拼接
-        data_df = merged_df.iloc[:-1].reset_index(drop=True)
-        total_row = merged_df.iloc[[-1]].reset_index(drop=True)
-        n_rows = data_df.shape[0]
-        n_splits = (n_rows + split_size - 1) // split_size
-        split_dfs = []
-        for i in range(n_splits):
-            chunk = data_df.iloc[i*split_size:(i+1)*split_size].reset_index(drop=True)
-            if len(chunk) < split_size:
-                chunk = pd.concat([chunk, pd.DataFrame([['']*chunk.shape[1]]*(split_size-len(chunk)), columns=chunk.columns)], ignore_index=True)
-            split_dfs.append(chunk)
-        wide_df = pd.concat(split_dfs, axis=1)
-        total_row_wide = pd.DataFrame([['']*wide_df.shape[1]], columns=wide_df.columns)
-        for i in range(n_splits):
-            col_offset = i * split_dfs[0].shape[1]
-            for col in total_row.columns:
-                if col in split_dfs[0].columns:
-                    total_row_wide.iloc[0, col_offset + split_dfs[0].columns.get_loc(col)] = total_row.iloc[0][col]
-        wide_df = pd.concat([wide_df, total_row_wide], ignore_index=True)
+    prev_rtos = None
+    for idx, row in merged_df.iterrows():
+        if row['RTOS'] == prev_rtos:
+            merged_df.at[idx, 'RTOS'] = ''
+        else:
+            prev_rtos = row['RTOS']
 
-        replace_dict = {
-            '✔': '\\tickYes',
-            'X': '-'
-        }
-        wide_df = wide_df.replace(replace_dict)
+    summary_row = {
+        'RTOS': 'Total',
+        'Function': '',
+        'Number of Vulnerabilities': '',
+        'DoS': merged_df['DoS'].value_counts().get('✔', 0),
+        'FP': merged_df['FP'].value_counts().get('✔', 0),
+        'Memory Read': merged_df['Memory Read'].value_counts().get('✔', 0),
+        'Memory Write': (
+            'I:' + str(merged_df['Memory Write'].value_counts().get('I', 0)) +
+            ' II:' + str(merged_df['Memory Write'].value_counts().get('II', 0)) +
+            ' X:' + str(merged_df['Memory Write'].value_counts().get('X', 0))
+        ),
+    }
+    if 'MPU (T)' in merged_df.columns:
+        summary_row['MPU (T)'] = merged_df['MPU (T)'].value_counts().get('✔', 0)
+    if 'MPU (F)' in merged_df.columns:
+        summary_row['MPU (F)'] = merged_df['MPU (F)'].value_counts().get('✔', 0)
+    for col in merged_df.columns:
+        if col not in summary_row:
+            summary_row[col] = ''
+    merged_df = pd.concat([merged_df, pd.DataFrame([summary_row])], ignore_index=True)
+
+    n = len(merged_df)
+    index_col = list(range(1, n)) + ['']
+    merged_df.insert(0, 'Index', index_col)
+
+    # 拆分表格，每split_size行为一组，横向拼接
+    data_df = merged_df.iloc[:-1].reset_index(drop=True)
+    total_row = merged_df.iloc[[-1]].reset_index(drop=True)
+    n_rows = data_df.shape[0]
+    n_splits = (n_rows + split_size - 1) // split_size
+    split_dfs = []
+    for i in range(n_splits):
+        chunk = data_df.iloc[i*split_size:(i+1)*split_size].reset_index(drop=True)
+        if len(chunk) < split_size:
+            chunk = pd.concat([chunk, pd.DataFrame([['']*chunk.shape[1]]*(split_size-len(chunk)), columns=chunk.columns)], ignore_index=True)
+        split_dfs.append(chunk)
+    wide_df = pd.concat(split_dfs, axis=1)
+    total_row_wide = pd.DataFrame([['']*wide_df.shape[1]], columns=wide_df.columns)
+    for i in range(n_splits):
+        col_offset = i * split_dfs[0].shape[1]
+        for col in total_row.columns:
+            if col in split_dfs[0].columns:
+                total_row_wide.iloc[0, col_offset + split_dfs[0].columns.get_loc(col)] = total_row.iloc[0][col]
+    wide_df = pd.concat([wide_df, total_row_wide], ignore_index=True)
+
+    replace_dict = {
+        '✔': '\\tickYes',
+        'X': '-'
+    }
+    wide_df = wide_df.replace(replace_dict)
+    with pd.ExcelWriter(summary_excel_path, engine='openpyxl') as writer:
         wide_df.to_excel(writer, sheet_name='Merged My Vulnerability Types', index=False)
+    dated_copy(summary_excel_path)
+    print(f'Merged vulnerability summary saved to: {summary_excel_path}')
 
 if __name__ == "__main__":
 
@@ -404,6 +594,9 @@ if __name__ == "__main__":
         "rt-thread": "/home/klee/klee_src/test-rtos/rt-thread/symbolic_execution/",
         "threadx-6.4.2": "/home/klee/klee_src/test-rtos/threadx-6.4.2/symbolic_execution/"
     }
+    for rtos_name, rtos_path in all_rtos_folder_path.items():
+        if os.path.isdir(os.path.join(rtos_path, 'output')):
+            extract_info_from_run_stats(rtos_path, output_folder)
     generate_summary_excel(all_rtos_folder_path, output_folder, split_size=80)
     
     

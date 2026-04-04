@@ -79,9 +79,9 @@ int main()
     unsigned int KLEE_resource;
     klee_make_symbolic_controllable(&KLEE_resource, sizeof(KLEE_resource), "KLEE_resource", true);
     unsigned long KLEE_rlim[2];
-    klee_make_symbolic_controllable(&KLEE_rlim[2], sizeof(KLEE_rlim[2]), "KLEE_rlim[2]", true);
+    klee_make_symbolic_controllable(KLEE_rlim, sizeof(KLEE_rlim), "KLEE_rlim", true);
     sysret_t KLEE_return_sys_getrlimit;
     klee_make_symbolic_controllable(&KLEE_return_sys_getrlimit, sizeof(KLEE_return_sys_getrlimit), "KLEE_return_sys_getrlimit", true);
-    KLEE_return_sys_getrlimit = sys_getrlimit(KLEE_resource, KLEE_rlim[2]);
+    KLEE_return_sys_getrlimit = sys_getrlimit(KLEE_resource, KLEE_rlim);
     return 0;
 }

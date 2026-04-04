@@ -93,6 +93,7 @@ typedef unsigned TypeSize;
 #include <sstream>
 #include <string>
 #include <sys/mman.h>
+#include <utility>
 #include <vector>
 
 // add sxh
@@ -2322,12 +2323,6 @@ void Executor::executeInstruction(ExecutionState &state, KInstruction *ki) {
   case Instruction::Br: {
     BranchInst *bi = cast<BranchInst>(i);
 
-    if (biMap[i] == 1) {
-      klee_debug_message("DEBUG: terminate the State, try to break the loop");
-      terminateState(state);
-      break;
-    }
-
     if (bi->isUnconditional()) {
       transferToBasicBlock(bi->getSuccessor(0), bi->getParent(), state);
     } else {
@@ -2337,6 +2332,13 @@ void Executor::executeInstruction(ExecutionState &state, KInstruction *ki) {
       ref<Expr> cond = eval(ki, 0, state).value;
 
       cond = optimizer.optimizeExpr(cond, false);
+
+      if (biMap[i] == 1) {
+        // Force exit branch instead of terminating (loop-breaking)
+        addConstraint(state, Expr::createIsZero(cond));
+        transferToBasicBlock(bi->getSuccessor(1), bi->getParent(), state);
+        break;
+      }
 
       if (state.biCount.count(i) == 0) {
         state.biCount[i] = 0;
@@ -4998,6 +5000,16 @@ void Executor::executeMemoryOperation(
         } else {
           is_controlled_value = false;
         }
+        
+        bool is_mpu_violation = checkMPUViolation(state, address);
+        if(is_mpu_violation){
+        std::string report_str = "MPU violation (T)";
+        vulnerabilityReport(report_str, target);
+        }else{
+        std::string report_str = "MPU violation (F)";
+        vulnerabilityReport(report_str, target);
+        }
+        
         klee_debug_message("DEBUG: has_semantic_check:%d\n canBeDesiredValue: "
                            "%d\n is_controlled_value: %d",
                            has_semantic_check, canBeDesiredValue,
@@ -7966,4 +7978,103 @@ Executor::getLazyAllocedMoNameFromExpr(ref<Expr> expr) {
   std::vector<std::string> lazy_alloc_strings =
       findSpecificString(expr_string, "lazy_alloc");
   return lazy_alloc_strings;
+}
+
+
+
+bool Executor::checkMPUViolation(ExecutionState &state, ref<Expr> address) {
+  ref<Expr> addr32;
+  unsigned w = address->getWidth();
+  if (w == 32) {
+    addr32 = address;
+  } else if (w < 32) {
+    addr32 = ZExtExpr::create(address, 32);
+  } else {
+    addr32 = ExtractExpr::create(address, 0, 32);
+  }
+
+  ref<Expr> enable =
+      ConstantExpr::create(static_cast<uint64_t>(MPU_ENABLE_ADDRESS), 32);
+
+  ConstraintSet cs;
+  for (auto const &c : state.addressConstraintsForTargetApp)
+    cs.push_back(c);
+
+  solver->setTimeout(coreSolverTimeout);
+  bool canBeEnable = false;
+  bool success = solver->mayBeTrue(
+      cs, EqExpr::create(addr32, enable), canBeEnable, state.queryMetaData);
+  assert(success && "FIXME: Unhandled solver failure");
+  if (!canBeEnable)
+    return false;
+
+  /* Second query must assume the write targets the enable word: check
+   * SAT(path_constraints ∧ address==MPU_ENABLE ∧ fixed_register_snapshot).
+   * Without Eq(addr, enable), we would only test path ∧ snapshot, which is
+   * not the "under enable-address write" scenario. */
+  /* Expected 32-bit contents at MPU-related addresses (path must still model
+   * these locations, or resolveOne skips them). Snapshot: Arm DS "MPU" view,
+   * Secure side, RNR_S==1 (RBAR/RLAR show region 1). Armv8-M PPB offsets
+   * per User Guide 107565 §3.2.1. Non-secure bank all-zero in that capture —
+   * not duplicated at the same VA here. */
+  static const std::vector<std::pair<uint32_t, uint32_t>> kMPUFixed32 = {
+      {MPU_ARMV8M_TYPE, 0x00001000u},
+      {MPU_ARMV8M_CTRL, 0x00000007u},
+      {MPU_ARMV8M_RNR, 0x00000001u},
+      {MPU_ARMV8M_RBAR, 0x20000013u},
+      {MPU_ARMV8M_RLAR, 0x20040001u},
+      {MPU_ARMV8M_RBAR_A1, 0x20000013u},
+      {MPU_ARMV8M_RLAR_A1, 0x20040001u},
+      {MPU_ARMV8M_RBAR_A2, 0x00000000u},
+      {MPU_ARMV8M_RLAR_A2, 0x00000000u},
+      {MPU_ARMV8M_RBAR_A3, 0x00000000u},
+      {MPU_ARMV8M_RLAR_A3, 0x00000000u},
+      {MPU_ARMV8M_MAIR0, 0x000000AAu},
+      {MPU_ARMV8M_MAIR1, 0x00000000u},
+  };
+
+  ConstraintManager cm(cs);
+  cm.addConstraint(EqExpr::create(addr32, enable));
+  Expr::Width ptrW = Context::get().getPointerWidth();
+
+  for (const auto &entry : kMPUFixed32) {
+    uint32_t absAddr = entry.first;
+    uint32_t fixedVal = entry.second;
+    if (absAddr >= MPU_ENABLE_ADDRESS && absAddr < MPU_ENABLE_ADDRESS + 4)
+      continue;
+    const bool inRtosWindow =
+        (absAddr >= MPU_REGION_START && absAddr < MPU_REGION_END);
+    const bool inArmv8mScs =
+        (absAddr >= MPU_ARMV8M_SCS_START && absAddr < MPU_ARMV8M_SCS_END);
+    if (!inRtosWindow && !inArmv8mScs)
+      continue;
+    if (absAddr % 4 != 0)
+      continue;
+
+    ref<ConstantExpr> ce =
+        ConstantExpr::create(static_cast<uint64_t>(absAddr), ptrW);
+    ObjectPair op;
+    if (!state.addressSpace.resolveOne(ce, op)) {
+      klee_debug_message(
+          "DEBUG: checkMPUViolation: no memory object at 0x%08x", absAddr);
+      continue;
+    }
+    const MemoryObject *mo = op.first;
+    const ObjectState *os = op.second;
+    uint64_t off = static_cast<uint64_t>(absAddr) - mo->address;
+    if (off + 4 > mo->size) {
+      klee_debug_message(
+          "DEBUG: checkMPUViolation: read out of bounds at 0x%08x", absAddr);
+      continue;
+    }
+    ref<Expr> memVal = os->read(static_cast<unsigned>(off), Expr::Int32);
+    cm.addConstraint(EqExpr::create(
+        memVal, ConstantExpr::create(static_cast<uint64_t>(fixedVal), Expr::Int32)));
+  }
+
+  bool feasible = false;
+  success = solver->mayBeTrue(cs, ConstantExpr::alloc(1, Expr::Bool), feasible,
+                               state.queryMetaData);
+  assert(success && "FIXME: Unhandled solver failure");
+  return !feasible;
 }

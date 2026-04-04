@@ -77,9 +77,9 @@
 int main()
 {
     int KLEE_fd[2];
-    klee_make_symbolic_controllable(&KLEE_fd[2], sizeof(KLEE_fd[2]), "KLEE_fd[2]", true);
+    klee_make_symbolic_controllable(KLEE_fd, sizeof(KLEE_fd), "KLEE_fd", true);
     sysret_t KLEE_return_sys_pipe;
     klee_make_symbolic_controllable(&KLEE_return_sys_pipe, sizeof(KLEE_return_sys_pipe), "KLEE_return_sys_pipe", true);
-    KLEE_return_sys_pipe = sys_pipe(KLEE_fd[2]);
+    KLEE_return_sys_pipe = sys_pipe(KLEE_fd);
     return 0;
 }

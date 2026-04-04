@@ -5,6 +5,8 @@ import re
 import sqlite3
 import numpy as np
 
+from output_utils import dated_copy
+
 
 def get_explored_paths_from_info(info_path):
     """从KLEE info文件中提取explored paths数量"""
@@ -86,7 +88,9 @@ def plot_states(df, rtos_name, output_folder):
         plt.yticks(y_ticks, y_labels, fontsize=24, weight='bold')
     
     plt.tight_layout()
-    plt.savefig(os.path.join(output_folder, f'{rtos_name}_states.png'), dpi=300, bbox_inches='tight')
+    _p = os.path.join(output_folder, f'{rtos_name}_states.png')
+    plt.savefig(_p, dpi=300, bbox_inches='tight')
+    dated_copy(_p)
     plt.close()
 
 
@@ -115,7 +119,9 @@ def plot_forks_time(df, rtos_name, output_folder):
         plt.yticks(y_ticks, y_labels, fontsize=24, weight='bold')
     
     plt.tight_layout()
-    plt.savefig(os.path.join(output_folder, f'{rtos_name}_forks_time.png'), dpi=300, bbox_inches='tight')
+    _p = os.path.join(output_folder, f'{rtos_name}_forks_time.png')
+    plt.savefig(_p, dpi=300, bbox_inches='tight')
+    dated_copy(_p)
     plt.close()
 
 
@@ -142,7 +148,9 @@ def plot_kernel_forks_percentage(df, rtos_name, output_folder):
     plt.yticks(y_ticks, y_labels, fontsize=24, weight='bold')
     
     plt.tight_layout()
-    plt.savefig(os.path.join(output_folder, f'{rtos_name}_kernel_forks_percentage.png'), dpi=300, bbox_inches='tight')
+    _p = os.path.join(output_folder, f'{rtos_name}_kernel_forks_percentage.png')
+    plt.savefig(_p, dpi=300, bbox_inches='tight')
+    dated_copy(_p)
     plt.close()
 
 
@@ -184,7 +192,9 @@ def plot_fork_distribution(df, rtos_name, output_folder):
                bbox=dict(boxstyle="round,pad=0.3", facecolor="white", alpha=0.8))
     
     plt.tight_layout()
-    plt.savefig(os.path.join(output_folder, f'{rtos_name}_fork_distribution.png'), dpi=300, bbox_inches='tight')
+    _p = os.path.join(output_folder, f'{rtos_name}_fork_distribution.png')
+    plt.savefig(_p, dpi=300, bbox_inches='tight')
+    dated_copy(_p)
     plt.close()
 
 
@@ -211,7 +221,9 @@ def plot_parameter_forks_percentage(df, rtos_name, output_folder):
     plt.yticks(y_ticks, y_labels, fontsize=24, weight='bold')
     
     plt.tight_layout()
-    plt.savefig(os.path.join(output_folder, f'{rtos_name}_parameter_forks_percentage.png'), dpi=300, bbox_inches='tight')
+    _p = os.path.join(output_folder, f'{rtos_name}_parameter_forks_percentage.png')
+    plt.savefig(_p, dpi=300, bbox_inches='tight')
+    dated_copy(_p)
     plt.close()
 
 
@@ -245,7 +257,9 @@ def plot_fork_comparison(df, rtos_name, output_folder):
     plt.yticks(y_ticks, y_labels, fontsize=20, weight='bold')
     
     plt.tight_layout()
-    plt.savefig(os.path.join(output_folder, f'{rtos_name}_fork_comparison.png'), dpi=300, bbox_inches='tight')
+    _p = os.path.join(output_folder, f'{rtos_name}_fork_comparison.png')
+    plt.savefig(_p, dpi=300, bbox_inches='tight')
+    dated_copy(_p)
     plt.close()
 
 
@@ -340,7 +354,8 @@ def analyze_states(root_folder, output_folder, rtos_name):
         # 确保数据按行显示（每个函数一行）
         df.to_excel(writer, sheet_name='Detailed States Data', index=False)
         summary_df.to_excel(writer, sheet_name='Summary Statistics', index=False)
-    
+    dated_copy(excel_path)
+
     print(f'States analysis results saved to: {excel_path}')
     print(f'{rtos_name} - Functions with Kernel Forks > 0: {kernel_forks_gt_zero_count}/{len(df)} ({kernel_forks_gt_zero_percentage}%)')
     print(f'{rtos_name} - Median Forks Time: {round(df["ForksTime"].median(), 2)}')
