@@ -1,0 +1,4290 @@
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:20
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:20
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179411360
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:20
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179411352
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:20
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179411384
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:20
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179411400
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:20
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:22
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:23
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:721
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179411032
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:721
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179411432
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:721
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:721
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179411456
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:721
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179411472
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:721
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179411488
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:721
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179411504
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:721
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179411520
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:721
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179411536
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:721
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:721
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:721
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:722
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:721
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:723
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:721
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:724
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:721
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:725
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:721
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:726
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:728
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:729
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:760
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:763
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:763
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:763
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:763
+KLEE: DEBUG: Detect __asm__ external function!
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:763
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:763
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:765
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable1
+KLEE: mo address: 110261179411536
+KLEE: newMo address: 110261179411616
+KLEE: alloc uncontrollable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 8,            alloc address: 110261179411616
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:765
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:765
+KLEE: Print condition:
+
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:786
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:721
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:791
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: Detect a unintialzied constant pointer.
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable2
+KLEE: DEBUG: Alloc a new uncontrollable memory object for the constant pointer. Alloc size:184 and address:110261179720448
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:791
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:791
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:797
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:797
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:797
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address controllable flag: 0
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:0
+ canBeDesiredAddress: 0
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:801
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable3
+KLEE: mo address: 110261179411032
+KLEE: newMo address: 110261179411736
+KLEE: alloc uncontrollable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 8,            alloc address: 110261179411736
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:801
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:801
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:801
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: Detect a unintialzied constant pointer.
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable4
+KLEE: DEBUG: Alloc a new uncontrollable memory object for the constant pointer. Alloc size:1 and address:110261179411760
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:801
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:801
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:801
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:801
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179411856
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179411880
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179411904
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179411920
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179411936
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179411952
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179411968
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179411984
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179412000
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:817
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:818
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:819
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:820
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:821
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:822
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:823
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:825
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:826
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:847
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:847
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:847
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address_controllable: 0
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Allocate global memory!!!alloc size: 8, states size: 2
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable5
+KLEE: mo address: 110261179720448
+KLEE: newMo address: 110261179412016
+KLEE: alloc uncontrollable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 8,            alloc address: 110261179412016
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:847
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:847
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:847
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:847
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:847
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179412024
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179412080
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179412112
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:13
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:13
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:13
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:14
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:14
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:14
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:14
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:14
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:15
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:15
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:15
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:15
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:15
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:15
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: lazyResolve failed, found a symbolic pointer
+KLEE: DEBUG: dump the address expression
+KLEE: DEBUG: Binding a symbolic pointer with address expression:
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address controllable flag: 0
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:0
+ canBeDesiredAddress: 1
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:15
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:16
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: runtime/Freestanding/memset.c:16
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:857
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:857
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:857
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address_controllable: 0
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:857
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:857
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:857
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:857
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:857
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:858
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: Detect a unintialzied constant pointer.
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable6
+KLEE: DEBUG: Alloc a new uncontrollable memory object for the constant pointer. Alloc size:8 and address:110261179412112
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:858
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:858
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:858
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:858
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:861
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:861
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:861
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:861
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:861
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:861
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:861
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:885
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:885
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:885
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:907
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:914
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:914
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:914
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:914
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:914
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:916
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:916
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:916
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:925
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:925
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:925
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:925
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address controllable flag: 0
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:0
+ canBeDesiredAddress: 0
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:928
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:928
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:928
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:928
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address controllable flag: 0
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:0
+ canBeDesiredAddress: 0
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:932
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:932
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:932
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/list.c:86
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179412120
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/list.c:86
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/list.c:86
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/list.c:89
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/list.c:89
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/list.c:89
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address controllable flag: 0
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:0
+ canBeDesiredAddress: 0
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/list.c:95
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:933
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:933
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:933
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/list.c:86
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179412024
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/list.c:86
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/list.c:86
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/list.c:89
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/list.c:89
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/list.c:89
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address controllable flag: 0
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:0
+ canBeDesiredAddress: 0
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/list.c:95
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:937
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:937
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:937
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:937
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:937
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:937
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address controllable flag: 0
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:0
+ canBeDesiredAddress: 0
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:940
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:940
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:940
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:940
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:940
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:940
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address controllable flag: 0
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:0
+ canBeDesiredAddress: 0
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:941
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:941
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:941
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:941
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:941
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:941
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address controllable flag: 0
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:0
+ canBeDesiredAddress: 0
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:950
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: Detect a unintialzied constant pointer.
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable7
+KLEE: DEBUG: Alloc a new uncontrollable memory object for the constant pointer. Alloc size:16 and address:110261179296288
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1013
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1013
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1013
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1017
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1017
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1017
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1018
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1023
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:802
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:802
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1026
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179412000
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1026
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1026
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1030
+KLEE: DEBUG: Detect __asm__ external function!
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1032
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1032
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1032
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1034
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: Detect a unintialzied constant pointer.
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable8
+KLEE: DEBUG: Alloc a new uncontrollable memory object for the constant pointer. Alloc size:184 and address:110261179720256
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1034
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1034
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1057
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1057
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1057
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1059
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1059
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1059
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address_controllable: 0
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1059
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1059
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1059
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address_controllable: 0
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1059
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1059
+KLEE: Print condition:
+
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1026
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1067
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1026
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1074
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1074
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1074
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1079
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1079
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1079
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1079
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address controllable flag: 0
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:0
+ canBeDesiredAddress: 0
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1086
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1088
+KLEE: DEBUG: Detect __asm__ external function!
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1090
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1090
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1090
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1026
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1107
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:803
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:804
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:810
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:810
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:24
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:25
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:25
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:26
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:27
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:27
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:28
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:29
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:29
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:30
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: alloc TCB in executeMemoryOperation!!
+KLEE: DEBUG: Allocate global memory for TCB!!!states size: 3
+KLEE: DEBUG: Alloc stack, top address: 110261180766208
+KLEE: DEBUG: detect controllable address
+KLEE: mo address: 110261179411352
+KLEE: newMo address: 110261179721984
+KLEE: alloc controllable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 184,            alloc address: 110261179721984
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:30
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_controllable11
+KLEE: DEBUG: detect controllable address
+KLEE: mo address: 110261179411384
+KLEE: newMo address: 110261179412256
+KLEE: alloc controllable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 1,            alloc address: 110261179412256
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:30
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179412248
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179412368
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179412344
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179412328
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2979
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2981
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2982
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2985
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2985
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2985
+KLEE: Print condition:
+
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 4
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2991
+KLEE: DEBUG: state id 4
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2991
+KLEE: DEBUG: state id 4
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: state id 4
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: state id 4
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: lazyResolve failed, found a symbolic pointer
+KLEE: DEBUG: dump the address expression
+KLEE: DEBUG: Binding a symbolic pointer with address expression:
+KLEE: DEBUG: getMoControllableInfo:1
+KLEE: DEBUG: detect controllable address
+KLEE: DEBUG: getMoControllableInfo return:1
+KLEE: DEBUG: address_controllable: 1
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Allocate global memory!!!alloc size: 8, states size: 4
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_controllable12
+KLEE: DEBUG: detect controllable address
+KLEE: mo address: 110261179721984
+KLEE: newMo address: 110261179412456
+KLEE: alloc controllable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 8,            alloc address: 110261179412456
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: Print condition:
+
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 5
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:3000
+KLEE: DEBUG: state id 5
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 5
+KLEE: DEBUG: states size 5
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: states size 5
+KLEE: DEBUG: states size 5
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:3003
+KLEE: DEBUG: state id 5
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 5
+KLEE: DEBUG: states size 5
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:3003
+KLEE: DEBUG: states size 5
+KLEE: DEBUG: states size 5
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:30
+KLEE: DEBUG: state id 5
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: value is a constant
+KLEE: DEBUG: states size 5
+KLEE: DEBUG: states size 5
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:31
+KLEE: DEBUG: states size 5
+KLEE: DEBUG: states size 4
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: state id 4
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: state id 4
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:1
+KLEE: DEBUG: detect controllable address
+KLEE: DEBUG: getMoControllableInfo return:1
+KLEE: DEBUG: address_controllable: 1
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: state id 4
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: fp_expr: (ReadLSB w64 152 lazy_alloc_controllable10)
+KLEE: mo->name: lazy_alloc_controllable12
+KLEE: DEBUG: detect controllable address
+KLEE: is_controllable_address: 1
+KLEE: pointerAddress: (ReadLSB w64 0 KLEE_kernel_xTask)
+KLEE: is_controllable: 1
+KLEE: DEBUG: Find symbolic function pointer
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2987
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2987
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2988
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address_controllable: 0
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Allocate global memory!!!alloc size: 8, states size: 3
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable13
+KLEE: mo address: 110261179720256
+KLEE: newMo address: 110261179412208
+KLEE: alloc uncontrollable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 8,            alloc address: 110261179412208
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: Print condition:
+
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 4
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:3000
+KLEE: DEBUG: state id 6
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:3003
+KLEE: DEBUG: state id 6
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:3003
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:30
+KLEE: DEBUG: state id 6
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: value is a constant
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:31
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address_controllable: 0
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: state id 3
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: fp_expr: (ReadLSB w64 152 lazy_alloc_uncontrollable8)
+KLEE: mo->name: lazy_alloc_uncontrollable13
+KLEE: DEBUG: detect uncontrollable address
+KLEE: is_controllable_address: 0
+KLEE: pointerAddress: 110261179720256
+KLEE: is_controllable: 0
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1061
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1061
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1062
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1067
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1026
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1074
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1074
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1074
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1079
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1079
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1079
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1079
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address controllable flag: 0
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:0
+ canBeDesiredAddress: 0
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1086
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1088
+KLEE: DEBUG: Detect __asm__ external function!
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1090
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1090
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1090
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1026
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1107
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:803
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:804
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:810
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:810
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:24
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:25
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:25
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:26
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:27
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:27
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:28
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:29
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:29
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:30
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: alloc TCB in executeMemoryOperation!!
+KLEE: DEBUG: Allocate global memory for TCB!!!states size: 2
+KLEE: DEBUG: Alloc stack, top address: 110261180766208
+KLEE: DEBUG: detect controllable address
+KLEE: mo address: 110261179411352
+KLEE: newMo address: 110261179720832
+KLEE: alloc controllable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 184,            alloc address: 110261179720832
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:30
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_controllable16
+KLEE: DEBUG: detect controllable address
+KLEE: mo address: 110261179411384
+KLEE: newMo address: 110261179412512
+KLEE: alloc controllable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 1,            alloc address: 110261179412512
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:30
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179411904
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179411928
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179411912
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179411960
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2979
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2981
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2982
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2985
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2985
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2985
+KLEE: Print condition:
+
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2991
+KLEE: DEBUG: state id 7
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2991
+KLEE: DEBUG: state id 7
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: state id 7
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: state id 7
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: lazyResolve failed, found a symbolic pointer
+KLEE: DEBUG: dump the address expression
+KLEE: DEBUG: Binding a symbolic pointer with address expression:
+KLEE: DEBUG: getMoControllableInfo:1
+KLEE: DEBUG: detect controllable address
+KLEE: DEBUG: getMoControllableInfo return:1
+KLEE: DEBUG: address_controllable: 1
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Allocate global memory!!!alloc size: 8, states size: 3
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_controllable17
+KLEE: DEBUG: detect controllable address
+KLEE: mo address: 110261179720832
+KLEE: newMo address: 110261179412392
+KLEE: alloc controllable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 8,            alloc address: 110261179412392
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: Print condition:
+
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 4
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:3000
+KLEE: DEBUG: state id 8
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:3003
+KLEE: DEBUG: state id 8
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:3003
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:30
+KLEE: DEBUG: state id 8
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: value is a constant
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:31
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: state id 7
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: state id 7
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:1
+KLEE: DEBUG: detect controllable address
+KLEE: DEBUG: getMoControllableInfo return:1
+KLEE: DEBUG: address_controllable: 1
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: state id 7
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: fp_expr: (ReadLSB w64 152 lazy_alloc_controllable15)
+KLEE: mo->name: lazy_alloc_controllable17
+KLEE: DEBUG: detect controllable address
+KLEE: is_controllable_address: 1
+KLEE: pointerAddress: (ReadLSB w64 0 KLEE_kernel_xTask)
+KLEE: is_controllable: 1
+KLEE: DEBUG: Find symbolic function pointer
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2987
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2987
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2988
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address_controllable: 0
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Allocate global memory!!!alloc size: 8, states size: 2
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable18
+KLEE: mo address: 110261179720448
+KLEE: newMo address: 110261179411896
+KLEE: alloc uncontrollable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 8,            alloc address: 110261179411896
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: Print condition:
+
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:3000
+KLEE: DEBUG: state id 9
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:3003
+KLEE: DEBUG: state id 9
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:3003
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:30
+KLEE: DEBUG: state id 9
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: value is a constant
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:31
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address_controllable: 0
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: state id 2
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: fp_expr: (ReadLSB w64 152 lazy_alloc_uncontrollable2)
+KLEE: mo->name: lazy_alloc_uncontrollable18
+KLEE: DEBUG: detect uncontrollable address
+KLEE: is_controllable_address: 0
+KLEE: pointerAddress: 110261179720448
+KLEE: is_controllable: 0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:768
+KLEE: DEBUG: Detect __asm__ external function!
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:768
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:768
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:770
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: alloc TCB in executeMemoryOperation!!
+KLEE: DEBUG: Allocate global memory for TCB!!!states size: 1
+KLEE: DEBUG: Alloc stack, top address: 110261180766208
+KLEE: mo address: 110261179411504
+KLEE: newMo address: 110261179720448
+KLEE: alloc uncontrollable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 184,            alloc address: 110261179720448
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:770
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:770
+KLEE: Print condition:
+
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:781
+KLEE: DEBUG: state id 10
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:781
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:781
+KLEE: DEBUG: Detect __asm__ external function!
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:721
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:783
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:791
+KLEE: DEBUG: state id 10
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:791
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:791
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:807
+KLEE: DEBUG: state id 10
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:721
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:810
+KLEE: DEBUG: state id 10
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:810
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:24
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:25
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:25
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:26
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:27
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:27
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:28
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:29
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:29
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:30
+KLEE: DEBUG: state id 10
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: alloc TCB in executeMemoryOperation!!
+KLEE: DEBUG: Allocate global memory for TCB!!!states size: 2
+KLEE: DEBUG: Alloc stack, top address: 110261180876800
+KLEE: DEBUG: detect controllable address
+KLEE: mo address: 110261179411352
+KLEE: newMo address: 110261179724288
+KLEE: alloc controllable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 184,            alloc address: 110261179724288
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:30
+KLEE: DEBUG: state id 10
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_controllable23
+KLEE: DEBUG: detect controllable address
+KLEE: mo address: 110261179411384
+KLEE: newMo address: 110261179412088
+KLEE: alloc controllable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 1,            alloc address: 110261179412088
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:30
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179411840
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179412368
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179412344
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179412504
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: state id 10
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: state id 10
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2979
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2981
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2982
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2985
+KLEE: DEBUG: state id 10
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2985
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2985
+KLEE: Print condition:
+
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2991
+KLEE: DEBUG: state id 11
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2991
+KLEE: DEBUG: state id 11
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: state id 11
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: state id 11
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: lazyResolve failed, found a symbolic pointer
+KLEE: DEBUG: dump the address expression
+KLEE: DEBUG: Binding a symbolic pointer with address expression:
+KLEE: DEBUG: getMoControllableInfo:1
+KLEE: DEBUG: detect controllable address
+KLEE: DEBUG: getMoControllableInfo return:1
+KLEE: DEBUG: address_controllable: 1
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Allocate global memory!!!alloc size: 8, states size: 3
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_controllable24
+KLEE: DEBUG: detect controllable address
+KLEE: mo address: 110261179724288
+KLEE: newMo address: 110261179411696
+KLEE: alloc controllable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 8,            alloc address: 110261179411696
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: Print condition:
+
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 4
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:3000
+KLEE: DEBUG: state id 12
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:3003
+KLEE: DEBUG: state id 12
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:3003
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:30
+KLEE: DEBUG: state id 12
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: value is a constant
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:31
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: state id 11
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: state id 11
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:1
+KLEE: DEBUG: detect controllable address
+KLEE: DEBUG: getMoControllableInfo return:1
+KLEE: DEBUG: address_controllable: 1
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: state id 11
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: fp_expr: (ReadLSB w64 152 lazy_alloc_controllable22)
+KLEE: mo->name: lazy_alloc_controllable24
+KLEE: DEBUG: detect controllable address
+KLEE: is_controllable_address: 1
+KLEE: pointerAddress: (ReadLSB w64 0 KLEE_kernel_xTask)
+KLEE: is_controllable: 1
+KLEE: DEBUG: Find symbolic function pointer
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2987
+KLEE: DEBUG: state id 10
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: Detect a unintialzied constant pointer.
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable25
+KLEE: DEBUG: Alloc a new uncontrollable memory object for the constant pointer. Alloc size:184 and address:110261179721984
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2987
+KLEE: DEBUG: state id 10
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2988
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: state id 10
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: state id 10
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address_controllable: 0
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Allocate global memory!!!alloc size: 8, states size: 2
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable26
+KLEE: mo address: 110261179721984
+KLEE: newMo address: 110261179412248
+KLEE: alloc uncontrollable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 8,            alloc address: 110261179412248
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: Print condition:
+
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:3000
+KLEE: DEBUG: state id 13
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:3003
+KLEE: DEBUG: state id 13
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:3003
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:30
+KLEE: DEBUG: state id 13
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: value is a constant
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:31
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: state id 10
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: state id 10
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address_controllable: 0
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: state id 10
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: fp_expr: (ReadLSB w64 152 lazy_alloc_uncontrollable25)
+KLEE: mo->name: lazy_alloc_uncontrollable26
+KLEE: DEBUG: detect uncontrollable address
+KLEE: is_controllable_address: 0
+KLEE: pointerAddress: 110261179721984
+KLEE: is_controllable: 0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:772
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:772
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:772
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179411704
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179411808
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179412248
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:13
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:13
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:13
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:14
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:14
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:14
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:14
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:14
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:15
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:15
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:15
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:15
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:15
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:15
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: lazyResolve failed, found a symbolic pointer
+KLEE: DEBUG: dump the address expression
+KLEE: DEBUG: Binding a symbolic pointer with address expression:
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address controllable flag: 0
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:0
+ canBeDesiredAddress: 1
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:15
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:16
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:16
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:775
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:775
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:775
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:775
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address controllable flag: 0
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:0
+ canBeDesiredAddress: 1
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:776
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:783
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:791
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:791
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:791
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:797
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:797
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:797
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address controllable flag: 0
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:0
+ canBeDesiredAddress: 1
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:801
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable27
+KLEE: mo address: 110261179411032
+KLEE: newMo address: 110261179412248
+KLEE: alloc uncontrollable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 8,            alloc address: 110261179412248
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:801
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:801
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:801
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: Detect a unintialzied constant pointer.
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable28
+KLEE: DEBUG: Alloc a new uncontrollable memory object for the constant pointer. Alloc size:1 and address:110261179412224
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:801
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:801
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:801
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:801
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179411464
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179411760
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179411864
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179412080
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179411768
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179412144
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179412104
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179411720
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179411696
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:817
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:818
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:819
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:820
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:821
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:822
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:823
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:825
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:826
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:847
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:847
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:847
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address_controllable: 0
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:847
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:847
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:847
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:847
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:847
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179412024
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179412720
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179412336
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:12
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:13
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:13
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:13
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:14
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:14
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:14
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:14
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:14
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:15
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:15
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:15
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:15
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:15
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:15
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: lazyResolve failed, found a symbolic pointer
+KLEE: DEBUG: dump the address expression
+KLEE: DEBUG: Binding a symbolic pointer with address expression:
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address controllable flag: 0
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:0
+ canBeDesiredAddress: 1
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:15
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:16
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: runtime/Freestanding/memset.c:16
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:857
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:857
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:857
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address_controllable: 0
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:857
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:857
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:857
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:857
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:857
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:858
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: Detect a unintialzied constant pointer.
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable29
+KLEE: DEBUG: Alloc a new uncontrollable memory object for the constant pointer. Alloc size:8 and address:110261179412336
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:858
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:858
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:858
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:858
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:861
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:861
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:861
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:861
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:861
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:861
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:861
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:885
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:885
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:885
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:907
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:914
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:914
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:914
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:914
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:914
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:916
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:916
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:916
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:816
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:925
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:925
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:925
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:925
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address controllable flag: 0
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:0
+ canBeDesiredAddress: 1
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:928
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:928
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:928
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:928
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address controllable flag: 0
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:0
+ canBeDesiredAddress: 1
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:932
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:932
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:932
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/list.c:86
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179412584
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/list.c:86
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/list.c:86
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/list.c:89
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/list.c:89
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/list.c:89
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address controllable flag: 0
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:0
+ canBeDesiredAddress: 1
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/list.c:95
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:933
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:933
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:933
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/list.c:86
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179412024
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/list.c:86
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/list.c:86
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/list.c:89
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/list.c:89
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/list.c:89
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address controllable flag: 0
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:0
+ canBeDesiredAddress: 1
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/list.c:95
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:937
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:937
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:937
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:937
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:937
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:937
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address controllable flag: 0
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:0
+ canBeDesiredAddress: 1
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:940
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:940
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:940
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:940
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:940
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:940
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address controllable flag: 0
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:0
+ canBeDesiredAddress: 1
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:941
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:941
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:941
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:941
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:941
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:941
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address controllable flag: 0
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:0
+ canBeDesiredAddress: 1
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:950
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: Detect a unintialzied constant pointer.
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable30
+KLEE: DEBUG: Alloc a new uncontrollable memory object for the constant pointer. Alloc size:16 and address:110261179296208
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1013
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1013
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1013
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1017
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1017
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1017
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1018
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1023
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:802
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:802
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1026
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179412512
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1026
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1026
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1030
+KLEE: DEBUG: Detect __asm__ external function!
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1032
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1032
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1032
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1034
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: Detect a unintialzied constant pointer.
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable31
+KLEE: DEBUG: Alloc a new uncontrollable memory object for the constant pointer. Alloc size:184 and address:110261179722176
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1034
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1034
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1057
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1057
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1057
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1059
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1059
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1059
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address_controllable: 0
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1059
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1059
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1059
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address_controllable: 0
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1059
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1059
+KLEE: Print condition:
+
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1026
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1067
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1026
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1074
+KLEE: DEBUG: state id 14
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1074
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1074
+KLEE: DEBUG: state id 14
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1079
+KLEE: DEBUG: state id 14
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1079
+KLEE: DEBUG: state id 14
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1079
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1079
+KLEE: DEBUG: state id 14
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address controllable flag: 0
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:0
+ canBeDesiredAddress: 1
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1086
+KLEE: DEBUG: state id 14
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1088
+KLEE: DEBUG: Detect __asm__ external function!
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1090
+KLEE: DEBUG: state id 14
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1090
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1090
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1026
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1107
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:803
+KLEE: DEBUG: state id 14
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:804
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:810
+KLEE: DEBUG: state id 14
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:810
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:24
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:25
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:25
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:26
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:27
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:27
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:28
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:29
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:29
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:30
+KLEE: DEBUG: state id 14
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: alloc TCB in executeMemoryOperation!!
+KLEE: DEBUG: Allocate global memory for TCB!!!states size: 2
+KLEE: DEBUG: Alloc stack, top address: 110261180876800
+KLEE: DEBUG: detect controllable address
+KLEE: mo address: 110261179411352
+KLEE: newMo address: 110261179724864
+KLEE: alloc controllable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 184,            alloc address: 110261179724864
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:30
+KLEE: DEBUG: state id 14
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_controllable34
+KLEE: DEBUG: detect controllable address
+KLEE: mo address: 110261179411384
+KLEE: newMo address: 110261179411912
+KLEE: alloc controllable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 1,            alloc address: 110261179411912
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:30
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179411888
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179412520
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179412760
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179412696
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: state id 14
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: state id 14
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2979
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2981
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2982
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2985
+KLEE: DEBUG: state id 14
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2985
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2985
+KLEE: Print condition:
+
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2991
+KLEE: DEBUG: state id 15
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2991
+KLEE: DEBUG: state id 15
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: state id 15
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: state id 15
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: lazyResolve failed, found a symbolic pointer
+KLEE: DEBUG: dump the address expression
+KLEE: DEBUG: Binding a symbolic pointer with address expression:
+KLEE: DEBUG: getMoControllableInfo:1
+KLEE: DEBUG: detect controllable address
+KLEE: DEBUG: getMoControllableInfo return:1
+KLEE: DEBUG: address_controllable: 1
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Allocate global memory!!!alloc size: 8, states size: 3
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_controllable35
+KLEE: DEBUG: detect controllable address
+KLEE: mo address: 110261179724864
+KLEE: newMo address: 110261179411656
+KLEE: alloc controllable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 8,            alloc address: 110261179411656
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: Print condition:
+
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 4
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:3000
+KLEE: DEBUG: state id 16
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:3003
+KLEE: DEBUG: state id 16
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:3003
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:30
+KLEE: DEBUG: state id 16
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: value is a constant
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 4
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:31
+KLEE: DEBUG: states size 4
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: state id 15
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: state id 15
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:1
+KLEE: DEBUG: detect controllable address
+KLEE: DEBUG: getMoControllableInfo return:1
+KLEE: DEBUG: address_controllable: 1
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: state id 15
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: fp_expr: (ReadLSB w64 152 lazy_alloc_controllable33)
+KLEE: mo->name: lazy_alloc_controllable35
+KLEE: DEBUG: detect controllable address
+KLEE: is_controllable_address: 1
+KLEE: pointerAddress: (ReadLSB w64 0 KLEE_kernel_xTask)
+KLEE: is_controllable: 1
+KLEE: DEBUG: Find symbolic function pointer
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2987
+KLEE: DEBUG: state id 14
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2987
+KLEE: DEBUG: state id 14
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2988
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: state id 14
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: state id 14
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address_controllable: 0
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Allocate global memory!!!alloc size: 8, states size: 2
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable36
+KLEE: mo address: 110261179722176
+KLEE: newMo address: 110261179412672
+KLEE: alloc uncontrollable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 8,            alloc address: 110261179412672
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: Print condition:
+
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:3000
+KLEE: DEBUG: state id 17
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:3003
+KLEE: DEBUG: state id 17
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:3003
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:30
+KLEE: DEBUG: state id 17
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: value is a constant
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:31
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: state id 14
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: state id 14
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address_controllable: 0
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: state id 14
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: fp_expr: (ReadLSB w64 152 lazy_alloc_uncontrollable31)
+KLEE: mo->name: lazy_alloc_uncontrollable36
+KLEE: DEBUG: detect uncontrollable address
+KLEE: is_controllable_address: 0
+KLEE: pointerAddress: 110261179722176
+KLEE: is_controllable: 0
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1061
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1061
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1062
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1067
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1026
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1074
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1074
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1074
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1079
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1079
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1079
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1079
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address controllable flag: 0
+KLEE: DEBUG: TEST here, address is:
+KLEE: DEBUG: Value is constrained
+KLEE: DEBUG: address_controllable:0
+ canBeDesiredAddress: 1
+ canBeDesiredValue: 0
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1086
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1088
+KLEE: DEBUG: Detect __asm__ external function!
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1090
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1090
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1090
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1026
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:1107
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:803
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:804
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:810
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:810
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:24
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:25
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:25
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:26
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:27
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:27
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:28
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:29
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:29
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:30
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: alloc TCB in executeMemoryOperation!!
+KLEE: DEBUG: Allocate global memory for TCB!!!states size: 1
+KLEE: DEBUG: Alloc stack, top address: 110261180876800
+KLEE: DEBUG: detect controllable address
+KLEE: mo address: 110261179411352
+KLEE: newMo address: 110261179719872
+KLEE: alloc controllable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 184,            alloc address: 110261179719872
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:30
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_controllable39
+KLEE: DEBUG: detect controllable address
+KLEE: mo address: 110261179411384
+KLEE: newMo address: 110261179411424
+KLEE: alloc controllable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 1,            alloc address: 110261179411424
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:30
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179411448
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179412360
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179411632
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: Allocate 8 bytes!!!,mo address: 110261179411928
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2979
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2981
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2982
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2985
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2985
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2985
+KLEE: Print condition:
+
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2991
+KLEE: DEBUG: state id 18
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2991
+KLEE: DEBUG: state id 18
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: state id 18
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: state id 18
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: lazyResolve failed, found a symbolic pointer
+KLEE: DEBUG: dump the address expression
+KLEE: DEBUG: Binding a symbolic pointer with address expression:
+KLEE: DEBUG: getMoControllableInfo:1
+KLEE: DEBUG: detect controllable address
+KLEE: DEBUG: getMoControllableInfo return:1
+KLEE: DEBUG: address_controllable: 1
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Allocate global memory!!!alloc size: 8, states size: 2
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_controllable40
+KLEE: DEBUG: detect controllable address
+KLEE: mo address: 110261179719872
+KLEE: newMo address: 110261179412664
+KLEE: alloc controllable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 8,            alloc address: 110261179412664
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: Print condition:
+
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:3000
+KLEE: DEBUG: state id 19
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:3003
+KLEE: DEBUG: state id 19
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:3003
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:30
+KLEE: DEBUG: state id 19
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: value is a constant
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 3
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:31
+KLEE: DEBUG: states size 3
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: state id 18
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: state id 18
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:1
+KLEE: DEBUG: detect controllable address
+KLEE: DEBUG: getMoControllableInfo return:1
+KLEE: DEBUG: address_controllable: 1
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: state id 18
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: fp_expr: (ReadLSB w64 152 lazy_alloc_controllable38)
+KLEE: mo->name: lazy_alloc_controllable40
+KLEE: DEBUG: detect controllable address
+KLEE: is_controllable_address: 1
+KLEE: pointerAddress: (ReadLSB w64 0 KLEE_kernel_xTask)
+KLEE: is_controllable: 1
+KLEE: DEBUG: Find symbolic function pointer
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2987
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2987
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2988
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address_controllable: 0
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: dump address and result in execution memory operation
+KLEE: DEBUG: Allocate global memory!!!alloc size: 8, states size: 1
+KLEE: DEBUG: Lazy alloc name: lazy_alloc_uncontrollable41
+KLEE: mo address: 110261179720448
+KLEE: newMo address: 110261179411440
+KLEE: alloc uncontrollable mo!!!
+KLEE: DEBUG: The symbolic pointer has been allocated, alloc size: 8,            alloc address: 110261179411440
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2994
+KLEE: Print condition:
+
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:3000
+KLEE: DEBUG: state id 20
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2978
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:3003
+KLEE: DEBUG: state id 20
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:3003
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:30
+KLEE: DEBUG: state id 20
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: value is a constant
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 2
+KLEE: Execute: test_files/test_MPU_xTaskCallApplicationTaskHook.c:31
+KLEE: DEBUG: states size 2
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: getMoControllableInfo:0
+KLEE: DEBUG: getMoControllableInfo return:0
+KLEE: DEBUG: address_controllable: 0
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: DEBUG: state id 1
+KLEE: DEBUG: dump the address expression before symplifying
+KLEE: DEBUG: dump the resolve result of address
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 1
+KLEE: Execute: test-rtos/freertos-10.5.1/Source/tasks.c:2996
+KLEE: fp_expr: (ReadLSB w64 152 lazy_alloc_uncontrollable20)
+KLEE: mo->name: lazy_alloc_uncontrollable41
+KLEE: DEBUG: detect controllable address
+KLEE: is_controllable_address: 1
+KLEE: pointerAddress: (ReadLSB w64 0 lazy_alloc_external_return2)
+KLEE: is_controllable: 0
+KLEE: DEBUG: states size 1
+KLEE: DEBUG: states size 0

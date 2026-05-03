@@ -321,10 +321,15 @@ private:
  bool CheckSemanticOnValue(ExecutionState &state, ref<Expr> value);
  std::vector<std::string> getLazyAllocedMoNameFromExpr(ref<Expr> expr);
  std::vector<std::string> findSpecificString(const std::string &input, const std::string &str);
-  /// When \a address may be the MPU enable register, check whether expected
-  /// fixed contents of other MPU slots are satisfiable with current path
-  /// constraints. \return true iff those fixed values contradict the constraints.
-  bool checkMPUViolation(ExecutionState &state, ref<Expr> address);
+  /// Solver-only check (state unchanged). \a address is the pointer expression
+  /// used for the snapshot (same family as \a canBeDesiredAddress checks).
+  /// \a accessOp is the ObjectPair from lazyResolve for this memory access — do
+  /// not re-resolve: AddressSpace::resolveOne uses only state.constraints and
+  /// often fails for symbolic pointers that lazyResolve already bound.
+  /// Snapshot: Read(addr32 + (reg_abs - MPU_CTRL)) vs \a accessOp.
+  /// \return true iff path ∧ relative snapshot equalities are UNSAT.
+  bool checkMPUViolation(ExecutionState &state, ref<Expr> address,
+                         ObjectPair accessOp);
   /// Allocate and bind a new object in a particular state. NOTE: This
   /// function may fork.
   ///

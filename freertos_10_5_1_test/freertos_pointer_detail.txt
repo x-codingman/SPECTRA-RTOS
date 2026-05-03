@@ -1,0 +1,359 @@
+Functions with pointer-like parameters:
+
+Function: MPU_xTaskCreate
+  BaseType_t MPU_xTaskCreate(...)
+    [user] const char * const pcName
+    [user] void * const pvParameters
+    [kernel] TaskHandle_t * const pxCreatedTask
+
+Function: MPU_xTaskCreateStatic
+  TaskHandle_t MPU_xTaskCreateStatic(...)
+    [user] const char * const pcName
+    [user] void * const pvParameters
+    [user] StackType_t * const puxStackBuffer
+    [user] StaticTask_t * const pxTaskBuffer
+
+Function: MPU_vTaskDelete
+  void MPU_vTaskDelete(...)
+    [kernel] TaskHandle_t xTaskToDelete
+
+Function: MPU_xTaskDelayUntil
+  BaseType_t MPU_xTaskDelayUntil(...)
+    [user] TickType_t * const pxPreviousWakeTime
+
+Function: MPU_xTaskAbortDelay
+  BaseType_t MPU_xTaskAbortDelay(...)
+    [kernel] TaskHandle_t xTask
+
+Function: MPU_uxTaskPriorityGet
+  UBaseType_t MPU_uxTaskPriorityGet(...)
+    [kernel] const TaskHandle_t xTask
+
+Function: MPU_eTaskGetState
+  eTaskState MPU_eTaskGetState(...)
+    [kernel] TaskHandle_t xTask
+
+Function: MPU_vTaskGetInfo
+  void MPU_vTaskGetInfo(...)
+    [kernel] TaskHandle_t xTask
+    [user] TaskStatus_t * pxTaskStatus
+
+Function: MPU_vTaskPrioritySet
+  void MPU_vTaskPrioritySet(...)
+    [kernel] TaskHandle_t xTask
+
+Function: MPU_vTaskSuspend
+  void MPU_vTaskSuspend(...)
+    [kernel] TaskHandle_t xTaskToSuspend
+
+Function: MPU_vTaskResume
+  void MPU_vTaskResume(...)
+    [kernel] TaskHandle_t xTaskToResume
+
+Function: MPU_pcTaskGetName
+  char * MPU_pcTaskGetName(...)
+    [kernel] TaskHandle_t xTaskToQuery
+
+Function: MPU_xTaskGetHandle
+  TaskHandle_t MPU_xTaskGetHandle(...)
+    [user] const char * pcNameToQuery
+
+Function: MPU_uxTaskGetStackHighWaterMark
+  UBaseType_t MPU_uxTaskGetStackHighWaterMark(...)
+    [kernel] TaskHandle_t xTask
+
+Function: MPU_uxTaskGetStackHighWaterMark2
+  configSTACK_DEPTH_TYPE MPU_uxTaskGetStackHighWaterMark2(...)
+    [kernel] TaskHandle_t xTask
+
+Function: MPU_vTaskSetApplicationTaskTag
+  void MPU_vTaskSetApplicationTaskTag(...)
+    [kernel] TaskHandle_t xTask
+
+Function: MPU_xTaskGetApplicationTaskTag
+  TaskHookFunction_t MPU_xTaskGetApplicationTaskTag(...)
+    [kernel] TaskHandle_t xTask
+
+Function: MPU_vTaskSetThreadLocalStoragePointer
+  void MPU_vTaskSetThreadLocalStoragePointer(...)
+    [kernel] TaskHandle_t xTaskToSet
+    [user] void * pvValue
+
+Function: MPU_pvTaskGetThreadLocalStoragePointer
+  void * MPU_pvTaskGetThreadLocalStoragePointer(...)
+    [kernel] TaskHandle_t xTaskToQuery
+
+Function: MPU_xTaskCallApplicationTaskHook
+  BaseType_t MPU_xTaskCallApplicationTaskHook(...)
+    [kernel] TaskHandle_t xTask
+    [user] void * pvParameter
+
+Function: MPU_uxTaskGetSystemState
+  UBaseType_t MPU_uxTaskGetSystemState(...)
+    [user] TaskStatus_t * const pxTaskStatusArray
+    [user] configRUN_TIME_COUNTER_TYPE * const pulTotalRunTime
+
+Function: MPU_vTaskList
+  void MPU_vTaskList(...)
+    [user] char * pcWriteBuffer
+
+Function: MPU_vTaskGetRunTimeStats
+  void MPU_vTaskGetRunTimeStats(...)
+    [user] char * pcWriteBuffer
+
+Function: MPU_xTaskGenericNotify
+  BaseType_t MPU_xTaskGenericNotify(...)
+    [kernel] TaskHandle_t xTaskToNotify
+    [user] uint32_t * pulPreviousNotificationValue
+
+Function: MPU_xTaskGenericNotifyWait
+  BaseType_t MPU_xTaskGenericNotifyWait(...)
+    [user] uint32_t * pulNotificationValue
+
+Function: MPU_xTaskGenericNotifyStateClear
+  BaseType_t MPU_xTaskGenericNotifyStateClear(...)
+    [kernel] TaskHandle_t xTask
+
+Function: MPU_ulTaskGenericNotifyValueClear
+  uint32_t MPU_ulTaskGenericNotifyValueClear(...)
+    [kernel] TaskHandle_t xTask
+
+Function: MPU_vTaskSetTimeOutState
+  void MPU_vTaskSetTimeOutState(...)
+    [user] TimeOut_t * const pxTimeOut
+
+Function: MPU_xTaskCheckForTimeOut
+  BaseType_t MPU_xTaskCheckForTimeOut(...)
+    [user] TimeOut_t * const pxTimeOut
+    [user] TickType_t * const pxTicksToWait
+
+Function: MPU_xQueueGenericSend
+  BaseType_t MPU_xQueueGenericSend(...)
+    [kernel] QueueHandle_t xQueue
+    [user] const void * const pvItemToQueue
+
+Function: MPU_xQueueReceive
+  BaseType_t MPU_xQueueReceive(...)
+    [kernel] QueueHandle_t xQueue
+    [user] void * const pvBuffer
+
+Function: MPU_xQueuePeek
+  BaseType_t MPU_xQueuePeek(...)
+    [kernel] QueueHandle_t xQueue
+    [user] void * const pvBuffer
+
+Function: MPU_xQueueSemaphoreTake
+  BaseType_t MPU_xQueueSemaphoreTake(...)
+    [kernel] QueueHandle_t xQueue
+
+Function: MPU_uxQueueMessagesWaiting
+  UBaseType_t MPU_uxQueueMessagesWaiting(...)
+    [kernel] const QueueHandle_t xQueue
+
+Function: MPU_uxQueueSpacesAvailable
+  UBaseType_t MPU_uxQueueSpacesAvailable(...)
+    [kernel] const QueueHandle_t xQueue
+
+Function: MPU_vQueueDelete
+  void MPU_vQueueDelete(...)
+    [kernel] QueueHandle_t xQueue
+
+Function: MPU_xQueueCreateMutexStatic
+  QueueHandle_t MPU_xQueueCreateMutexStatic(...)
+    [user] StaticQueue_t * pxStaticQueue
+
+Function: MPU_xQueueCreateCountingSemaphoreStatic
+  QueueHandle_t MPU_xQueueCreateCountingSemaphoreStatic(...)
+    [user] StaticQueue_t * pxStaticQueue
+
+Function: MPU_xQueueGetMutexHolder
+  TaskHandle_t MPU_xQueueGetMutexHolder(...)
+    [kernel] QueueHandle_t xSemaphore
+
+Function: MPU_xQueueTakeMutexRecursive
+  BaseType_t MPU_xQueueTakeMutexRecursive(...)
+    [kernel] QueueHandle_t xMutex
+
+Function: MPU_xQueueGiveMutexRecursive
+  BaseType_t MPU_xQueueGiveMutexRecursive(...)
+    [kernel] QueueHandle_t pxMutex
+
+Function: MPU_vQueueAddToRegistry
+  void MPU_vQueueAddToRegistry(...)
+    [kernel] QueueHandle_t xQueue
+    [user] const char * pcName
+
+Function: MPU_vQueueUnregisterQueue
+  void MPU_vQueueUnregisterQueue(...)
+    [kernel] QueueHandle_t xQueue
+
+Function: MPU_pcQueueGetName
+  const char * MPU_pcQueueGetName(...)
+    [kernel] QueueHandle_t xQueue
+
+Function: MPU_xQueueGenericCreateStatic
+  QueueHandle_t MPU_xQueueGenericCreateStatic(...)
+    [user] uint8_t * pucQueueStorage
+    [user] StaticQueue_t * pxStaticQueue
+
+Function: MPU_xQueueAddToSet
+  BaseType_t MPU_xQueueAddToSet(...)
+    [kernel] QueueSetMemberHandle_t xQueueOrSemaphore
+    [kernel] QueueSetHandle_t xQueueSet
+
+Function: MPU_xQueueRemoveFromSet
+  BaseType_t MPU_xQueueRemoveFromSet(...)
+    [kernel] QueueSetMemberHandle_t xQueueOrSemaphore
+    [kernel] QueueSetHandle_t xQueueSet
+
+Function: MPU_xQueueSelectFromSet
+  QueueSetMemberHandle_t MPU_xQueueSelectFromSet(...)
+    [kernel] QueueSetHandle_t xQueueSet
+
+Function: MPU_xQueueGenericReset
+  BaseType_t MPU_xQueueGenericReset(...)
+    [kernel] QueueHandle_t xQueue
+
+Function: MPU_vQueueSetQueueNumber
+  void MPU_vQueueSetQueueNumber(...)
+    [kernel] QueueHandle_t xQueue
+
+Function: MPU_uxQueueGetQueueNumber
+  UBaseType_t MPU_uxQueueGetQueueNumber(...)
+    [kernel] QueueHandle_t xQueue
+
+Function: MPU_ucQueueGetQueueType
+  uint8_t MPU_ucQueueGetQueueType(...)
+    [kernel] QueueHandle_t xQueue
+
+Function: MPU_xTimerCreate
+  TimerHandle_t MPU_xTimerCreate(...)
+    [user] const char * const pcTimerName
+    [user] void * const pvTimerID
+
+Function: MPU_xTimerCreateStatic
+  TimerHandle_t MPU_xTimerCreateStatic(...)
+    [user] const char * const pcTimerName
+    [user] void * const pvTimerID
+    [user] StaticTimer_t * pxTimerBuffer
+
+Function: MPU_pvTimerGetTimerID
+  void * MPU_pvTimerGetTimerID(...)
+    [kernel] const TimerHandle_t xTimer
+
+Function: MPU_vTimerSetTimerID
+  void MPU_vTimerSetTimerID(...)
+    [kernel] TimerHandle_t xTimer
+    [user] void * pvNewID
+
+Function: MPU_xTimerIsTimerActive
+  BaseType_t MPU_xTimerIsTimerActive(...)
+    [kernel] TimerHandle_t xTimer
+
+Function: MPU_xTimerPendFunctionCall
+  BaseType_t MPU_xTimerPendFunctionCall(...)
+    [user] void * pvParameter1
+
+Function: MPU_pcTimerGetName
+  const char * MPU_pcTimerGetName(...)
+    [kernel] TimerHandle_t xTimer
+
+Function: MPU_vTimerSetReloadMode
+  void MPU_vTimerSetReloadMode(...)
+    [kernel] TimerHandle_t xTimer
+
+Function: MPU_uxTimerGetReloadMode
+  UBaseType_t MPU_uxTimerGetReloadMode(...)
+    [kernel] TimerHandle_t xTimer
+
+Function: MPU_xTimerGetPeriod
+  TickType_t MPU_xTimerGetPeriod(...)
+    [kernel] TimerHandle_t xTimer
+
+Function: MPU_xTimerGetExpiryTime
+  TickType_t MPU_xTimerGetExpiryTime(...)
+    [kernel] TimerHandle_t xTimer
+
+Function: MPU_xTimerGenericCommand
+  BaseType_t MPU_xTimerGenericCommand(...)
+    [kernel] TimerHandle_t xTimer
+    [user] BaseType_t * const pxHigherPriorityTaskWoken
+
+Function: MPU_xEventGroupCreateStatic
+  EventGroupHandle_t MPU_xEventGroupCreateStatic(...)
+    [user] StaticEventGroup_t * pxEventGroupBuffer
+
+Function: MPU_xEventGroupWaitBits
+  EventBits_t MPU_xEventGroupWaitBits(...)
+    [kernel] EventGroupHandle_t xEventGroup
+
+Function: MPU_xEventGroupClearBits
+  EventBits_t MPU_xEventGroupClearBits(...)
+    [kernel] EventGroupHandle_t xEventGroup
+
+Function: MPU_xEventGroupSetBits
+  EventBits_t MPU_xEventGroupSetBits(...)
+    [kernel] EventGroupHandle_t xEventGroup
+
+Function: MPU_xEventGroupSync
+  EventBits_t MPU_xEventGroupSync(...)
+    [kernel] EventGroupHandle_t xEventGroup
+
+Function: MPU_vEventGroupDelete
+  void MPU_vEventGroupDelete(...)
+    [kernel] EventGroupHandle_t xEventGroup
+
+Function: MPU_uxEventGroupGetNumber
+  UBaseType_t MPU_uxEventGroupGetNumber(...)
+    [user] void * xEventGroup
+
+Function: MPU_xStreamBufferSend
+  size_t MPU_xStreamBufferSend(...)
+    [kernel] StreamBufferHandle_t xStreamBuffer
+    [user] const void * pvTxData
+
+Function: MPU_xStreamBufferReceive
+  size_t MPU_xStreamBufferReceive(...)
+    [kernel] StreamBufferHandle_t xStreamBuffer
+    [user] void * pvRxData
+
+Function: MPU_xStreamBufferNextMessageLengthBytes
+  size_t MPU_xStreamBufferNextMessageLengthBytes(...)
+    [kernel] StreamBufferHandle_t xStreamBuffer
+
+Function: MPU_vStreamBufferDelete
+  void MPU_vStreamBufferDelete(...)
+    [kernel] StreamBufferHandle_t xStreamBuffer
+
+Function: MPU_xStreamBufferIsFull
+  BaseType_t MPU_xStreamBufferIsFull(...)
+    [kernel] StreamBufferHandle_t xStreamBuffer
+
+Function: MPU_xStreamBufferIsEmpty
+  BaseType_t MPU_xStreamBufferIsEmpty(...)
+    [kernel] StreamBufferHandle_t xStreamBuffer
+
+Function: MPU_xStreamBufferReset
+  BaseType_t MPU_xStreamBufferReset(...)
+    [kernel] StreamBufferHandle_t xStreamBuffer
+
+Function: MPU_xStreamBufferSpacesAvailable
+  size_t MPU_xStreamBufferSpacesAvailable(...)
+    [kernel] StreamBufferHandle_t xStreamBuffer
+
+Function: MPU_xStreamBufferBytesAvailable
+  size_t MPU_xStreamBufferBytesAvailable(...)
+    [kernel] StreamBufferHandle_t xStreamBuffer
+
+Function: MPU_xStreamBufferSetTriggerLevel
+  BaseType_t MPU_xStreamBufferSetTriggerLevel(...)
+    [kernel] StreamBufferHandle_t xStreamBuffer
+
+Function: MPU_xStreamBufferGenericCreateStatic
+  StreamBufferHandle_t MPU_xStreamBufferGenericCreateStatic(...)
+    [user] uint8_t * const pucStreamBufferStorageArea
+    [user] StaticStreamBuffer_t * const pxStaticStreamBuffer
+
+--- Totals ---
+Functions with kernel-handle params: 64
+Pointer slots: 108 (kernel 66, user 42)

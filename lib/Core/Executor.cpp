@@ -2634,7 +2634,11 @@ void Executor::executeInstruction(ExecutionState &state, KInstruction *ki) {
         ref<Expr> fp_expr = eval(ki, 0, state).value;
     if(state.addressSpace.address_mo_info.count(fp_expr)) {
       const MemoryObject *mo = state.addressSpace.address_mo_info[fp_expr];
+      
       bool is_controllable = state.addressSpace.mo_controllable_info[mo].first;
+      klee_debug_message("is_controllable: %d", is_controllable);
+      // Test controllability flag for Ablation experiments
+      // bool is_controllable = true;
       if(is_controllable) {
         klee_debug_message("DEBUG: Find symbolic function pointer");
         std::string report_str =
@@ -4896,6 +4900,7 @@ void Executor::executeMemoryOperation(
       if (address_controllable) {
         detectInformationLeak(state, address, mo, value, true, target);
       }
+      //Test controllability flag for Ablation experiments
       // bool address_controllable = true;
       // detectInformationLeak(state, address, mo, value, true, target);
 
@@ -5001,14 +5006,14 @@ void Executor::executeMemoryOperation(
           is_controlled_value = false;
         }
         
-        bool is_mpu_violation = checkMPUViolation(state, address);
-        if(is_mpu_violation){
-        std::string report_str = "MPU violation (T)";
-        vulnerabilityReport(report_str, target);
-        }else{
-        std::string report_str = "MPU violation (F)";
-        vulnerabilityReport(report_str, target);
-        }
+        bool is_mpu_violation = checkMPUViolation(state, address_test, op);
+        // if(is_mpu_violation){
+        //   std::string report_str = "MPU violation (F)";
+        //   vulnerabilityReport(report_str, target);
+        // }else{
+        //   std::string report_str = "MPU violation (T)";
+        //   vulnerabilityReport(report_str, target);
+        // }
         
         klee_debug_message("DEBUG: has_semantic_check:%d\n canBeDesiredValue: "
                            "%d\n is_controlled_value: %d",
@@ -5021,9 +5026,21 @@ void Executor::executeMemoryOperation(
               std::string((has_semantic_check ? "(V3)" : "(V2)"));
           vulnerabilityReport(report_str, target);
         } else {
+          if(!has_semantic_check){
           std::string report_str = "Arbitrary memory write vulnerability " +
-              std::string((has_semantic_check ? "(V1)" : "(V0)"));
+              std::string("(V0)");
           vulnerabilityReport(report_str, target);
+          }else{
+            if(!is_mpu_violation){
+            std::string report_str = "Arbitrary memory write vulnerability " +
+                std::string("(V1)");
+            vulnerabilityReport(report_str, target);
+            }else{
+              std::string report_str = "Arbitrary memory write vulnerability " +
+                std::string("(V5)");
+              vulnerabilityReport(report_str, target);
+            }
+          }
         }
       } else if (address_controllable && !canBeDesiredAddress) {
         std::string report_str = "Limited memory write vulnerability (V4)";
@@ -5133,7 +5150,8 @@ void Executor::executeMemoryOperation(
       bool address_controllable =
           getMoControllableInfo(state, mo) ||
           address_expr.find("KLEE") != std::string::npos;
-      //bool address_controllable = true;
+      // Test controllability flag for Ablation experiments
+      // bool address_controllable = true;
       klee_debug_message("DEBUG: address_controllable: %d", address_controllable);
 
       if (address_controllable) {
@@ -7284,6 +7302,24 @@ bool Executor::getMoControllableInfo(ExecutionState &state,
                                                   pointerOP, needBound);
     if (!success) {
       klee_debug_message("DEBUG: lazyResolve failed to resolve the pointer mo");
+      std::vector<ref<Expr>> kids = getAddKids(pointerAddress);
+      klee_debug_message("DEBUG: dump the address expression");
+      for (int i = 0; i < kids.size(); i++) {
+
+        if (state.addressSpace.address_mo_info.count(kids[i]) > 0) {
+          const MemoryObject *newMo = state.addressSpace.address_mo_info[kids[i]];
+          addConstraint(state, EqExpr::create(kids[i], newMo->getBaseExpr()));
+          if (!isa<ConstantExpr>(pointerAddress))
+            pointerAddress = ConstraintManager::simplifyExpr(state.constraints, pointerAddress);
+          klee_debug_message(
+              "DEBUG: Binding a symbolic pointer with address expression:");
+        }
+      }
+      success = state.addressSpace.lazyResolve(state, solver, pointerAddress,
+                                                  pointerOP, needBound);
+      if (!success) {
+        klee_debug_message("DEBUG: lazyResolve failed to resolve the pointer mo AGAIN!!!");
+      }
     }
 
     // check whether pointer MO is still controllable
@@ -7314,6 +7350,8 @@ bool Executor::getMoControllableInfo(ExecutionState &state,
   klee_debug_message("DEBUG: getMoControllableInfo return:%d", address_controllable);
   return address_controllable;
 }
+
+
 void Executor::vulnerabilityReport(std::string report_str,
                                    KInstruction *target) {
   std::string currentVulnerabilityInfo = report_str + " " + target->info->file +
@@ -7323,7 +7361,7 @@ void Executor::vulnerabilityReport(std::string report_str,
   if (it == testInfoRecordSet.end()) {
     testInfoRecordSet.insert(currentVulnerabilityInfo);
     klee_test_info("Error: %s"
-                   "on file %s: line %d. ",
+                   "on file %s: line %d.",
                    report_str.c_str(), target->info->file.c_str(),
                    target->info->line);
   }
@@ -7982,41 +8020,33 @@ Executor::getLazyAllocedMoNameFromExpr(ref<Expr> expr) {
 
 
 
-bool Executor::checkMPUViolation(ExecutionState &state, ref<Expr> address) {
-  ref<Expr> addr32;
+bool Executor::checkMPUViolation(ExecutionState &state, ref<Expr> address,
+                                 ObjectPair accessOp) {
+  /* Solver-only. Caller passes the same ObjectPair lazyResolve used for this
+   * access; do not resolveOne (constraints differ; symbolic search flaky). */
+  Expr::Width ptrW = Context::get().getPointerWidth();
   unsigned w = address->getWidth();
-  if (w == 32) {
-    addr32 = address;
-  } else if (w < 32) {
-    addr32 = ZExtExpr::create(address, 32);
+  /* Use full pointer width for MPU_CTRL anchor so 64-bit paths match
+   * ReadLSB w64 KLEE_*_ptr constraints (truncating to w32 broke getOffsetExpr). */
+  ref<Expr> addrPtrW;
+  if (w == ptrW) {
+    addrPtrW = address;
+  } else if (w < ptrW) {
+    addrPtrW = ZExtExpr::create(address, ptrW);
   } else {
-    addr32 = ExtractExpr::create(address, 0, 32);
+    addrPtrW = ExtractExpr::create(address, 0, ptrW);
   }
 
-  ref<Expr> enable =
-      ConstantExpr::create(static_cast<uint64_t>(MPU_ENABLE_ADDRESS), 32);
-
   ConstraintSet cs;
+  for (auto const &c : state.constraints)
+    cs.push_back(c);
   for (auto const &c : state.addressConstraintsForTargetApp)
     cs.push_back(c);
 
-  solver->setTimeout(coreSolverTimeout);
-  bool canBeEnable = false;
-  bool success = solver->mayBeTrue(
-      cs, EqExpr::create(addr32, enable), canBeEnable, state.queryMetaData);
-  assert(success && "FIXME: Unhandled solver failure");
-  if (!canBeEnable)
-    return false;
+  const MemoryObject *mpuMo = accessOp.first;
+  const ObjectState *mpuOs = accessOp.second;
 
-  /* Second query must assume the write targets the enable word: check
-   * SAT(path_constraints ∧ address==MPU_ENABLE ∧ fixed_register_snapshot).
-   * Without Eq(addr, enable), we would only test path ∧ snapshot, which is
-   * not the "under enable-address write" scenario. */
-  /* Expected 32-bit contents at MPU-related addresses (path must still model
-   * these locations, or resolveOne skips them). Snapshot: Arm DS "MPU" view,
-   * Secure side, RNR_S==1 (RBAR/RLAR show region 1). Armv8-M PPB offsets
-   * per User Guide 107565 §3.2.1. Non-secure bank all-zero in that capture —
-   * not duplicated at the same VA here. */
+  /* Table: absolute VA + value; delta = abs - MPU_CTRL (signed). */
   static const std::vector<std::pair<uint32_t, uint32_t>> kMPUFixed32 = {
       {MPU_ARMV8M_TYPE, 0x00001000u},
       {MPU_ARMV8M_CTRL, 0x00000007u},
@@ -8034,47 +8064,48 @@ bool Executor::checkMPUViolation(ExecutionState &state, ref<Expr> address) {
   };
 
   ConstraintManager cm(cs);
-  cm.addConstraint(EqExpr::create(addr32, enable));
-  Expr::Width ptrW = Context::get().getPointerWidth();
 
   for (const auto &entry : kMPUFixed32) {
     uint32_t absAddr = entry.first;
     uint32_t fixedVal = entry.second;
-    if (absAddr >= MPU_ENABLE_ADDRESS && absAddr < MPU_ENABLE_ADDRESS + 4)
-      continue;
-    const bool inRtosWindow =
-        (absAddr >= MPU_REGION_START && absAddr < MPU_REGION_END);
-    const bool inArmv8mScs =
-        (absAddr >= MPU_ARMV8M_SCS_START && absAddr < MPU_ARMV8M_SCS_END);
-    if (!inRtosWindow && !inArmv8mScs)
-      continue;
+    int64_t delta64 = (int64_t)(uint32_t)absAddr -
+                      (int64_t)(uint32_t)MPU_ENABLE_ADDRESS;
     if (absAddr % 4 != 0)
-      continue;
+      return false;
 
-    ref<ConstantExpr> ce =
-        ConstantExpr::create(static_cast<uint64_t>(absAddr), ptrW);
-    ObjectPair op;
-    if (!state.addressSpace.resolveOne(ce, op)) {
-      klee_debug_message(
-          "DEBUG: checkMPUViolation: no memory object at 0x%08x", absAddr);
-      continue;
-    }
-    const MemoryObject *mo = op.first;
-    const ObjectState *os = op.second;
-    uint64_t off = static_cast<uint64_t>(absAddr) - mo->address;
-    if (off + 4 > mo->size) {
-      klee_debug_message(
-          "DEBUG: checkMPUViolation: read out of bounds at 0x%08x", absAddr);
-      continue;
-    }
-    ref<Expr> memVal = os->read(static_cast<unsigned>(off), Expr::Int32);
+    ref<Expr> delta32 =
+        ConstantExpr::create((uint64_t)(uint32_t)(int32_t)delta64, 32);
+    ref<Expr> deltaPtr = SExtExpr::create(delta32, ptrW);
+    ref<Expr> cellAddr = AddExpr::create(addrPtrW, deltaPtr);
+    ref<Expr> offInMo = mpuMo->getOffsetExpr(cellAddr);
+    ref<Expr> memVal = mpuOs->read(offInMo, Expr::Int32);
     cm.addConstraint(EqExpr::create(
         memVal, ConstantExpr::create(static_cast<uint64_t>(fixedVal), Expr::Int32)));
   }
 
-  bool feasible = false;
-  success = solver->mayBeTrue(cs, ConstantExpr::alloc(1, Expr::Bool), feasible,
-                               state.queryMetaData);
-  assert(success && "FIXME: Unhandled solver failure");
-  return !feasible;
+  /* ∃X. cs(X): mayBeTrue(cs, probe) with probe = c0 ∨ … ∨ cn so IndependentSolver
+   * keeps every conjunct's Reads (same Array, disjoint indices, would drop [13]
+   * if probe were only Or(first,last)).
+   * Also disable TimingSolver simplification for this query: simplifyExpr(cs,
+   * ∨ci) folds each ci to true (ci ∈ cs), so ∨ becomes constant true and
+   * mayBeTrue degenerates to the broken mayBeTrue(cs, true) path. */
+  solver->setTimeout(coreSolverTimeout);
+  bool phaseBSat = true;
+  if (!cs.empty()) {
+    ref<Expr> satProbe;
+    for (auto const &c : cs)
+      satProbe = satProbe.isNull() ? c : OrExpr::create(satProbe, c);
+    bool savedSimplify = solver->simplifyExprs;
+    solver->simplifyExprs = false;
+    bool okSat =
+        solver->mayBeTrue(cs, satProbe, phaseBSat, state.queryMetaData);
+    solver->simplifyExprs = savedSimplify;
+    assert(okSat && "FIXME: Unhandled solver failure");
+  }
+  klee_debug_message(
+      "checkMPUViolation: %s — %s",
+      phaseBSat ? "SAT" : "UNSAT",
+      phaseBSat ? "path ∧ address ∧ MPU snapshot consistent (return false)"
+                  : "path ∧ address ∧ MPU snapshot inconsistent (return true, violation)");
+  return !phaseBSat;
 }

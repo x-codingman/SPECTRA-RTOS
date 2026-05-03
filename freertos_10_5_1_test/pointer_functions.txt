@@ -1,0 +1,502 @@
+Functions with at least one pointer slot (* and/or ALIGN_TYPE):
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:1
+Function: UINT _txe_byte_release(VOID *memory_ptr)
+    [user] VOID *memory_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:2
+Function: UINT _txm_module_thread_system_suspend(TX_THREAD *thread_ptr)
+    [kernel] TX_THREAD *thread_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:3
+Function: UINT _txe_event_flags_info_get(TX_EVENT_FLAGS_GROUP *group_ptr, CHAR **name, ULONG *current_flags, TX_THREAD **first_suspended, ULONG *suspended_count, TX_EVENT_FLAGS_GROUP **next_group)
+    [kernel] TX_EVENT_FLAGS_GROUP *group_ptr
+    [user] CHAR **name
+    [user] ULONG *current_flags
+    [kernel] TX_THREAD **first_suspended
+    [user] ULONG *suspended_count
+    [kernel] TX_EVENT_FLAGS_GROUP **next_group
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:4
+Function: UINT _tx_thread_performance_system_info_get(ULONG *resumptions, ULONG *suspensions, ULONG *solicited_preemptions, ULONG *interrupt_preemptions, ULONG *priority_inversions, ULONG *time_slices, ULONG *relinquishes, ULONG *timeouts, ULONG *wait_aborts, ULONG *non_idle_returns, ULONG *idle_returns)
+    [user] ULONG *resumptions
+    [user] ULONG *suspensions
+    [user] ULONG *solicited_preemptions
+    [user] ULONG *interrupt_preemptions
+    [user] ULONG *priority_inversions
+    [user] ULONG *time_slices
+    [user] ULONG *relinquishes
+    [user] ULONG *timeouts
+    [user] ULONG *wait_aborts
+    [user] ULONG *non_idle_returns
+    [user] ULONG *idle_returns
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:5
+Function: UINT _tx_trace_buffer_full_notify(VOID (*full_buffer_callback)(VOID *buffer))
+    [user] VOID (*full_buffer_callback)(VOID *buffer)
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:6
+Function: UINT _tx_event_flags_performance_system_info_get(ULONG *sets, ULONG *gets, ULONG *suspensions, ULONG *timeouts)
+    [user] ULONG *sets
+    [user] ULONG *gets
+    [user] ULONG *suspensions
+    [user] ULONG *timeouts
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:7
+Function: UINT _txe_timer_change(TX_TIMER *timer_ptr, ULONG initial_ticks, ULONG reschedule_ticks)
+    [kernel] TX_TIMER *timer_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:8
+Function: UINT _txe_event_flags_delete(TX_EVENT_FLAGS_GROUP *group_ptr)
+    [kernel] TX_EVENT_FLAGS_GROUP *group_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:9
+Function: UINT _txe_block_pool_info_get(TX_BLOCK_POOL *pool_ptr, CHAR **name, ULONG *available_blocks, ULONG *total_blocks, TX_THREAD **first_suspended, ULONG *suspended_count, TX_BLOCK_POOL **next_pool)
+    [kernel] TX_BLOCK_POOL *pool_ptr
+    [user] CHAR **name
+    [user] ULONG *available_blocks
+    [user] ULONG *total_blocks
+    [kernel] TX_THREAD **first_suspended
+    [user] ULONG *suspended_count
+    [kernel] TX_BLOCK_POOL **next_pool
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:10
+Function: UINT _txe_semaphore_delete(TX_SEMAPHORE *semaphore_ptr)
+    [kernel] TX_SEMAPHORE *semaphore_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:11
+Function: UINT _txe_mutex_get(TX_MUTEX *mutex_ptr, ULONG wait_option)
+    [kernel] TX_MUTEX *mutex_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:12
+Function: UINT _txe_semaphore_prioritize(TX_SEMAPHORE *semaphore_ptr)
+    [kernel] TX_SEMAPHORE *semaphore_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:13
+Function: UINT _txe_mutex_prioritize(TX_MUTEX *mutex_ptr)
+    [kernel] TX_MUTEX *mutex_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:14
+Function: UINT _tx_queue_performance_system_info_get(ULONG *messages_sent, ULONG *messages_received, ULONG *empty_suspensions, ULONG *full_suspensions, ULONG *full_errors, ULONG *timeouts)
+    [user] ULONG *messages_sent
+    [user] ULONG *messages_received
+    [user] ULONG *empty_suspensions
+    [user] ULONG *full_suspensions
+    [user] ULONG *full_errors
+    [user] ULONG *timeouts
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:15
+Function: UINT _txe_byte_allocate(TX_BYTE_POOL *pool_ptr, VOID **memory_ptr, ULONG memory_size, ULONG wait_option)
+    [kernel] TX_BYTE_POOL *pool_ptr
+    [user] VOID **memory_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:16
+Function: UINT _txe_semaphore_put(TX_SEMAPHORE *semaphore_ptr)
+    [kernel] TX_SEMAPHORE *semaphore_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:17
+Function: UINT _txe_byte_pool_delete(TX_BYTE_POOL *pool_ptr)
+    [kernel] TX_BYTE_POOL *pool_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:18
+Function: UINT _txe_semaphore_ceiling_put(TX_SEMAPHORE *semaphore_ptr, ULONG ceiling)
+    [kernel] TX_SEMAPHORE *semaphore_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:19
+Function: UINT _txe_event_flags_set_notify(TX_EVENT_FLAGS_GROUP *group_ptr, VOID (*events_set_notify)(TX_EVENT_FLAGS_GROUP *))
+    [kernel] TX_EVENT_FLAGS_GROUP *group_ptr
+    [user] VOID (*events_set_notify)(TX_EVENT_FLAGS_GROUP *)
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:20
+Function: UINT _txe_queue_delete(TX_QUEUE *queue_ptr)
+    [kernel] TX_QUEUE *queue_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:22
+Function: UINT _tx_timer_performance_system_info_get(ULONG *activates, ULONG *reactivates, ULONG *deactivates, ULONG *expirations, ULONG *expiration_adjusts)
+    [user] ULONG *activates
+    [user] ULONG *reactivates
+    [user] ULONG *deactivates
+    [user] ULONG *expirations
+    [user] ULONG *expiration_adjusts
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:24
+Function: UINT _txe_queue_front_send(TX_QUEUE *queue_ptr, VOID *source_ptr, ULONG wait_option)
+    [kernel] TX_QUEUE *queue_ptr
+    [user] VOID *source_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:25
+Function: UINT _tx_event_flags_performance_info_get(TX_EVENT_FLAGS_GROUP *group_ptr, ULONG *sets, ULONG *gets, ULONG *suspensions, ULONG *timeouts)
+    [kernel] TX_EVENT_FLAGS_GROUP *group_ptr
+    [user] ULONG *sets
+    [user] ULONG *gets
+    [user] ULONG *suspensions
+    [user] ULONG *timeouts
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:26
+Function: UINT _txm_module_object_pointer_get(UINT object_type, CHAR *name, VOID **object_ptr)
+    [user] CHAR *name
+    [user] VOID **object_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:27
+Function: UINT _txe_thread_wait_abort(TX_THREAD *thread_ptr)
+    [kernel] TX_THREAD *thread_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:28
+Function: UINT _txe_block_pool_delete(TX_BLOCK_POOL *pool_ptr)
+    [kernel] TX_BLOCK_POOL *pool_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:29
+Function: UINT _txe_thread_info_get(TX_THREAD *thread_ptr, CHAR **name, UINT *state, ULONG *run_count, UINT *priority, UINT *preemption_threshold, ULONG *time_slice, TX_THREAD **next_thread, TX_THREAD **next_suspended_thread)
+    [kernel] TX_THREAD *thread_ptr
+    [user] CHAR **name
+    [user] UINT *state
+    [user] ULONG *run_count
+    [user] UINT *priority
+    [user] UINT *preemption_threshold
+    [user] ULONG *time_slice
+    [kernel] TX_THREAD **next_thread
+    [kernel] TX_THREAD **next_suspended_thread
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:30
+Function: UINT _txe_queue_flush(TX_QUEUE *queue_ptr)
+    [kernel] TX_QUEUE *queue_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:31
+Function: UINT _txe_thread_time_slice_change(TX_THREAD *thread_ptr, ULONG new_time_slice, ULONG *old_time_slice)
+    [kernel] TX_THREAD *thread_ptr
+    [user] ULONG *old_time_slice
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:32
+Function: UINT _txe_thread_priority_change(TX_THREAD *thread_ptr, UINT new_priority, UINT *old_priority)
+    [kernel] TX_THREAD *thread_ptr
+    [user] UINT *old_priority
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:33
+Function: UINT _txe_thread_terminate(TX_THREAD *thread_ptr)
+    [kernel] TX_THREAD *thread_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:34
+Function: UINT _tx_timer_performance_info_get(TX_TIMER *timer_ptr, ULONG *activates, ULONG *reactivates, ULONG *deactivates, ULONG *expirations, ULONG *expiration_adjusts)
+    [kernel] TX_TIMER *timer_ptr
+    [user] ULONG *activates
+    [user] ULONG *reactivates
+    [user] ULONG *deactivates
+    [user] ULONG *expirations
+    [user] ULONG *expiration_adjusts
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:35
+Function: UINT _tx_byte_pool_performance_info_get(TX_BYTE_POOL *pool_ptr, ULONG *allocates, ULONG *releases, ULONG *fragments_searched, ULONG *merges, ULONG *splits, ULONG *suspensions, ULONG *timeouts)
+    [kernel] TX_BYTE_POOL *pool_ptr
+    [user] ULONG *allocates
+    [user] ULONG *releases
+    [user] ULONG *fragments_searched
+    [user] ULONG *merges
+    [user] ULONG *splits
+    [user] ULONG *suspensions
+    [user] ULONG *timeouts
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:36
+Function: UINT _txe_thread_create(TX_THREAD *thread_ptr, CHAR *name_ptr, VOID (*entry_function)(ULONG entry_input), ULONG entry_input, VOID *stack_start, ULONG stack_size, UINT priority, UINT preempt_threshold, ULONG time_slice, UINT auto_start, UINT thread_control_block_size)
+    [kernel] TX_THREAD *thread_ptr
+    [user] CHAR *name_ptr
+    [user] VOID (*entry_function)(ULONG entry_input)
+    [user] VOID *stack_start
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:37
+Function: UINT _txe_mutex_info_get(TX_MUTEX *mutex_ptr, CHAR **name, ULONG *count, TX_THREAD **owner, TX_THREAD **first_suspended, ULONG *suspended_count, TX_MUTEX **next_mutex)
+    [kernel] TX_MUTEX *mutex_ptr
+    [user] CHAR **name
+    [user] ULONG *count
+    [kernel] TX_THREAD **owner
+    [kernel] TX_THREAD **first_suspended
+    [user] ULONG *suspended_count
+    [kernel] TX_MUTEX **next_mutex
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:38
+Function: UINT _txe_block_allocate(TX_BLOCK_POOL *pool_ptr, VOID **block_ptr, ULONG wait_option)
+    [kernel] TX_BLOCK_POOL *pool_ptr
+    [user] VOID **block_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:39
+Function: UINT _txe_timer_create(TX_TIMER *timer_ptr, CHAR *name_ptr, VOID (*expiration_function)(ULONG), ULONG expiration_input, ULONG initial_ticks, ULONG reschedule_ticks, UINT auto_activate, UINT timer_control_block_size)
+    [kernel] TX_TIMER *timer_ptr
+    [user] CHAR *name_ptr
+    [user] VOID (*expiration_function)(ULONG)
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:40
+Function: UINT _tx_thread_performance_info_get(TX_THREAD *thread_ptr, ULONG *resumptions, ULONG *suspensions, ULONG *solicited_preemptions, ULONG *interrupt_preemptions, ULONG *priority_inversions, ULONG *time_slices, ULONG *relinquishes, ULONG *timeouts, ULONG *wait_aborts, TX_THREAD **last_preempted_by)
+    [kernel] TX_THREAD *thread_ptr
+    [user] ULONG *resumptions
+    [user] ULONG *suspensions
+    [user] ULONG *solicited_preemptions
+    [user] ULONG *interrupt_preemptions
+    [user] ULONG *priority_inversions
+    [user] ULONG *time_slices
+    [user] ULONG *relinquishes
+    [user] ULONG *timeouts
+    [user] ULONG *wait_aborts
+    [kernel] TX_THREAD **last_preempted_by
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:45
+Function: UINT _tx_byte_pool_performance_system_info_get(ULONG *allocates, ULONG *releases, ULONG *fragments_searched, ULONG *merges, ULONG *splits, ULONG *suspensions, ULONG *timeouts)
+    [user] ULONG *allocates
+    [user] ULONG *releases
+    [user] ULONG *fragments_searched
+    [user] ULONG *merges
+    [user] ULONG *splits
+    [user] ULONG *suspensions
+    [user] ULONG *timeouts
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:46
+Function: UINT _txe_queue_send(TX_QUEUE *queue_ptr, VOID *source_ptr, ULONG wait_option)
+    [kernel] TX_QUEUE *queue_ptr
+    [user] VOID *source_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:47
+Function: UINT _txe_mutex_create(TX_MUTEX *mutex_ptr, CHAR *name_ptr, UINT inherit, UINT mutex_control_block_size)
+    [kernel] TX_MUTEX *mutex_ptr
+    [user] CHAR *name_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:48
+Function: UINT _tx_thread_stack_error_notify(VOID (*stack_error_handler)(TX_THREAD *thread_ptr))
+    [user] VOID (*stack_error_handler)(TX_THREAD *thread_ptr)
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:50
+Function: UINT _tx_trace_enable(VOID *trace_buffer_start, ULONG trace_buffer_size, ULONG registry_entries)
+    [user] VOID *trace_buffer_start
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:51
+Function: UINT _txe_timer_activate(TX_TIMER *timer_ptr)
+    [kernel] TX_TIMER *timer_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:52
+Function: UINT _txe_byte_pool_prioritize(TX_BYTE_POOL *pool_ptr)
+    [kernel] TX_BYTE_POOL *pool_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:53
+Function: UINT _txe_queue_prioritize(TX_QUEUE *queue_ptr)
+    [kernel] TX_QUEUE *queue_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:54
+Function: UINT _tx_semaphore_performance_system_info_get(ULONG *puts, ULONG *gets, ULONG *suspensions, ULONG *timeouts)
+    [user] ULONG *puts
+    [user] ULONG *gets
+    [user] ULONG *suspensions
+    [user] ULONG *timeouts
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:55
+Function: UINT _txe_queue_send_notify(TX_QUEUE *queue_ptr, VOID (*queue_send_notify)(TX_QUEUE *notify_queue_ptr))
+    [kernel] TX_QUEUE *queue_ptr
+    [user] VOID (*queue_send_notify)(TX_QUEUE *notify_queue_ptr)
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:56
+Function: UINT _txe_mutex_put(TX_MUTEX *mutex_ptr)
+    [kernel] TX_MUTEX *mutex_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:57
+Function: UINT _tx_block_pool_performance_system_info_get(ULONG *allocates, ULONG *releases, ULONG *suspensions, ULONG *timeouts)
+    [user] ULONG *allocates
+    [user] ULONG *releases
+    [user] ULONG *suspensions
+    [user] ULONG *timeouts
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:58
+Function: UINT _txe_thread_resume(TX_THREAD *thread_ptr)
+    [kernel] TX_THREAD *thread_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:59
+Function: UINT _txe_semaphore_info_get(TX_SEMAPHORE *semaphore_ptr, CHAR **name, ULONG *current_value, TX_THREAD **first_suspended, ULONG *suspended_count, TX_SEMAPHORE **next_semaphore)
+    [kernel] TX_SEMAPHORE *semaphore_ptr
+    [user] CHAR **name
+    [user] ULONG *current_value
+    [kernel] TX_THREAD **first_suspended
+    [user] ULONG *suspended_count
+    [kernel] TX_SEMAPHORE **next_semaphore
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:60
+Function: UINT _txe_block_pool_create(TX_BLOCK_POOL *pool_ptr, CHAR *name_ptr, ULONG block_size, VOID *pool_start, ULONG pool_size, UINT pool_control_block_size)
+    [kernel] TX_BLOCK_POOL *pool_ptr
+    [user] CHAR *name_ptr
+    [user] VOID *pool_start
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:61
+Function: UINT _tx_semaphore_performance_info_get(TX_SEMAPHORE *semaphore_ptr, ULONG *puts, ULONG *gets, ULONG *suspensions, ULONG *timeouts)
+    [kernel] TX_SEMAPHORE *semaphore_ptr
+    [user] ULONG *puts
+    [user] ULONG *gets
+    [user] ULONG *suspensions
+    [user] ULONG *timeouts
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:62
+Function: UINT _txe_semaphore_put_notify(TX_SEMAPHORE *semaphore_ptr, VOID (*semaphore_put_notify)(TX_SEMAPHORE *notify_semaphore_ptr))
+    [kernel] TX_SEMAPHORE *semaphore_ptr
+    [user] VOID (*semaphore_put_notify)(TX_SEMAPHORE *notify_semaphore_ptr)
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:63
+Function: UINT _txe_thread_reset(TX_THREAD *thread_ptr)
+    [kernel] TX_THREAD *thread_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:64
+Function: UINT _txe_byte_pool_create(TX_BYTE_POOL *pool_ptr, CHAR *name_ptr, VOID *pool_start, ULONG pool_size, UINT pool_control_block_size)
+    [kernel] TX_BYTE_POOL *pool_ptr
+    [user] CHAR *name_ptr
+    [user] VOID *pool_start
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:65
+Function: UINT _txe_block_release(VOID *block_ptr)
+    [user] VOID *block_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:67
+Function: UINT _txe_timer_deactivate(TX_TIMER *timer_ptr)
+    [kernel] TX_TIMER *timer_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:69
+Function: UINT _txe_queue_create(TX_QUEUE *queue_ptr, CHAR *name_ptr, UINT message_size, VOID *queue_start, ULONG queue_size, UINT queue_control_block_size)
+    [kernel] TX_QUEUE *queue_ptr
+    [user] CHAR *name_ptr
+    [user] VOID *queue_start
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:70
+Function: UINT _txe_event_flags_create(TX_EVENT_FLAGS_GROUP *group_ptr, CHAR *name_ptr, UINT event_control_block_size)
+    [kernel] TX_EVENT_FLAGS_GROUP *group_ptr
+    [user] CHAR *name_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:71
+Function: UINT _tx_queue_performance_info_get(TX_QUEUE *queue_ptr, ULONG *messages_sent, ULONG *messages_received, ULONG *empty_suspensions, ULONG *full_suspensions, ULONG *full_errors, ULONG *timeouts)
+    [kernel] TX_QUEUE *queue_ptr
+    [user] ULONG *messages_sent
+    [user] ULONG *messages_received
+    [user] ULONG *empty_suspensions
+    [user] ULONG *full_suspensions
+    [user] ULONG *full_errors
+    [user] ULONG *timeouts
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:72
+Function: UINT _txe_semaphore_create(TX_SEMAPHORE *semaphore_ptr, CHAR *name_ptr, ULONG initial_count, UINT semaphore_control_block_size)
+    [kernel] TX_SEMAPHORE *semaphore_ptr
+    [user] CHAR *name_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:74
+Function: UINT _tx_mutex_performance_system_info_get(ULONG *puts, ULONG *gets, ULONG *suspensions, ULONG *timeouts, ULONG *inversions, ULONG *inheritances)
+    [user] ULONG *puts
+    [user] ULONG *gets
+    [user] ULONG *suspensions
+    [user] ULONG *timeouts
+    [user] ULONG *inversions
+    [user] ULONG *inheritances
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:75
+Function: UINT _txe_queue_receive(TX_QUEUE *queue_ptr, VOID *destination_ptr, ULONG wait_option)
+    [kernel] TX_QUEUE *queue_ptr
+    [user] VOID *destination_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:76
+Function: UINT _txe_thread_suspend(TX_THREAD *thread_ptr)
+    [kernel] TX_THREAD *thread_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:77
+Function: UINT _txm_module_object_deallocate(VOID *object_ptr)
+    [user] VOID *object_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:79
+Function: UINT _txe_queue_info_get(TX_QUEUE *queue_ptr, CHAR **name, ULONG *enqueued, ULONG *available_storage, TX_THREAD **first_suspended, ULONG *suspended_count, TX_QUEUE **next_queue)
+    [kernel] TX_QUEUE *queue_ptr
+    [user] CHAR **name
+    [user] ULONG *enqueued
+    [user] ULONG *available_storage
+    [kernel] TX_THREAD **first_suspended
+    [user] ULONG *suspended_count
+    [kernel] TX_QUEUE **next_queue
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:80
+Function: UINT _txe_semaphore_get(TX_SEMAPHORE *semaphore_ptr, ULONG wait_option)
+    [kernel] TX_SEMAPHORE *semaphore_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:81
+Function: UINT _txe_mutex_delete(TX_MUTEX *mutex_ptr)
+    [kernel] TX_MUTEX *mutex_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:83
+Function: UINT _txe_event_flags_get(TX_EVENT_FLAGS_GROUP *group_ptr, ULONG requested_flags, UINT get_option, ULONG *actual_flags_ptr, ULONG wait_option)
+    [kernel] TX_EVENT_FLAGS_GROUP *group_ptr
+    [user] ULONG *actual_flags_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:84
+Function: UINT _txm_module_object_allocate(VOID **object_ptr, ULONG object_size)
+    [user] VOID **object_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:85
+Function: UINT _txe_byte_pool_info_get(TX_BYTE_POOL *pool_ptr, CHAR **name, ULONG *available_bytes, ULONG *fragments, TX_THREAD **first_suspended, ULONG *suspended_count, TX_BYTE_POOL **next_pool)
+    [kernel] TX_BYTE_POOL *pool_ptr
+    [user] CHAR **name
+    [user] ULONG *available_bytes
+    [user] ULONG *fragments
+    [kernel] TX_THREAD **first_suspended
+    [user] ULONG *suspended_count
+    [kernel] TX_BYTE_POOL **next_pool
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:86
+Function: UINT _txe_timer_info_get(TX_TIMER *timer_ptr, CHAR **name, UINT *active, ULONG *remaining_ticks, ULONG *reschedule_ticks, TX_TIMER **next_timer)
+    [kernel] TX_TIMER *timer_ptr
+    [user] CHAR **name
+    [user] UINT *active
+    [user] ULONG *remaining_ticks
+    [user] ULONG *reschedule_ticks
+    [kernel] TX_TIMER **next_timer
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:87
+Function: UINT _txe_event_flags_set(TX_EVENT_FLAGS_GROUP *group_ptr, ULONG flags_to_set, UINT set_option)
+    [kernel] TX_EVENT_FLAGS_GROUP *group_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:88
+Function: UINT _txe_thread_preemption_change(TX_THREAD *thread_ptr, UINT new_threshold, UINT *old_threshold)
+    [kernel] TX_THREAD *thread_ptr
+    [user] UINT *old_threshold
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:89
+Function: UINT _tx_block_pool_performance_info_get(TX_BLOCK_POOL *pool_ptr, ULONG *allocates, ULONG *releases, ULONG *suspensions, ULONG *timeouts)
+    [kernel] TX_BLOCK_POOL *pool_ptr
+    [user] ULONG *allocates
+    [user] ULONG *releases
+    [user] ULONG *suspensions
+    [user] ULONG *timeouts
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:90
+Function: UINT _txe_thread_delete(TX_THREAD *thread_ptr)
+    [kernel] TX_THREAD *thread_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:92
+Function: UINT _txm_module_object_pointer_get_extended(UINT object_type, CHAR *name, UINT name_length, VOID **object_ptr)
+    [user] CHAR *name
+    [user] VOID **object_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:93
+Function: UINT _tx_mutex_performance_info_get(TX_MUTEX *mutex_ptr, ULONG *puts, ULONG *gets, ULONG *suspensions, ULONG *timeouts, ULONG *inversions, ULONG *inheritances)
+    [kernel] TX_MUTEX *mutex_ptr
+    [user] ULONG *puts
+    [user] ULONG *gets
+    [user] ULONG *suspensions
+    [user] ULONG *timeouts
+    [user] ULONG *inversions
+    [user] ULONG *inheritances
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:94
+Function: UINT _txe_timer_delete(TX_TIMER *timer_ptr)
+    [kernel] TX_TIMER *timer_ptr
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:95
+Function: UINT _txe_thread_entry_exit_notify(TX_THREAD *thread_ptr, VOID (*thread_entry_exit_notify)(TX_THREAD *notify_thread_ptr, UINT type))
+    [kernel] TX_THREAD *thread_ptr
+    [user] VOID (*thread_entry_exit_notify)(TX_THREAD *notify_thread_ptr, UINT type)
+
+File: /home/klee/klee_src/threadx_test_v6_4_2/funcs_new.txt:96
+Function: UINT _txe_block_pool_prioritize(TX_BLOCK_POOL *pool_ptr)
+    [kernel] TX_BLOCK_POOL *pool_ptr
+
+
+--- Totals ---
+Functions with ≥1 kernel (TX_*) ptr param: 66
+Functions with ≥1 pointer slot: 83
+Parameter slots total: 244
+  kernel (*): 83
+  user:       161

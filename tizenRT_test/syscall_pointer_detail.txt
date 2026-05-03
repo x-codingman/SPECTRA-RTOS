@@ -1,0 +1,516 @@
+Syscalls with at least one pointer-like parameter:
+
+Syscall: aio_cancel
+  "int" aio_cancel("int", "FAR struct aiocb *")
+    [kernel] "FAR struct aiocb *"
+
+Syscall: aio_fsync
+  "int" aio_fsync("int", "FAR struct aiocb *")
+    [kernel] "FAR struct aiocb *"
+
+Syscall: aio_read
+  "int" aio_read("FAR struct aiocb *")
+    [kernel] "FAR struct aiocb *"
+
+Syscall: aio_write
+  "int" aio_write("FAR struct aiocb *")
+    [kernel] "FAR struct aiocb *"
+
+Syscall: accept
+  "int" accept("int", "struct sockaddr*", "socklen_t*")
+    [user] "struct sockaddr*"
+    [user] "socklen_t*"
+
+Syscall: atexit
+  "int" atexit("void (*)(void)")
+    [user] "void (*)(void)"
+
+Syscall: bind
+  "int" bind("int", "FAR const struct sockaddr*", "socklen_t")
+    [user] "FAR const struct sockaddr*"
+
+Syscall: clock_getres
+  "int" clock_getres("clockid_t", "struct timespec*")
+    [user] "struct timespec*"
+
+Syscall: clock_gettime
+  "int" clock_gettime("clockid_t", "struct timespec*")
+    [user] "struct timespec*"
+
+Syscall: clock_settime
+  "int" clock_settime("clockid_t", "const struct timespec*")
+    [user] "const struct timespec*"
+
+Syscall: closedir
+  "int" closedir("FAR DIR*")
+    [kernel] "FAR DIR*"
+
+Syscall: connect
+  "int" connect("int", "FAR const struct sockaddr*", "socklen_t")
+    [user] "FAR const struct sockaddr*"
+
+Syscall: exec
+  int exec(FAR const char *, FAR char * const *, FAR const struct symtab_s *, int)
+    [user] FAR const char *
+    [user] FAR char * const *
+    [kernel] FAR const struct symtab_s *
+
+Syscall: execv
+  int execv(FAR const char *, FAR char *const []|FAR char *const *)
+    [user] FAR const char *
+    [user] FAR char *const []|FAR char *const *
+
+Syscall: fs_fdopen
+  "FAR struct file_struct*" fs_fdopen("int", "int", "FAR struct tcb_s*")
+    [kernel] "FAR struct tcb_s*"
+
+Syscall: fstat
+  int fstat(int, FAR struct stat*)
+    [user] FAR struct stat*
+
+Syscall: fstatfs
+  int fstatfs(int, FAR struct statfs*)
+    [user] FAR struct statfs*
+
+Syscall: getenv
+  "FAR char*" getenv("FAR const char*")
+    [user] "FAR const char*"
+
+Syscall: get_environ_ptr
+  "FAR char*" get_environ_ptr("size_t *")
+    [user] "size_t *"
+
+Syscall: getpeername
+  "int" getpeername("int", "struct sockaddr *", "socklen_t *")
+    [user] "struct sockaddr *"
+    [user] "socklen_t *"
+
+Syscall: getsockname
+  "int" getsockname("int", "FAR struct sockaddr *", "FAR socklen_t *")
+    [user] "FAR struct sockaddr *"
+    [user] "FAR socklen_t *"
+
+Syscall: getsockopt
+  "int" getsockopt("int", "int", "int", "FAR void*", "FAR socklen_t*")
+    [user] "FAR void*"
+    [user] "FAR socklen_t*"
+
+Syscall: gettimeofday
+  "int" gettimeofday("struct timeval*", "FAR struct timezone*")
+    [user] "struct timeval*"
+    [user] "FAR struct timezone*"
+
+Syscall: mkdir
+  "int" mkdir("FAR const char*", "mode_t")
+    [user] "FAR const char*"
+
+Syscall: mkfifo
+  "int" mkfifo("FAR const char*", "mode_t")
+    [user] "FAR const char*"
+
+Syscall: mmap
+  "FAR void*" mmap("FAR void*", "size_t", "int", "int", "int", "off_t")
+    [user] "FAR void*"
+
+Syscall: mount
+  "int" mount("const char*", "const char*", "const char*", "unsigned long", "const void*")
+    [user] "const char*"
+    [user] "const char*"
+    [user] "const char*"
+    [user] "const void*"
+
+Syscall: mq_getattr
+  "int" mq_getattr("mqd_t", "struct mq_attr *")
+    [kernel] "struct mq_attr *"
+
+Syscall: mq_notify
+  "int" mq_notify("mqd_t", "const struct sigevent*")
+    [kernel] "const struct sigevent*"
+
+Syscall: mq_open
+  "mqd_t" mq_open("const char*", "int", "...")
+    [user] "const char*"
+
+Syscall: mq_receive
+  "ssize_t" mq_receive("mqd_t", "char*", "size_t", "int*")
+    [user] "char*"
+    [user] "int*"
+
+Syscall: mq_send
+  "int" mq_send("mqd_t", "const char*", "size_t", "int")
+    [user] "const char*"
+
+Syscall: mq_setattr
+  "int" mq_setattr("mqd_t", "const struct mq_attr *", "struct mq_attr *")
+    [kernel] "const struct mq_attr *"
+    [kernel] "struct mq_attr *"
+
+Syscall: mq_timedreceive
+  "ssize_t" mq_timedreceive("mqd_t", "char*", "size_t", "int*", "const struct timespec*")
+    [user] "char*"
+    [user] "int*"
+    [user] "const struct timespec*"
+
+Syscall: mq_timedsend
+  "int" mq_timedsend("mqd_t", "const char*", "size_t", "int", "const struct timespec*")
+    [user] "const char*"
+    [user] "const struct timespec*"
+
+Syscall: mq_unlink
+  "int" mq_unlink("const char*")
+    [user] "const char*"
+
+Syscall: on_exit
+  "int" on_exit("CODE void (*)(int, FAR void *)", "FAR void *")
+    [user] "CODE void (*)(int
+    [user] FAR void *)"
+    [user] "FAR void *"
+
+Syscall: nanosleep
+  "int" nanosleep("FAR const struct timespec *", "FAR struct timespec*")
+    [user] "FAR const struct timespec *"
+    [user] "FAR struct timespec*"
+
+Syscall: open
+  "int" open("const char*", "int", "...")
+    [user] "const char*"
+
+Syscall: opendir
+  "FAR DIR*" opendir("FAR const char*")
+    [user] "FAR const char*"
+
+Syscall: pipe
+  "int" pipe("int [2]|int*")
+    [user] "int [2]|int*"
+
+Syscall: poll
+  "int" poll("FAR struct pollfd*", "nfds_t", "int")
+    [kernel] "FAR struct pollfd*"
+
+Syscall: pread
+  "ssize_t" pread("int", "FAR void*", "size_t", "off_t")
+    [user] "FAR void*"
+
+Syscall: pwrite
+  "ssize_t" pwrite("int", "FAR const void*", "size_t", "off_t")
+    [user] "FAR const void*"
+
+Syscall: pthread_cond_broadcast
+  "int" pthread_cond_broadcast("FAR pthread_cond_t*")
+    [kernel] "FAR pthread_cond_t*"
+
+Syscall: pthread_cond_signal
+  "int" pthread_cond_signal("FAR pthread_cond_t*")
+    [kernel] "FAR pthread_cond_t*"
+
+Syscall: pthread_cond_timedwait
+  "int" pthread_cond_timedwait("FAR pthread_cond_t*", "FAR pthread_mutex_t*", "FAR const struct timespec*")
+    [kernel] "FAR pthread_cond_t*"
+    [kernel] "FAR pthread_mutex_t*"
+    [user] "FAR const struct timespec*"
+
+Syscall: pthread_cond_wait
+  "int" pthread_cond_wait("FAR pthread_cond_t*", "FAR pthread_mutex_t*")
+    [kernel] "FAR pthread_cond_t*"
+    [kernel] "FAR pthread_mutex_t*"
+
+Syscall: pthread_create
+  "int" pthread_create("FAR pthread_t*", "FAR const pthread_attr_t*", "pthread_startroutine_t", "pthread_addr_t")
+    [kernel] "FAR pthread_t*"
+    [kernel] "FAR const pthread_attr_t*"
+
+Syscall: pthread_getschedparam
+  "int" pthread_getschedparam("pthread_t", "FAR int*", "FAR struct sched_param*")
+    [user] "FAR int*"
+    [user] "FAR struct sched_param*"
+
+Syscall: pthread_join
+  "int" pthread_join("pthread_t", "FAR pthread_addr_t*")
+    [kernel] "FAR pthread_addr_t*"
+
+Syscall: pthread_tryjoin_np
+  "int" pthread_tryjoin_np("pthread_t", "FAR pthread_addr_t*")
+    [kernel] "FAR pthread_addr_t*"
+
+Syscall: pthread_key_create
+  "int" pthread_key_create("FAR pthread_key_t*", "CODE void (*)(FAR void*)")
+    [kernel] "FAR pthread_key_t*"
+    [user] "CODE void (*)(FAR void*)"
+
+Syscall: pthread_mutex_destroy
+  "int" pthread_mutex_destroy("FAR pthread_mutex_t*")
+    [kernel] "FAR pthread_mutex_t*"
+
+Syscall: pthread_mutex_init
+  "int" pthread_mutex_init("FAR pthread_mutex_t*", "FAR const pthread_mutexattr_t*")
+    [kernel] "FAR pthread_mutex_t*"
+    [kernel] "FAR const pthread_mutexattr_t*"
+
+Syscall: pthread_mutex_lock
+  "int" pthread_mutex_lock("FAR pthread_mutex_t*")
+    [kernel] "FAR pthread_mutex_t*"
+
+Syscall: pthread_mutex_trylock
+  "int" pthread_mutex_trylock("FAR pthread_mutex_t*")
+    [kernel] "FAR pthread_mutex_t*"
+
+Syscall: pthread_mutex_unlock
+  "int" pthread_mutex_unlock("FAR pthread_mutex_t*")
+    [kernel] "FAR pthread_mutex_t*"
+
+Syscall: pthread_mutex_consistent
+  "int" pthread_mutex_consistent("FAR pthread_mutex_t*")
+    [kernel] "FAR pthread_mutex_t*"
+
+Syscall: pthread_setschedparam
+  "int" pthread_setschedparam("pthread_t", "int", "FAR const struct sched_param*")
+    [user] "FAR const struct sched_param*"
+
+Syscall: pthread_setspecific
+  "int" pthread_setspecific("pthread_key_t", "FAR const void*")
+    [user] "FAR const void*"
+
+Syscall: pthread_sigmask
+  "int" pthread_sigmask("int", "FAR const sigset_t*", "FAR sigset_t*")
+    [kernel] "FAR const sigset_t*"
+    [kernel] "FAR sigset_t*"
+
+Syscall: putenv
+  "int" putenv("FAR const char*")
+    [user] "FAR const char*"
+
+Syscall: read
+  "ssize_t" read("int", "FAR void*", "size_t")
+    [user] "FAR void*"
+
+Syscall: readdir
+  "FAR struct dirent*" readdir("FAR DIR*")
+    [kernel] "FAR DIR*"
+
+Syscall: recv
+  "ssize_t" recv("int", "FAR void*", "size_t", "int")
+    [user] "FAR void*"
+
+Syscall: recvfrom
+  "ssize_t" recvfrom("int", "FAR void*", "size_t", "int", "FAR struct sockaddr*", "FAR socklen_t*")
+    [user] "FAR void*"
+    [user] "FAR struct sockaddr*"
+    [user] "FAR socklen_t*"
+
+Syscall: recvmsg
+  "ssize_t" recvmsg("int", "FAR struct msghdr*", "int")
+    [kernel] "FAR struct msghdr*"
+
+Syscall: rename
+  "int" rename("FAR const char*", "FAR const char*")
+    [user] "FAR const char*"
+    [user] "FAR const char*"
+
+Syscall: rewinddir
+  "void" rewinddir("FAR DIR*")
+    [kernel] "FAR DIR*"
+
+Syscall: rmdir
+  "int" rmdir("FAR const char*")
+    [user] "FAR const char*"
+
+Syscall: sched_getparam
+  "int" sched_getparam("pid_t", "struct sched_param*")
+    [user] "struct sched_param*"
+
+Syscall: sched_rr_get_interval
+  "int" sched_rr_get_interval("pid_t", "struct timespec*")
+    [user] "struct timespec*"
+
+Syscall: sched_setparam
+  "int" sched_setparam("pid_t", "const struct sched_param*")
+    [user] "const struct sched_param*"
+
+Syscall: sched_setscheduler
+  "int" sched_setscheduler("pid_t", "int", "const struct sched_param*")
+    [user] "const struct sched_param*"
+
+Syscall: seekdir
+  "void" seekdir("FAR DIR*", "off_t")
+    [kernel] "FAR DIR*"
+
+Syscall: select
+  "int" select("int", "FAR fd_set*", "FAR fd_set*", "FAR fd_set*", "FAR struct timeval*")
+    [kernel] "FAR fd_set*"
+    [kernel] "FAR fd_set*"
+    [kernel] "FAR fd_set*"
+    [user] "FAR struct timeval*"
+
+Syscall: sem_close
+  "int" sem_close("FAR sem_t*")
+    [kernel] "FAR sem_t*"
+
+Syscall: sem_destroy
+  "int" sem_destroy("FAR sem_t*")
+    [kernel] "FAR sem_t*"
+
+Syscall: sem_open
+  "FAR sem_t*" sem_open("FAR const char*", "int", "...")
+    [user] "FAR const char*"
+
+Syscall: sem_post
+  "int" sem_post("FAR sem_t*")
+    [kernel] "FAR sem_t*"
+
+Syscall: sem_setprotocol
+  int sem_setprotocol(FAR sem_t*, int)
+    [kernel] FAR sem_t*
+
+Syscall: sem_timedwait
+  "int" sem_timedwait("FAR sem_t*", "FAR const struct timespec *")
+    [kernel] "FAR sem_t*"
+    [user] "FAR const struct timespec *"
+
+Syscall: sem_trywait
+  "int" sem_trywait("FAR sem_t*")
+    [kernel] "FAR sem_t*"
+
+Syscall: sem_unlink
+  "int" sem_unlink("FAR const char*")
+    [user] "FAR const char*"
+
+Syscall: sem_wait
+  "int" sem_wait("FAR sem_t*")
+    [kernel] "FAR sem_t*"
+
+Syscall: send
+  "ssize_t" send("int", "FAR const void*", "size_t", "int")
+    [user] "FAR const void*"
+
+Syscall: sendto
+  "ssize_t" sendto("int", "FAR const void*", "size_t", "int", "FAR const struct sockaddr*", "socklen_t")
+    [user] "FAR const void*"
+    [user] "FAR const struct sockaddr*"
+
+Syscall: setenv
+  "int" setenv("const char*", "const char*", "int")
+    [user] "const char*"
+    [user] "const char*"
+
+Syscall: setsockopt
+  "int" setsockopt("int", "int", "int", "FAR const void*", "socklen_t")
+    [user] "FAR const void*"
+
+Syscall: shmat
+  "FAR void *" shmat("int", "FAR const void *", "int")
+    [user] "FAR const void *"
+
+Syscall: shmctl
+  "int" shmctl("int", "int", "FAR struct shmid_ds *")
+    [kernel] "FAR struct shmid_ds *"
+
+Syscall: shmdt
+  "int" shmdt("FAR const void *")
+    [user] "FAR const void *"
+
+Syscall: sigaction
+  "int" sigaction("int", "FAR const struct sigaction*", "FAR struct sigaction*")
+    [kernel] "FAR const struct sigaction*"
+    [kernel] "FAR struct sigaction*"
+
+Syscall: sigpending
+  "int" sigpending("FAR sigset_t*")
+    [kernel] "FAR sigset_t*"
+
+Syscall: sigprocmask
+  "int" sigprocmask("int", "FAR const sigset_t*", "FAR sigset_t*")
+    [kernel] "FAR const sigset_t*"
+    [kernel] "FAR sigset_t*"
+
+Syscall: sigqueue
+  "int" sigqueue("int", "int", "union sigval|FAR void *|sival_ptr")
+    [user] "union sigval|FAR void *|sival_ptr"
+
+Syscall: sigsuspend
+  "int" sigsuspend("FAR const sigset_t*")
+    [kernel] "FAR const sigset_t*"
+
+Syscall: sigtimedwait
+  "int" sigtimedwait("FAR const sigset_t*", "FAR struct siginfo*", "FAR const struct timespec*")
+    [kernel] "FAR const sigset_t*"
+    [kernel] "FAR struct siginfo*"
+    [user] "FAR const struct timespec*"
+
+Syscall: sigwaitinfo
+  "int" sigwaitinfo("FAR const sigset_t*", "FAR struct siginfo*")
+    [kernel] "FAR const sigset_t*"
+    [kernel] "FAR struct siginfo*"
+
+Syscall: stat
+  "int" stat("const char*", "FAR struct stat*")
+    [user] "const char*"
+    [user] "FAR struct stat*"
+
+Syscall: statfs
+  "int" statfs("const char*", "struct statfs*")
+    [user] "const char*"
+    [user] "struct statfs*"
+
+Syscall: task_create
+  "int" task_create("FAR const char*", "int", "int", "main_t", "FAR char * const []|FAR char * const *")
+    [user] "FAR const char*"
+    [user] "FAR char * const []|FAR char * const *"
+
+Syscall: task_setcancelstate
+  int task_setcancelstate(int, FAR int*)
+    [user] FAR int*
+
+Syscall: task_setcanceltype
+  int task_setcanceltype(int, FAR int*)
+    [user] FAR int*
+
+Syscall: timer_create
+  "int" timer_create("clockid_t", "FAR struct sigevent*", "FAR timer_t*")
+    [kernel] "FAR struct sigevent*"
+    [kernel] "FAR timer_t*"
+
+Syscall: timer_gettime
+  "int" timer_gettime("timer_t", "FAR struct itimerspec*")
+    [user] "FAR struct itimerspec*"
+
+Syscall: timer_settime
+  "int" timer_settime("timer_t", "int", "FAR const struct itimerspec*", "FAR struct itimerspec*")
+    [user] "FAR const struct itimerspec*"
+    [user] "FAR struct itimerspec*"
+
+Syscall: umount
+  "int" umount("const char*")
+    [user] "const char*"
+
+Syscall: unlink
+  "int" unlink("FAR const char*")
+    [user] "FAR const char*"
+
+Syscall: unsetenv
+  "int" unsetenv("const char*")
+    [user] "const char*"
+
+Syscall: up_assert
+  "void" up_assert("FAR const uint8_t*", "int")
+    [user] "FAR const uint8_t*"
+
+Syscall: wait
+  "pid_t" wait("int*")
+    [user] "int*"
+
+Syscall: waitid
+  "int" waitid("idtype_t", "id_t", " FAR siginfo_t *", "int")
+    [kernel] " FAR siginfo_t *"
+
+Syscall: waitpid
+  "pid_t" waitpid("pid_t", "int*", "int")
+    [user] "int*"
+
+Syscall: write
+  "ssize_t" write("int", "FAR const void*", "size_t")
+    [user] "FAR const void*"
+
+--- Totals ---
+Syscalls with at least one kernel ptr param: 47
+Syscalls with at least one pointer slot: 116
+Slots: 162 (kernel 60, user 102)
