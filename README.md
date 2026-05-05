@@ -1,6 +1,6 @@
 # SPECTRA: Symbolic Pointer Exposure Checking and TRacking Architecture
 
-**SPECTRA** is a symbolic execution-based framework for detecting **Shared Legacy Object Pointers (SLOP)** vulnerabilities in **Real-Time Operating Systems (RTOSs)**. These vulnerabilities arise from exposing internal kernel object pointers to untrusted user threads, even in privilege-separated architectures.
+**SPECTRA** is a symbolic execution-based framework for detecting **Shared Legacy Isolation-breaking Pointers (SLIP)** vulnerabilities in **Real-Time Operating Systems (RTOSs)**. These vulnerabilities arise from exposing internal kernel object pointers to untrusted user threads, even in privilege-separated architectures.
 
 > 📢 This repository is part of an anonymous artifact submission. All identifiers that may reveal authorship have been removed or anonymized.
 
