@@ -33,7 +33,6 @@ rtos-api-analysis/results/
 autoconf/aclocal.m4
 autoconf/autom4te.cache/
 autom4te.cache/
-nlohmann_json/
 
 # KLEE output
 test-rtos/freertos-10.5.1/symbolic_execution/
