@@ -10,11 +10,15 @@ Prerequisite: Run data-analyze-all.py first to populate InstructionCoverage in x
 """
 
 import os
-import pandas as pd
-import numpy as np
+from pathlib import Path
+
 import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
 
 from output_utils import dated_copy
+
+_SCRIPT_DIR = Path(__file__).resolve().parent
 
 
 def get_rtos_display_name(rtos_version):
@@ -44,7 +48,7 @@ def load_code_coverage_df(result_folder, rtos_version, use_walltime=True):
     df = pd.read_excel(xlsx_path, engine='openpyxl')
     if 'System Call' not in df.columns:
         return None
-    df = df[~df['System Call'].isin(['Total Finished', 'Total', '总计'])]
+    df = df[~df['System Call'].isin(['Total Finished', 'Total'])]
     if 'InstructionCoverage' not in df.columns:
         return None
     df['CodeCoverage'] = pd.to_numeric(df['InstructionCoverage'], errors='coerce')
@@ -198,8 +202,8 @@ def print_code_coverage_summary(result_folder, rtos_versions, use_walltime=True)
 
 
 if __name__ == '__main__':
-    result_folder = '/home/klee/klee_src/rtos-api-analysis/results'
-    store_folder = '/home/klee/klee_src/rtos-api-analysis/results/code_coverage'
+    result_folder = str(_SCRIPT_DIR / 'results')
+    store_folder = str(_SCRIPT_DIR / 'results' / 'code_coverage')
 
     rtos_list = ['freertos-10.5.1', 'tizenrt', 'threadx-6.4.2', 'rt-thread']
     rtos_available = [r for r in rtos_list

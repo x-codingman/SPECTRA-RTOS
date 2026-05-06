@@ -1,15 +1,20 @@
 import os
-import pandas as pd
-import matplotlib.pyplot as plt
 import re
-import sqlite3
+from pathlib import Path
+
+import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
+import sqlite3
 
 from output_utils import dated_copy
 
+_REPO_ROOT = Path(__file__).resolve().parent.parent
+_SCRIPT_DIR = Path(__file__).resolve().parent
+
 
 def get_explored_paths_from_info(info_path):
-    """从KLEE info文件中提取explored paths数量"""
+    """Return explored paths count from a KLEE ``info`` file, or ``None``."""
     if not os.path.exists(info_path):
         return None
     try:
@@ -24,30 +29,25 @@ def get_explored_paths_from_info(info_path):
 
 
 def get_fork_stats_from_info(info_path):
-    """从KLEE info文件中提取fork统计信息"""
+    """Return fork timing / percentage fields parsed from ``info``, or ``None``."""
     if not os.path.exists(info_path):
         return None
     try:
         with open(info_path, 'r') as f:
             content = f.read()
             
-            # 提取fork时间
             forks_time_match = re.search(r'KLEE: done: forks time = (\d+)', content)
             forks_time = int(forks_time_match.group(1)) if forks_time_match else 0
             
-            # 提取kernel objects forks time
             kernel_forks_time_match = re.search(r'KLEE: done: kernel objects forks time = (\d+)', content)
             kernel_forks_time = int(kernel_forks_time_match.group(1)) if kernel_forks_time_match else 0
             
-            # 提取kernel objects forks time percentage
             kernel_forks_percentage_match = re.search(r'KLEE: done: kernel objects forks time percentage = ([\d.]+)%', content)
             kernel_forks_percentage = float(kernel_forks_percentage_match.group(1)) if kernel_forks_percentage_match else 0.0
             
-            # 提取parameter caused forks time
             param_forks_time_match = re.search(r'KLEE: done: parameter caused forks time = (\d+)', content)
             param_forks_time = int(param_forks_time_match.group(1)) if param_forks_time_match else 0
             
-            # 提取parameter caused forks time percentage
             param_forks_percentage_match = re.search(r'KLEE: done: parameter caused forks time percentage = ([\d.]+)%', content)
             param_forks_percentage = float(param_forks_percentage_match.group(1)) if param_forks_percentage_match else 0.0
             
@@ -64,7 +64,7 @@ def get_fork_stats_from_info(info_path):
 
 
 def plot_states(df, rtos_name, output_folder):
-    """绘制状态数量图表"""
+    """Bar chart of explored paths per system call."""
     plt.figure(figsize=(12, 8))
     bar_width = 0.5
     plt.bar(range(len(df)), df['ExploredPaths'], width=bar_width)
@@ -79,7 +79,6 @@ def plot_states(df, rtos_name, output_folder):
     plt.title(f'States Analysis - {rtos_name}', fontsize=32, weight='bold')
     plt.grid(True, linestyle='--', alpha=0.7)
     
-    # 使用对数刻度
     if df['ExploredPaths'].max() > 0:
         plt.yscale('log', base=10)
         y_max = np.ceil(np.log10(df['ExploredPaths'].max()))
@@ -95,7 +94,7 @@ def plot_states(df, rtos_name, output_folder):
 
 
 def plot_forks_time(df, rtos_name, output_folder):
-    """绘制fork时间图表"""
+    """Bar chart of fork time per system call."""
     plt.figure(figsize=(12, 8))
     bar_width = 0.5
     plt.bar(range(len(df)), df['ForksTime'], width=bar_width)
@@ -110,7 +109,6 @@ def plot_forks_time(df, rtos_name, output_folder):
     plt.title(f'Forks Time Analysis - {rtos_name}', fontsize=32, weight='bold')
     plt.grid(True, linestyle='--', alpha=0.7)
     
-    # 使用对数刻度
     if df['ForksTime'].max() > 0:
         plt.yscale('log', base=10)
         y_max = np.ceil(np.log10(df['ForksTime'].max()))
@@ -126,7 +124,7 @@ def plot_forks_time(df, rtos_name, output_folder):
 
 
 def plot_kernel_forks_percentage(df, rtos_name, output_folder):
-    """绘制kernel forks百分比图表"""
+    """Kernel forks time as percentage of fork time."""
     plt.figure(figsize=(12, 8))
     bar_width = 0.5
     plt.bar(range(len(df)), df['KernelForksPercentage'], width=bar_width)
@@ -141,7 +139,6 @@ def plot_kernel_forks_percentage(df, rtos_name, output_folder):
     plt.title(f'Kernel Forks Percentage Analysis - {rtos_name}', fontsize=32, weight='bold')
     plt.grid(True, linestyle='--', alpha=0.7)
     
-    # 设置y轴范围为0到100
     plt.ylim(0, 100)
     y_ticks = [0, 20, 40, 60, 80, 100]
     y_labels = ['0%', '20%', '40%', '60%', '80%', '100%']
@@ -155,25 +152,21 @@ def plot_kernel_forks_percentage(df, rtos_name, output_folder):
 
 
 def plot_fork_distribution(df, rtos_name, output_folder):
-    """绘制fork分布图表（总forks、parameter forks、kernel object forks）"""
-    # 计算三种类型的fork统计
+    """Pie chart: syscalls with non-zero fork / param / kernel-object fork counts."""
     total_forks_gt_zero = df[df['ForksTime'] > 0]
     param_forks_gt_zero = df[df['ParamForksTime'] > 0]
     kernel_forks_gt_zero = df[df['KernelForksTime'] > 0]
     
     plt.figure(figsize=(12, 8))
-    
-    # 创建饼图 - 始终显示三种类型
+
     labels = ['Total Forks > 0', 'Parameter Forks > 0', 'Kernel Forks > 0']
     sizes = [len(total_forks_gt_zero), len(param_forks_gt_zero), len(kernel_forks_gt_zero)]
     colors = ['#ff9999', '#66b3ff', '#99ff99']
-    
-    # 即使某些数量相同，也显示所有三种类型
+
     plt.pie(sizes, labels=labels, colors=colors, autopct='%1.1f%%', startangle=90, 
             textprops={'fontsize': 18, 'weight': 'bold'})
     plt.title(f'Fork Distribution Analysis - {rtos_name}', fontsize=24, weight='bold')
-    
-    # 添加统计信息文本
+
     total_functions = len(df)
     total_gt_zero_count = len(total_forks_gt_zero)
     param_gt_zero_count = len(param_forks_gt_zero)
@@ -199,7 +192,7 @@ def plot_fork_distribution(df, rtos_name, output_folder):
 
 
 def plot_parameter_forks_percentage(df, rtos_name, output_folder):
-    """绘制parameter caused forks百分比图表"""
+    """Bar chart of parameter-caused forks percentage."""
     plt.figure(figsize=(12, 8))
     bar_width = 0.5
     plt.bar(range(len(df)), df['ParamForksPercentage'], width=bar_width)
@@ -214,7 +207,6 @@ def plot_parameter_forks_percentage(df, rtos_name, output_folder):
     plt.title(f'Parameter Forks Percentage Analysis - {rtos_name}', fontsize=32, weight='bold')
     plt.grid(True, linestyle='--', alpha=0.7)
     
-    # 设置y轴范围为0到100
     plt.ylim(0, 100)
     y_ticks = [0, 20, 40, 60, 80, 100]
     y_labels = ['0%', '20%', '40%', '60%', '80%', '100%']
@@ -228,7 +220,7 @@ def plot_parameter_forks_percentage(df, rtos_name, output_folder):
 
 
 def plot_fork_comparison(df, rtos_name, output_folder):
-    """绘制kernel forks vs parameter forks对比图表"""
+    """Grouped bars: kernel vs parameter fork percentages."""
     plt.figure(figsize=(12, 8))
     
     x = range(len(df))
@@ -250,7 +242,6 @@ def plot_fork_comparison(df, rtos_name, output_folder):
     plt.legend(fontsize=20, loc='upper right')
     plt.grid(True, linestyle='--', alpha=0.7)
     
-    # 设置y轴范围为0到100
     plt.ylim(0, 100)
     y_ticks = [0, 20, 40, 60, 80, 100]
     y_labels = ['0%', '20%', '40%', '60%', '80%', '100%']
@@ -264,15 +255,13 @@ def plot_fork_comparison(df, rtos_name, output_folder):
 
 
 def analyze_states(root_folder, output_folder, rtos_name):
-    """分析states信息"""
+    """Build per-harness dataframe from ``info`` files and emit plots."""
     data_list = []
     
     for folder in os.listdir(root_folder):
         folder_path = os.path.join(root_folder, folder)
         if os.path.isdir(folder_path):
-            # 从info文件获取explored paths
             explored_paths = get_explored_paths_from_info(os.path.join(folder_path, 'info'))
-            # 从info文件获取fork统计信息
             fork_stats = get_fork_stats_from_info(os.path.join(folder_path, 'info'))
             
             if explored_paths is not None and fork_stats is not None:
@@ -292,7 +281,6 @@ def analyze_states(root_folder, output_folder, rtos_name):
     
     df = pd.DataFrame(data_list)
     
-    # 计算基于总forks时间的百分比（而不是基于总函数数）
     total_forks_time = df['ForksTime'].sum()
     if total_forks_time > 0:
         df['KernelForksPercentageOfTotal'] = round((df['KernelForksTime'] / total_forks_time) * 100, 2)
@@ -301,12 +289,10 @@ def analyze_states(root_folder, output_folder, rtos_name):
         df['KernelForksPercentageOfTotal'] = 0.0
         df['ParamForksPercentageOfTotal'] = 0.0
     
-    # 统计kernel object fork > 0的函数个数和比例
     kernel_forks_gt_zero = df[df['KernelForksTime'] > 0]
     kernel_forks_gt_zero_count = len(kernel_forks_gt_zero)
     kernel_forks_gt_zero_percentage = round((kernel_forks_gt_zero_count / len(df)) * 100, 2) if len(df) > 0 else 0
     
-    # 计算统计信息
     stats_summary = [
         {'Metric': 'Total Explored Paths', 'Value': int(df['ExploredPaths'].sum())},
         {'Metric': 'Average Explored Paths', 'Value': round(df['ExploredPaths'].mean(), 2)},
@@ -351,7 +337,6 @@ def analyze_states(root_folder, output_folder, rtos_name):
     excel_path = os.path.join(output_folder, f'{rtos_name}_states_analysis.xlsx')
     
     with pd.ExcelWriter(excel_path, engine='openpyxl') as writer:
-        # 确保数据按行显示（每个函数一行）
         df.to_excel(writer, sheet_name='Detailed States Data', index=False)
         summary_df.to_excel(writer, sheet_name='Summary Statistics', index=False)
     dated_copy(excel_path)
@@ -360,7 +345,6 @@ def analyze_states(root_folder, output_folder, rtos_name):
     print(f'{rtos_name} - Functions with Kernel Forks > 0: {kernel_forks_gt_zero_count}/{len(df)} ({kernel_forks_gt_zero_percentage}%)')
     print(f'{rtos_name} - Median Forks Time: {round(df["ForksTime"].median(), 2)}')
     
-    # 生成图表
     plot_states(df, rtos_name, output_folder)
     plot_forks_time(df, rtos_name, output_folder)
     plot_kernel_forks_percentage(df, rtos_name, output_folder)
@@ -372,11 +356,12 @@ def analyze_states(root_folder, output_folder, rtos_name):
 
 
 if __name__ == '__main__':
+    tr = _REPO_ROOT / 'test-rtos'
     root_folders = [
-        '/home/klee/klee_src/test-rtos/freertos-10.5.1/symbolic_execution/output',
-        '/home/klee/klee_src/test-rtos/threadx-6.4.2/symbolic_execution/output',
-        '/home/klee/klee_src/test-rtos/rt-thread/symbolic_execution/output',
-        '/home/klee/klee_src/test-rtos/tizenrt/symbolic_execution/output',
+        str(tr / 'freertos-10.5.1' / 'symbolic_execution' / 'output'),
+        str(tr / 'threadx-6.4.2' / 'symbolic_execution' / 'output'),
+        str(tr / 'rt-thread' / 'symbolic_execution' / 'output'),
+        str(tr / 'tizenrt' / 'symbolic_execution' / 'output'),
     ]
     rtos_names = [
         'FreeRTOS',
@@ -384,7 +369,7 @@ if __name__ == '__main__':
         'RT-Thread',
         'TizenRT'
     ]
-    output_folder = "/home/klee/klee_src/rtos-api-analysis/results/states"
+    output_folder = str(_SCRIPT_DIR / 'results' / 'states')
     
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)

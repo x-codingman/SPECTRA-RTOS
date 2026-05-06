@@ -1,10 +1,25 @@
 import os
 import re
 import sys
+from pathlib import Path
+
 import pandas as pd
 import sqlite3
 
 from output_utils import dated_copy
+
+_REPO_ROOT = Path(__file__).resolve().parent.parent
+_FREERTOS_1051_SYM = (_REPO_ROOT / "test-rtos" / "freertos-10.5.1" / "symbolic_execution").resolve()
+
+
+def _symbolic_roots_map():
+    tr = _REPO_ROOT / "test-rtos"
+    return {
+        "freertos-10.5.1": str((tr / "freertos-10.5.1" / "symbolic_execution").resolve()).rstrip("/") + "/",
+        "tizenrt": str((tr / "tizenrt" / "symbolic_execution").resolve()).rstrip("/") + "/",
+        "rt-thread": str((tr / "rt-thread" / "symbolic_execution").resolve()).rstrip("/") + "/",
+        "threadx-6.4.2": str((tr / "threadx-6.4.2" / "symbolic_execution").resolve()).rstrip("/") + "/",
+    }
 
 # Omitted from merged vulnerability_summary / rtos_totals (e.g. legacy reports on disk).
 RTOS_EXCLUDED_FROM_VULNERABILITY_SUMMARY = frozenset({'freertos-10.6.0'})
@@ -123,7 +138,10 @@ def collect_vulnerabilities_list(root_folder, rtos_project_name):
                             match = re.search(r'KLEE: Error: (.*?)on file (.*?): line (\d+)', line)
                             target_name = os.path.basename(dirpath)
                             parts = target_name.split('_')
-                            if len(parts) >= 3 and root_folder == "/home/klee/klee_src/test-rtos/freertos-10.5.1/symbolic_execution/":
+                            if (
+                                len(parts) >= 3
+                                and Path(os.path.abspath(root_folder)).resolve() == _FREERTOS_1051_SYM
+                            ):
                                 target_name = parts[2]
                             if match:
                                 vulnerabilities.append({
@@ -254,7 +272,7 @@ def build_vulnerability_frames(vulnerabilities):
 
     summary_row = {
         'RTOS_Project': '',
-        'Function': '总计',
+        'Function': 'Total',
         'Harness': '',
         'Vulnerability Type': '',
         'Line Number': '',
@@ -300,7 +318,7 @@ def build_vulnerability_frames(vulnerabilities):
 
     summary_row2 = {
         'RTOS_Project': '',
-        'Function': '总计',
+        'Function': 'Total',
         'Harness': '',
         'Vulnerability Type': '',
         'Line Number': '',
@@ -461,25 +479,20 @@ def get_rtos_folder():
     print("3. RT-Thread")
     print("4. ThreadX")
     # show the default path
-    print("Default path: /home/klee/klee_src/test-rtos/freertos-10.5.1/symbolic_execution/")
+    _map = _symbolic_roots_map()
+    print("Default path:", _map["freertos-10.5.1"])
     choice = input("Enter the number of the RTOS folder: ")
-    # give a default path
-    default_path = "/home/klee/klee_src/test-rtos/freertos-10.5.1/symbolic_execution/"
+    default_path = _map["freertos-10.5.1"]
     if choice == "0":
-        return {
-            "freertos-10.5.1": "/home/klee/klee_src/test-rtos/freertos-10.5.1/symbolic_execution/",
-            "tizenrt": "/home/klee/klee_src/test-rtos/tizenrt/symbolic_execution/",
-            "rt-thread": "/home/klee/klee_src/test-rtos/rt-thread/symbolic_execution/",
-            "threadx-6.4.2": "/home/klee/klee_src/test-rtos/threadx-6.4.2/symbolic_execution/"
-        }
+        return dict(_map)
     if choice == "1":
-        return "/home/klee/klee_src/test-rtos/freertos-10.5.1/symbolic_execution/"
+        return _map["freertos-10.5.1"]
     elif choice == "2":
-        return "/home/klee/klee_src/test-rtos/tizenrt/symbolic_execution/"
+        return _map["tizenrt"]
     elif choice == "3":
-        return "/home/klee/klee_src/test-rtos/rt-thread/symbolic_execution/"
+        return _map["rt-thread"]
     elif choice == "4":
-        return "/home/klee/klee_src/test-rtos/threadx-6.4.2/symbolic_execution/"
+        return _map["threadx-6.4.2"]
     else:
         return default_path
         
@@ -566,12 +579,11 @@ def _read_text_utf8(path):
 
 
 def extract_info(directory, output_folder):
-    # 创建一个空的DataFrame来存储结果
+    # Accumulate runtime rows from each harness output subdirectory.
     df = pd.DataFrame(columns=['System Call', 'Elapsed', 'Explored Paths',
                                'Total Instructions', 'Completed Paths', 'Partially Completed Paths',
                                'Generated Tests', 'StoppedByMaxTime', 'Last Instruction'])
 
-    # 遍历目录下的每个子文件夹
     directory = os.path.join(directory, 'output')
     if not os.path.isdir(directory):
         print(f"Warning: extract_info: no directory {directory}, skipping runtime info.")
@@ -586,7 +598,6 @@ def extract_info(directory, output_folder):
         if os.path.isdir(folder_path):
             info_file = os.path.join(folder_path, "info")
 
-            # 检查info文件是否存在
             if os.path.isfile(info_file):
                 try:
                     content = _read_text_utf8(info_file)
@@ -594,7 +605,6 @@ def extract_info(directory, output_folder):
                     print(f"Warning: could not read {info_file}: {e}")
                     continue
 
-                # 提取信息（格式不完整或字段缺失时走 messages.txt 回退）
                 try:
                     if 'Elapsed: ' not in content:
                         raise IndexError
@@ -610,7 +620,6 @@ def extract_info(directory, output_folder):
                                     'StoppedByMaxTime': halted_by_max_time_label(folder_path),
                                     'Last Instruction': 'NA'}, ignore_index=True)
                 except (IndexError, ValueError, TypeError):
-                    # info 不完整或 Elapsed 无法解析：从 messages.txt 取最后一行 KLEE: Execute:
                     message_file = os.path.join(folder_path, "messages.txt")
                     klee_execute_line = None
                     if os.path.isfile(message_file):
@@ -1538,17 +1547,14 @@ def write_rtos_vulnerability_type_totals(merged_detailed, output_folder):
     notes = pd.DataFrame([
         {
             'Metric': 'Finding_Count',
-            '说明': '「告警条数」：Merged Detailed Report 中，对应 RTOS × 漏洞类型 的 KLEE 报错行数（test_info.txt 里每条 Error 计一次）。同一 syscall/harness 可对应多条（不同路径/行号）。',
             'Description': 'Number of KLEE error lines; one harness may contribute multiple findings.',
         },
         {
             'Metric': 'Unique_Syscall_Count',
-            '说明': '「涉及漏洞的 syscall 数量」：在同一 RTOS × 漏洞类型 下，对 Harness（无则用 TestInfoPath 上级目录名，再无则 Function）去重后的个数，即「至少出现过一次该类型告警」的独立 syscall 测试数。',
             'Description': 'Distinct syscall tests (Harness / test-info folder key) with at least one finding of that type.',
         },
         {
             'Metric': '_syscall_key',
-            '说明': '内部键：优先 Harness 列；否则取 test_info.txt 所在目录名；再否则 Function。',
             'Description': 'Dedup key: Harness, else dirname(TestInfoPath), else Function.',
         },
     ])
@@ -1574,7 +1580,7 @@ def write_memory_write_ii_mpu_t_ratio(merged_my_vul_df, output_folder):
         return
     df = merged_my_vul_df.copy()
     if 'Function' in df.columns:
-        df = df[~df['Function'].astype(str).isin(['总计', 'Total'])]
+        df = df[~df['Function'].astype(str).isin(['Total'])]
     if 'Memory Write' not in df.columns:
         print('write_memory_write_ii_mpu_t_ratio: no Memory Write column, skip.')
         return
@@ -1617,10 +1623,6 @@ def write_memory_write_ii_mpu_t_ratio(merged_my_vul_df, output_folder):
 
     notes = pd.DataFrame([{
         'Metric': 'Ratio_II_with_MPU_T',
-        '说明': (
-            '在合并后的 My Vulnerability Types 中：分母为 Memory Write 含 W-II 的 syscall 数'
-            '（值为 II 或 I, II）；分子为其中 MPU (T) = ✔ 的条数。比例 = 分子/分母。'
-        ),
         'Description': (
             'Among rows with limited memory write (Memory Write is II or I, II), '
             'fraction with MPU violation (T). '
@@ -1679,7 +1681,7 @@ def generate_summary_excel(root_folder, output_folder, split_size=80):
             my_vul_df = pd.read_excel(rtos_vul_path, sheet_name='My Vulnerability Types', engine='openpyxl')
             my_vul_df = my_vul_df.drop('File', axis=1, errors='ignore')
             my_vul_df = my_vul_df.drop('Harness', axis=1, errors='ignore')
-            my_vul_df = my_vul_df[~my_vul_df['Function'].isin(['总计', 'Total'])]
+            my_vul_df = my_vul_df[~my_vul_df['Function'].isin(['Total'])]
             my_vul_df['RTOS'] = rtos_name
             if merged_df is None:
                 merged_df = my_vul_df
@@ -1789,7 +1791,7 @@ def generate_summary_excel(root_folder, output_folder, split_size=80):
     index_col = list(range(1, n)) + ['']
     merged_df.insert(0, 'Index', index_col)
 
-    # 拆分表格，每split_size行为一组，横向拼接
+    # Split rows into horizontal chunks (split_size rows per block).
     data_df = merged_df.iloc[:-1].reset_index(drop=True)
     total_row = merged_df.iloc[[-1]].reset_index(drop=True)
     n_rows = data_df.shape[0]
@@ -1834,12 +1836,7 @@ if __name__ == "__main__":
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
 
-    all_rtos_folder_path = {
-        "freertos-10.5.1": "/home/klee/klee_src/test-rtos/freertos-10.5.1/symbolic_execution/",
-        "tizenrt": "/home/klee/klee_src/test-rtos/tizenrt/symbolic_execution/",
-        "rt-thread": "/home/klee/klee_src/test-rtos/rt-thread/symbolic_execution/",
-        "threadx-6.4.2": "/home/klee/klee_src/test-rtos/threadx-6.4.2/symbolic_execution/",
-    }
+    all_rtos_folder_path = _symbolic_roots_map()
 
     if "--summary-only" in sys.argv:
         # Merge existing results/<rtos>_vulnerability_report.xlsx → vulnerability_summary.xlsx

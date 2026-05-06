@@ -1,12 +1,16 @@
 # This script is used to analyze the performance of the existing table
 # and generate the performance report
 
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
 import os
+from pathlib import Path
+
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
 
 from output_utils import dated_copy
+
+_SCRIPT_DIR = Path(__file__).resolve().parent
 
 
 def _load_runtime_table(result_folder, rtos_version):
@@ -22,7 +26,7 @@ def _load_runtime_table(result_folder, rtos_version):
 
 def _per_syscall_rows(df):
     """Exclude summary rows from data-analyze-all output."""
-    return df[~df['System Call'].astype(str).isin(['Total Finished', 'Total', '总计'])].copy()
+    return df[~df['System Call'].astype(str).isin(['Total Finished', 'Total'])].copy()
 
 
 def analyze_performance(result_folder, rtos_version, store_folder):
@@ -118,9 +122,9 @@ def analyze_performance(result_folder, rtos_version, store_folder):
 if __name__ == '__main__':
     # Read the existing table
     # Specify the result folder
-    result_folder = '/home/klee/klee_src/rtos-api-analysis/results'
+    result_folder = str(_SCRIPT_DIR / 'results')
     rtos_version = 'freertos-10.5.1'
-    store_folder = '/home/klee/klee_src/rtos-api-analysis/results/runtime'
+    store_folder = str(_SCRIPT_DIR / 'results' / 'runtime')
     if not os.path.exists(store_folder):
         os.makedirs(store_folder)
     analyze_performance(result_folder, rtos_version, store_folder)

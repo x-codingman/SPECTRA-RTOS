@@ -27,12 +27,10 @@ SHEET_DIRECT = "MyType_Source_Lines"
 SHEET_GUARDED = "MyType_Source_Lines_Guarded"
 
 # ---------------------------------------------------------------------------
-# Edit here: RTOS_Project 通常包含的 **子串** (小写) → 该 RTOS 常用 **C 标识符**。
-# 每一项会自动变成正则 ``\\b`` + re.escape(名称) + ``\\b``（**整词**匹配）。
-# 例如 ``tcb`` 不会匹配标识符 ``rtcb``，需单独写 ``rtcb``。
-# 行级标注：先按 ``RTOS_Project`` 子串选 RTOS key；**未匹配**则对该行用「全部 key 的并集」。
-# Key ``"*"`` 的名称会**合并进每一个** RTOS 的列表里（也进入并集），用于如 sched 等
-# 所有工程都可能出现的符号。
+# Per-RTOS substring keys (matched case-insensitively in RTOS_Project) map to typical
+# C identifiers for that RTOS row. Each name becomes a regex word boundary match.
+# Rows first try the matched RTOS list; unmatched rows union all RTOS-specific lists.
+# Key "*" is merged into every RTOS symbol list for cross-cutting identifiers (e.g. sched).
 # ---------------------------------------------------------------------------
 GLOBAL_NAME_KEY = "*"
 EMBEDDED_KERNEL_NAMES_BY_RTOS: Dict[str, List[str]] = {

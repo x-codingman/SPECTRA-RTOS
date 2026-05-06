@@ -11,6 +11,9 @@ so boxplots show many “fliers”. Prefer ECDF or violin for the full picture.
 
 import os
 import contextlib
+from pathlib import Path
+
+_SCRIPT_DIR = Path(__file__).resolve().parent
 
 try:
     from contextlib import nullcontext
@@ -307,7 +310,7 @@ def plot_memory_usage_box(
 
 
 if __name__ == "__main__":
-    memory_dir = "/home/klee/klee_src/rtos-api-analysis/results/memory"
+    memory_dir = str(_SCRIPT_DIR / "results" / "memory")
     plot_memory_usage_cdf(
         memory_dir,
         DEFAULT_RTOS,

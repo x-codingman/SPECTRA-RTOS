@@ -13,11 +13,15 @@ Data source: *_runtime_info.xlsx / *_runtime_info_walltime.xlsx (Explored Paths 
 """
 
 import os
-import pandas as pd
-import numpy as np
+from pathlib import Path
+
 import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
 
 from output_utils import dated_copy
+
+_SCRIPT_DIR = Path(__file__).resolve().parent
 
 
 def get_rtos_display_name(rtos_version):
@@ -51,7 +55,7 @@ def load_explored_paths_per_syscall(result_folder, rtos_version, use_walltime=Tr
 
     df = pd.read_excel(xlsx_path, engine='openpyxl')
     if 'System Call' in df.columns:
-        df = df[~df['System Call'].isin(['Total Finished', 'Total', '总计'])]
+        df = df[~df['System Call'].isin(['Total Finished', 'Total'])]
 
     paths = pd.to_numeric(df['Explored Paths'], errors='coerce')
     paths = paths.dropna()
@@ -80,7 +84,7 @@ def load_path_coverage_ratio_df(result_folder, rtos_version, use_walltime=True):
     df = pd.read_excel(xlsx_path, engine='openpyxl')
     if 'System Call' not in df.columns:
         return None
-    df = df[~df['System Call'].isin(['Total Finished', 'Total', '总计'])]
+    df = df[~df['System Call'].isin(['Total Finished', 'Total'])]
 
     explored = pd.to_numeric(df['Explored Paths'], errors='coerce')
     completed = pd.to_numeric(df['Completed Paths'], errors='coerce')
@@ -107,7 +111,7 @@ def load_path_coverage_df(result_folder, rtos_version, use_walltime=True):
     df = pd.read_excel(xlsx_path, engine='openpyxl')
     if 'System Call' not in df.columns or 'Explored Paths' not in df.columns:
         return None
-    df = df[~df['System Call'].isin(['Total Finished', 'Total', '总计'])]
+    df = df[~df['System Call'].isin(['Total Finished', 'Total'])]
     df['Explored Paths'] = pd.to_numeric(df['Explored Paths'], errors='coerce')
     df = df.dropna(subset=['Explored Paths'])
     df = df[df['Explored Paths'] >= 0]
@@ -142,7 +146,7 @@ def load_instruction_coverage_df(result_folder, rtos_version, use_walltime=True)
     df = pd.read_excel(xlsx_path, engine='openpyxl')
     if 'System Call' not in df.columns:
         return None
-    df = df[~df['System Call'].isin(['Total Finished', 'Total', '总计'])]
+    df = df[~df['System Call'].isin(['Total Finished', 'Total'])]
     if 'InstructionCoverage' not in df.columns:
         return None
     df['InstructionCoverage'] = pd.to_numeric(df['InstructionCoverage'], errors='coerce')
@@ -468,8 +472,8 @@ def plot_path_coverage_pareto(result_folder, rtos_version, output_folder,
 
 
 if __name__ == '__main__':
-    result_folder = '/home/klee/klee_src/rtos-api-analysis/results'
-    store_folder = '/home/klee/klee_src/rtos-api-analysis/results/path_coverage'
+    result_folder = str(_SCRIPT_DIR / 'results')
+    store_folder = str(_SCRIPT_DIR / 'results' / 'path_coverage')
 
     if not os.path.exists(store_folder):
         os.makedirs(store_folder)

@@ -1,11 +1,16 @@
 import os
-import pandas as pd
+from pathlib import Path
+
 import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
 import re
 import sqlite3
-import numpy as np
 
 from output_utils import dated_copy
+
+_REPO_ROOT = Path(__file__).resolve().parent.parent
+_SCRIPT_DIR = Path(__file__).resolve().parent
 
 
 def get_max_memory_usage(stats_path):
@@ -18,7 +23,7 @@ def get_max_memory_usage(stats_path):
         result = cursor.fetchone()
         conn.close()
         if result and result[0]:
-            return round(float(result[0]) / (1024 * 1024), 2)  # 转为MB并保留两位小数
+            return round(float(result[0]) / (1024 * 1024), 2)
     except Exception as e:
         print(f"Error reading {stats_path}: {e}")
     return None
@@ -64,8 +69,7 @@ def plot_instructions(df, rtos_name, output_folder):
     
     plt.yscale('log', base=10)
     
-    # 统一纵坐标刻度，从1开始
-    y_min = 0  # 从1开始，所以log10(1) = 0
+    y_min = 0
     y_max = np.ceil(np.log10(df['Instructions'].max()))
     y_ticks = [10**i for i in range(int(y_min), int(y_max)+1)]
     y_labels = [f'10^{i}' for i in range(int(y_min), int(y_max)+1)]
@@ -92,8 +96,7 @@ def plot_memory(df, rtos_name, output_folder):
     
     plt.yscale('log', base=10)
     
-    # 统一纵坐标刻度，从1开始
-    y_min = 0  # 从1开始，所以log10(1) = 0
+    y_min = 0
     y_max = np.ceil(np.log10(df['Memory Usage (MB)'].max()))
     y_ticks = [10**i for i in range(int(y_min), int(y_max)+1)]
     y_labels = [f'10^{i}' for i in range(int(y_min), int(y_max)+1)]
@@ -175,11 +178,12 @@ def analyze_memory_and_coverage(root_folder, output_folder, rtos_name):
     return df
 
 if __name__ == '__main__':
+    tr = _REPO_ROOT / 'test-rtos'
     root_folders = [
-        '/home/klee/klee_src/test-rtos/freertos-10.5.1/symbolic_execution/output',
-        '/home/klee/klee_src/test-rtos/threadx-6.4.2/symbolic_execution/output',
-        '/home/klee/klee_src/test-rtos/rt-thread/symbolic_execution/output',
-        '/home/klee/klee_src/test-rtos/tizenrt/symbolic_execution/output',
+        str(tr / 'freertos-10.5.1' / 'symbolic_execution' / 'output'),
+        str(tr / 'threadx-6.4.2' / 'symbolic_execution' / 'output'),
+        str(tr / 'rt-thread' / 'symbolic_execution' / 'output'),
+        str(tr / 'tizenrt' / 'symbolic_execution' / 'output'),
     ]
     rtos_names = [
         'FreeRTOS',
@@ -187,7 +191,7 @@ if __name__ == '__main__':
         'RT-Thread',
         'TizenRT'
     ]
-    output_folder = "/home/klee/klee_src/rtos-api-analysis/results/memory"
+    output_folder = str(_SCRIPT_DIR / 'results' / 'memory')
     
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)

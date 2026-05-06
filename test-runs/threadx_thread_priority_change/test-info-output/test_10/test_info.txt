@@ -1,3 +1,0 @@
-KLEE: Error: Uninitialized pointer dereference(read) vulnerabilityon file test-rtos/freertos-10.5.1/Source/tasks.c: line 2994.
-KLEE: Error: Uninitialized pointer dereference(read) vulnerabilityon file test-rtos/freertos-10.5.1/Source/tasks.c: line 2996.
-KLEE: Error: Potential Function pointer dereference vulnerabilityon file test-rtos/freertos-10.5.1/Source/tasks.c: line 2996.

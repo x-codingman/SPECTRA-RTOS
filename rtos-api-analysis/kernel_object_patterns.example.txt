@@ -1,6 +1,0 @@
-# Optional: pass with --patterns-file to annotate_mytype_kernel_objects.py
-#   python3 annotate_mytype_kernel_objects.py --patterns-file this_file.txt
-# (Appends raw regex after EMBEDDED_KERNEL_NAME rules; main names are in the script.)
-#
-# my_driver || \bMyKernelDevice_[a-z]+\b
-# \bsched_[a-z]+\b

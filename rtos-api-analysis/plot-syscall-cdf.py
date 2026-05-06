@@ -13,6 +13,9 @@ Data source: *_runtime_info.xlsx from data-analyze-all.py (Elapsed column)
 
 import os
 import contextlib
+from pathlib import Path
+
+_SCRIPT_DIR = Path(__file__).resolve().parent
 
 try:
     from contextlib import nullcontext
@@ -90,7 +93,7 @@ def load_elapsed_times(result_folder, rtos_version, use_walltime=False):
     df = pd.read_excel(xlsx_path, engine='openpyxl')
 
     if 'System Call' in df.columns:
-        df = df[~df['System Call'].isin(['Total Finished', 'Total', '总计'])]
+        df = df[~df['System Call'].isin(['Total Finished', 'Total'])]
 
     elapsed = pd.to_numeric(df['Elapsed'], errors='coerce')
     elapsed = elapsed.dropna()
@@ -226,8 +229,8 @@ def plot_single_rtos_cdf(result_folder, rtos_version, output_folder,
 
 
 if __name__ == '__main__':
-    result_folder = '/home/klee/klee_src/rtos-api-analysis/results'
-    store_folder = '/home/klee/klee_src/rtos-api-analysis/results/runtime'
+    result_folder = str(_SCRIPT_DIR / 'results')
+    store_folder = str(_SCRIPT_DIR / 'results' / 'runtime')
 
     if not os.path.exists(store_folder):
         os.makedirs(store_folder)

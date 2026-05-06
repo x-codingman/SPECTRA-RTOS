@@ -8,6 +8,9 @@ Y-axis is fork *time* attribution, not path counts — caption accordingly in pa
 
 import os
 import contextlib
+from pathlib import Path
+
+_SCRIPT_DIR = Path(__file__).resolve().parent
 
 try:
     from contextlib import nullcontext
@@ -141,7 +144,7 @@ def plot_explored_vs_kernel_fork_share(
 
 
 if __name__ == "__main__":
-    states_dir = "/home/klee/klee_src/rtos-api-analysis/results/states"
+    states_dir = str(_SCRIPT_DIR / "results" / "states")
     out = os.path.join(states_dir, "explored_paths_vs_kernel_fork_time_share_scatter.png")
     plot_explored_vs_kernel_fork_share(
         states_dir,

@@ -1,7 +1,0 @@
-KLEE: WARNING: undefined reference to function: klee_make_symbolic_controllable
-KLEE: WARNING: undefined reference to function: pvPortMalloc
-KLEE: WARNING: undefined reference to function: vAssertCalled
-KLEE: WARNING: undefined reference to function: vPortEnterCritical
-KLEE: WARNING: undefined reference to function: vPortExitCritical
-KLEE: WARNING: undefined reference to function: vPortFree
-KLEE: WARNING: undefined reference to function: vPortYield
