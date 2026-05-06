@@ -31,7 +31,6 @@ ENV MINISAT_VERSION=master
 ENV Z3_VERSION=4.8.15
 ENV USE_LIBCXX=1
 ENV KLEE_RUNTIME_BUILD="Release"
-LABEL maintainer="Xinhui Shao (xinhuishao@seu.edu.cn)"
 
 
 # TODO remove adding sudo package
