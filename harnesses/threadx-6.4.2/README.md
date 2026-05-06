@@ -5,4 +5,4 @@ ThreadX 6.4.2 harness build notes:
 
 Linked module bitcode paths mirror the resolved absolute `KERNEL_DIR` under `./build/common_modules_lib/`.
 
-See also: [Naming conventions](../../docs/spectra-artifact/naming-conventions.md) and [Repository layout](../../docs/spectra-artifact/repository-layout.md).
+See also: [README.md](../../README.md) (repository layout).

@@ -12,4 +12,4 @@ Each subdirectory is a **self-contained front end** for one RTOS revision: harne
 
 Scripts resolve the **repository root** as `Path(__file__).resolve().parents[2]` (two levels below `harnesses/<name>/`).
 
-Full map: [Repository layout](../docs/spectra-artifact/repository-layout.md).
+Repo structure: [README.md](../README.md) (repository layout).
