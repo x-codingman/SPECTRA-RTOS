@@ -1,0 +1,1922 @@
+diff --git a/bsp/qemu-vexpress-a9/.config b/bsp/qemu-vexpress-a9/.config
+index 97d57e6bbf..e65afb6e8d 100644
+--- a/bsp/qemu-vexpress-a9/.config
++++ b/bsp/qemu-vexpress-a9/.config
+@@ -2,10 +2,116 @@
+ #
+ # RT-Thread Kernel
+ #
++
++#
++# klibc options
++#
++
++#
++# rt_vsnprintf options
++#
++# CONFIG_RT_KLIBC_USING_LIBC_VSNPRINTF is not set
++# CONFIG_RT_KLIBC_USING_VSNPRINTF_LONGLONG is not set
++# CONFIG_RT_KLIBC_USING_VSNPRINTF_STANDARD is not set
++# end of rt_vsnprintf options
++
++#
++# rt_vsscanf options
++#
++# CONFIG_RT_KLIBC_USING_LIBC_VSSCANF is not set
++# end of rt_vsscanf options
++
++#
++# rt_memset options
++#
++# CONFIG_RT_KLIBC_USING_USER_MEMSET is not set
++# CONFIG_RT_KLIBC_USING_LIBC_MEMSET is not set
++# CONFIG_RT_KLIBC_USING_TINY_MEMSET is not set
++# end of rt_memset options
++
++#
++# rt_memcpy options
++#
++# CONFIG_RT_KLIBC_USING_USER_MEMCPY is not set
++# CONFIG_RT_KLIBC_USING_LIBC_MEMCPY is not set
++# CONFIG_RT_KLIBC_USING_TINY_MEMCPY is not set
++# end of rt_memcpy options
++
++#
++# rt_memmove options
++#
++# CONFIG_RT_KLIBC_USING_USER_MEMMOVE is not set
++# CONFIG_RT_KLIBC_USING_LIBC_MEMMOVE is not set
++# end of rt_memmove options
++
++#
++# rt_memcmp options
++#
++# CONFIG_RT_KLIBC_USING_USER_MEMCMP is not set
++# CONFIG_RT_KLIBC_USING_LIBC_MEMCMP is not set
++# end of rt_memcmp options
++
++#
++# rt_strstr options
++#
++# CONFIG_RT_KLIBC_USING_USER_STRSTR is not set
++# CONFIG_RT_KLIBC_USING_LIBC_STRSTR is not set
++# end of rt_strstr options
++
++#
++# rt_strcasecmp options
++#
++# CONFIG_RT_KLIBC_USING_USER_STRCASECMP is not set
++# end of rt_strcasecmp options
++
++#
++# rt_strncpy options
++#
++# CONFIG_RT_KLIBC_USING_USER_STRNCPY is not set
++# CONFIG_RT_KLIBC_USING_LIBC_STRNCPY is not set
++# end of rt_strncpy options
++
++#
++# rt_strcpy options
++#
++# CONFIG_RT_KLIBC_USING_USER_STRCPY is not set
++# CONFIG_RT_KLIBC_USING_LIBC_STRCPY is not set
++# end of rt_strcpy options
++
++#
++# rt_strncmp options
++#
++# CONFIG_RT_KLIBC_USING_USER_STRNCMP is not set
++# CONFIG_RT_KLIBC_USING_LIBC_STRNCMP is not set
++# end of rt_strncmp options
++
++#
++# rt_strcmp options
++#
++# CONFIG_RT_KLIBC_USING_USER_STRCMP is not set
++# CONFIG_RT_KLIBC_USING_LIBC_STRCMP is not set
++# end of rt_strcmp options
++
++#
++# rt_strlen options
++#
++# CONFIG_RT_KLIBC_USING_USER_STRLEN is not set
++# CONFIG_RT_KLIBC_USING_LIBC_STRLEN is not set
++# end of rt_strlen options
++
++#
++# rt_strnlen options
++#
++# CONFIG_RT_KLIBC_USING_USER_STRNLEN is not set
++# end of rt_strnlen options
++
++# CONFIG_RT_UTEST_TC_USING_KLIBC is not set
++# end of klibc options
++
+ CONFIG_RT_NAME_MAX=8
+ # CONFIG_RT_USING_ARCH_DATA_TYPE is not set
+-# CONFIG_RT_USING_SMART is not set
+ # CONFIG_RT_USING_NANO is not set
++CONFIG_RT_USING_SMART=y
+ # CONFIG_RT_USING_AMP is not set
+ # CONFIG_RT_USING_SMP is not set
+ CONFIG_RT_CPUS_NR=1
+@@ -15,9 +121,10 @@ CONFIG_RT_ALIGN_SIZE=8
+ CONFIG_RT_THREAD_PRIORITY_256=y
+ CONFIG_RT_THREAD_PRIORITY_MAX=256
+ CONFIG_RT_TICK_PER_SECOND=100
++CONFIG_RT_USING_OVERFLOW_CHECK=y
+ CONFIG_RT_USING_HOOK=y
+ CONFIG_RT_HOOK_USING_FUNC_PTR=y
+-# CONFIG_RT_USING_HOOKLIST is not set
++CONFIG_RT_USING_HOOKLIST=y
+ CONFIG_RT_USING_IDLE_HOOK=y
+ CONFIG_RT_IDLE_HOOK_LIST_SIZE=4
+ CONFIG_IDLE_THREAD_STACK_SIZE=4096
+@@ -25,21 +132,13 @@ CONFIG_RT_USING_TIMER_SOFT=y
+ CONFIG_RT_TIMER_THREAD_PRIO=4
+ CONFIG_RT_TIMER_THREAD_STACK_SIZE=4096
+ # CONFIG_RT_USING_TIMER_ALL_SOFT is not set
+-# CONFIG_RT_USING_CPU_USAGE_TRACER is not set
++CONFIG_RT_USING_CPU_USAGE_TRACER=y
+ 
+ #
+-# kservice optimization
++# kservice options
+ #
+ # CONFIG_RT_USING_TINY_FFS is not set
+-# end of kservice optimization
+-
+-#
+-# klibc optimization
+-#
+-# CONFIG_RT_KLIBC_USING_STDLIB is not set
+-# CONFIG_RT_KLIBC_USING_TINY_SIZE is not set
+-# CONFIG_RT_KLIBC_USING_PRINTF_LONGLONG is not set
+-# end of klibc optimization
++# end of kservice options
+ 
+ CONFIG_RT_USING_DEBUG=y
+ CONFIG_RT_DEBUGING_ASSERT=y
+@@ -47,7 +146,7 @@ CONFIG_RT_DEBUGING_COLOR=y
+ CONFIG_RT_DEBUGING_CONTEXT=y
+ # CONFIG_RT_DEBUGING_AUTO_INIT is not set
+ # CONFIG_RT_DEBUGING_PAGE_LEAK is not set
+-CONFIG_RT_USING_OVERFLOW_CHECK=y
++# CONFIG_RT_USING_CI_ACTION is not set
+ 
+ #
+ # Inter-Thread communication
+@@ -85,12 +184,11 @@ CONFIG_RT_USING_DEVICE=y
+ CONFIG_RT_USING_DEVICE_OPS=y
+ CONFIG_RT_USING_INTERRUPT_INFO=y
+ # CONFIG_RT_USING_THREADSAFE_PRINTF is not set
+-# CONFIG_RT_USING_SCHED_THREAD_CTX is not set
+ CONFIG_RT_USING_CONSOLE=y
+ CONFIG_RT_CONSOLEBUF_SIZE=256
+ CONFIG_RT_CONSOLE_DEVICE_NAME="uart0"
+ CONFIG_RT_VER_NUM=0x50200
+-# CONFIG_RT_USING_STDC_ATOMIC is not set
++CONFIG_RT_USING_STDC_ATOMIC=y
+ CONFIG_RT_BACKTRACE_LEVEL_MAX_NR=32
+ # end of RT-Thread Kernel
+ 
+@@ -100,6 +198,8 @@ CONFIG_RT_USING_CPU_FFS=y
+ CONFIG_ARCH_MM_MMU=y
+ CONFIG_ARCH_ARM=y
+ CONFIG_ARCH_ARM_MMU=y
++CONFIG_KERNEL_VADDR_START=0xc0000000
++# CONFIG_RT_IOREMAP_LATE is not set
+ CONFIG_ARCH_ARM_CORTEX_A=y
+ CONFIG_RT_USING_GIC_V2=y
+ CONFIG_ARCH_ARM_CORTEX_A9=y
+@@ -138,7 +238,6 @@ CONFIG_RT_USING_DFS=y
+ CONFIG_DFS_USING_POSIX=y
+ CONFIG_DFS_USING_WORKDIR=y
+ CONFIG_DFS_FD_MAX=32
+-# CONFIG_RT_USING_DFS_V1 is not set
+ CONFIG_RT_USING_DFS_V2=y
+ CONFIG_RT_USING_DFS_ELMFAT=y
+ 
+@@ -168,10 +267,23 @@ CONFIG_RT_DFS_ELM_MUTEX_TIMEOUT=3000
+ 
+ CONFIG_RT_USING_DFS_DEVFS=y
+ CONFIG_RT_USING_DFS_ROMFS=y
+-# CONFIG_RT_USING_DFS_ROMFS_USER_ROOT is not set
++CONFIG_RT_USING_DFS_PTYFS=y
++# CONFIG_RT_USING_DFS_PROCFS is not set
+ # CONFIG_RT_USING_DFS_CROMFS is not set
+ CONFIG_RT_USING_DFS_TMPFS=y
+ CONFIG_RT_USING_DFS_MQUEUE=y
++CONFIG_RT_USING_PAGECACHE=y
++
++#
++# page cache config
++#
++CONFIG_RT_PAGECACHE_COUNT=4096
++CONFIG_RT_PAGECACHE_ASPACE_COUNT=1024
++CONFIG_RT_PAGECACHE_PRELOAD=4
++CONFIG_RT_PAGECACHE_HASH_NR=1024
++CONFIG_RT_PAGECACHE_GC_WORK_LEVEL=90
++CONFIG_RT_PAGECACHE_GC_STOP_LEVEL=70
++# end of page cache config
+ # end of DFS: device virtual file system
+ 
+ # CONFIG_RT_USING_FAL is not set
+@@ -191,6 +303,7 @@ CONFIG_RT_USING_SERIAL_V1=y
+ # CONFIG_RT_USING_SERIAL_V2 is not set
+ CONFIG_RT_SERIAL_USING_DMA=y
+ CONFIG_RT_SERIAL_RB_BUFSZ=256
++CONFIG_RT_USING_SERIAL_BYPASS=y
+ # CONFIG_RT_USING_CAN is not set
+ # CONFIG_RT_USING_CPUTIME is not set
+ CONFIG_RT_USING_I2C=y
+@@ -199,6 +312,7 @@ CONFIG_RT_USING_I2C_BITOPS=y
+ # CONFIG_RT_I2C_BITOPS_DEBUG is not set
+ # CONFIG_RT_USING_SOFT_I2C is not set
+ # CONFIG_RT_USING_PHY is not set
++# CONFIG_RT_USING_PHY_V2 is not set
+ # CONFIG_RT_USING_ADC is not set
+ # CONFIG_RT_USING_DAC is not set
+ CONFIG_RT_USING_NULL=y
+@@ -221,8 +335,9 @@ CONFIG_RT_MMCSD_STACK_SIZE=16384
+ CONFIG_RT_MMCSD_THREAD_PREORITY=22
+ CONFIG_RT_MMCSD_MAX_PARTITION=16
+ # CONFIG_RT_SDIO_DEBUG is not set
++# CONFIG_RT_USING_SDHCI is not set
+ CONFIG_RT_USING_SPI=y
+-# CONFIG_RT_USING_SPI_BITOPS is not set
++# CONFIG_RT_USING_SOFT_SPI is not set
+ # CONFIG_RT_USING_QSPI is not set
+ CONFIG_RT_USING_SPI_MSD=y
+ CONFIG_RT_USING_SFUD=y
+@@ -240,6 +355,15 @@ CONFIG_RT_USING_WDT=y
+ # CONFIG_RT_USING_LCD is not set
+ # CONFIG_RT_USING_HWCRYPTO is not set
+ # CONFIG_RT_USING_WIFI is not set
++CONFIG_RT_USING_BLK=y
++
++#
++# Partition Types
++#
++CONFIG_RT_BLK_PARTITION_DFS=y
++CONFIG_RT_BLK_PARTITION_EFI=y
++# end of Partition Types
++
+ # CONFIG_RT_USING_VIRTIO is not set
+ CONFIG_RT_USING_PIN=y
+ CONFIG_RT_USING_KTIME=y
+@@ -275,6 +399,9 @@ CONFIG_RT_USING_POSIX_STDIO=y
+ CONFIG_RT_USING_POSIX_POLL=y
+ CONFIG_RT_USING_POSIX_SELECT=y
+ # CONFIG_RT_USING_POSIX_EVENTFD is not set
++CONFIG_RT_USING_POSIX_EPOLL=y
++CONFIG_RT_USING_POSIX_SIGNALFD=y
++CONFIG_RT_SIGNALFD_MAX_NUM=10
+ # CONFIG_RT_USING_POSIX_TIMERFD is not set
+ # CONFIG_RT_USING_POSIX_SOCKET is not set
+ CONFIG_RT_USING_POSIX_TERMIOS=y
+@@ -306,10 +433,94 @@ CONFIG_RT_USING_POSIX_MESSAGE_SEMAPHORE=y
+ #
+ # Network
+ #
+-# CONFIG_RT_USING_SAL is not set
+-# CONFIG_RT_USING_NETDEV is not set
+-# CONFIG_RT_USING_LWIP is not set
+-# CONFIG_RT_USING_AT is not set
++CONFIG_RT_USING_SAL=y
++CONFIG_SAL_INTERNET_CHECK=y
++
++#
++# Docking with protocol stacks
++#
++CONFIG_SAL_USING_LWIP=y
++# CONFIG_SAL_USING_AT is not set
++# CONFIG_SAL_USING_TLS is not set
++# end of Docking with protocol stacks
++
++CONFIG_SAL_USING_POSIX=y
++CONFIG_RT_USING_NETDEV=y
++CONFIG_NETDEV_USING_IFCONFIG=y
++CONFIG_NETDEV_USING_PING=y
++CONFIG_NETDEV_USING_NETSTAT=y
++CONFIG_NETDEV_USING_AUTO_DEFAULT=y
++# CONFIG_NETDEV_USING_LINK_STATUS_CALLBACK is not set
++# CONFIG_NETDEV_USING_IPV6 is not set
++CONFIG_NETDEV_IPV4=1
++CONFIG_NETDEV_IPV6=0
++CONFIG_RT_USING_LWIP=y
++# CONFIG_RT_USING_LWIP_LOCAL_VERSION is not set
++# CONFIG_RT_USING_LWIP141 is not set
++CONFIG_RT_USING_LWIP203=y
++# CONFIG_RT_USING_LWIP212 is not set
++# CONFIG_RT_USING_LWIP_LATEST is not set
++CONFIG_RT_USING_LWIP_VER_NUM=0x20003
++# CONFIG_RT_USING_LWIP_IPV6 is not set
++CONFIG_RT_LWIP_MEM_ALIGNMENT=4
++CONFIG_RT_LWIP_IGMP=y
++CONFIG_RT_LWIP_ICMP=y
++# CONFIG_RT_LWIP_SNMP is not set
++CONFIG_RT_LWIP_DNS=y
++CONFIG_RT_LWIP_DHCP=y
++CONFIG_IP_SOF_BROADCAST=1
++CONFIG_IP_SOF_BROADCAST_RECV=1
++
++#
++# Static IPv4 Address
++#
++CONFIG_RT_LWIP_IPADDR="192.168.1.30"
++CONFIG_RT_LWIP_GWADDR="192.168.1.1"
++CONFIG_RT_LWIP_MSKADDR="255.255.255.0"
++# end of Static IPv4 Address
++
++CONFIG_RT_LWIP_UDP=y
++CONFIG_RT_LWIP_TCP=y
++CONFIG_RT_LWIP_RAW=y
++# CONFIG_RT_LWIP_PPP is not set
++CONFIG_RT_MEMP_NUM_NETCONN=8
++CONFIG_RT_LWIP_PBUF_NUM=16
++CONFIG_RT_LWIP_RAW_PCB_NUM=4
++CONFIG_RT_LWIP_UDP_PCB_NUM=4
++CONFIG_RT_LWIP_TCP_PCB_NUM=4
++CONFIG_RT_LWIP_TCP_SEG_NUM=40
++CONFIG_RT_LWIP_TCP_SND_BUF=8196
++CONFIG_RT_LWIP_TCP_WND=8196
++CONFIG_RT_LWIP_TCPTHREAD_PRIORITY=10
++CONFIG_RT_LWIP_TCPTHREAD_MBOX_SIZE=8
++CONFIG_RT_LWIP_TCPTHREAD_STACKSIZE=1024
++# CONFIG_LWIP_NO_RX_THREAD is not set
++# CONFIG_LWIP_NO_TX_THREAD is not set
++CONFIG_RT_LWIP_ETHTHREAD_PRIORITY=12
++CONFIG_RT_LWIP_ETHTHREAD_STACKSIZE=1024
++CONFIG_RT_LWIP_ETHTHREAD_MBOX_SIZE=8
++# CONFIG_RT_LWIP_REASSEMBLY_FRAG is not set
++CONFIG_LWIP_NETIF_STATUS_CALLBACK=1
++CONFIG_LWIP_NETIF_LINK_CALLBACK=1
++CONFIG_RT_LWIP_NETIF_NAMESIZE=6
++CONFIG_SO_REUSE=1
++CONFIG_LWIP_SO_RCVTIMEO=1
++CONFIG_LWIP_SO_SNDTIMEO=1
++CONFIG_LWIP_SO_RCVBUF=1
++CONFIG_LWIP_SO_LINGER=0
++# CONFIG_RT_LWIP_NETIF_LOOPBACK is not set
++CONFIG_LWIP_NETIF_LOOPBACK=0
++# CONFIG_RT_LWIP_STATS is not set
++# CONFIG_RT_LWIP_USING_HW_CHECKSUM is not set
++CONFIG_RT_LWIP_USING_PING=y
++# CONFIG_LWIP_USING_DHCPD is not set
++# CONFIG_RT_LWIP_ENABLE_USER_HOOKS is not set
++# CONFIG_RT_LWIP_DEBUG is not set
++CONFIG_RT_USING_AT=y
++# CONFIG_AT_DEBUG is not set
++# CONFIG_AT_USING_SERVER is not set
++# CONFIG_AT_USING_CLIENT is not set
++CONFIG_AT_SW_VERSION_NUM=0x10301
+ # end of Network
+ 
+ #
+@@ -336,6 +547,26 @@ CONFIG_RT_USING_ADT_REF=y
+ # end of Utilities
+ 
+ # CONFIG_RT_USING_VBUS is not set
++CONFIG_RT_USING_LWP=y
++# CONFIG_LWP_DEBUG is not set
++CONFIG_LWP_USING_RUNTIME=y
++CONFIG_RT_LWP_MAX_NR=30
++CONFIG_LWP_TASK_STACK_SIZE=16384
++CONFIG_RT_CH_MSG_MAX_NR=1024
++CONFIG_LWP_TID_MAX_NR=64
++CONFIG_LWP_ENABLE_ASID=y
++CONFIG_RT_LWP_SHM_MAX_NR=64
++CONFIG_RT_USING_LDSO=y
++# CONFIG_ELF_DEBUG_ENABLE is not set
++# CONFIG_ELF_LOAD_RANDOMIZE is not set
++CONFIG_LWP_USING_TERMINAL=y
++CONFIG_LWP_PTY_MAX_PARIS_LIMIT=64
++
++#
++# Memory management
++#
++# CONFIG_RT_USING_MEMBLOCK is not set
++# end of Memory management
+ 
+ #
+ # Using USB legacy version
+@@ -478,6 +709,8 @@ CONFIG_RT_USING_ADT_REF=y
+ # CONFIG_PKG_USING_MATTER_ADAPTATION_LAYER is not set
+ # CONFIG_PKG_USING_LHC_MODBUS is not set
+ # CONFIG_PKG_USING_QMODBUS is not set
++# CONFIG_PKG_USING_PNET is not set
++# CONFIG_PKG_USING_OPENER is not set
+ # end of IoT - internet of things
+ 
+ #
+@@ -505,6 +738,7 @@ CONFIG_RT_USING_ADT_REF=y
+ # CONFIG_PKG_USING_JSMN is not set
+ # CONFIG_PKG_USING_AGILE_JSMN is not set
+ # CONFIG_PKG_USING_PARSON is not set
++# CONFIG_PKG_USING_RYAN_JSON is not set
+ # end of JSON: JavaScript Object Notation, a lightweight data-interchange format
+ 
+ #
+@@ -610,6 +844,8 @@ CONFIG_RT_USING_ADT_REF=y
+ # CONFIG_PKG_USING_ARMV7M_DWT_TOOL is not set
+ # CONFIG_PKG_USING_VOFA_PLUS is not set
+ # CONFIG_PKG_USING_ZDEBUG is not set
++# CONFIG_PKG_USING_RVBACKTRACE is not set
++# CONFIG_PKG_USING_HPATCHLITE is not set
+ # end of tools packages
+ 
+ #
+@@ -621,7 +857,6 @@ CONFIG_RT_USING_ADT_REF=y
+ #
+ # CONFIG_PKG_USING_RT_MEMCPY_CM is not set
+ # CONFIG_PKG_USING_RT_KPRINTF_THREADSAFE is not set
+-# CONFIG_PKG_USING_RT_VSNPRINTF_FULL is not set
+ # end of enhanced kernel services
+ 
+ # CONFIG_PKG_USING_AUNITY is not set
+@@ -639,7 +874,6 @@ CONFIG_RT_USING_ADT_REF=y
+ #
+ # CONFIG_PKG_USING_CMSIS_5 is not set
+ # CONFIG_PKG_USING_CMSIS_CORE is not set
+-# CONFIG_PKG_USING_CMSIS_DSP is not set
+ # CONFIG_PKG_USING_CMSIS_NN is not set
+ # CONFIG_PKG_USING_CMSIS_RTOS1 is not set
+ # CONFIG_PKG_USING_CMSIS_RTOS2 is not set
+@@ -691,7 +925,6 @@ CONFIG_RT_USING_ADT_REF=y
+ # CONFIG_PKG_USING_ARM_2D is not set
+ # CONFIG_PKG_USING_MCUBOOT is not set
+ # CONFIG_PKG_USING_TINYUSB is not set
+-# CONFIG_PKG_USING_CHERRYUSB is not set
+ # CONFIG_PKG_USING_KMULTI_RTIMER is not set
+ # CONFIG_PKG_USING_TFDB is not set
+ # CONFIG_PKG_USING_QPC is not set
+@@ -699,10 +932,13 @@ CONFIG_RT_USING_ADT_REF=y
+ # CONFIG_PKG_USING_FLASH_BLOB is not set
+ # CONFIG_PKG_USING_MLIBC is not set
+ # CONFIG_PKG_USING_TASK_MSG_BUS is not set
++# CONFIG_PKG_USING_UART_FRAMEWORK is not set
+ # CONFIG_PKG_USING_SFDB is not set
+ # CONFIG_PKG_USING_RTP is not set
+ # CONFIG_PKG_USING_REB is not set
++# CONFIG_PKG_USING_RMP is not set
+ # CONFIG_PKG_USING_R_RHEALSTONE is not set
++# CONFIG_PKG_USING_HEARTBEAT is not set
+ # end of system packages
+ 
+ #
+@@ -716,12 +952,42 @@ CONFIG_RT_USING_ADT_REF=y
+ #
+ # STM32 HAL & SDK Drivers
+ #
++# CONFIG_PKG_USING_STM32F0_HAL_DRIVER is not set
++# CONFIG_PKG_USING_STM32F0_CMSIS_DRIVER is not set
++# CONFIG_PKG_USING_STM32F1_HAL_DRIVER is not set
++# CONFIG_PKG_USING_STM32F1_CMSIS_DRIVER is not set
++# CONFIG_PKG_USING_STM32F2_HAL_DRIVER is not set
++# CONFIG_PKG_USING_STM32F2_CMSIS_DRIVER is not set
++# CONFIG_PKG_USING_STM32F3_HAL_DRIVER is not set
++# CONFIG_PKG_USING_STM32F3_CMSIS_DRIVER is not set
+ # CONFIG_PKG_USING_STM32F4_HAL_DRIVER is not set
+ # CONFIG_PKG_USING_STM32F4_CMSIS_DRIVER is not set
++# CONFIG_PKG_USING_STM32F7_HAL_DRIVER is not set
++# CONFIG_PKG_USING_STM32F7_CMSIS_DRIVER is not set
++# CONFIG_PKG_USING_STM32G0_HAL_DRIVER is not set
++# CONFIG_PKG_USING_STM32G0_CMSIS_DRIVER is not set
++# CONFIG_PKG_USING_STM32G4_HAL_DRIVER is not set
++# CONFIG_PKG_USING_STM32G4_CMSIS_DRIVER is not set
++# CONFIG_PKG_USING_STM32H5_HAL_DRIVER is not set
++# CONFIG_PKG_USING_STM32H5_CMSIS_DRIVER is not set
++# CONFIG_PKG_USING_STM32H7_HAL_DRIVER is not set
++# CONFIG_PKG_USING_STM32H7_CMSIS_DRIVER is not set
++# CONFIG_PKG_USING_STM32H7RS_HAL_DRIVER is not set
++# CONFIG_PKG_USING_STM32H7RS_CMSIS_DRIVER is not set
++# CONFIG_PKG_USING_STM32L0_HAL_DRIVER is not set
++# CONFIG_PKG_USING_STM32L0_CMSIS_DRIVER is not set
+ # CONFIG_PKG_USING_STM32L4_HAL_DRIVER is not set
+ # CONFIG_PKG_USING_STM32L4_CMSIS_DRIVER is not set
++# CONFIG_PKG_USING_STM32L5_HAL_DRIVER is not set
++# CONFIG_PKG_USING_STM32L5_CMSIS_DRIVER is not set
++# CONFIG_PKG_USING_STM32U5_HAL_DRIVER is not set
++# CONFIG_PKG_USING_STM32U5_CMSIS_DRIVER is not set
+ # CONFIG_PKG_USING_STM32WB55_SDK is not set
+ # CONFIG_PKG_USING_STM32_SDIO is not set
++# CONFIG_PKG_USING_STM32WL_HAL_DRIVER is not set
++# CONFIG_PKG_USING_STM32WL_CMSIS_DRIVER is not set
++# CONFIG_PKG_USING_STM32WB_HAL_DRIVER is not set
++# CONFIG_PKG_USING_STM32WB_CMSIS_DRIVER is not set
+ # end of STM32 HAL & SDK Drivers
+ 
+ #
+@@ -753,6 +1019,48 @@ CONFIG_RT_USING_ADT_REF=y
+ # CONFIG_PKG_USING_NRF5X_SDK is not set
+ # CONFIG_PKG_USING_NRFX is not set
+ # CONFIG_PKG_USING_RASPBERRYPI_PICO_SDK is not set
++# CONFIG_PKG_USING_MM32 is not set
++
++#
++# WCH HAL & SDK Drivers
++#
++# CONFIG_PKG_USING_CH32V20x_SDK is not set
++# CONFIG_PKG_USING_CH32V307_SDK is not set
++# end of WCH HAL & SDK Drivers
++
++#
++# AT32 HAL & SDK Drivers
++#
++# CONFIG_PKG_USING_AT32A403A_HAL_DRIVER is not set
++# CONFIG_PKG_USING_AT32A403A_CMSIS_DRIVER is not set
++# CONFIG_PKG_USING_AT32A423_HAL_DRIVER is not set
++# CONFIG_PKG_USING_AT32A423_CMSIS_DRIVER is not set
++# CONFIG_PKG_USING_AT32F45x_HAL_DRIVER is not set
++# CONFIG_PKG_USING_AT32F45x_CMSIS_DRIVER is not set
++# CONFIG_PKG_USING_AT32F402_405_HAL_DRIVER is not set
++# CONFIG_PKG_USING_AT32F402_405_CMSIS_DRIVER is not set
++# CONFIG_PKG_USING_AT32F403A_407_HAL_DRIVER is not set
++# CONFIG_PKG_USING_AT32F403A_407_CMSIS_DRIVER is not set
++# CONFIG_PKG_USING_AT32F413_HAL_DRIVER is not set
++# CONFIG_PKG_USING_AT32F413_CMSIS_DRIVER is not set
++# CONFIG_PKG_USING_AT32F415_HAL_DRIVER is not set
++# CONFIG_PKG_USING_AT32F415_CMSIS_DRIVER is not set
++# CONFIG_PKG_USING_AT32F421_HAL_DRIVER is not set
++# CONFIG_PKG_USING_AT32F421_CMSIS_DRIVER is not set
++# CONFIG_PKG_USING_AT32F423_HAL_DRIVER is not set
++# CONFIG_PKG_USING_AT32F423_CMSIS_DRIVER is not set
++# CONFIG_PKG_USING_AT32F425_HAL_DRIVER is not set
++# CONFIG_PKG_USING_AT32F425_CMSIS_DRIVER is not set
++# CONFIG_PKG_USING_AT32F435_437_HAL_DRIVER is not set
++# CONFIG_PKG_USING_AT32F435_437_CMSIS_DRIVER is not set
++# CONFIG_PKG_USING_AT32M412_416_HAL_DRIVER is not set
++# CONFIG_PKG_USING_AT32M412_416_CMSIS_DRIVER is not set
++# end of AT32 HAL & SDK Drivers
++
++#
++# HC32 DDL Drivers
++#
++# end of HC32 DDL Drivers
+ # end of HAL & SDK Drivers
+ 
+ #
+@@ -790,14 +1098,17 @@ CONFIG_RT_USING_ADT_REF=y
+ # CONFIG_PKG_USING_BMI088 is not set
+ # CONFIG_PKG_USING_HMC5883 is not set
+ # CONFIG_PKG_USING_MAX6675 is not set
++# CONFIG_PKG_USING_MAX31855 is not set
+ # CONFIG_PKG_USING_TMP1075 is not set
+ # CONFIG_PKG_USING_SR04 is not set
+ # CONFIG_PKG_USING_CCS811 is not set
+ # CONFIG_PKG_USING_PMSXX is not set
+ # CONFIG_PKG_USING_RT3020 is not set
+ # CONFIG_PKG_USING_MLX90632 is not set
++# CONFIG_PKG_USING_MLX90382 is not set
+ # CONFIG_PKG_USING_MLX90393 is not set
+ # CONFIG_PKG_USING_MLX90392 is not set
++# CONFIG_PKG_USING_MLX90394 is not set
+ # CONFIG_PKG_USING_MLX90397 is not set
+ # CONFIG_PKG_USING_MS5611 is not set
+ # CONFIG_PKG_USING_MAX31865 is not set
+@@ -823,6 +1134,8 @@ CONFIG_RT_USING_ADT_REF=y
+ # CONFIG_PKG_USING_ICM20608 is not set
+ # CONFIG_PKG_USING_PAJ7620 is not set
+ # CONFIG_PKG_USING_STHS34PF80 is not set
++# CONFIG_PKG_USING_P3T1755 is not set
++# CONFIG_PKG_USING_QMI8658 is not set
+ # end of sensors drivers
+ 
+ #
+@@ -911,6 +1224,10 @@ CONFIG_RT_USING_ADT_REF=y
+ # CONFIG_PKG_USING_SYSTEM_RUN_LED is not set
+ # CONFIG_PKG_USING_BT_MX01 is not set
+ # CONFIG_PKG_USING_RGPOWER is not set
++# CONFIG_PKG_USING_BT_MX02 is not set
++# CONFIG_PKG_USING_GC9A01 is not set
++# CONFIG_PKG_USING_IK485 is not set
++# CONFIG_PKG_USING_SERVO is not set
+ # CONFIG_PKG_USING_SPI_TOOLS is not set
+ # end of peripheral libraries and drivers
+ 
+@@ -927,6 +1244,7 @@ CONFIG_RT_USING_ADT_REF=y
+ # CONFIG_PKG_USING_QUEST is not set
+ # CONFIG_PKG_USING_NAXOS is not set
+ # CONFIG_PKG_USING_R_TINYMAIX is not set
++# CONFIG_PKG_USING_LLMCHAT is not set
+ # end of AI packages
+ 
+ #
+@@ -938,6 +1256,7 @@ CONFIG_RT_USING_ADT_REF=y
+ # CONFIG_PKG_USING_UKAL is not set
+ # CONFIG_PKG_USING_DIGITALCTRL is not set
+ # CONFIG_PKG_USING_KISSFFT is not set
++# CONFIG_PKG_USING_CMSIS_DSP is not set
+ # end of Signal Processing and Control Algorithm Packages
+ 
+ #
+@@ -997,6 +1316,7 @@ CONFIG_RT_USING_ADT_REF=y
+ # CONFIG_PKG_USING_KI is not set
+ # CONFIG_PKG_USING_ARMv7M_DWT is not set
+ # CONFIG_PKG_USING_CRCLIB is not set
++# CONFIG_PKG_USING_LIBCRC is not set
+ # CONFIG_PKG_USING_LWGPS is not set
+ # CONFIG_PKG_USING_STATE_MACHINE is not set
+ # CONFIG_PKG_USING_DESIGN_PATTERN is not set
+@@ -1007,6 +1327,7 @@ CONFIG_RT_USING_ADT_REF=y
+ # CONFIG_PKG_USING_SOEM is not set
+ # CONFIG_PKG_USING_QPARAM is not set
+ # CONFIG_PKG_USING_CorevMCU_CLI is not set
++# CONFIG_PKG_USING_DRMP is not set
+ # end of miscellaneous packages
+ 
+ #
+@@ -1020,6 +1341,7 @@ CONFIG_RT_USING_ADT_REF=y
+ # CONFIG_PKG_USING_ARDUINO_MSGQ_C_CPP_DEMO is not set
+ # CONFIG_PKG_USING_ARDUINO_SKETCH_LOADER_DEMO is not set
+ # CONFIG_PKG_USING_ARDUINO_ULTRASOUND_RADAR is not set
++# CONFIG_PKG_USING_ARDUINO_RTDUINO_SENSORFUSION_SHIELD is not set
+ # CONFIG_PKG_USING_ARDUINO_NINEINONE_SENSOR_SHIELD is not set
+ # CONFIG_PKG_USING_ARDUINO_SENSOR_KIT is not set
+ # CONFIG_PKG_USING_ARDUINO_MATLAB_SUPPORT is not set
+@@ -1245,70 +1567,6 @@ CONFIG_RT_USING_ADT_REF=y
+ # end of Arduino libraries
+ # end of RT-Thread online packages
+ 
+-#
+-# Privated Packages of RealThread
+-#
+-# CONFIG_PKG_USING_CODEC is not set
+-# CONFIG_PKG_USING_PLAYER is not set
+-# CONFIG_PKG_USING_MPLAYER is not set
+-# CONFIG_PKG_USING_PERSIMMON_SRC is not set
+-# CONFIG_PKG_USING_JS_PERSIMMON is not set
+-# CONFIG_PKG_USING_JERRYSCRIPT_WIN32 is not set
+-
+-#
+-# Network Utilities
+-#
+-# end of Network Utilities
+-
+-# CONFIG_PKG_USING_WICED is not set
+-# CONFIG_PKG_USING_CLOUDSDK is not set
+-# CONFIG_PKG_USING_POWER_MANAGER is not set
+-# CONFIG_PKG_USING_RT_OTA is not set
+-# CONFIG_PKG_USING_RTINSIGHT is not set
+-# CONFIG_PKG_USING_SMARTCONFIG is not set
+-# CONFIG_PKG_USING_RTX is not set
+-# CONFIG_RT_USING_TESTCASE is not set
+-# CONFIG_PKG_USING_NGHTTP2 is not set
+-# CONFIG_PKG_USING_AVS is not set
+-# CONFIG_PKG_USING_ALI_LINKKIT is not set
+-# CONFIG_PKG_USING_STS is not set
+-# CONFIG_PKG_USING_DLMS is not set
+-# CONFIG_PKG_USING_AUDIO_FRAMEWORK is not set
+-# CONFIG_PKG_USING_ZBAR is not set
+-# CONFIG_PKG_USING_MCF is not set
+-# CONFIG_PKG_USING_URPC is not set
+-# CONFIG_PKG_USING_DCM is not set
+-# CONFIG_PKG_USING_EMQ is not set
+-# CONFIG_PKG_USING_CFGM is not set
+-# CONFIG_PKG_USING_RT_CMSIS_DAP is not set
+-# CONFIG_PKG_USING_SMODULE is not set
+-# CONFIG_PKG_USING_SNFD is not set
+-# CONFIG_PKG_USING_UDBD is not set
+-# CONFIG_PKG_USING_BENCHMARK is not set
+-# CONFIG_PKG_USING_UBJSON is not set
+-# CONFIG_PKG_USING_DATATYPE is not set
+-# CONFIG_PKG_USING_FASTFS is not set
+-# CONFIG_PKG_USING_RIL is not set
+-# CONFIG_PKG_USING_WATCH_DCM_SVC is not set
+-# CONFIG_PKG_USING_WATCH_APP_FWK is not set
+-# CONFIG_PKG_USING_GUI_TEST is not set
+-# CONFIG_PKG_USING_PMEM is not set
+-# CONFIG_PKG_USING_LWRDP is not set
+-# CONFIG_PKG_USING_MASAN is not set
+-# CONFIG_PKG_USING_BSDIFF_LIB is not set
+-# CONFIG_PKG_USING_PRC_DIFF is not set
+-
+-#
+-# RT-Thread Smart
+-#
+-# CONFIG_PKG_USING_UKERNEL is not set
+-# end of RT-Thread Smart
+-
+-# CONFIG_PKG_USING_TRACE_AGENT is not set
+-# CONFIG_PKG_USING_DLOG is not set
+-# CONFIG_PKG_USING_EXT4 is not set
+-# end of Privated Packages of RealThread
+-
+ #
+ # Hardware Drivers Config
+ #
+diff --git a/bsp/qemu-vexpress-a9/SConstruct b/bsp/qemu-vexpress-a9/SConstruct
+index aa95fff7df..e6a0c96042 100644
+--- a/bsp/qemu-vexpress-a9/SConstruct
++++ b/bsp/qemu-vexpress-a9/SConstruct
+@@ -1,6 +1,7 @@
+ import os
+ import sys
+ import rtconfig
++import scons_compiledb
+ 
+ if os.getenv('RTT_ROOT'):
+     RTT_ROOT = os.getenv('RTT_ROOT')
+@@ -21,7 +22,7 @@ env = Environment(tools = ['mingw'],
+     LINK = rtconfig.LINK, LINKFLAGS = rtconfig.LFLAGS)
+ env.PrependENVPath('PATH', rtconfig.EXEC_PATH)
+ env['ASCOM'] = env['ASPPCOM']
+-
++scons_compiledb.enable(env)
+ Export('RTT_ROOT')
+ Export('rtconfig')
+ 
+@@ -32,5 +33,9 @@ if GetDepend('RT_USING_SMART'):
+     # use smart link.lds
+     env['LINKFLAGS'] = env['LINKFLAGS'].replace('link.lds', 'link_smart.lds')
+ 
++env['OBJSUFFIX'] = '.bc'
+ # make a building
+ DoBuilding(TARGET, objs)
++env.CompileDb()
++
++
+diff --git a/bsp/qemu-vexpress-a9/drivers/automac.h b/bsp/qemu-vexpress-a9/drivers/automac.h
+index 37087ec89b..ed17bc8b5b 100644
+--- a/bsp/qemu-vexpress-a9/drivers/automac.h
++++ b/bsp/qemu-vexpress-a9/drivers/automac.h
+@@ -8,8 +8,8 @@
+ #define AUTOMAC0  0x52
+ #define AUTOMAC1  0x54
+ #define AUTOMAC2  0x00
+-#define AUTOMAC3  0x60
+-#define AUTOMAC4  0x47
+-#define AUTOMAC5  0x90
++#define AUTOMAC3  0x65
++#define AUTOMAC4  0x77
++#define AUTOMAC5  0xb4
+ 
+ #endif
+diff --git a/bsp/qemu-vexpress-a9/link_smart.lds b/bsp/qemu-vexpress-a9/link_smart.lds
+index 04e3eb3a92..a80b7a9c31 100644
+--- a/bsp/qemu-vexpress-a9/link_smart.lds
++++ b/bsp/qemu-vexpress-a9/link_smart.lds
+@@ -107,5 +107,12 @@ SECTIONS
+     .stab.indexstr 0 : { *(.stab.indexstr) }
+     .comment 0 : { *(.comment) }
+ 
++    .dynamic : { *(.dynamic) }
++    .rel.dyn : { *(.rel.dyn) }
++    .rela.dyn : { *(.rela.dyn) }
++    .got : { *(.got) }
++    .got.plt : { *(.got.plt) }
++    .plt : { *(.plt) }
++
+     _end = .;
+ }
+diff --git a/bsp/qemu-vexpress-a9/rtconfig.h b/bsp/qemu-vexpress-a9/rtconfig.h
+index 6b25c97541..738c0e9218 100644
+--- a/bsp/qemu-vexpress-a9/rtconfig.h
++++ b/bsp/qemu-vexpress-a9/rtconfig.h
+@@ -3,33 +3,96 @@
+ 
+ /* RT-Thread Kernel */
+ 
++/* klibc options */
++
++/* rt_vsnprintf options */
++
++/* end of rt_vsnprintf options */
++
++/* rt_vsscanf options */
++
++/* end of rt_vsscanf options */
++
++/* rt_memset options */
++
++/* end of rt_memset options */
++
++/* rt_memcpy options */
++
++/* end of rt_memcpy options */
++
++/* rt_memmove options */
++
++/* end of rt_memmove options */
++
++/* rt_memcmp options */
++
++/* end of rt_memcmp options */
++
++/* rt_strstr options */
++
++/* end of rt_strstr options */
++
++/* rt_strcasecmp options */
++
++/* end of rt_strcasecmp options */
++
++/* rt_strncpy options */
++
++/* end of rt_strncpy options */
++
++/* rt_strcpy options */
++
++/* end of rt_strcpy options */
++
++/* rt_strncmp options */
++
++/* end of rt_strncmp options */
++
++/* rt_strcmp options */
++
++/* end of rt_strcmp options */
++
++/* rt_strlen options */
++
++/* end of rt_strlen options */
++
++
++
++
++/*Defined by Xinhui Shao*/
++#define RT_USING_MMU_STUB
++
++/* rt_strnlen options */
++
++/* end of rt_strnlen options */
++/* end of klibc options */
+ #define RT_NAME_MAX 8
++#define RT_USING_SMART
+ #define RT_CPUS_NR 1
+ #define RT_ALIGN_SIZE 8
+ #define RT_THREAD_PRIORITY_256
+ #define RT_THREAD_PRIORITY_MAX 256
+ #define RT_TICK_PER_SECOND 100
++#define RT_USING_OVERFLOW_CHECK
+ #define RT_USING_HOOK
+ #define RT_HOOK_USING_FUNC_PTR
++#define RT_USING_HOOKLIST
+ #define RT_USING_IDLE_HOOK
+ #define RT_IDLE_HOOK_LIST_SIZE 4
+ #define IDLE_THREAD_STACK_SIZE 4096
+ #define RT_USING_TIMER_SOFT
+ #define RT_TIMER_THREAD_PRIO 4
+ #define RT_TIMER_THREAD_STACK_SIZE 4096
++#define RT_USING_CPU_USAGE_TRACER
+ 
+-/* kservice optimization */
++/* kservice options */
+ 
+-/* end of kservice optimization */
+-
+-/* klibc optimization */
+-
+-/* end of klibc optimization */
++/* end of kservice options */
+ #define RT_USING_DEBUG
+ #define RT_DEBUGING_ASSERT
+ #define RT_DEBUGING_COLOR
+ #define RT_DEBUGING_CONTEXT
+-#define RT_USING_OVERFLOW_CHECK
+ 
+ /* Inter-Thread communication */
+ 
+@@ -59,6 +122,7 @@
+ #define RT_CONSOLEBUF_SIZE 256
+ #define RT_CONSOLE_DEVICE_NAME "uart0"
+ #define RT_VER_NUM 0x50200
++#define RT_USING_STDC_ATOMIC
+ #define RT_BACKTRACE_LEVEL_MAX_NR 32
+ /* end of RT-Thread Kernel */
+ #define RT_USING_CACHE
+@@ -67,6 +131,7 @@
+ #define ARCH_MM_MMU
+ #define ARCH_ARM
+ #define ARCH_ARM_MMU
++#define KERNEL_VADDR_START 0xc0000000
+ #define ARCH_ARM_CORTEX_A
+ #define RT_USING_GIC_V2
+ #define ARCH_ARM_CORTEX_A9
+@@ -118,8 +183,20 @@
+ /* end of elm-chan's FatFs, Generic FAT Filesystem Module */
+ #define RT_USING_DFS_DEVFS
+ #define RT_USING_DFS_ROMFS
++#define RT_USING_DFS_PTYFS
+ #define RT_USING_DFS_TMPFS
+ #define RT_USING_DFS_MQUEUE
++#define RT_USING_PAGECACHE
++
++/* page cache config */
++
++#define RT_PAGECACHE_COUNT 4096
++#define RT_PAGECACHE_ASPACE_COUNT 1024
++#define RT_PAGECACHE_PRELOAD 4
++#define RT_PAGECACHE_HASH_NR 1024
++#define RT_PAGECACHE_GC_WORK_LEVEL 90
++#define RT_PAGECACHE_GC_STOP_LEVEL 70
++/* end of page cache config */
+ /* end of DFS: device virtual file system */
+ 
+ /* Device Drivers */
+@@ -134,6 +211,7 @@
+ #define RT_USING_SERIAL_V1
+ #define RT_SERIAL_USING_DMA
+ #define RT_SERIAL_RB_BUFSZ 256
++#define RT_USING_SERIAL_BYPASS
+ #define RT_USING_I2C
+ #define RT_USING_I2C_BITOPS
+ #define RT_USING_NULL
+@@ -157,6 +235,13 @@
+ #define RT_SFUD_USING_FLASH_INFO_TABLE
+ #define RT_SFUD_SPI_MAX_HZ 50000000
+ #define RT_USING_WDT
++#define RT_USING_BLK
++
++/* Partition Types */
++
++#define RT_BLK_PARTITION_DFS
++#define RT_BLK_PARTITION_EFI
++/* end of Partition Types */
+ #define RT_USING_PIN
+ #define RT_USING_KTIME
+ /* end of Device Drivers */
+@@ -181,6 +266,9 @@
+ #define RT_USING_POSIX_STDIO
+ #define RT_USING_POSIX_POLL
+ #define RT_USING_POSIX_SELECT
++#define RT_USING_POSIX_EPOLL
++#define RT_USING_POSIX_SIGNALFD
++#define RT_SIGNALFD_MAX_NUM 10
+ #define RT_USING_POSIX_TERMIOS
+ #define RT_USING_POSIX_AIO
+ #define RT_USING_POSIX_DELAY
+@@ -202,6 +290,67 @@
+ 
+ /* Network */
+ 
++#define RT_USING_SAL
++#define SAL_INTERNET_CHECK
++
++/* Docking with protocol stacks */
++
++#define SAL_USING_LWIP
++/* end of Docking with protocol stacks */
++#define SAL_USING_POSIX
++#define RT_USING_NETDEV
++#define NETDEV_USING_IFCONFIG
++#define NETDEV_USING_PING
++#define NETDEV_USING_NETSTAT
++#define NETDEV_USING_AUTO_DEFAULT
++#define NETDEV_IPV4 1
++#define NETDEV_IPV6 0
++#define RT_USING_LWIP
++#define RT_USING_LWIP203
++#define RT_USING_LWIP_VER_NUM 0x20003
++#define RT_LWIP_MEM_ALIGNMENT 4
++#define RT_LWIP_IGMP
++#define RT_LWIP_ICMP
++#define RT_LWIP_DNS
++#define RT_LWIP_DHCP
++#define IP_SOF_BROADCAST 1
++#define IP_SOF_BROADCAST_RECV 1
++
++/* Static IPv4 Address */
++
++#define RT_LWIP_IPADDR "192.168.1.30"
++#define RT_LWIP_GWADDR "192.168.1.1"
++#define RT_LWIP_MSKADDR "255.255.255.0"
++/* end of Static IPv4 Address */
++#define RT_LWIP_UDP
++#define RT_LWIP_TCP
++#define RT_LWIP_RAW
++#define RT_MEMP_NUM_NETCONN 8
++#define RT_LWIP_PBUF_NUM 16
++#define RT_LWIP_RAW_PCB_NUM 4
++#define RT_LWIP_UDP_PCB_NUM 4
++#define RT_LWIP_TCP_PCB_NUM 4
++#define RT_LWIP_TCP_SEG_NUM 40
++#define RT_LWIP_TCP_SND_BUF 8196
++#define RT_LWIP_TCP_WND 8196
++#define RT_LWIP_TCPTHREAD_PRIORITY 10
++#define RT_LWIP_TCPTHREAD_MBOX_SIZE 8
++#define RT_LWIP_TCPTHREAD_STACKSIZE 1024
++#define RT_LWIP_ETHTHREAD_PRIORITY 12
++#define RT_LWIP_ETHTHREAD_STACKSIZE 1024
++#define RT_LWIP_ETHTHREAD_MBOX_SIZE 8
++#define LWIP_NETIF_STATUS_CALLBACK 1
++#define LWIP_NETIF_LINK_CALLBACK 1
++#define RT_LWIP_NETIF_NAMESIZE 6
++#define SO_REUSE 1
++#define LWIP_SO_RCVTIMEO 1
++#define LWIP_SO_SNDTIMEO 1
++#define LWIP_SO_RCVBUF 1
++#define LWIP_SO_LINGER 0
++#define LWIP_NETIF_LOOPBACK 0
++#define RT_LWIP_USING_PING
++#define RT_USING_AT
++#define AT_SW_VERSION_NUM 0x10301
+ /* end of Network */
+ 
+ /* Memory protection */
+@@ -217,6 +366,21 @@
+ #define RT_USING_ADT_HASHMAP
+ #define RT_USING_ADT_REF
+ /* end of Utilities */
++#define RT_USING_LWP
++#define LWP_USING_RUNTIME
++#define RT_LWP_MAX_NR 30
++#define LWP_TASK_STACK_SIZE 16384
++#define RT_CH_MSG_MAX_NR 1024
++#define LWP_TID_MAX_NR 64
++#define LWP_ENABLE_ASID
++#define RT_LWP_SHM_MAX_NR 64
++#define RT_USING_LDSO
++#define LWP_USING_TERMINAL
++#define LWP_PTY_MAX_PARIS_LIMIT 64
++
++/* Memory management */
++
++/* end of Memory management */
+ 
+ /* Using USB legacy version */
+ 
+@@ -324,6 +488,18 @@
+ /* Kendryte SDK */
+ 
+ /* end of Kendryte SDK */
++
++/* WCH HAL & SDK Drivers */
++
++/* end of WCH HAL & SDK Drivers */
++
++/* AT32 HAL & SDK Drivers */
++
++/* end of AT32 HAL & SDK Drivers */
++
++/* HC32 DDL Drivers */
++
++/* end of HC32 DDL Drivers */
+ /* end of HAL & SDK Drivers */
+ 
+ /* sensors drivers */
+@@ -404,18 +580,6 @@
+ /* end of Arduino libraries */
+ /* end of RT-Thread online packages */
+ 
+-/* Privated Packages of RealThread */
+-
+-
+-/* Network Utilities */
+-
+-/* end of Network Utilities */
+-
+-/* RT-Thread Smart */
+-
+-/* end of RT-Thread Smart */
+-/* end of Privated Packages of RealThread */
+-
+ /* Hardware Drivers Config */
+ 
+ #define SOC_VEXPRESS_A9
+diff --git a/bsp/qemu-vexpress-a9/rtconfig.py b/bsp/qemu-vexpress-a9/rtconfig.py
+index 77cc9dfb4a..0ef71eae8a 100644
+--- a/bsp/qemu-vexpress-a9/rtconfig.py
++++ b/bsp/qemu-vexpress-a9/rtconfig.py
+@@ -36,12 +36,12 @@ BUILD       = 'debug'
+ LINK_SCRIPT = 'link.lds'
+ 
+ if PLATFORM == 'gcc':
+-    PREFIX  = os.getenv('RTT_CC_PREFIX') or 'arm-none-eabi-'
+-    CC      = PREFIX + 'gcc'
+-    CXX     = PREFIX + 'g++'
+-    AS      = PREFIX + 'gcc'
+-    AR      = PREFIX + 'ar'
+-    LINK    = PREFIX + 'gcc'
++    PREFIX  = os.getenv('RTT_CC_PREFIX') or 'arm-linux-musleabi-'
++    CC      = 'clang-11'
++    CXX     = 'clang++'
++    AS      = 'clang'
++    AR      = 'ar'
++    LINK    = 'llvm-link'
+     TARGET_EXT = 'elf'
+     SIZE    = PREFIX + 'size'
+     OBJDUMP = PREFIX + 'objdump'
+@@ -49,18 +49,23 @@ if PLATFORM == 'gcc':
+     STRIP   = PREFIX + 'strip'
+     CFPFLAGS = ' -msoft-float'
+     AFPFLAGS = ' -mfloat-abi=softfp -mfpu=neon'
+-    DEVICE   = ' -march=armv7-a -mtune=cortex-a7 -ftree-vectorize -ffast-math -funwind-tables -fno-strict-aliasing'
++    _musl = os.getenv('RTT_CROSS_SYSROOT', '/opt/x86_64-linux-musl')
++    DEVICE   = '--target=x86_64-linux-musleabi -march=x86-64 -ftree-vectorize -ffast-math -funwind-tables -fno-strict-aliasing \
++      --sysroot=%s \
++      -I%s/include \
++      -I%s/usr/include' % (_musl, _musl, _musl)
+ 
+-    CXXFLAGS= DEVICE + CFPFLAGS + ' -Wall -fdiagnostics-color=always'
+-    CFLAGS  = DEVICE + CFPFLAGS + ' -Wall -Wno-cpp -std=gnu99 -D_POSIX_SOURCE -fdiagnostics-color=always'
++    CXXFLAGS= DEVICE + CFPFLAGS + ' -emit-llvm -O3 -Wall -ffunction-sections -fdata-sections -fdiagnostics-color=always'
++    CFLAGS  = DEVICE + CFPFLAGS + ' -emit-llvm -O3 -Wall -ffunction-sections -fdata-sections -Wall -Wno-cpp -std=gnu99 -D_POSIX_SOURCE -fdiagnostics-color=always'
+     AFLAGS  = DEVICE + ' -c' + AFPFLAGS + ' -x assembler-with-cpp'    
+-    LFLAGS  = DEVICE + ' -Wl,--gc-sections,-Map=rtthread.map,-cref,-u,system_vectors -T '+ LINK_SCRIPT + ' -lsupc++ -lgcc -static'
++    #LFLAGS  = DEVICE + ' -Wl,--gc-sections,-Map=rtthread.map,-cref,-u,system_vectors -T '+ LINK_SCRIPT + ' -lsupc++ -lgcc -static'
++    LFLAGS  = ''
+     CPATH   = ''
+     LPATH   = ''
+ 
+     if BUILD == 'debug':
+-        CFLAGS   += ' -O0 -gdwarf-2'
+-        CXXFLAGS += ' -O0 -gdwarf-2'
++        CFLAGS   += '  -gdwarf-2'
++        CXXFLAGS += '  -gdwarf-2'
+         AFLAGS   += ' -gdwarf-2'
+     else:
+         CFLAGS   += ' -Os'
+@@ -75,3 +80,4 @@ if PLATFORM == 'gcc':
+ 
+     DUMP_ACTION = OBJDUMP + ' -D -S $TARGET > rtt.asm\n'
+     POST_ACTION = OBJCPY + ' -O binary $TARGET rtthread.bin\n' + SIZE + ' $TARGET \n'
++
+diff --git a/components/drivers/core/SConscript b/components/drivers/core/SConscript
+index f3f3fbd313..0760549ab5 100644
+--- a/components/drivers/core/SConscript
++++ b/components/drivers/core/SConscript
+@@ -16,6 +16,7 @@ if GetDepend(['RT_USING_DM']):
+ if GetDepend(['RT_USING_OFW']):
+     src += ['platform_ofw.c']
+ 
++
+ group = DefineGroup('DeviceDrivers', src, depend = ['RT_USING_DEVICE'], CPPPATH = CPPPATH)
+ 
+ Return('group')
+diff --git a/components/legacy/rtlegacy.h b/components/legacy/rtlegacy.h
+index 661925dc0b..5e17344d99 100644
+--- a/components/legacy/rtlegacy.h
++++ b/components/legacy/rtlegacy.h
+@@ -24,7 +24,7 @@
+ /* legacy attributes define (<5.0.0) */
+ #define RT_SECTION rt_section
+ #define RT_WEAK    rt_weak
+-#define RT_USED    rt_used
++#define RT_USED    /*rt_used*/
+ #ifndef ALIGN
+ #define ALIGN      rt_align
+ #endif
+diff --git a/components/libc/compilers/common/include/sys/time.h b/components/libc/compilers/common/include/sys/time.h
+index 817fe78676..2b944b4612 100644
+--- a/components/libc/compilers/common/include/sys/time.h
++++ b/components/libc/compilers/common/include/sys/time.h
+@@ -47,14 +47,14 @@ int8_t rt_tz_is_dst(void);
+ struct itimerspec;
+ 
+ /* 'struct timeval' is defined on __x86_64__ toolchain */
+-#if !defined(__x86_64__) && !defined(_TIMEVAL_DEFINED)
++//#if !defined(__x86_64__) && !defined(_TIMEVAL_DEFINED)
+ #define _TIMEVAL_DEFINED
+ struct timeval
+ {
+     time_t      tv_sec;     /* seconds */
+     suseconds_t tv_usec;    /* and microseconds */
+ };
+-#endif /* _TIMEVAL_DEFINED */
++//#endif /* _TIMEVAL_DEFINED */
+ 
+ #if defined(_GNU_SOURCE) && (defined(__x86_64__) || defined(__i386__) || defined(RT_USING_SMART))
+ /* linux x86 platform gcc use! */
+diff --git a/components/libc/compilers/musl/SConscript b/components/libc/compilers/musl/SConscript
+index 8c5d0448ae..ad1a71fa1c 100644
+--- a/components/libc/compilers/musl/SConscript
++++ b/components/libc/compilers/musl/SConscript
+@@ -16,7 +16,7 @@ if musllibc_version:
+     CPPPATH = [cwd]
+     CPPDEFINES = ['RT_USING_MUSLLIBC', 'RT_USING_LIBC']
+     LIBS = ['c', 'gcc']
+-    LINKFLAGS = ' --specs=kernel.specs'
++    LINKFLAGS = ''
+     AddDepend(['RT_USING_MUSLLIBC', 'RT_USING_LIBC'])
+ 
+     group = group + DefineGroup('Compiler', src, depend = [''], CPPPATH = CPPPATH, LINKFLAGS = LINKFLAGS, CPPDEFINES = CPPDEFINES, LIBS = LIBS)
+diff --git a/components/lwp/SConscript b/components/lwp/SConscript
+index cd8a2428a5..74b7d02dd3 100644
+--- a/components/lwp/SConscript
++++ b/components/lwp/SConscript
+@@ -49,7 +49,12 @@ CPPPATH += ['./terminal/']
+ if not GetDepend(['LWP_USING_RUNTIME']):
+     SrcRemove(src, 'lwp_runtime.c')
+ 
++
++SrcRemove(src, 'lwp_user_mm.c')
++
++SrcRemove(src, 'arch/' + arch + '/' + cpu+'/lwp_gcc.S')
+ group = DefineGroup('lwP', src, depend = ['RT_USING_SMART'], CPPPATH = CPPPATH)
+ 
+ group = group + SConscript(os.path.join('vdso', 'SConscript'))
++group = group + SConscript(os.path.join('test_files', 'SConscript'))
+ Return('group')
+diff --git a/components/lwp/lwp_futex.c b/components/lwp/lwp_futex.c
+index a49a86680a..21ba2c8289 100644
+--- a/components/lwp/lwp_futex.c
++++ b/components/lwp/lwp_futex.c
+@@ -368,8 +368,7 @@ static rt_err_t _suspend_thread_locked(rt_thread_t thread, rt_futex_t futex)
+                                      RT_IPC_FLAG_FIFO, RT_INTERRUPTIBLE);
+ }
+ 
+-rt_inline int _futex_cmpxchg_value(int *curval, int *uaddr, int uval,
+-                                   int newval)
++rt_inline int _futex_cmpxchg_value(int *curval, _Atomic int *uaddr, int uval, int newval)
+ {
+     int err = 0;
+ 
+@@ -589,7 +588,7 @@ static long _futex_lock_pi(rt_futex_t futex, struct rt_lwp *lwp, int *uaddr,
+         /* If the value is 0, then the kernel tries
+              to atomically set the futex value to the caller's TID.  */
+         nword = current_thread->tid;
+-        if (_futex_cmpxchg_value(&cword, uaddr, word, nword))
++        if (_futex_cmpxchg_value(&cword, (_Atomic int *)uaddr, word, nword))
+         {
+             _futex_unlock(lwp, op_flags);
+             return -EAGAIN;
+@@ -609,7 +608,7 @@ static long _futex_lock_pi(rt_futex_t futex, struct rt_lwp *lwp, int *uaddr,
+ 
+         nword =
+             word | FUTEX_WAITERS;
+-        if (_futex_cmpxchg_value(&cword, uaddr, word, nword))
++        if (_futex_cmpxchg_value(&cword, (_Atomic int *)uaddr, word, nword))
+         {
+             _futex_unlock(lwp, op_flags);
+             return -EAGAIN;
+@@ -651,7 +650,7 @@ static long _futex_lock_pi(rt_futex_t futex, struct rt_lwp *lwp, int *uaddr,
+ 
+     _futex_lock(lwp, op_flags);
+     nword = current_thread->tid | FUTEX_WAITERS;
+-    if (_futex_cmpxchg_value(&cword, uaddr, word, nword))
++    if (_futex_cmpxchg_value(&cword, (_Atomic int *)uaddr, word, nword))
+     {
+         err = -EAGAIN;
+     }
+@@ -843,7 +842,7 @@ retry:
+ 
+     nword = (word & FUTEX_WAITERS) | FUTEX_OWNER_DIED;
+ 
+-    if ((rc = _futex_cmpxchg_value(&cword, uaddr, word, nword)))
++    if ((rc = _futex_cmpxchg_value(&cword, (_Atomic int *)uaddr, word, nword)))
+     {
+         switch (rc)
+         {
+diff --git a/components/lwp/lwp_internal.c b/components/lwp/lwp_internal.c
+index 1fc68f2e73..a92505e6ae 100644
+--- a/components/lwp/lwp_internal.c
++++ b/components/lwp/lwp_internal.c
+@@ -99,23 +99,23 @@ static rt_err_t _mutex_take_safe(rt_mutex_t mtx, rt_int32_t timeout, int flags)
+ 
+ rt_err_t lwp_mutex_take_safe(rt_mutex_t mtx, rt_int32_t timeout, int flags)
+ {
+-    LWP_DEF_RETURN_CODE(rc);
+-    rc = _mutex_take_safe(mtx, timeout, flags);
+-    LWP_RETURN(rc);
++    // LWP_DEF_RETURN_CODE(rc);
++    // rc = _mutex_take_safe(mtx, timeout, flags);
++    // LWP_RETURN(rc);
+ }
+ 
+ rt_err_t lwp_mutex_release_safe(rt_mutex_t mtx)
+ {
+-    LWP_DEF_RETURN_CODE(rc);
++    // LWP_DEF_RETURN_CODE(rc);
+ 
+-    rc = rt_mutex_release(mtx);
+-    if (rc)
+-    {
+-        LOG_I("%s: release failed with code %ld", __func__, rc);
+-        rt_backtrace();
+-    }
++    // rc = rt_mutex_release(mtx);
++    // if (rc)
++    // {
++    //     LOG_I("%s: release failed with code %ld", __func__, rc);
++    //     rt_backtrace();
++    // }
+ 
+-    LWP_RETURN(rc);
++    // LWP_RETURN(rc);
+ }
+ 
+ rt_err_t lwp_critical_enter(struct rt_lwp *lwp, int flags)
+diff --git a/components/lwp/lwp_internal.h b/components/lwp/lwp_internal.h
+index 96c7949d64..3e7fc87c9a 100644
+--- a/components/lwp/lwp_internal.h
++++ b/components/lwp/lwp_internal.h
+@@ -12,6 +12,7 @@
+ #ifndef __LWP_INTERNAL_H__
+ #define __LWP_INTERNAL_H__
+ 
++#include "symbolic_execution_address_space.h"
+ #include "lwp.h"
+ #include "lwp_arch.h"
+ #include "lwp_user_mm.h"
+@@ -27,10 +28,17 @@ struct rt_lwp;
+ rt_err_t lwp_mutex_take_safe(rt_mutex_t mtx, rt_int32_t timeout, int flags);
+ rt_err_t lwp_mutex_release_safe(rt_mutex_t mtx);
+ 
++#ifdef LWP_USE_MMU_STUB
++rt_inline rt_bool_t lwp_in_user_space(const char *addr)
++{
++    return IS_SYMBOLIC_USER_ADDRESS(addr);
++}
++#else
+ rt_inline rt_bool_t lwp_in_user_space(const char *addr)
+ {
+     return (addr >= (char *)USER_VADDR_START && addr < (char *)USER_VADDR_TOP);
+ }
++#endif
+ 
+ #ifdef RT_USING_SMP
+     #define LOCAL_IRQ_MASK() rt_hw_local_irq_disable()
+diff --git a/components/lwp/lwp_ipc.c b/components/lwp/lwp_ipc.c
+index f75597376d..0d6af81f44 100644
+--- a/components/lwp/lwp_ipc.c
++++ b/components/lwp/lwp_ipc.c
+@@ -958,7 +958,7 @@ static struct dfs_file *lwp_fd_get(int fdt_type, int fd)
+     }
+     else
+     {
+-        fdt = dfs_fdtable_get();
++        fdt = dfs_fdtable_get_global();
+     }
+     return fdt_get_file(fdt, fd);
+ }
+diff --git a/components/lwp/lwp_mm.c b/components/lwp/lwp_mm.c
+index f8d051133c..fdc5a43bf6 100644
+--- a/components/lwp/lwp_mm.c
++++ b/components/lwp/lwp_mm.c
+@@ -15,26 +15,26 @@ static rt_mutex_t mm_lock;
+ 
+ void rt_mm_lock(void)
+ {
+-    if (rt_thread_self())
+-    {
+-        if (!mm_lock)
+-        {
+-            mm_lock = rt_mutex_create("mm_lock", RT_IPC_FLAG_FIFO);
+-        }
+-        if (mm_lock)
+-        {
+-            rt_mutex_take(mm_lock, RT_WAITING_FOREVER);
+-        }
+-    }
++    // if (rt_thread_self())
++    // {
++    //     if (!mm_lock)
++    //     {
++    //         mm_lock = rt_mutex_create("mm_lock", RT_IPC_FLAG_FIFO);
++    //     }
++    //     if (mm_lock)
++    //     {
++    //         rt_mutex_take(mm_lock, RT_WAITING_FOREVER);
++    //     }
++    // }
+ }
+ 
+ void rt_mm_unlock(void)
+ {
+-    if (rt_thread_self())
+-    {
+-        if (mm_lock)
+-        {
+-            rt_mutex_release(mm_lock);
+-        }
+-    }
++    // if (rt_thread_self())
++    // {
++    //     if (mm_lock)
++    //     {
++    //         rt_mutex_release(mm_lock);
++    //     }
++    // }
+ }
+diff --git a/components/lwp/lwp_pid.c b/components/lwp/lwp_pid.c
+index 34285598df..a3600d992a 100644
+--- a/components/lwp/lwp_pid.c
++++ b/components/lwp/lwp_pid.c
+@@ -293,26 +293,26 @@ void lwp_user_object_lock_destroy(struct rt_lwp *lwp)
+ 
+ void lwp_user_object_lock(struct rt_lwp *lwp)
+ {
+-    if (lwp)
+-    {
+-        rt_mutex_take(&lwp->object_mutex, RT_WAITING_FOREVER);
+-    }
+-    else
+-    {
+-        RT_ASSERT(0);
+-    }
++    // if (lwp)
++    // {
++    //     rt_mutex_take(&lwp->object_mutex, RT_WAITING_FOREVER);
++    // }
++    // else
++    // {
++    //     RT_ASSERT(0);
++    // }
+ }
+ 
+ void lwp_user_object_unlock(struct rt_lwp *lwp)
+ {
+-    if (lwp)
+-    {
+-        rt_mutex_release(&lwp->object_mutex);
+-    }
+-    else
+-    {
+-        RT_ASSERT(0);
+-    }
++    // if (lwp)
++    // {
++    //     rt_mutex_release(&lwp->object_mutex);
++    // }
++    // else
++    // {
++    //     RT_ASSERT(0);
++    // }
+ }
+ 
+ int lwp_user_object_add(struct rt_lwp *lwp, rt_object_t object)
+diff --git a/components/lwp/lwp_syscall.c b/components/lwp/lwp_syscall.c
+index 96bad92b51..77cd98c1e4 100644
+--- a/components/lwp/lwp_syscall.c
++++ b/components/lwp/lwp_syscall.c
+@@ -117,14 +117,16 @@ void lwp_cleanup(struct rt_thread *tid);
+ #ifdef ARCH_MM_MMU
+     #define ALLOC_KERNEL_STACK_SIZE 5120
+ 
++    static temp_buffer[16];
++    static temp_size=16;
+     static void *kmem_get(size_t size)
+     {
+-        return rt_malloc(size);
++        return temp_buffer;
+     }
+ 
+     static void kmem_put(void *kptr)
+     {
+-        rt_free(kptr);
++        return;
+     }
+ #else /* ARCH_MM_MMU */
+     #define ALLOC_KERNEL_STACK_SIZE 1536
+@@ -6219,7 +6221,7 @@ sysret_t sys_reboot(int magic, int magic2, int type, void *arg)
+ ssize_t sys_pread64(int fd, void *buf, int size, size_t offset)
+ #ifdef RT_USING_DFS_V2
+ {
+-    ssize_t pread(int fd, void *buf, size_t len, size_t offset);
++    //ssize_t pread(int fd, void *buf, size_t len, size_t offset);
+ #ifdef ARCH_MM_MMU
+     ssize_t ret = -1;
+     void *kmem = RT_NULL;
+@@ -6273,7 +6275,7 @@ ssize_t sys_pread64(int fd, void *buf, int size, size_t offset)
+ ssize_t sys_pwrite64(int fd, void *buf, int size, size_t offset)
+ #ifdef RT_USING_DFS_V2
+ {
+-    ssize_t pwrite(int fd, const void *buf, size_t len, size_t offset);
++    //ssize_t pwrite(int fd, const void *buf, size_t len, size_t offset);
+ #ifdef ARCH_MM_MMU
+     ssize_t ret = -1;
+     void *kmem = RT_NULL;
+diff --git a/components/net/sal/SConscript b/components/net/sal/SConscript
+index 437b6ce2e0..daf324faff 100644
+--- a/components/net/sal/SConscript
++++ b/components/net/sal/SConscript
+@@ -30,6 +30,7 @@ if GetDepend('SAL_USING_POSIX'):
+ if not GetDepend('HAVE_SYS_SOCKET_H'):
+     CPPPATH += [cwd + '/include/socket/sys_socket']
+ 
++SrcRemove(src, 'src/sal_socket.c')
+ group = DefineGroup('SAL', src, depend = ['RT_USING_SAL'], CPPPATH = CPPPATH)
+ 
+ Return('group')
+diff --git a/include/rtcompiler.h b/include/rtcompiler.h
+index 121f084ae9..4c9ca74f6a 100644
+--- a/include/rtcompiler.h
++++ b/include/rtcompiler.h
+@@ -14,7 +14,7 @@
+ 
+ #if defined(__ARMCC_VERSION)        /* ARM Compiler */
+ #define rt_section(x)               __attribute__((section(x)))
+-#define rt_used                     __attribute__((used))
++#define rt_used                     /*__attribute__((used))*/
+ #define rt_align(n)                 __attribute__((aligned(n)))
+ #if __ARMCC_VERSION >= 6010050
+ #define rt_packed(declare)          declare __attribute__((packed))
+@@ -28,7 +28,7 @@
+ #define rt_always_inline            rt_inline
+ #elif defined (__IAR_SYSTEMS_ICC__) /* for IAR Compiler */
+ #define rt_section(x)               @ x
+-#define rt_used                     __root
++#define rt_used                     /*__root*/
+ #define PRAGMA(x)                   _Pragma(#x)
+ #define rt_align(n)                 PRAGMA(data_alignment=n)
+ #define rt_packed(declare)          declare
+@@ -41,7 +41,7 @@
+ #define __RT_STRINGIFY(x...)        #x
+ #define RT_STRINGIFY(x...)          __RT_STRINGIFY(x)
+ #define rt_section(x)               __attribute__((section(x)))
+-#define rt_used                     __attribute__((used))
++#define rt_used                     /*__attribute__((used))*/
+ #define rt_align(n)                 __attribute__((aligned(n)))
+ #define rt_packed(declare)          declare __attribute__((packed))
+ #define rt_weak                     __attribute__((weak))
+@@ -51,7 +51,7 @@
+ #define rt_always_inline            static inline __attribute__((always_inline))
+ #elif defined (__ADSPBLACKFIN__)    /* for VisualDSP++ Compiler */
+ #define rt_section(x)               __attribute__((section(x)))
+-#define rt_used                     __attribute__((used))
++#define rt_used                     /*__attribute__((used))*/
+ #define rt_align(n)                 __attribute__((aligned(n)))
+ #define rt_packed(declare)          declare
+ #define rt_weak                     __attribute__((weak))
+@@ -77,9 +77,9 @@
+  */
+ #define rt_section(x)               __attribute__((section(x)))
+ #ifdef __TI_EABI__
+-#define rt_used                     __attribute__((retain)) __attribute__((used))
++#define rt_used                     /*__attribute__((retain)) __attribute__((used))*/
+ #else
+-#define rt_used                     __attribute__((used))
++#define rt_used                     /*__attribute__((used))*/
+ #endif
+ #define PRAGMA(x)                   _Pragma(#x)
+ #define rt_align(n)                 __attribute__((aligned(n)))
+@@ -95,7 +95,7 @@
+ #define rt_always_inline            rt_inline
+ #elif defined (__TASKING__)         /* for TASKING Compiler */
+ #define rt_section(x)               __attribute__((section(x)))
+-#define rt_used                     __attribute__((used, protect))
++#define rt_used                     /*__attribute__((used, protect))*/
+ #define PRAGMA(x)                   _Pragma(#x)
+ #define rt_align(n)                 __attribute__((__align(n)))
+ #define rt_packed(declare)          declare __packed__
+diff --git a/include/rtdef.h b/include/rtdef.h
+index b1f8e48c6f..8ef0578db9 100644
+--- a/include/rtdef.h
++++ b/include/rtdef.h
+@@ -140,7 +140,7 @@ typedef int (*init_fn_t)(void);
+         #define INIT_EXPORT(fn, level)                                  \
+                                 const char __rti_level_##fn[] = ".rti_fn." level;       \
+                                 const char __rti_##fn##_name[] = #fn;                   \
+-                                __declspec(allocate("rti_fn$f"))                        \
++                                /*__declspec(allocate("rti_fn$f"))*/                        \
+                                 rt_used const struct rt_init_desc __rt_init_msc_##fn =  \
+                                 {__rti_level_##fn, fn, __rti_##fn##_name};
+     #else
+@@ -151,7 +151,7 @@ typedef int (*init_fn_t)(void);
+         };
+         #define INIT_EXPORT(fn, level)                                  \
+                                 const char __rti_level_##fn[] = ".rti_fn." level;       \
+-                                __declspec(allocate("rti_fn$f"))                        \
++                                /*__declspec(allocate("rti_fn$f"))*/                        \
+                                 rt_used const struct rt_init_desc __rt_init_msc_##fn =  \
+                                 {__rti_level_##fn, fn };
+     #endif /* RT_DEBUGING_AUTO_INIT */
+@@ -447,8 +447,7 @@ struct rt_object_information
+     void name##_sethook(name##_hooklistnode_t node)                          \
+     {                                                                        \
+         rt_ubase_t level = rt_spin_lock_irqsave(&name##lock);                \
+-        while (name##_nested)                                                \
+-        {                                                                    \
++        while (name##_nested) {                                              \
+             rt_spin_unlock_irqrestore(&name##lock, level);                   \
+             level = rt_spin_lock_irqsave(&name##lock);                       \
+         }                                                                    \
+@@ -458,8 +457,7 @@ struct rt_object_information
+     void name##_rmhook(name##_hooklistnode_t node)                           \
+     {                                                                        \
+         rt_ubase_t level = rt_spin_lock_irqsave(&name##lock);                \
+-        while (name##_nested)                                                \
+-        {                                                                    \
++        while (name##_nested) {                                              \
+             rt_spin_unlock_irqrestore(&name##lock, level);                   \
+             level = rt_spin_lock_irqsave(&name##lock);                       \
+         }                                                                    \
+@@ -916,7 +914,7 @@ struct rt_thread
+     struct lwp_thread_signal    signal;                 /**< lwp signal for user-space thread */
+     struct rt_user_context      user_ctx;               /**< user space context */
+     struct rt_wakeup            wakeup_handle;          /**< wakeup handle for IPC */
+-    rt_atomic_t                 exit_request;           /**< pending exit request of thread */
++    _Atomic rt_atomic_t         exit_request;           /**< pending exit request of thread */
+     int                         tid;                    /**< thread ID used by process */
+     int                         tid_ref_count;          /**< reference of tid */
+     void                        *susp_recycler;         /**< suspended recycler on this thread */
+diff --git a/include/rthw.h b/include/rthw.h
+index 672e820918..73a45cbcb9 100644
+--- a/include/rthw.h
++++ b/include/rthw.h
+@@ -26,7 +26,7 @@
+ #include <cpuport.h> /* include spinlock, cache ops, etc. */
+ #endif
+ 
+-#ifdef __cplusplus
++#ifdef __cpluspluss
+ extern "C" {
+ #endif
+ 
+diff --git a/include/rtservice.h b/include/rtservice.h
+index 3d99b46151..886a02cf84 100644
+--- a/include/rtservice.h
++++ b/include/rtservice.h
+@@ -60,11 +60,11 @@ rt_inline void rt_list_init(rt_list_t *l)
+  */
+ rt_inline void rt_list_insert_after(rt_list_t *l, rt_list_t *n)
+ {
+-    l->next->prev = n;
+-    n->next = l->next;
++    // l->next->prev = n;
++    // n->next = l->next;
+ 
+-    l->next = n;
+-    n->prev = l;
++    // l->next = n;
++    // n->prev = l;
+ }
+ 
+ /**
+diff --git a/libcpu/arm/cortex-a/SConscript b/libcpu/arm/cortex-a/SConscript
+index 4eb763baa1..0af32284d6 100644
+--- a/libcpu/arm/cortex-a/SConscript
++++ b/libcpu/arm/cortex-a/SConscript
+@@ -39,6 +39,14 @@ if rtconfig.PLATFORM in ['iccarm']:
+ if rtconfig.PLATFORM in ['iccarm']:
+     src += Glob('*_iar.S')
+ 
++SrcRemove(src, 'context_gcc.S')
++SrcRemove(src, 'cp15_gcc.S')
++SrcRemove(src, 'cp15_armcc.S')
++SrcRemove(src, 'cp15_armclang.S')
++SrcRemove(src, 'cp15_iar.S')
++SrcRemove(src, 'vector_gcc.S')
++SrcRemove(src, 'start_gcc.S')
++
+ group = DefineGroup('libcpu', src, depend = [''], CPPPATH = CPPPATH)
+ 
+ Return('group')
+diff --git a/libcpu/arm/cortex-a/start_gcc.S b/libcpu/arm/cortex-a/start_gcc.S
+index 2f6add6058..ab7ec27a40 100644
+--- a/libcpu/arm/cortex-a/start_gcc.S
++++ b/libcpu/arm/cortex-a/start_gcc.S
+@@ -219,7 +219,7 @@ enable_mmu_page_table_early:
+     mcr     p15, #0, r0, c2, c0, #0
+     dmb
+     
+-    ldr     r0,=#0x55555555
++    ldr     r0, =0x55555555
+     mcr     p15, #0, r0, c3, c0, #0
+ 
+     /* disable ttbr1 */
+diff --git a/src/scheduler_up.c b/src/scheduler_up.c
+index 693cfcae0e..270d598ecb 100644
+--- a/src/scheduler_up.c
++++ b/src/scheduler_up.c
+@@ -199,127 +199,127 @@ void rt_system_scheduler_start(void)
+  */
+ void rt_schedule(void)
+ {
+-    rt_base_t level;
+-    struct rt_thread *to_thread;
+-    struct rt_thread *from_thread;
+-    /* using local variable to avoid unecessary function call */
+-    struct rt_thread *curr_thread = rt_thread_self();
+-
+-    /* disable interrupt */
+-    level = rt_hw_interrupt_disable();
+-
+-    /* check the scheduler is enabled or not */
+-    if (rt_scheduler_lock_nest == 0)
+-    {
+-        rt_ubase_t highest_ready_priority;
+-
+-        if (rt_thread_ready_priority_group != 0)
+-        {
+-            /* need_insert_from_thread: need to insert from_thread to ready queue */
+-            int need_insert_from_thread = 0;
+-
+-            to_thread = _scheduler_get_highest_priority_thread(&highest_ready_priority);
+-
+-            if ((RT_SCHED_CTX(curr_thread).stat & RT_THREAD_STAT_MASK) == RT_THREAD_RUNNING)
+-            {
+-                if (RT_SCHED_PRIV(curr_thread).current_priority < highest_ready_priority)
+-                {
+-                    to_thread = curr_thread;
+-                }
+-                else if (RT_SCHED_PRIV(curr_thread).current_priority == highest_ready_priority
+-                         && (RT_SCHED_CTX(curr_thread).stat & RT_THREAD_STAT_YIELD_MASK) == 0)
+-                {
+-                    to_thread = curr_thread;
+-                }
+-                else
+-                {
+-                    need_insert_from_thread = 1;
+-                }
+-            }
+-
+-            if (to_thread != curr_thread)
+-            {
+-                /* if the destination thread is not the same as current thread */
+-                rt_current_priority = (rt_uint8_t)highest_ready_priority;
+-                from_thread                   = curr_thread;
+-                rt_cpu_self()->current_thread = to_thread;
+-
+-                RT_OBJECT_HOOK_CALL(rt_scheduler_hook, (from_thread, to_thread));
+-
+-                if (need_insert_from_thread)
+-                {
+-                    rt_sched_insert_thread(from_thread);
+-                }
+-
+-                if ((RT_SCHED_CTX(from_thread).stat & RT_THREAD_STAT_YIELD_MASK) != 0)
+-                {
+-                    RT_SCHED_CTX(from_thread).stat &= ~RT_THREAD_STAT_YIELD_MASK;
+-                }
+-
+-                rt_sched_remove_thread(to_thread);
+-                RT_SCHED_CTX(to_thread).stat = RT_THREAD_RUNNING | (RT_SCHED_CTX(to_thread).stat & ~RT_THREAD_STAT_MASK);
+-
+-                /* switch to new thread */
+-                LOG_D("[%d]switch to priority#%d "
+-                         "thread:%.*s(sp:0x%08x), "
+-                         "from thread:%.*s(sp: 0x%08x)",
+-                         rt_interrupt_nest, highest_ready_priority,
+-                         RT_NAME_MAX, to_thread->parent.name, to_thread->sp,
+-                         RT_NAME_MAX, from_thread->parent.name, from_thread->sp);
+-
+-                RT_SCHEDULER_STACK_CHECK(to_thread);
+-
+-                if (rt_interrupt_nest == 0)
+-                {
+-                    extern void rt_thread_handle_sig(rt_bool_t clean_state);
+-
+-                    RT_OBJECT_HOOK_CALL(rt_scheduler_switch_hook, (from_thread));
+-
+-                    rt_hw_context_switch((rt_uintptr_t)&from_thread->sp,
+-                            (rt_uintptr_t)&to_thread->sp);
+-
+-                    /* enable interrupt */
+-                    rt_hw_interrupt_enable(level);
+-
+-#ifdef RT_USING_SIGNALS
+-                    /* check stat of thread for signal */
+-                    level = rt_hw_interrupt_disable();
+-                    if (RT_SCHED_CTX(curr_thread).stat & RT_THREAD_STAT_SIGNAL_PENDING)
+-                    {
+-                        extern void rt_thread_handle_sig(rt_bool_t clean_state);
+-
+-                        RT_SCHED_CTX(curr_thread).stat &= ~RT_THREAD_STAT_SIGNAL_PENDING;
+-
+-                        rt_hw_interrupt_enable(level);
+-
+-                        /* check signal status */
+-                        rt_thread_handle_sig(RT_TRUE);
+-                    }
+-                    else
+-                    {
+-                        rt_hw_interrupt_enable(level);
+-                    }
+-#endif /* RT_USING_SIGNALS */
+-                    goto __exit;
+-                }
+-                else
+-                {
+-                    LOG_D("switch in interrupt");
+-
+-                    rt_hw_context_switch_interrupt((rt_uintptr_t)&from_thread->sp,
+-                            (rt_uintptr_t)&to_thread->sp, from_thread, to_thread);
+-                }
+-            }
+-            else
+-            {
+-                rt_sched_remove_thread(curr_thread);
+-                RT_SCHED_CTX(curr_thread).stat = RT_THREAD_RUNNING | (RT_SCHED_CTX(curr_thread).stat & ~RT_THREAD_STAT_MASK);
+-            }
+-        }
+-    }
+-
+-    /* enable interrupt */
+-    rt_hw_interrupt_enable(level);
++//     rt_base_t level;
++//     struct rt_thread *to_thread;
++//     struct rt_thread *from_thread;
++//     /* using local variable to avoid unecessary function call */
++//     struct rt_thread *curr_thread = rt_thread_self();
++
++//     /* disable interrupt */
++//     level = rt_hw_interrupt_disable();
++
++//     /* check the scheduler is enabled or not */
++//     if (rt_scheduler_lock_nest == 0)
++//     {
++//         rt_ubase_t highest_ready_priority;
++
++//         if (rt_thread_ready_priority_group != 0)
++//         {
++//             /* need_insert_from_thread: need to insert from_thread to ready queue */
++//             int need_insert_from_thread = 0;
++
++//             to_thread = _scheduler_get_highest_priority_thread(&highest_ready_priority);
++
++//             if ((RT_SCHED_CTX(curr_thread).stat & RT_THREAD_STAT_MASK) == RT_THREAD_RUNNING)
++//             {
++//                 if (RT_SCHED_PRIV(curr_thread).current_priority < highest_ready_priority)
++//                 {
++//                     to_thread = curr_thread;
++//                 }
++//                 else if (RT_SCHED_PRIV(curr_thread).current_priority == highest_ready_priority
++//                          && (RT_SCHED_CTX(curr_thread).stat & RT_THREAD_STAT_YIELD_MASK) == 0)
++//                 {
++//                     to_thread = curr_thread;
++//                 }
++//                 else
++//                 {
++//                     need_insert_from_thread = 1;
++//                 }
++//             }
++
++//             if (to_thread != curr_thread)
++//             {
++//                 /* if the destination thread is not the same as current thread */
++//                 rt_current_priority = (rt_uint8_t)highest_ready_priority;
++//                 from_thread                   = curr_thread;
++//                 rt_cpu_self()->current_thread = to_thread;
++
++//                 RT_OBJECT_HOOK_CALL(rt_scheduler_hook, (from_thread, to_thread));
++
++//                 if (need_insert_from_thread)
++//                 {
++//                     rt_sched_insert_thread(from_thread);
++//                 }
++
++//                 if ((RT_SCHED_CTX(from_thread).stat & RT_THREAD_STAT_YIELD_MASK) != 0)
++//                 {
++//                     RT_SCHED_CTX(from_thread).stat &= ~RT_THREAD_STAT_YIELD_MASK;
++//                 }
++
++//                 rt_sched_remove_thread(to_thread);
++//                 RT_SCHED_CTX(to_thread).stat = RT_THREAD_RUNNING | (RT_SCHED_CTX(to_thread).stat & ~RT_THREAD_STAT_MASK);
++
++//                 /* switch to new thread */
++//                 LOG_D("[%d]switch to priority#%d "
++//                          "thread:%.*s(sp:0x%08x), "
++//                          "from thread:%.*s(sp: 0x%08x)",
++//                          rt_interrupt_nest, highest_ready_priority,
++//                          RT_NAME_MAX, to_thread->parent.name, to_thread->sp,
++//                          RT_NAME_MAX, from_thread->parent.name, from_thread->sp);
++
++//                 RT_SCHEDULER_STACK_CHECK(to_thread);
++
++//                 if (rt_interrupt_nest == 0)
++//                 {
++//                     extern void rt_thread_handle_sig(rt_bool_t clean_state);
++
++//                     RT_OBJECT_HOOK_CALL(rt_scheduler_switch_hook, (from_thread));
++
++//                     rt_hw_context_switch((rt_uintptr_t)&from_thread->sp,
++//                             (rt_uintptr_t)&to_thread->sp);
++
++//                     /* enable interrupt */
++//                     rt_hw_interrupt_enable(level);
++
++// #ifdef RT_USING_SIGNALS
++//                     /* check stat of thread for signal */
++//                     level = rt_hw_interrupt_disable();
++//                     if (RT_SCHED_CTX(curr_thread).stat & RT_THREAD_STAT_SIGNAL_PENDING)
++//                     {
++//                         extern void rt_thread_handle_sig(rt_bool_t clean_state);
++
++//                         RT_SCHED_CTX(curr_thread).stat &= ~RT_THREAD_STAT_SIGNAL_PENDING;
++
++//                         rt_hw_interrupt_enable(level);
++
++//                         /* check signal status */
++//                         rt_thread_handle_sig(RT_TRUE);
++//                     }
++//                     else
++//                     {
++//                         rt_hw_interrupt_enable(level);
++//                     }
++// #endif /* RT_USING_SIGNALS */
++//                     goto __exit;
++//                 }
++//                 else
++//                 {
++//                     LOG_D("switch in interrupt");
++
++//                     rt_hw_context_switch_interrupt((rt_uintptr_t)&from_thread->sp,
++//                             (rt_uintptr_t)&to_thread->sp, from_thread, to_thread);
++//                 }
++//             }
++//             else
++//             {
++//                 rt_sched_remove_thread(curr_thread);
++//                 RT_SCHED_CTX(curr_thread).stat = RT_THREAD_RUNNING | (RT_SCHED_CTX(curr_thread).stat & ~RT_THREAD_STAT_MASK);
++//             }
++//         }
++//     }
++
++//     /* enable interrupt */
++//     rt_hw_interrupt_enable(level);
+ 
+ __exit:
+     return;

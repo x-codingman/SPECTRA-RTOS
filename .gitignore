@@ -26,9 +26,12 @@ config.h
 site.exp
 
 *.code-workspace
+__pycache__/
 # Site file for llvm-lit
 lit.site.cfg
 rtos-api-analysis/results/
+/reproduced-ir/
+/.ir-smoke-*/
 # Autoconf files
 autoconf/aclocal.m4
 autoconf/autom4te.cache/
