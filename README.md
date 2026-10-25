@@ -1,4 +1,4 @@
-# SPECTRA (anonymous artifact)
+# SPECTRA
 SPECTRA is a symbolic-execution framework for detecting Shared Legacy Isolation-breaking Pointers (SLIP) vulnerabilities in real-time operating systems (RTOSs). In this artifact, SPECTRA is evaluated on four widely used RTOSs: FreeRTOS, TizenRT, RT-Thread, and ThreadX.
 
 
@@ -10,8 +10,18 @@ SPECTRA is a symbolic-execution framework for detecting Shared Legacy Isolation-
 | **`harnesses/`** | Per-RTOS harness workspaces ([harnesses/README.md](harnesses/README.md)). |
 | **`test-rtos/`** | Vendored RTOS kernel trees the harnesses build against. |
 | **`rtos-api-analysis/`** | Scripts and helpers to aggregate or inspect analysis outputs. |
+| **`docs/results/`** | Complete per-system-call vulnerability-detection results from the paper, with the original table PDF and structured data. |
 | **`examples/`**, **`test/`**, **`unittests/`** | KLEE examples and tests shipped with the engine. |
 | **`scripts/`**, **`utils/`** | Build and utility scripts. |
+
+## Full vulnerability-detection results
+
+The complete results for the 210 reported system calls are available as a
+[readable table](docs/results/full-vulnerability-results.md), the
+[original Table XI PDF](docs/results/full-vulnerability-results.pdf), and
+[structured JSON data](docs/results/full-vulnerability-results.json).
+The table documentation identifies the evaluated RTOS configurations and explains
+the category labels and original identifier mappings.
 
 ## Docker build (KLEE)
 
@@ -75,5 +85,3 @@ python3 run_test.py
 
 All `run_test.py` scripts use `${REPO_ROOT}/build/bin/klee` and write results into each RTOS tree under `test-rtos/*/symbolic_execution/`.
 If a harness `makefile` still contains machine-specific absolute paths, update them to your local checkout before running `make`.
-
-This tree is for anonymous artifact review only; it does not include step-by-step reproduction instructions.
