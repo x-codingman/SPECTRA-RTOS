@@ -1,6 +1,6 @@
 # The SLIP Problem: Detecting Shared Legacy Isolation-breaking Pointers in MCU-Oriented Real-Time Operating Systems
 
-This repository contains SPECTRA, the research artifact accompanying our NDSS 2027 paper. SPECTRA is a symbolic-execution framework for detecting Shared Legacy Isolation-breaking Pointers (SLIP) vulnerabilities in real-time operating systems (RTOSs). In this artifact, SPECTRA is evaluated on four widely used RTOSs: FreeRTOS, TizenRT, RT-Thread, and ThreadX.
+This repository contains SPECTRA, the research artifact accompanying our NDSS 2027 paper. SPECTRA is a symbolic-execution framework for detecting Shared Legacy Isolation-breaking Pointers (SLIP) vulnerabilities in real-time operating systems (RTOSs).
 
 
 ## Repository layout
