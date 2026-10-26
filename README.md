@@ -1,5 +1,6 @@
-# SPECTRA
-SPECTRA is a symbolic-execution framework for detecting Shared Legacy Isolation-breaking Pointers (SLIP) vulnerabilities in real-time operating systems (RTOSs). In this artifact, SPECTRA is evaluated on four widely used RTOSs: FreeRTOS, TizenRT, RT-Thread, and ThreadX.
+# The SLIP Problem: Detecting Shared Legacy Isolation-breaking Pointers in MCU-Oriented Real-Time Operating Systems
+
+This repository contains SPECTRA, the research artifact accompanying our NDSS 2027 paper. SPECTRA is a symbolic-execution framework for detecting Shared Legacy Isolation-breaking Pointers (SLIP) vulnerabilities in real-time operating systems (RTOSs). In this artifact, SPECTRA is evaluated on four widely used RTOSs: FreeRTOS, TizenRT, RT-Thread, and ThreadX.
 
 
 ## Repository layout
@@ -10,7 +11,7 @@ SPECTRA is a symbolic-execution framework for detecting Shared Legacy Isolation-
 | **`harnesses/`** | Per-RTOS harness workspaces ([harnesses/README.md](harnesses/README.md)). |
 | **`test-rtos/`** | Vendored RTOS kernel trees the harnesses build against. |
 | **`rtos-api-analysis/`** | Scripts and helpers to aggregate or inspect analysis outputs. |
-| **`docs/results/`** | Complete per-system-call vulnerability-detection results from the paper, with the original table PDF and structured data. |
+| **`docs/results/`** | Complete per-system-call vulnerability-detection results from the paper, with a PDF table, public CVE identifiers, and structured data. |
 | **`examples/`**, **`test/`**, **`unittests/`** | KLEE examples and tests shipped with the engine. |
 | **`scripts/`**, **`utils/`** | Build and utility scripts. |
 
@@ -18,10 +19,10 @@ SPECTRA is a symbolic-execution framework for detecting Shared Legacy Isolation-
 
 The complete results for the 210 reported system calls are available as a
 [readable table](docs/results/full-vulnerability-results.md), the
-[original Table XI PDF](docs/results/full-vulnerability-results.pdf), and
+[PDF table](docs/results/full-vulnerability-results.pdf), and
 [structured JSON data](docs/results/full-vulnerability-results.json).
 The table documentation identifies the evaluated RTOS configurations and explains
-the category labels and original identifier mappings.
+the category labels and public CVE identifier mappings.
 
 ## Docker build (KLEE)
 
